@@ -19,8 +19,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: - Custom Function
     private func initialSystem(){
         
-        
-        
         //2. Check internet exist
         if (useClosures) {  // 2nd loop
             reachability!.whenReachable = {
