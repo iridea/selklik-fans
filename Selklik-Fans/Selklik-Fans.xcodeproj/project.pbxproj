@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0DB170600DE335F77AA5C2AB /* Pods_Selklik_Fans.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93106E8CDDAF466E4ABE4638 /* Pods_Selklik_Fans.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		894253091BB297B700A04953 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253081BB297B700A04953 /* AppDelegate.swift */; };
 		8942530B1BB297B700A04953 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942530A1BB297B700A04953 /* ViewController.swift */; };
 		8942530E1BB297B700A04953 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8942530C1BB297B700A04953 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1DCCCE5513B30E4494472C0C /* Pods-Selklik-Fans.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selklik-Fans.release.xcconfig"; path = "Pods/Target Support Files/Pods-Selklik-Fans/Pods-Selklik-Fans.release.xcconfig"; sourceTree = "<group>"; };
 		894253051BB297B700A04953 /* Selklik-Fans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Selklik-Fans.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		894253081BB297B700A04953 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8942530A1BB297B700A04953 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +51,8 @@
 		894253281BB297B700A04953 /* Selklik_FansUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selklik_FansUITests.swift; sourceTree = "<group>"; };
 		8942532A1BB297B700A04953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		894253381BB29C1300A04953 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		93106E8CDDAF466E4ABE4638 /* Pods_Selklik_Fans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Selklik_Fans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D80A33531EC1AF33B6A0C573 /* Pods-Selklik-Fans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selklik-Fans.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Selklik-Fans/Pods-Selklik-Fans.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DB170600DE335F77AA5C2AB /* Pods_Selklik_Fans.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -76,6 +81,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3B8B509197125C4B47BBD1C7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D80A33531EC1AF33B6A0C573 /* Pods-Selklik-Fans.debug.xcconfig */,
+				1DCCCE5513B30E4494472C0C /* Pods-Selklik-Fans.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		894252FC1BB297B700A04953 = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +98,8 @@
 				8942531C1BB297B700A04953 /* Selklik-FansTests */,
 				894253271BB297B700A04953 /* Selklik-FansUITests */,
 				894253061BB297B700A04953 /* Products */,
+				3B8B509197125C4B47BBD1C7 /* Pods */,
+				9AFF24E74F0D784D5942D99A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +144,14 @@
 			path = "Selklik-FansUITests";
 			sourceTree = "<group>";
 		};
+		9AFF24E74F0D784D5942D99A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				93106E8CDDAF466E4ABE4638 /* Pods_Selklik_Fans.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +159,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8942532D1BB297B700A04953 /* Build configuration list for PBXNativeTarget "Selklik-Fans" */;
 			buildPhases = (
+				94402C8B04AF99FD3A577AD8 /* Check Pods Manifest.lock */,
 				894253011BB297B700A04953 /* Sources */,
 				894253021BB297B700A04953 /* Frameworks */,
 				894253031BB297B700A04953 /* Resources */,
+				228C07F7A3B4585454BF32EC /* Embed Pods Frameworks */,
+				E1466F0C8AB92125A0210C4F /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +280,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		228C07F7A3B4585454BF32EC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Selklik-Fans/Pods-Selklik-Fans-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94402C8B04AF99FD3A577AD8 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E1466F0C8AB92125A0210C4F /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Selklik-Fans/Pods-Selklik-Fans-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		894253011BB297B700A04953 /* Sources */ = {
@@ -398,6 +473,7 @@
 		};
 		8942532E1BB297B700A04953 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D80A33531EC1AF33B6A0C573 /* Pods-Selklik-Fans.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Selklik-Fans/Info.plist";
@@ -409,6 +485,7 @@
 		};
 		8942532F1BB297B700A04953 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1DCCCE5513B30E4494472C0C /* Pods-Selklik-Fans.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = "Selklik-Fans/Info.plist";
@@ -485,6 +562,7 @@
 				8942532F1BB297B700A04953 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		894253301BB297B700A04953 /* Build configuration list for PBXNativeTarget "Selklik-FansTests" */ = {
 			isa = XCConfigurationList;
@@ -493,6 +571,7 @@
 				894253321BB297B700A04953 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		894253331BB297B700A04953 /* Build configuration list for PBXNativeTarget "Selklik-FansUITests" */ = {
 			isa = XCConfigurationList;
@@ -501,6 +580,7 @@
 				894253351BB297B700A04953 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

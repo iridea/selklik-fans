@@ -1,0 +1,15 @@
+platform :ios, "9.0"
+use_frameworks!
+
+target 'Selklik-Fans' do
+pod 'ReachabilitySwift', git: 'https://github.com/ashleymills/Reachability.swift'
+end
+
+target 'Selklik-FansTests' do
+
+end
+
+target 'Selklik-FansUITests' do
+
+end
+
