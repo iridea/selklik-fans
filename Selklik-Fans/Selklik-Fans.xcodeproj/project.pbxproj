@@ -1,0 +1,508 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		894253091BB297B700A04953 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253081BB297B700A04953 /* AppDelegate.swift */; };
+		8942530B1BB297B700A04953 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942530A1BB297B700A04953 /* ViewController.swift */; };
+		8942530E1BB297B700A04953 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8942530C1BB297B700A04953 /* Main.storyboard */; };
+		894253101BB297B700A04953 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8942530F1BB297B700A04953 /* Assets.xcassets */; };
+		894253131BB297B700A04953 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 894253111BB297B700A04953 /* LaunchScreen.storyboard */; };
+		8942531E1BB297B700A04953 /* Selklik_FansTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942531D1BB297B700A04953 /* Selklik_FansTests.swift */; };
+		894253291BB297B700A04953 /* Selklik_FansUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253281BB297B700A04953 /* Selklik_FansUITests.swift */; };
+		894253391BB29C1300A04953 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 894253381BB29C1300A04953 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8942531A1BB297B700A04953 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 894252FD1BB297B700A04953 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 894253041BB297B700A04953;
+			remoteInfo = "Selklik-Fans";
+		};
+		894253251BB297B700A04953 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 894252FD1BB297B700A04953 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 894253041BB297B700A04953;
+			remoteInfo = "Selklik-Fans";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		894253051BB297B700A04953 /* Selklik-Fans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Selklik-Fans.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		894253081BB297B700A04953 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8942530A1BB297B700A04953 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8942530D1BB297B700A04953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8942530F1BB297B700A04953 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		894253121BB297B700A04953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		894253141BB297B700A04953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		894253191BB297B700A04953 /* Selklik-FansTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Selklik-FansTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8942531D1BB297B700A04953 /* Selklik_FansTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selklik_FansTests.swift; sourceTree = "<group>"; };
+		8942531F1BB297B700A04953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		894253241BB297B700A04953 /* Selklik-FansUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Selklik-FansUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		894253281BB297B700A04953 /* Selklik_FansUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selklik_FansUITests.swift; sourceTree = "<group>"; };
+		8942532A1BB297B700A04953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		894253381BB29C1300A04953 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		894253021BB297B700A04953 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		894253161BB297B700A04953 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		894253211BB297B700A04953 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		894252FC1BB297B700A04953 = {
+			isa = PBXGroup;
+			children = (
+				894253381BB29C1300A04953 /* .gitignore */,
+				894253071BB297B700A04953 /* Selklik-Fans */,
+				8942531C1BB297B700A04953 /* Selklik-FansTests */,
+				894253271BB297B700A04953 /* Selklik-FansUITests */,
+				894253061BB297B700A04953 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		894253061BB297B700A04953 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				894253051BB297B700A04953 /* Selklik-Fans.app */,
+				894253191BB297B700A04953 /* Selklik-FansTests.xctest */,
+				894253241BB297B700A04953 /* Selklik-FansUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		894253071BB297B700A04953 /* Selklik-Fans */ = {
+			isa = PBXGroup;
+			children = (
+				894253081BB297B700A04953 /* AppDelegate.swift */,
+				8942530A1BB297B700A04953 /* ViewController.swift */,
+				8942530C1BB297B700A04953 /* Main.storyboard */,
+				8942530F1BB297B700A04953 /* Assets.xcassets */,
+				894253111BB297B700A04953 /* LaunchScreen.storyboard */,
+				894253141BB297B700A04953 /* Info.plist */,
+			);
+			path = "Selklik-Fans";
+			sourceTree = "<group>";
+		};
+		8942531C1BB297B700A04953 /* Selklik-FansTests */ = {
+			isa = PBXGroup;
+			children = (
+				8942531D1BB297B700A04953 /* Selklik_FansTests.swift */,
+				8942531F1BB297B700A04953 /* Info.plist */,
+			);
+			path = "Selklik-FansTests";
+			sourceTree = "<group>";
+		};
+		894253271BB297B700A04953 /* Selklik-FansUITests */ = {
+			isa = PBXGroup;
+			children = (
+				894253281BB297B700A04953 /* Selklik_FansUITests.swift */,
+				8942532A1BB297B700A04953 /* Info.plist */,
+			);
+			path = "Selklik-FansUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		894253041BB297B700A04953 /* Selklik-Fans */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8942532D1BB297B700A04953 /* Build configuration list for PBXNativeTarget "Selklik-Fans" */;
+			buildPhases = (
+				894253011BB297B700A04953 /* Sources */,
+				894253021BB297B700A04953 /* Frameworks */,
+				894253031BB297B700A04953 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Selklik-Fans";
+			productName = "Selklik-Fans";
+			productReference = 894253051BB297B700A04953 /* Selklik-Fans.app */;
+			productType = "com.apple.product-type.application";
+		};
+		894253181BB297B700A04953 /* Selklik-FansTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 894253301BB297B700A04953 /* Build configuration list for PBXNativeTarget "Selklik-FansTests" */;
+			buildPhases = (
+				894253151BB297B700A04953 /* Sources */,
+				894253161BB297B700A04953 /* Frameworks */,
+				894253171BB297B700A04953 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8942531B1BB297B700A04953 /* PBXTargetDependency */,
+			);
+			name = "Selklik-FansTests";
+			productName = "Selklik-FansTests";
+			productReference = 894253191BB297B700A04953 /* Selklik-FansTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		894253231BB297B700A04953 /* Selklik-FansUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 894253331BB297B700A04953 /* Build configuration list for PBXNativeTarget "Selklik-FansUITests" */;
+			buildPhases = (
+				894253201BB297B700A04953 /* Sources */,
+				894253211BB297B700A04953 /* Frameworks */,
+				894253221BB297B700A04953 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				894253261BB297B700A04953 /* PBXTargetDependency */,
+			);
+			name = "Selklik-FansUITests";
+			productName = "Selklik-FansUITests";
+			productReference = 894253241BB297B700A04953 /* Selklik-FansUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		894252FD1BB297B700A04953 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0700;
+				ORGANIZATIONNAME = Selklik;
+				TargetAttributes = {
+					894253041BB297B700A04953 = {
+						CreatedOnToolsVersion = 7.0;
+					};
+					894253181BB297B700A04953 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 894253041BB297B700A04953;
+					};
+					894253231BB297B700A04953 = {
+						CreatedOnToolsVersion = 7.0;
+						TestTargetID = 894253041BB297B700A04953;
+					};
+				};
+			};
+			buildConfigurationList = 894253001BB297B700A04953 /* Build configuration list for PBXProject "Selklik-Fans" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 894252FC1BB297B700A04953;
+			productRefGroup = 894253061BB297B700A04953 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				894253041BB297B700A04953 /* Selklik-Fans */,
+				894253181BB297B700A04953 /* Selklik-FansTests */,
+				894253231BB297B700A04953 /* Selklik-FansUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		894253031BB297B700A04953 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				894253391BB29C1300A04953 /* .gitignore in Resources */,
+				894253131BB297B700A04953 /* LaunchScreen.storyboard in Resources */,
+				894253101BB297B700A04953 /* Assets.xcassets in Resources */,
+				8942530E1BB297B700A04953 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		894253171BB297B700A04953 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		894253221BB297B700A04953 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		894253011BB297B700A04953 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8942530B1BB297B700A04953 /* ViewController.swift in Sources */,
+				894253091BB297B700A04953 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		894253151BB297B700A04953 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8942531E1BB297B700A04953 /* Selklik_FansTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		894253201BB297B700A04953 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				894253291BB297B700A04953 /* Selklik_FansUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8942531B1BB297B700A04953 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 894253041BB297B700A04953 /* Selklik-Fans */;
+			targetProxy = 8942531A1BB297B700A04953 /* PBXContainerItemProxy */;
+		};
+		894253261BB297B700A04953 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 894253041BB297B700A04953 /* Selklik-Fans */;
+			targetProxy = 894253251BB297B700A04953 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8942530C1BB297B700A04953 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8942530D1BB297B700A04953 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		894253111BB297B700A04953 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				894253121BB297B700A04953 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8942532B1BB297B700A04953 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8942532C1BB297B700A04953 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8942532E1BB297B700A04953 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Selklik-Fans/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.selklik.Selklik-Fans";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8942532F1BB297B700A04953 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Selklik-Fans/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.selklik.Selklik-Fans";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		894253311BB297B700A04953 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Selklik-FansTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.selklik.Selklik-FansTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Selklik-Fans.app/Selklik-Fans";
+			};
+			name = Debug;
+		};
+		894253321BB297B700A04953 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "Selklik-FansTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.selklik.Selklik-FansTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Selklik-Fans.app/Selklik-Fans";
+			};
+			name = Release;
+		};
+		894253341BB297B700A04953 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Selklik-FansUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.selklik.Selklik-FansUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Selklik-Fans";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		894253351BB297B700A04953 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "Selklik-FansUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.selklik.Selklik-FansUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "Selklik-Fans";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		894253001BB297B700A04953 /* Build configuration list for PBXProject "Selklik-Fans" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8942532B1BB297B700A04953 /* Debug */,
+				8942532C1BB297B700A04953 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8942532D1BB297B700A04953 /* Build configuration list for PBXNativeTarget "Selklik-Fans" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8942532E1BB297B700A04953 /* Debug */,
+				8942532F1BB297B700A04953 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		894253301BB297B700A04953 /* Build configuration list for PBXNativeTarget "Selklik-FansTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				894253311BB297B700A04953 /* Debug */,
+				894253321BB297B700A04953 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		894253331BB297B700A04953 /* Build configuration list for PBXNativeTarget "Selklik-FansUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				894253341BB297B700A04953 /* Debug */,
+				894253351BB297B700A04953 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 894252FD1BB297B700A04953 /* Project object */;
+}
