@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		0DB170600DE335F77AA5C2AB /* Pods_Selklik_Fans.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93106E8CDDAF466E4ABE4638 /* Pods_Selklik_Fans.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		894253091BB297B700A04953 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253081BB297B700A04953 /* AppDelegate.swift */; };
-		8942530B1BB297B700A04953 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942530A1BB297B700A04953 /* ViewController.swift */; };
+		8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942530A1BB297B700A04953 /* CoordinatorViewController.swift */; };
 		8942530E1BB297B700A04953 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8942530C1BB297B700A04953 /* Main.storyboard */; };
 		894253101BB297B700A04953 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8942530F1BB297B700A04953 /* Assets.xcassets */; };
 		894253131BB297B700A04953 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 894253111BB297B700A04953 /* LaunchScreen.storyboard */; };
@@ -39,7 +39,7 @@
 		1DCCCE5513B30E4494472C0C /* Pods-Selklik-Fans.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selklik-Fans.release.xcconfig"; path = "Pods/Target Support Files/Pods-Selklik-Fans/Pods-Selklik-Fans.release.xcconfig"; sourceTree = "<group>"; };
 		894253051BB297B700A04953 /* Selklik-Fans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Selklik-Fans.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		894253081BB297B700A04953 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		8942530A1BB297B700A04953 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8942530A1BB297B700A04953 /* CoordinatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorViewController.swift; sourceTree = "<group>"; };
 		8942530D1BB297B700A04953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8942530F1BB297B700A04953 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		894253121BB297B700A04953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -117,7 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				894253081BB297B700A04953 /* AppDelegate.swift */,
-				8942530A1BB297B700A04953 /* ViewController.swift */,
+				8942530A1BB297B700A04953 /* CoordinatorViewController.swift */,
 				8942530C1BB297B700A04953 /* Main.storyboard */,
 				8942530F1BB297B700A04953 /* Assets.xcassets */,
 				894253111BB297B700A04953 /* LaunchScreen.storyboard */,
@@ -334,7 +334,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8942530B1BB297B700A04953 /* ViewController.swift in Sources */,
+				8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */,
 				894253091BB297B700A04953 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
