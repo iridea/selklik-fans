@@ -58,7 +58,7 @@
                                                                     <outlet property="delegate" destination="ax9-7Z-aZw" id="XbQ-xL-w13"/>
                                                                 </connections>
                                                             </textField>
-                                                            <visualEffectView opaque="NO" alpha="0.40000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zl3-Xw-LLh">
+                                                            <visualEffectView opaque="NO" alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Zl3-Xw-LLh">
                                                                 <rect key="frame" x="9" y="40" width="252" height="1"/>
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5ZX-wd-7MX">
                                                                     <rect key="frame" x="0.0" y="0.0" width="252" height="1"/>
@@ -106,6 +106,9 @@
                                                         <state key="normal" title="LOG IN">
                                                             <color key="titleColor" red="0.564653933" green="0.45339596269999999" blue="0.35711643100000001" alpha="1" colorSpace="calibratedRGB"/>
                                                         </state>
+                                                        <connections>
+                                                            <action selector="loginButtonTouchUpInside:" destination="ax9-7Z-aZw" eventType="touchUpInside" id="NZK-Nk-SsA"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                             </stackView>
@@ -147,9 +150,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="emailTextField" destination="fFM-DP-W3W" id="qQw-wj-Dsq"/>
                         <outlet property="loginButton" destination="dFV-pb-oDQ" id="kP5-U9-XaF"/>
                         <outlet property="mainScrollView" destination="BU1-g1-GBE" id="mGH-Eb-gAA"/>
                         <outlet property="mainStackView" destination="11M-Bz-p1W" id="cTI-k2-QLV"/>
+                        <outlet property="passwordTextField" destination="35j-Qn-4Sc" id="edw-3Y-5jf"/>
                         <outlet property="textboxBackground" destination="1hH-CC-94C" id="u2k-4f-hJE"/>
                     </connections>
                 </viewController>

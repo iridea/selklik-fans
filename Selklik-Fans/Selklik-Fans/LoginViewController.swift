@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
    
@@ -14,6 +16,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var mainStackView: UIStackView!
     @IBOutlet weak var textboxBackground: UIView!
+    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     
     //MARK: - Custom Function
     @IBAction func backButtonPress(sender: AnyObject) {
@@ -21,8 +25,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(textField: UITextField) {
-        print("textFieldDidBeginEditing")
-    mainScrollView.setContentOffset(CGPointMake(0, 20), animated: true)
+        mainScrollView.setContentOffset(CGPointMake(0, 20), animated: true)
     }
     
     func textFieldDidEndEditing(textField: UITextField) {
@@ -32,6 +35,33 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    private func loginToSystem() {
+        
+        let username = self.emailTextField.text
+        let password = self.passwordTextField.text
+        
+        let headers = ["Content-Type": "application/x-www-form-urlencoded"]
+        
+        let parameters = ["email":username!,
+            "password":password!]
+        
+        let postUrl = "http://www.selklik.mobi/api/1.1/user_login"
+        
+        Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters).responseJSON { _, _, result in
+            switch result {
+            case .Success:
+                print("Validation Successful")
+                let json = JSON(result.value!)
+                print(json["token"].string!)
+            case .Failure(_, let error):
+                print(error)
+            }
+        }
+    }
+    @IBAction func loginButtonTouchUpInside(sender: AnyObject) {
+        loginToSystem()
     }
     
     //MARK: - Default Function

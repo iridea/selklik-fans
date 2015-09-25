@@ -52,8 +52,12 @@ code_sign_if_enabled() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework 'Pods-Selklik-Fans/Alamofire.framework'
   install_framework 'Pods-Selklik-Fans/ReachabilitySwift.framework'
+  install_framework 'Pods-Selklik-Fans/SwiftyJSON.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework 'Pods-Selklik-Fans/Alamofire.framework'
   install_framework 'Pods-Selklik-Fans/ReachabilitySwift.framework'
+  install_framework 'Pods-Selklik-Fans/SwiftyJSON.framework'
 fi

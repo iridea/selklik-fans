@@ -3,6 +3,8 @@ use_frameworks!
 
 target 'Selklik-Fans' do
 pod 'ReachabilitySwift', git: 'https://github.com/ashleymills/Reachability.swift'
+pod 'Alamofire', '2.0.2'
+pod 'SwiftyJSON', '~> 2.3'
 end
 
 target 'Selklik-FansTests' do
