@@ -16,6 +16,8 @@
 		8942531E1BB297B700A04953 /* Selklik_FansTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942531D1BB297B700A04953 /* Selklik_FansTests.swift */; };
 		894253291BB297B700A04953 /* Selklik_FansUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253281BB297B700A04953 /* Selklik_FansUITests.swift */; };
 		894253391BB29C1300A04953 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 894253381BB29C1300A04953 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
+		89E0B1EC1BB3C19A0052D64B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		89E0B1F01BB498DF0052D64B /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89E0B1EF1BB498DF0052D64B /* Login.storyboard */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		894253281BB297B700A04953 /* Selklik_FansUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selklik_FansUITests.swift; sourceTree = "<group>"; };
 		8942532A1BB297B700A04953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		894253381BB29C1300A04953 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		89E0B1EF1BB498DF0052D64B /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		93106E8CDDAF466E4ABE4638 /* Pods_Selklik_Fans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Selklik_Fans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80A33531EC1AF33B6A0C573 /* Pods-Selklik-Fans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selklik-Fans.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Selklik-Fans/Pods-Selklik-Fans.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,10 +122,12 @@
 			children = (
 				894253081BB297B700A04953 /* AppDelegate.swift */,
 				8942530A1BB297B700A04953 /* CoordinatorViewController.swift */,
+				89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */,
 				8942530C1BB297B700A04953 /* Main.storyboard */,
 				8942530F1BB297B700A04953 /* Assets.xcassets */,
 				894253111BB297B700A04953 /* LaunchScreen.storyboard */,
 				894253141BB297B700A04953 /* Info.plist */,
+				89E0B1EF1BB498DF0052D64B /* Login.storyboard */,
 			);
 			path = "Selklik-Fans";
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 			files = (
 				894253391BB29C1300A04953 /* .gitignore in Resources */,
 				894253131BB297B700A04953 /* LaunchScreen.storyboard in Resources */,
+				89E0B1F01BB498DF0052D64B /* Login.storyboard in Resources */,
 				894253101BB297B700A04953 /* Assets.xcassets in Resources */,
 				8942530E1BB297B700A04953 /* Main.storyboard in Resources */,
 			);
@@ -334,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89E0B1EC1BB3C19A0052D64B /* LoginViewController.swift in Sources */,
 				8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */,
 				894253091BB297B700A04953 /* AppDelegate.swift in Sources */,
 			);
