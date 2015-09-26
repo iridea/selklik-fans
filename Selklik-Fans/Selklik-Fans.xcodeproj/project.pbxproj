@@ -10,7 +10,7 @@
 		0DB170600DE335F77AA5C2AB /* Pods_Selklik_Fans.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93106E8CDDAF466E4ABE4638 /* Pods_Selklik_Fans.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		894253091BB297B700A04953 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253081BB297B700A04953 /* AppDelegate.swift */; };
 		8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942530A1BB297B700A04953 /* CoordinatorViewController.swift */; };
-		8942530E1BB297B700A04953 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8942530C1BB297B700A04953 /* Main.storyboard */; };
+		8942530E1BB297B700A04953 /* Startup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8942530C1BB297B700A04953 /* Startup.storyboard */; };
 		894253101BB297B700A04953 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8942530F1BB297B700A04953 /* Assets.xcassets */; };
 		894253131BB297B700A04953 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 894253111BB297B700A04953 /* LaunchScreen.storyboard */; };
 		8942531E1BB297B700A04953 /* Selklik_FansTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942531D1BB297B700A04953 /* Selklik_FansTests.swift */; };
@@ -42,7 +42,7 @@
 		894253051BB297B700A04953 /* Selklik-Fans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Selklik-Fans.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		894253081BB297B700A04953 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8942530A1BB297B700A04953 /* CoordinatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorViewController.swift; sourceTree = "<group>"; };
-		8942530D1BB297B700A04953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8942530D1BB297B700A04953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Startup.storyboard; sourceTree = "<group>"; };
 		8942530F1BB297B700A04953 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		894253121BB297B700A04953 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		894253141BB297B700A04953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -124,11 +124,11 @@
 				894253081BB297B700A04953 /* AppDelegate.swift */,
 				8942530A1BB297B700A04953 /* CoordinatorViewController.swift */,
 				89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */,
-				8942530C1BB297B700A04953 /* Main.storyboard */,
 				8942530F1BB297B700A04953 /* Assets.xcassets */,
-				894253111BB297B700A04953 /* LaunchScreen.storyboard */,
 				894253141BB297B700A04953 /* Info.plist */,
+				8942530C1BB297B700A04953 /* Startup.storyboard */,
 				89E0B1EF1BB498DF0052D64B /* Login.storyboard */,
+				894253111BB297B700A04953 /* LaunchScreen.storyboard */,
 			);
 			path = "Selklik-Fans";
 			sourceTree = "<group>";
@@ -284,7 +284,7 @@
 				894253131BB297B700A04953 /* LaunchScreen.storyboard in Resources */,
 				89E0B1F01BB498DF0052D64B /* Login.storyboard in Resources */,
 				894253101BB297B700A04953 /* Assets.xcassets in Resources */,
-				8942530E1BB297B700A04953 /* Main.storyboard in Resources */,
+				8942530E1BB297B700A04953 /* Startup.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,12 +395,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		8942530C1BB297B700A04953 /* Main.storyboard */ = {
+		8942530C1BB297B700A04953 /* Startup.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				8942530D1BB297B700A04953 /* Base */,
 			);
-			name = Main.storyboard;
+			name = Startup.storyboard;
 			sourceTree = "<group>";
 		};
 		894253111BB297B700A04953 /* LaunchScreen.storyboard */ = {

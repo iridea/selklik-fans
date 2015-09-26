@@ -47,13 +47,13 @@
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1hH-CC-94C">
                                                         <rect key="frame" x="0.0" y="0.0" width="270" height="81"/>
                                                         <subviews>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jamal.nasir@me.com" placeholder="EMAIL" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFM-DP-W3W">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jamal.nasir@me.com" placeholder="EMAIL" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFM-DP-W3W">
                                                                 <rect key="frame" x="8" y="7" width="254" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="tOu-Tb-q1h"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                                 <connections>
                                                                     <outlet property="delegate" destination="ax9-7Z-aZw" id="XbQ-xL-w13"/>
                                                                 </connections>
@@ -69,13 +69,13 @@
                                                                 </constraints>
                                                                 <blurEffect style="light"/>
                                                             </visualEffectView>
-                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jamal123" placeholder="PASSWORD" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="35j-Qn-4Sc">
+                                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jamal123" placeholder="PASSWORD" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="35j-Qn-4Sc">
                                                                 <rect key="frame" x="8" y="46" width="254" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="rKW-gp-NGd"/>
                                                                 </constraints>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                                <textInputTraits key="textInputTraits"/>
+                                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                                                 <connections>
                                                                     <outlet property="delegate" destination="ax9-7Z-aZw" id="khx-JA-Hqz"/>
                                                                 </connections>

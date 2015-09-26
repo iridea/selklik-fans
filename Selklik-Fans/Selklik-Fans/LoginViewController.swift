@@ -58,16 +58,20 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters).responseJSON { _, _, result in
             switch result {
             case .Success:
-                print("Validation Successful")
-                 self.messageFrame.removeFromSuperview()
+                self.messageFrame.removeFromSuperview()
                 let json = JSON(result.value!)
-                print(json["token"].string!)
+
+                if  (json["status"]) {
+                    print("Validation Successful")
+                }
+                else{
+                    print("Validation Failed")
+                }
             case .Failure(_, let error):
+                
                 print(error)
             }
         }
-        //hudView.hidden = true
-        //self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func progressBarDisplayer(msg:String, _ indicator:Bool ) {
@@ -78,7 +82,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         view.addSubview(hudView);
         view.userInteractionEnabled = false
         hudView.opaque = false
-        hudView.backgroundColor = UIColor(red: 42/255, green: 42/255, blue: 42/255, alpha: 0.5)
+        hudView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5)
         
         strLabel = UILabel(frame: CGRect(x: 50, y: 0, width: 200, height: 50))
         strLabel.text = msg
