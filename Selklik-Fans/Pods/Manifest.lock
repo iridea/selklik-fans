@@ -14,7 +14,7 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   ReachabilitySwift:
-    :commit: 6f7854758cbdd5ae7685800e86e334cf8bb3e40a
+    :commit: 2a8cbe7265d7b9221a789d60612a152f5ee9c8c7
     :git: https://github.com/ashleymills/Reachability.swift
 
 SPEC CHECKSUMS:

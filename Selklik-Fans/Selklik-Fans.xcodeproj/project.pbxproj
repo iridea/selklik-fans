@@ -120,6 +120,7 @@
 		894253071BB297B700A04953 /* Selklik-Fans */ = {
 			isa = PBXGroup;
 			children = (
+				89E0B1F11BB54F3D0052D64B /* Helpers */,
 				894253081BB297B700A04953 /* AppDelegate.swift */,
 				8942530A1BB297B700A04953 /* CoordinatorViewController.swift */,
 				89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */,
@@ -148,6 +149,21 @@
 				8942532A1BB297B700A04953 /* Info.plist */,
 			);
 			path = "Selklik-FansUITests";
+			sourceTree = "<group>";
+		};
+		89E0B1F11BB54F3D0052D64B /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				89E0B1F21BB54F450052D64B /* Libraries */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		89E0B1F21BB54F450052D64B /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Libraries;
 			sourceTree = "<group>";
 		};
 		9AFF24E74F0D784D5942D99A /* Frameworks */ = {
