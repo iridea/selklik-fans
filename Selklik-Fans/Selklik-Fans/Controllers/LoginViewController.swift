@@ -60,12 +60,21 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             case .Success:
                 self.messageFrame.removeFromSuperview()
                 let json = JSON(result.value!)
-
                 if  (json["status"]) {
                     print("Validation Successful")
                 }
                 else{
                     print("Validation Failed")
+                    let uiAlert = UIAlertController(title: Title.loginFail, message: Message.loginFail, preferredStyle: UIAlertControllerStyle.Alert)
+                    self.presentViewController(uiAlert, animated: true, completion: nil)
+                    
+                    uiAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
+                        self.messageFrame.removeFromSuperview()
+                        //self.hudView.removeFromSuperview()
+                        self.view.userInteractionEnabled = true
+                        
+                    }))
+
                 }
             case .Failure(_, let error):
                 
@@ -76,14 +85,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func progressBarDisplayer(msg:String, _ indicator:Bool ) {
         
-        let hudView = UIView(frame: view.bounds)
-        hudView.opaque = false
-        
-        view.addSubview(hudView);
         view.userInteractionEnabled = false
-        hudView.opaque = false
-        hudView.backgroundColor = UIColor(red: 0/255, green: 0/255, blue: 0/255, alpha: 0.5)
-        
+       
         strLabel = UILabel(frame: CGRect(x: 50, y: 0, width: 200, height: 50))
         strLabel.text = msg
         strLabel.textColor = UIColor.whiteColor()
