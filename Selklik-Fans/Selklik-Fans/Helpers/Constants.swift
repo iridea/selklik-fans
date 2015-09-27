@@ -8,6 +8,16 @@
 
 import Foundation
 
+struct API {
+    static let url = "http://www.selklik.mobi/api/"
+    static let version = "1.1/"
+}
+
+struct Setting {
+    static let country = "my"
+}
+
+
 struct Title {
     static let loginFail = "Login Fail"
 }
