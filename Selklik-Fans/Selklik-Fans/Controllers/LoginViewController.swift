@@ -12,7 +12,7 @@ import SwiftyJSON
 import CoreData
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-   
+    
     @IBOutlet weak var mainScrollView: UIScrollView!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var mainStackView: UIStackView!
@@ -57,7 +57,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let parameters = ["email":username!,
             "password":password!]
         
-        let postUrl = "http://www.selklik.mobi/api/1.1/user_login"
+        let postUrl = API.url + API.version + "user_login"
         
         Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters).responseJSON { _, _, result in
             switch result {
@@ -66,7 +66,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 let json = JSON(result.value!)
                 if  (json["status"]) {
                     print("Validation Successful")
-                    self.getTokenFromCoreData(json["token"].string!)
+                    self.updateTokenInCoreData(json["token"].string!)
                     print("currentAccess.token!: " + self.currentAccess.token!)
                 }
                 else{
@@ -80,7 +80,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         self.view.userInteractionEnabled = true
                         
                     }))
-
+                    
                 }
             case .Failure(_, let error):
                 
@@ -89,7 +89,18 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func getTokenFromCoreData(userToken:String) {
+    func clearTokenInCoreData(){
+        managedContext.deleteObject(currentAccess)
+        var error: NSError?
+        do {
+            try managedContext.save()
+        } catch let error1 as NSError {
+            error = error1
+            print("Could not save: \(error)")
+        }
+    }
+    
+    func updateTokenInCoreData(userToken:String) {
         
         let accessEntity = NSEntityDescription.entityForName("Access",
             inManagedObjectContext: managedContext)
@@ -97,28 +108,29 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let accessFetch = NSFetchRequest(entityName: "Access")
         
         var error: NSError?
-
+        
         
         do  {
             let result = try managedContext.executeFetchRequest(accessFetch) as? [SelklikFansAccess]
             
             if let loginUser = result {
                 
-                if loginUser.count == 0 {
-                    
-                    currentAccess = SelklikFansAccess(entity: accessEntity!,
-                        insertIntoManagedObjectContext: managedContext)
-                    currentAccess.token = userToken
-                    
-                    do {
-                        try managedContext.save()
-                    } catch let error1 as NSError {
-                        error = error1
-                        print("Could not save: \(error)")
-                    }
-                } else {
+                //if old token exist in core data, delete it
+                if loginUser.count > 0 {
                     currentAccess = loginUser[0]
+                    clearTokenInCoreData()
                 }
+                
+                currentAccess = SelklikFansAccess(entity: accessEntity!, insertIntoManagedObjectContext: managedContext)
+                currentAccess.token = userToken
+                
+                do {
+                    try managedContext.save()
+                } catch let error1 as NSError {
+                    error = error1
+                    print("Could not save: \(error)")
+                }
+                
             }
         }
         catch let fetchError as NSError {
@@ -129,7 +141,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func progressBarDisplayer(msg:String, _ indicator:Bool ) {
         
         view.userInteractionEnabled = false
-       
+        
         strLabel = UILabel(frame: CGRect(x: 50, y: 0, width: 200, height: 50))
         strLabel.text = msg
         strLabel.textColor = UIColor.whiteColor()
@@ -161,7 +173,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         textboxBackground.layer.cornerRadius = 10
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
