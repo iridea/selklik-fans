@@ -93,6 +93,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         viewController.managedContext = coreDataStack.context
     }
     
+    func tokenExistInCoreData() -> Bool {
+        
+        var accessStatus = false
+        
+        let accessFetch = NSFetchRequest(entityName: "Access")
+        
+        do  {
+            let result = try coreDataStack.context.executeFetchRequest(accessFetch) as? [SelklikFansAccess]
+            
+            if let loginUser = result {
+                
+                if loginUser.count > 0 {
+                    
+                    accessStatus = true
+                }
+            }
+        }
+        catch let fetchError as NSError {
+            print("Fetch access in AppDelegate error: \(fetchError.localizedDescription)")
+        }
+        return accessStatus
+    }
+    
     //MARK: - Default Function
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
