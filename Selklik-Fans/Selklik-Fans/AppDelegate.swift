@@ -8,6 +8,7 @@
 
 import UIKit
 import ReachabilitySwift
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -15,6 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let useClosures = false
     let reachability = Reachability.reachabilityForInternetConnection()
+    lazy var coreDataStack = CoreDataStack()
     
     //MARK: - Custom Function
     private func initialSystem(){
@@ -28,6 +30,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 } else {
                     print("Reachable via Cellular")
                 }
+                
+                self.connectedToInternet()
             }
             reachability!.whenUnreachable = { reachability in
                 print("System are not connected to internet")
@@ -50,6 +54,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Reachable via Cellular")
                 
             }
+            
+            connectedToInternet()
+            
         } else {
             print("System are not connected to internet")
         }
@@ -66,6 +73,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Network is back!. Reachable via Cellular")
             }
             
+            connectedToInternet()
+            
         } else {
             print("System are not connected to internet")
         }
@@ -77,6 +86,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if (!useClosures) {
             NSNotificationCenter.defaultCenter().removeObserver(self, name: ReachabilityChangedNotification, object: nil)
         }
+    }
+    
+    func connectedToInternet(){
+        let viewController = self.window!.rootViewController as! CoordinatorViewController
+        viewController.managedContext = coreDataStack.context
     }
     
     //MARK: - Default Function

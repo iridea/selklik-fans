@@ -35,7 +35,7 @@
                                     <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="z0e-GR-r6E" kind="modal" id="X7v-Wt-ZY9"/>
+                                    <segue destination="z0e-GR-r6E" kind="modal" identifier="StartupToLoginSegue" id="X7v-Wt-ZY9"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="selklik-logo-bolder" translatesAutoresizingMaskIntoConstraints="NO" id="q4a-ug-UKR">

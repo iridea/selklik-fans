@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import CoreData
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
    
@@ -18,6 +19,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var textboxBackground: UIView!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    var managedContext: NSManagedObjectContext!
+    var currentAccess: SelklikFansAccess!
     
     var messageFrame = UIView()
     var activityIndicator = UIActivityIndicatorView()
@@ -62,6 +66,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 let json = JSON(result.value!)
                 if  (json["status"]) {
                     print("Validation Successful")
+                    self.getTokenFromCoreData(json["token"].string!)
+                    print("currentAccess.token!: " + self.currentAccess.token!)
                 }
                 else{
                     print("Validation Failed")
@@ -80,6 +86,43 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 
                 print(error)
             }
+        }
+    }
+    
+    func getTokenFromCoreData(userToken:String) {
+        
+        let accessEntity = NSEntityDescription.entityForName("Access",
+            inManagedObjectContext: managedContext)
+        
+        let accessFetch = NSFetchRequest(entityName: "Access")
+        
+        var error: NSError?
+
+        
+        do  {
+            let result = try managedContext.executeFetchRequest(accessFetch) as? [SelklikFansAccess]
+            
+            if let loginUser = result {
+                
+                if loginUser.count == 0 {
+                    
+                    currentAccess = SelklikFansAccess(entity: accessEntity!,
+                        insertIntoManagedObjectContext: managedContext)
+                    currentAccess.token = userToken
+                    
+                    do {
+                        try managedContext.save()
+                    } catch let error1 as NSError {
+                        error = error1
+                        print("Could not save: \(error)")
+                    }
+                } else {
+                    currentAccess = loginUser[0]
+                }
+            }
+        }
+        catch let fetchError as NSError {
+            print("dogFetch error: \(fetchError.localizedDescription)")
         }
     }
     
@@ -105,6 +148,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginButtonTouchUpInside(sender: AnyObject) {
         loginToSystem()
+        //print(managedContext)
+        
     }
     
     //MARK: - Default Function

@@ -7,11 +7,14 @@
 //
 
 import UIKit
+import CoreData
 
 class CoordinatorViewController: UIViewController {
 
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var joinButton: UIButton!
+    
+    var managedContext: NSManagedObjectContext!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +30,20 @@ class CoordinatorViewController: UIViewController {
         joinButton.layer.borderWidth = 1
         joinButton.layer.borderColor = UIColor.whiteColor().CGColor
         
+         
       
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "StartupToLoginSegue")
+        {
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let loginViewController = navigationController.topViewController as! LoginViewController
+            loginViewController.managedContext = self.managedContext
 
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
