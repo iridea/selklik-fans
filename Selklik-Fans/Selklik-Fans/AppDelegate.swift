@@ -9,12 +9,15 @@
 import UIKit
 import ReachabilitySwift
 import CoreData
+import Alamofire
+import SwiftyJSON
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     let useClosures = false
+    var userLocalToken:String?
     let reachability = Reachability.reachabilityForInternetConnection()
     lazy var coreDataStack = CoreDataStack()
     
@@ -91,6 +94,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func connectedToInternet(){
         let viewController = self.window!.rootViewController as! CoordinatorViewController
         viewController.managedContext = coreDataStack.context
+        tokenExistInCoreData()
     }
     
     func tokenExistInCoreData() -> Bool {
@@ -105,7 +109,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             if let loginUser = result {
                 
                 if loginUser.count > 0 {
-                    
+                    print("loginUser.count: \(loginUser.count)")
+                    userLocalToken = loginUser[0].token
+                    print("loginUser[0].token:" + userLocalToken!)
+                    verifyUserToken()
                     accessStatus = true
                 }
             }
@@ -114,6 +121,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Fetch access in AppDelegate error: \(fetchError.localizedDescription)")
         }
         return accessStatus
+    }
+    
+    private func verifyUserToken() {
+        
+        let headers = ["Content-Type": "application/x-www-form-urlencoded"]
+        let parameters = ["token":userLocalToken!, "country":Setting.country]
+        let postUrl = API.url + API.version + "user_check"
+        //var tokenEquel = false
+        
+        Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters).responseJSON { _, _, result in
+            switch result {
+            case .Success:
+                let json = JSON(result.value!)
+                print(json)
+                
+            case .Failure(_, let error):
+                
+                print(error)
+            }
+        }
     }
     
     //MARK: - Default Function
