@@ -22,6 +22,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     lazy var coreDataStack = CoreDataStack()
     
     //MARK: - Custom Function
+    
+    func setInitialViewController(storyboardName storyboardName:String, storyboardId: String){
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        let storyboard = UIStoryboard(name: storyboardName, bundle: nil)
+        let initialViewController = storyboard.instantiateViewControllerWithIdentifier(storyboardId) 
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+        
+    }
+    
     private func initialSystem(){
         
         //2. Check internet exist
@@ -135,6 +146,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             case .Success:
                 let json = JSON(result.value!)
                 print(json)
+                if json["status"]{
+                    self.setInitialViewController(storyboardName: "Feed", storyboardId: "feedInitialViewController")
+                }
+                
                 
             case .Failure(_, let error):
                 

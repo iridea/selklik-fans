@@ -22,6 +22,9 @@
 		89C8F0B81BB7E83900AFE092 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0B71BB7E83900AFE092 /* CoreDataStack.swift */; settings = {ASSET_TAGS = (); }; };
 		89C8F0BB1BB7F9B700AFE092 /* SelklikFansAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0B91BB7F9B700AFE092 /* SelklikFansAccess.swift */; settings = {ASSET_TAGS = (); }; };
 		89C8F0BC1BB7F9B700AFE092 /* SelklikFansAccess+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0BA1BB7F9B700AFE092 /* SelklikFansAccess+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		89C8F0BE1BB8218100AFE092 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C8F0BD1BB8218100AFE092 /* Feed.storyboard */; settings = {ASSET_TAGS = (); }; };
+		89C8F0C31BB829FE00AFE092 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0C21BB829FE00AFE092 /* SWRevealViewController.m */; settings = {ASSET_TAGS = (); }; };
+		89C8F0C51BB8327D00AFE092 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0C41BB8327D00AFE092 /* FeedViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		89E0B1EC1BB3C19A0052D64B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -64,6 +67,11 @@
 		89C8F0B71BB7E83900AFE092 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		89C8F0B91BB7F9B700AFE092 /* SelklikFansAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelklikFansAccess.swift; sourceTree = "<group>"; };
 		89C8F0BA1BB7F9B700AFE092 /* SelklikFansAccess+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SelklikFansAccess+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		89C8F0BD1BB8218100AFE092 /* Feed.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Feed.storyboard; sourceTree = "<group>"; };
+		89C8F0C01BB829FD00AFE092 /* Selklik-Fans-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Selklik-Fans-Bridging-Header.h"; sourceTree = "<group>"; };
+		89C8F0C11BB829FE00AFE092 /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		89C8F0C21BB829FE00AFE092 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		89C8F0C41BB8327D00AFE092 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		93106E8CDDAF466E4ABE4638 /* Pods_Selklik_Fans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Selklik_Fans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80A33531EC1AF33B6A0C573 /* Pods-Selklik-Fans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selklik-Fans.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Selklik-Fans/Pods-Selklik-Fans.debug.xcconfig"; sourceTree = "<group>"; };
@@ -165,6 +173,7 @@
 				894253081BB297B700A04953 /* AppDelegate.swift */,
 				8942530A1BB297B700A04953 /* CoordinatorViewController.swift */,
 				89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */,
+				89C8F0C41BB8327D00AFE092 /* FeedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -175,6 +184,7 @@
 				89C8F0B21BB75FE900AFE092 /* Login.storyboard */,
 				8942530C1BB297B700A04953 /* Startup.storyboard */,
 				894253111BB297B700A04953 /* LaunchScreen.storyboard */,
+				89C8F0BD1BB8218100AFE092 /* Feed.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -196,6 +206,16 @@
 			path = Stores;
 			sourceTree = "<group>";
 		};
+		89C8F0BF1BB829D200AFE092 /* SWRevealViewController */ = {
+			isa = PBXGroup;
+			children = (
+				89C8F0C11BB829FE00AFE092 /* SWRevealViewController.h */,
+				89C8F0C21BB829FE00AFE092 /* SWRevealViewController.m */,
+				89C8F0C01BB829FD00AFE092 /* Selklik-Fans-Bridging-Header.h */,
+			);
+			name = SWRevealViewController;
+			sourceTree = "<group>";
+		};
 		89E0B1F11BB54F3D0052D64B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
@@ -209,6 +229,7 @@
 		89E0B1F21BB54F450052D64B /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				89C8F0BF1BB829D200AFE092 /* SWRevealViewController */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -286,6 +307,7 @@
 		894252FD1BB297B700A04953 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = Selklik;
 				TargetAttributes = {
@@ -329,6 +351,7 @@
 			files = (
 				894253391BB29C1300A04953 /* .gitignore in Resources */,
 				894253131BB297B700A04953 /* LaunchScreen.storyboard in Resources */,
+				89C8F0BE1BB8218100AFE092 /* Feed.storyboard in Resources */,
 				89C8F0B31BB75FE900AFE092 /* Login.storyboard in Resources */,
 				894253101BB297B700A04953 /* Assets.xcassets in Resources */,
 				8942530E1BB297B700A04953 /* Startup.storyboard in Resources */,
@@ -406,9 +429,11 @@
 			files = (
 				89E0B1EC1BB3C19A0052D64B /* LoginViewController.swift in Sources */,
 				89C8F0BC1BB7F9B700AFE092 /* SelklikFansAccess+CoreDataProperties.swift in Sources */,
+				89C8F0C51BB8327D00AFE092 /* FeedViewController.swift in Sources */,
 				89C8F0BB1BB7F9B700AFE092 /* SelklikFansAccess.swift in Sources */,
 				8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */,
 				894253091BB297B700A04953 /* AppDelegate.swift in Sources */,
+				89C8F0C31BB829FE00AFE092 /* SWRevealViewController.m in Sources */,
 				89C8F0B81BB7E83900AFE092 /* CoreDataStack.swift in Sources */,
 				899B7FE71BB6941500922922 /* Constants.swift in Sources */,
 				89C8F0B61BB7E6D500AFE092 /* SelklikFans.xcdatamodeld in Sources */,
@@ -554,10 +579,13 @@
 			baseConfigurationReference = D80A33531EC1AF33B6A0C573 /* Pods-Selklik-Fans.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Selklik-Fans/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.selklik.Selklik-Fans";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Selklik-Fans/Helpers/Selklik-Fans-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -566,10 +594,12 @@
 			baseConfigurationReference = 1DCCCE5513B30E4494472C0C /* Pods-Selklik-Fans.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "Selklik-Fans/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.selklik.Selklik-Fans";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Selklik-Fans/Helpers/Selklik-Fans-Bridging-Header.h";
 			};
 			name = Release;
 		};
