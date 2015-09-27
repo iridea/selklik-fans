@@ -29,9 +29,6 @@ class CoordinatorViewController: UIViewController {
         joinButton.layer.cornerRadius = 23
         joinButton.layer.borderWidth = 1
         joinButton.layer.borderColor = UIColor.whiteColor().CGColor
-        
-         
-      
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
