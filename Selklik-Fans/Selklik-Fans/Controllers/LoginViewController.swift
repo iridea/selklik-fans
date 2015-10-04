@@ -23,6 +23,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     var managedContext: NSManagedObjectContext!
     var currentAccess: SelklikFansAccess!
     
+    //variable for loading HUD
     var messageFrame = UIView()
     var activityIndicator = UIActivityIndicatorView()
     var strLabel = UILabel()
@@ -68,6 +69,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     print("Validation Successful")
                     self.updateTokenInCoreData(json["token"].string!)
                     print("currentAccess.token!: " + self.currentAccess.token!)
+                    
+                    self.performSegueWithIdentifier("loginToFeedSegue", sender: self)
                 }
                 else{
                     print("Validation Failed")
@@ -76,7 +79,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     
                     uiAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
                         self.messageFrame.removeFromSuperview()
-                        //self.hudView.removeFromSuperview()
                         self.view.userInteractionEnabled = true
                         
                     }))
@@ -104,33 +106,32 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         let accessEntity = NSEntityDescription.entityForName("Access",
             inManagedObjectContext: managedContext)
-        
+
         let accessFetch = NSFetchRequest(entityName: "Access")
-        
+
         var error: NSError?
-        
-        
+
+
         do  {
             let result = try managedContext.executeFetchRequest(accessFetch) as? [SelklikFansAccess]
-            
+
             if let loginUser = result {
-                
+
                 //if old token exist in core data, delete it
                 if loginUser.count > 0 {
                     currentAccess = loginUser[0]
                     clearTokenInCoreData()
                 }
-                
+
                 currentAccess = SelklikFansAccess(entity: accessEntity!, insertIntoManagedObjectContext: managedContext)
                 currentAccess.token = userToken
-                
+
                 do {
                     try managedContext.save()
                 } catch let error1 as NSError {
                     error = error1
                     print("Could not save: \(error)")
                 }
-                
             }
         }
         catch let fetchError as NSError {
@@ -160,8 +161,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func loginButtonTouchUpInside(sender: AnyObject) {
         loginToSystem()
-        //print(managedContext)
-        
     }
     
     //MARK: - Default Function
@@ -177,8 +176,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
     }
-    
-    
+
 }
 
 

@@ -156,11 +156,20 @@
                         <outlet property="mainStackView" destination="11M-Bz-p1W" id="cTI-k2-QLV"/>
                         <outlet property="passwordTextField" destination="35j-Qn-4Sc" id="edw-3Y-5jf"/>
                         <outlet property="textboxBackground" destination="1hH-CC-94C" id="u2k-4f-hJE"/>
+                        <segue destination="O7w-IL-7Vg" kind="modal" identifier="loginToFeedSegue" id="fdq-wd-Ovq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zre-bA-Ut4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="918" y="311"/>
+        </scene>
+        <!--Feed-->
+        <scene sceneID="g5i-6p-BaQ">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Feed" id="O7w-IL-7Vg" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XS9-1K-EoV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1237" y="228"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1mT-0v-bve">

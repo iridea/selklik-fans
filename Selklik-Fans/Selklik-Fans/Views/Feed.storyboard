@@ -34,7 +34,30 @@
                     <view key="view" contentMode="scaleToFill" id="8pS-MN-dbq">
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e6E-D1-f0Q">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="5PP-NW-7al">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5PP-NW-7al" id="nMK-fD-she">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <sections/>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="e6E-D1-f0Q" firstAttribute="leading" secondItem="8pS-MN-dbq" secondAttribute="leading" id="9td-kB-GdA"/>
+                            <constraint firstItem="awS-gI-P2d" firstAttribute="top" secondItem="e6E-D1-f0Q" secondAttribute="bottom" id="F2I-KM-S6u"/>
+                            <constraint firstAttribute="trailing" secondItem="e6E-D1-f0Q" secondAttribute="trailing" id="K8s-qo-0ud"/>
+                            <constraint firstItem="e6E-D1-f0Q" firstAttribute="top" secondItem="rdS-5v-4um" secondAttribute="bottom" id="iWb-ZE-0WW"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="dRh-Y1-jBh">
                         <barButtonItem key="leftBarButtonItem" image="Menu" id="QWD-bR-c4H">
@@ -42,6 +65,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="feedTableView" destination="e6E-D1-f0Q" id="4qW-Hl-WKM"/>
                         <outlet property="menuButton" destination="QWD-bR-c4H" id="KCJ-xh-CYV"/>
                     </connections>
                 </viewController>
@@ -69,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1XF-Jb-d3W" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-14" y="260"/>
+            <point key="canvasLocation" x="-14" y="235"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5bi-5p-CiH">
@@ -111,7 +135,7 @@
         <scene sceneID="SW2-Qu-eNe">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tOf-kC-ysR" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="pv8-6U-yik"/>
+                    <tabBarItem key="tabBarItem" title="Item 1" image="Back" id="pv8-6U-yik"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="9Ba-jV-F9L">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -129,6 +153,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Back" width="26" height="26"/>
         <image name="Menu" width="26" height="26"/>
     </resources>
 </document>

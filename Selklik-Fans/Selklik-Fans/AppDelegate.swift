@@ -103,9 +103,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func connectedToInternet(){
-        let viewController = self.window!.rootViewController as! CoordinatorViewController
-        viewController.managedContext = coreDataStack.context
-        tokenExistInCoreData()
+        if self.window!.rootViewController is CoordinatorViewController {
+            let viewController = self.window!.rootViewController as! CoordinatorViewController
+            viewController.managedContext = coreDataStack.context
+            tokenExistInCoreData()
+        }
     }
     
     func tokenExistInCoreData() -> Bool {
@@ -137,7 +139,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private func verifyUserToken() {
         
         let headers = ["Content-Type": "application/x-www-form-urlencoded"]
-        let parameters = ["token":userLocalToken!, "country":Setting.country]
+        let parameters = ["token":userLocalToken!, "country":Setting.malaysia]
         let postUrl = API.url + API.version + "user_check"
         //var tokenEquel = false
         
