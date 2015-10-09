@@ -10,8 +10,11 @@ import Foundation
 
 struct API {
     static let url = "http://www.selklik.mobi/api/"
-    static let version = "1.1/"
+    static let version = "1.2/"
     static let artistFeedUrl = url + version + "artist_feed"
+    static let loginUrl = url + version + "user_login"
+    static let logoutUrl = url + version + "user_logout"
+
 }
 
 struct Setting {
@@ -22,8 +25,10 @@ struct Setting {
 
 struct Title {
     static let loginFail = "Login Fail"
+    static let logoutFail = "Logout Fail"
 }
 
 struct Message {
     static let loginFail = "Log in to system fail. Please check your email or password."
+    static let logoutFail = "Something wrong with our server. Logout fail."
 }

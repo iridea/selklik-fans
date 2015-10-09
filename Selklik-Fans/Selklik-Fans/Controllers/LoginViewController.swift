@@ -44,11 +44,40 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+
     }
-    
+
+    func clearAllAccess() {
+
+        let fetchPosts = NSFetchRequest(entityName: "Access")
+
+        do  {
+            let fetchedEntities = try managedContext.executeFetchRequest(fetchPosts) as? [SelklikFansAccess]
+
+            for entity in fetchedEntities! {
+                managedContext.deleteObject(entity)
+            }
+
+        }
+        catch let fetchError as NSError {
+            print("Fetch Post for delete error: \(fetchError.localizedDescription)")
+        }
+
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save: \(error)")
+        }
+    }
+
+
     private func loginToSystem() {
         
         progressBarDisplayer("Verifying...", true)
+
+        //clear access entity
+        clearAllAccess()
+        //-------------------
         
         let username = self.emailTextField.text
         let password = self.passwordTextField.text
@@ -56,21 +85,30 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let headers = ["Content-Type": "application/x-www-form-urlencoded"]
         
         let parameters = ["email":username!,
-            "password":password!]
+            "password":password!,
+            "device_id":"test-device-id",
+            "device_os":1]
         
-        let postUrl = API.url + API.version + "user_login"
+        let postUrl = API.loginUrl
         
-        Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters).responseJSON { _, _, result in
+        Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters as? [String : AnyObject]).responseJSON { _, _, result in
             switch result {
             case .Success:
+
                 self.messageFrame.removeFromSuperview()
+
                 let json = JSON(result.value!)
-                if  (json["status"]) {
+
+                print("json from login:\(json)")
+
+                if  (json["status"].boolValue){
+
                     print("Validation Successful")
-                    self.updateTokenInCoreData(json["token"].string!)
-                    print("currentAccess.token!: " + self.currentAccess.token!)
-                    
-                    self.performSegueWithIdentifier("loginToFeedSegue", sender: self)
+
+                    dispatch_async(dispatch_get_main_queue()) {
+                        self.updateOrInsertTokenInCoreData(json["token"].string!)
+                        self.performSegueWithIdentifier("loginToFeedSegue", sender: self)
+                    }
                 }
                 else{
                     print("Validation Failed")
@@ -93,23 +131,22 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func clearTokenInCoreData(){
         managedContext.deleteObject(currentAccess)
-        var error: NSError?
+       
         do {
             try managedContext.save()
-        } catch let error1 as NSError {
-            error = error1
+        } catch let error as NSError {
+
             print("Could not save: \(error)")
         }
     }
     
-    func updateTokenInCoreData(userToken:String) {
+    func updateOrInsertTokenInCoreData(userToken:String) {
         
         let accessEntity = NSEntityDescription.entityForName("Access",
             inManagedObjectContext: managedContext)
 
         let accessFetch = NSFetchRequest(entityName: "Access")
 
-        var error: NSError?
 
 
         do  {
@@ -128,8 +165,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
                 do {
                     try managedContext.save()
-                } catch let error1 as NSError {
-                    error = error1
+                } catch let error as NSError {
                     print("Could not save: \(error)")
                 }
             }

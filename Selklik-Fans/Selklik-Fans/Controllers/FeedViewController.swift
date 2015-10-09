@@ -12,14 +12,16 @@ import SwiftyJSON
 import CoreData
 
 class FeedViewController: UIViewController {
+
     //MARK: - Variable
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var managedContext: NSManagedObjectContext!
     var userToken:String!
     var allPosts = [Post]()
     var newPost:Post!
+    var artistPost = [NSManagedObject]()
 
-    //var fetchedResultsController : NSFetchedResultsController!
+    var fetchedResultsController: NSFetchedResultsController!
 
     //variable for loading HUD
     var messageFrame = UIView()
@@ -30,11 +32,15 @@ class FeedViewController: UIViewController {
     //MARK: - IBOutlet
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var feedTableView: UITableView!
+    @IBAction func reloadButton(sender: AnyObject) {
+        self.getFeedFromCoreData()
+    }
 
     //MARK: - Custom Function
 
     //self.progressBarDisplayer("Preparing data", true)
     //self.messageFrame.removeFromSuperview()
+    //view.userInteractionEnabled = false
     func progressBarDisplayer(msg:String, _ indicator:Bool ) {
 
         view.userInteractionEnabled = false
@@ -66,52 +72,58 @@ class FeedViewController: UIViewController {
                 managedContext.deleteObject(entity)
             }
 
-            do {
-                try managedContext.save()
-            } catch let error as NSError {
-                print("Could not save: \(error)")
-            }
-
         }
         catch let fetchError as NSError {
             print("Fetch Post for delete error: \(fetchError.localizedDescription)")
         }
+
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save: \(error)")
+        }
     }
+
+
 
     func populateFeed() {
 
         let postEntity = NSEntityDescription.entityForName("Post",inManagedObjectContext: managedContext)
 
-        Alamofire.request(.GET, API.artistFeedUrl, parameters: ["token": self.userToken, "country": Setting.malaysia, "limit" : "15"]).responseJSON {
+        Alamofire.request(.GET, API.artistFeedUrl, parameters: ["token": userToken, "country": Setting.malaysia, "limit" : "15"]).responseJSON {
             _, _, result in
 
+            print("MASUK FetchRemoteFeedData - ALAMOFIRE")
             let json = JSON(result.value!)
+
+            print(json)
 
             for (_,subJson):(String, JSON) in json["result"] {
 
-                self.newPost = Post(entity: postEntity!, insertIntoManagedObjectContext: self.managedContext)
+                let newPost = Post(entity: postEntity!,
+                    insertIntoManagedObjectContext: self.managedContext)
 
                 //MARK: - Standard Data
                 if let artistId = subJson["artist_id"].string {
-                    self.newPost.artistId = artistId
+                    newPost.artistId = artistId
                 }else{
                     print("unable to read JSON data artist_id")
                 }
 
                 if let name = subJson["artist_name"].string {
-                    self.newPost.name = name
+                    newPost.name = name
                 }else{
                     print("unable to read JSON data artist_name")
                 }
 
                 if let screenName = subJson["artist_screen_name"].string {
-                    self.newPost.screenName = screenName
+                    newPost.screenName = screenName
                 }else{
                     print("unable to read JSON data artist_screen_name")
                 }
 
                 if let profileImageUrl = subJson["artist_img"].string {
-                    self.newPost.profileImageUrl = profileImageUrl
+                    newPost.profileImageUrl = profileImageUrl
                 }else{
                     print("unable to read JSON data artist_img")
                 }
@@ -123,31 +135,31 @@ class FeedViewController: UIViewController {
                 }
 
                 if let postId = subJson["post_id"].string {
-                    self.newPost.postId = postId
+                    newPost.postId = postId
                 }else{
                     print("unable to read JSON data post_id")
                 }
 
                 if let postLink = subJson["post_link"].string {
-                    self.newPost.postLink = postLink
+                    newPost.postLink = postLink
                 }else{
                     print("unable to read JSON data post_link")
                 }
 
                 if let postText = subJson["post_text"].string {
-                    self.newPost.postText = postText
+                    newPost.postText = postText
                 }else{
                     print("unable to read JSON data post_text")
                 }
 
                 if let socialMediaType = subJson["social_media"].string {
-                    self.newPost.socialMediaType = socialMediaType
+                    newPost.socialMediaType = socialMediaType
                 }else{
                     print("unable to read JSON data social_media")
                 }
 
                 if let postType = subJson["post_type"].string {
-                    self.newPost.postType = postType
+                    newPost.postType = postType
                 }else{
                     print("unable to read JSON data post_type")
                 }
@@ -162,11 +174,11 @@ class FeedViewController: UIViewController {
                         //isRetweet
                         if let isRetweet = subJson["is_retweet"].int {
 
-                            self.newPost.twIsRetweet = isRetweet
+                            newPost.twIsRetweet = isRetweet
 
                             if isRetweet == 1 {
-                                self.newPost.twRetweetName = subJson["rt_name"].string
-                                self.newPost.twRetweetScreenName = subJson["rt_screen_name"].string
+                                newPost.twRetweetName = subJson["rt_name"].string
+                                newPost.twRetweetScreenName = subJson["rt_screen_name"].string
                             }
 
                         }else{
@@ -176,7 +188,7 @@ class FeedViewController: UIViewController {
 
                         //Favourite
                         if let totalLike = subJson["favorites"].string {
-                            self.newPost.totalLike = Int(totalLike)
+                            newPost.totalLike = Int(totalLike)
                         }else{
                             print("unable to read JSON data favorites")
                         }//---------------------------------------------
@@ -184,7 +196,7 @@ class FeedViewController: UIViewController {
 
                         //total retweet
                         if let twTotalRetweet = subJson["retweets"].string {
-                            self.newPost.twTotalRetweet = Int(twTotalRetweet)
+                            newPost.twTotalRetweet = Int(twTotalRetweet)
                         }else{
                             print("unable to read JSON data retweets")
                         }//---------------------------------------------
@@ -198,37 +210,37 @@ class FeedViewController: UIViewController {
                                 break
                             case "photo":
                                 if let photoStdUrl = subJson["post_photo"]["medium"]["photo_link"].string {
-                                    self.newPost.photoStdUrl = photoStdUrl
+                                    newPost.photoStdUrl = photoStdUrl
                                 }
 
                                 if let photoStdWidth = subJson["post_photo"]["medium"]["photo_width"].string {
-                                    self.newPost.photoStdWidth = Float(photoStdWidth)
+                                    newPost.photoStdWidth = Float(photoStdWidth)
                                 }
 
                                 if let photoStdHeight = subJson["post_photo"]["medium"]["photo_height"].string {
-                                    self.newPost.photoStdHeight = Float(photoStdHeight)
+                                    newPost.photoStdHeight = Float(photoStdHeight)
                                 }
                                 break
 
                             case "video":
                                 if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
-                                    self.newPost.videoStdUrl = videoStdUrl
+                                    newPost.videoStdUrl = videoStdUrl
                                 }
 
                                 if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
-                                    self.newPost.videoStdUrl = videoStdUrl
+                                    newPost.videoStdUrl = videoStdUrl
                                 }
 
                                 if let videoThumbStdUrl = subJson["post_thumb"]["medium"]["thumb_link"].string {
-                                    self.newPost.videoThumbStdUrl = videoThumbStdUrl
+                                    newPost.videoThumbStdUrl = videoThumbStdUrl
                                 }
 
                                 if let videoThumbStdWidth = subJson["post_thumb"]["medium"]["thumb_width"].string {
-                                    self.newPost.videoThumbStdWidth = Float(videoThumbStdWidth)
+                                    newPost.videoThumbStdWidth = Float(videoThumbStdWidth)
                                 }
 
                                 if let videoThumbStdHeight = subJson["post_thumb"]["medium"]["thumb_height"].string {
-                                    self.newPost.videoThumbStdHeight = Float(videoThumbStdHeight)
+                                    newPost.videoThumbStdHeight = Float(videoThumbStdHeight)
                                 }
                                 break
 
@@ -246,56 +258,56 @@ class FeedViewController: UIViewController {
                             //Likes
                             if let totalLike = subJson["likes"].string {
 
-                                self.newPost.totalLike = Int(totalLike)
+                                newPost.totalLike = Int(totalLike)
                             }else{
                                 print("unable to read JSON data likes")
-                            }//---------------------------------------------
+                            }//-------------------------------------------
 
                             //Comments
                             if let totalComment = subJson["comments"].string {
 
-                                self.newPost.totalComment = Int(totalComment)
+                                newPost.totalComment = Int(totalComment)
                             }else{
                                 print("unable to read JSON data comments")
-                            }//---------------------------------------------
+                            }//--------------------------------------------
 
 
                             switch postType {
 
                             case "photo":
                                 if let photoStdUrl = subJson["post_photo"]["standard"]["photo_link"].string {
-                                    self.newPost.photoStdUrl = photoStdUrl
+                                    newPost.photoStdUrl = photoStdUrl
                                 }
 
                                 if let photoStdWidth = subJson["post_photo"]["standard"]["photo_width"].string {
-                                    self.newPost.photoStdWidth = Float(photoStdWidth)
+                                    newPost.photoStdWidth = Float(photoStdWidth)
                                 }
 
                                 if let photoStdHeight = subJson["post_photo"]["standard"]["photo_height"].string {
-                                    self.newPost.photoStdHeight = Float(photoStdHeight)
+                                    newPost.photoStdHeight = Float(photoStdHeight)
                                 }
                                 break
 
                             case "video":
                                 if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
-                                    self.newPost.videoStdUrl = videoStdUrl
+                                    newPost.videoStdUrl = videoStdUrl
                                 }
 
                                 if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
-                                    self.newPost.videoStdUrl = videoStdUrl
+                                    newPost.videoStdUrl = videoStdUrl
                                 }
 
                                 //Thumb
                                 if let videoThumbStdUrl = subJson["post_thumb"]["standard"]["thumb_link"].string {
-                                    self.newPost.videoThumbStdUrl = videoThumbStdUrl
+                                    newPost.videoThumbStdUrl = videoThumbStdUrl
                                 }
 
                                 if let videoThumbStdWidth = subJson["post_thumb"]["standard"]["thumb_width"].string {
-                                    self.newPost.videoThumbStdWidth = Float(videoThumbStdWidth)
+                                    newPost.videoThumbStdWidth = Float(videoThumbStdWidth)
                                 }
 
                                 if let videoThumbStdHeight = subJson["post_thumb"]["standard"]["thumb_height"].string {
-                                    self.newPost.videoThumbStdHeight = Float(videoThumbStdHeight)
+                                    newPost.videoThumbStdHeight = Float(videoThumbStdHeight)
                                 }
                                 break
 
@@ -312,7 +324,7 @@ class FeedViewController: UIViewController {
                             //Likes
                             if let totalLike = subJson["likes"].string {
 
-                                self.newPost.totalLike = Int(totalLike)
+                                newPost.totalLike = Int(totalLike)
                             }else{
                                 print("unable to read JSON data likes")
                             }//---------------------------------------------
@@ -320,14 +332,14 @@ class FeedViewController: UIViewController {
                             //Comments
                             if let totalComment = subJson["comments"].string {
 
-                                self.newPost.totalComment = Int(totalComment)
+                                newPost.totalComment = Int(totalComment)
                             }else{
                                 print("unable to read JSON data comments")
                             }//---------------------------------------------
 
                             //Shared
                             if let fbTotalShare = subJson["shared"].string {
-                                self.newPost.fbTotalShare = Int(fbTotalShare)
+                                newPost.fbTotalShare = Int(fbTotalShare)
                             }else{
                                 print("unable to read JSON data likes")
                             }//---------------------------------------------
@@ -339,56 +351,56 @@ class FeedViewController: UIViewController {
                                 break
                             case "photo":
                                 if let photoStdUrl = subJson["post_photo"]["standard"]["photo_link"].string {
-                                    self.newPost.photoStdUrl = photoStdUrl
+                                    newPost.photoStdUrl = photoStdUrl
                                 }
 
                                 if let photoStdWidth = subJson["post_photo"]["standard"]["photo_width"].string {
-                                    self.newPost.photoStdWidth = Float(photoStdWidth)
+                                    newPost.photoStdWidth = Float(photoStdWidth)
                                 }
 
                                 if let photoStdHeight = subJson["post_photo"]["standard"]["photo_height"].string {
-                                    self.newPost.photoStdHeight = Float(photoStdHeight)
+                                    newPost.photoStdHeight = Float(photoStdHeight)
                                 }
                                 break
 
                             case "video":
                                 if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
-                                    self.newPost.videoStdUrl = videoStdUrl
+                                    newPost.videoStdUrl = videoStdUrl
                                 }
 
                                 if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
-                                    self.newPost.videoStdUrl = videoStdUrl
+                                    newPost.videoStdUrl = videoStdUrl
                                 }
 
                                 //Thumb
                                 if let videoThumbStdUrl = subJson["post_thumb"]["standard"]["thumb_link"].string {
-                                    self.newPost.videoThumbStdUrl = videoThumbStdUrl
+                                    newPost.videoThumbStdUrl = videoThumbStdUrl
                                 }
 
                                 if let videoThumbStdWidth = subJson["post_thumb"]["standard"]["thumb_width"].string {
-                                    self.newPost.videoThumbStdWidth = Float(videoThumbStdWidth)
+                                    newPost.videoThumbStdWidth = Float(videoThumbStdWidth)
                                 }
 
                                 if let videoThumbStdHeight = subJson["post_thumb"]["standard"]["thumb_height"].string {
-                                    self.newPost.videoThumbStdHeight = Float(videoThumbStdHeight)
+                                    newPost.videoThumbStdHeight = Float(videoThumbStdHeight)
                                 }
                                 break
 
                             case "link":
                                 if let fbContentLink = subJson["post_shared"]["standard"]["shared_link"].string {
-                                    self.newPost.fbContentLink = fbContentLink
+                                    newPost.fbContentLink = fbContentLink
                                 }
 
                                 if let fbContentLinkImageUrl = subJson["post_shared"]["standard"]["link_photo"].string {
-                                    self.newPost.fbContentLinkImageUrl = fbContentLinkImageUrl
+                                    newPost.fbContentLinkImageUrl = fbContentLinkImageUrl
                                 }
 
                                 if let fbContentLinkTitle = subJson["post_shared"]["standard"]["link_title"].string {
-                                    self.newPost.fbContentLinkTitle = fbContentLinkTitle
+                                    newPost.fbContentLinkTitle = fbContentLinkTitle
                                 }
 
                                 if let fbContentLinkText = subJson["post_shared"]["standard"]["link_text"].string {
-                                    self.newPost.fbContentLinkText = fbContentLinkText
+                                    newPost.fbContentLinkText = fbContentLinkText
                                 }
                                 break
 
@@ -421,20 +433,22 @@ class FeedViewController: UIViewController {
 
                 }
 
-                self.allPosts.append(self.newPost)
 
+
+
+
+            }// End of For-Loop JSON data
+
+            dispatch_async(dispatch_get_main_queue()) {
                 do {
                     try self.managedContext.save()
                 } catch let error as NSError {
                     print("Could not save: \(error)")
                 }
 
-            }// End of For-Loop JSON data
-
-            dispatch_async(dispatch_get_main_queue()) {
-
-                print("allPosts.count:\(self.allPosts.count)")
+                self.getFeedFromCoreData()
                 self.feedTableView.reloadData()
+
                 self.messageFrame.removeFromSuperview()
                 self.view.userInteractionEnabled = true
             }
@@ -442,53 +456,85 @@ class FeedViewController: UIViewController {
 
         }// End of Alamofire
 
-
-
     } //End of populateFeed()
 
     //MARK: - Default Function
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        feedTableView.dataSource = self
-        self.userToken = appDelegate.userLocalToken
-        self.managedContext = appDelegate.coreDataStack.context
-        self.progressBarDisplayer("Loading data", true)
-        
-        //clear all post in core data
-        clearAllPost()
-        
-        //insert to core data the new posts received from server
-        populateFeed()
 
+        feedTableView.dataSource = self
+
+        self.managedContext = appDelegate.coreDataStack.context
+        self.userToken = getTokenFromCoreData()
+
+        self.progressBarDisplayer("Loading data", true)
         
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-
-       // self.getFeedFromCoreData()
-
+        
+        let fetchRequest = NSFetchRequest(entityName: "Post")
+        do {
+            let results =
+            try managedContext.executeFetchRequest(fetchRequest)
+            if results.count > 0 {
+                clearAllPost()
+            }
+        } catch let error as NSError {
+            print("Could not fetch \(error), \(error.userInfo)")
+        }
+        
+        //insert to core data the new posts received from server
+        populateFeed()
         
     }
     
-    func getFeedFromCoreData() {
-        
+    func getTokenFromCoreData() -> String{
 
-        let accessFetch = NSFetchRequest(entityName: "Post")
+        var userToken:String!
+        let accessFetch = NSFetchRequest(entityName: "Access")
         do  {
-            let result = try managedContext.executeFetchRequest(accessFetch) as? [Post]
+            let result = try managedContext.executeFetchRequest(accessFetch) as? [SelklikFansAccess]
 
-            print("result count: \(result?.count)")
-            for artistFeed in result! {
-                print(artistFeed)
+            if let loginUser = result {
+
+                //if old token exist in core data, delete it
+                if loginUser.count > 0 {
+                    userToken  = loginUser[0].token
+
+                }
 
             }
         }
         catch let fetchError as NSError {
             print("dogFetch error: \(fetchError.localizedDescription)")
         }
+
+        return userToken
+    }
+    
+    func getFeedFromCoreData() {
+        
+        //----------------------------------
+        //1
+        let fetchRequest = NSFetchRequest(entityName: "Post")
+        
+        
+        do  {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            artistPost = results as! [NSManagedObject]
+            
+        }
+        catch let fetchError as NSError {
+            print("Fetch access in AppDelegate error: \(fetchError.localizedDescription)")
+        }
+        
+        
+        
+        //----------------------------------
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -498,30 +544,51 @@ class FeedViewController: UIViewController {
     
 }
 
-
-extension FeedViewController:UITableViewDataSource {
-    func tableView(tableView: UITableView,
-        numberOfRowsInSection section: Int) -> Int {
-            
-
-            return allPosts.count
+extension FeedViewController: UITableViewDataSource {
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return artistPost.count
     }
     
-    func tableView(tableView: UITableView,
-        cellForRowAtIndexPath
-        indexPath: NSIndexPath) -> UITableViewCell {
-            
-            let cell =
-            tableView.dequeueReusableCellWithIdentifier("Cell",
-                forIndexPath: indexPath) as UITableViewCell
-            
-            //let walk = currentDog.walks![indexPath.row] as! Walk
-            
-            cell.textLabel!.text = allPosts[indexPath.row].postText
-            
-            return cell
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell =
+        tableView.dequeueReusableCellWithIdentifier("Cell")
+        
+        let post = artistPost[indexPath.row]
+        
+        cell!.textLabel!.text =
+            post.valueForKey("postText") as? String
+
+        let socialMediaType = post.valueForKey("socialMediaType") as? String
+        let postType = post.valueForKey("postType") as? String
+
+        switch(socialMediaType!){
+        case "twitter":
+            if postType == "text" {
+                
+            }
+        break
+        case "instagram":
+        print("instagram")
+        break
+        case "facebook":
+        print("facebook")
+        break
+        case "premium":
+        print("Premium")
+        break
+        default:
+        print("undefine")
+        }
+        
+        
+        return cell!
+        
     }
+    
+    
 }
+
 
 
 

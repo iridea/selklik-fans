@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mP0-k7-mUi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="mP0-k7-mUi">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
     </dependencies>
@@ -22,24 +22,28 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="270" placeholderIntrinsicHeight="285" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="11M-Bz-p1W">
                                         <rect key="frame" x="25" y="13" width="270" height="280"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aYT-Z2-fAH">
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aYT-Z2-fAH">
                                                 <rect key="frame" x="85" y="0.0" width="100" height="129"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Mi-qZ-5bt">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="7Mi-qZ-5bt">
                                                         <rect key="frame" x="0.0" y="0.0" width="100" height="129"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selklik-logo-bolder" translatesAutoresizingMaskIntoConstraints="NO" id="szT-oH-hc9">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="selklik-logo-bolder" translatesAutoresizingMaskIntoConstraints="NO" id="szT-oH-hc9">
                                                                 <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                                <animations/>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SELKLIK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5g8-dL-GIB">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SELKLIK" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5g8-dL-GIB">
                                                                 <rect key="frame" x="0.0" y="105" width="100" height="24"/>
+                                                                <animations/>
                                                                 <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="20"/>
                                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                         </subviews>
+                                                        <animations/>
                                                     </stackView>
                                                 </subviews>
+                                                <animations/>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5aN-x1-Fhu">
                                                 <rect key="frame" x="0.0" y="144" width="270" height="81"/>
@@ -49,6 +53,7 @@
                                                         <subviews>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jamal.nasir@me.com" placeholder="EMAIL" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="fFM-DP-W3W">
                                                                 <rect key="frame" x="8" y="7" width="254" height="30"/>
+                                                                <animations/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="tOu-Tb-q1h"/>
                                                                 </constraints>
@@ -63,7 +68,9 @@
                                                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5ZX-wd-7MX">
                                                                     <rect key="frame" x="0.0" y="0.0" width="252" height="1"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                                    <animations/>
                                                                 </view>
+                                                                <animations/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="1" id="BAR-v9-ooy"/>
                                                                 </constraints>
@@ -71,6 +78,7 @@
                                                             </visualEffectView>
                                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="jamal123" placeholder="PASSWORD" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="35j-Qn-4Sc">
                                                                 <rect key="frame" x="8" y="46" width="254" height="30"/>
+                                                                <animations/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="30" id="rKW-gp-NGd"/>
                                                                 </constraints>
@@ -81,6 +89,7 @@
                                                                 </connections>
                                                             </textField>
                                                         </subviews>
+                                                        <animations/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstItem="35j-Qn-4Sc" firstAttribute="top" secondItem="Zl3-Xw-LLh" secondAttribute="bottom" constant="5" id="07v-oH-vdZ"/>
@@ -96,12 +105,14 @@
                                                         </constraints>
                                                     </view>
                                                 </subviews>
+                                                <animations/>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W7V-WR-vUF">
+                                            <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W7V-WR-vUF">
                                                 <rect key="frame" x="0.0" y="240" width="270" height="40"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="270" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFV-pb-oDQ">
+                                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" placeholderIntrinsicWidth="270" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dFV-pb-oDQ">
                                                         <rect key="frame" x="0.0" y="0.0" width="270" height="40"/>
+                                                        <animations/>
                                                         <color key="backgroundColor" red="0.97254902124404907" green="0.82745099067687988" blue="0.16078431904315948" alpha="1" colorSpace="calibratedRGB"/>
                                                         <state key="normal" title="LOG IN">
                                                             <color key="titleColor" red="0.564653933" green="0.45339596269999999" blue="0.35711643100000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -111,8 +122,10 @@
                                                         </connections>
                                                     </button>
                                                 </subviews>
+                                                <animations/>
                                             </stackView>
                                         </subviews>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="280" id="1vJ-KF-c8C"/>
                                             <constraint firstAttribute="trailing" secondItem="5aN-x1-Fhu" secondAttribute="trailing" id="8Wz-uO-kio"/>
@@ -122,6 +135,7 @@
                                         </constraints>
                                     </stackView>
                                 </subviews>
+                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="11M-Bz-p1W" secondAttribute="trailing" constant="25" id="2Ow-Eg-r60"/>
                                     <constraint firstItem="11M-Bz-p1W" firstAttribute="top" secondItem="BU1-g1-GBE" secondAttribute="top" constant="13" id="72Z-tQ-PhH"/>
@@ -133,6 +147,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" red="0.14901961386203766" green="0.12156862765550613" blue="0.24705882370471954" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="BU1-g1-GBE" firstAttribute="top" secondItem="CdJ-s9-318" secondAttribute="bottom" id="BTt-p9-nen"/>
@@ -179,6 +194,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="g3A-Ll-wGd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="barTintColor" red="0.10196078568696976" green="0.062745101749897003" blue="0.17254902422428131" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <fontDescription key="fontDescription" name="ArialRoundedMTBold" family="Arial Rounded MT Bold" pointSize="0.0"/>

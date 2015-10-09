@@ -30,7 +30,7 @@ class CoreDataStack {
 
         let url = self.applicationDocumentsDirectory
             .URLByAppendingPathComponent(self.modelName)
-
+        print(url)
         do {
             let options =
             [NSMigratePersistentStoresAutomaticallyOption : true]
