@@ -120,11 +120,10 @@ class FeedViewController: UIViewController {
 
         let postEntity = NSEntityDescription.entityForName("Post",inManagedObjectContext: managedContext)
 
-        Alamofire.request(.GET, API.artistFeedUrl, parameters: ["token": userToken, "country": Setting.malaysia, "limit" : "15"]).responseJSON {
-            _, _, result in
+        Alamofire.request(.GET, API.artistFeedUrl, parameters: ["token": userToken, "country": Setting.malaysia, "limit" : "15"]).responseJSON { response in
 
             print("MASUK FetchRemoteFeedData - ALAMOFIRE")
-            let json = JSON(result.value!)
+            let json = JSON(response.result.value!)
 
             print(json)
 
@@ -555,8 +554,7 @@ extension FeedViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        //var cell = tableView.dequeueReusableCellWithIdentifier("Cell")
-        
+
         let post = artistPost[indexPath.row]
 
         let socialMediaType = post.valueForKey("socialMediaType") as? String

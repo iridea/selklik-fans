@@ -1,10 +1,13 @@
 PODS:
-  - Alamofire (2.0.2)
+  - Alamofire (3.0.0)
+  - AlamofireImage (2.0.0-beta.1):
+    - Alamofire (~> 3.0.0-beta.3)
   - ReachabilitySwift (2.0)
   - SwiftyJSON (2.3.0)
 
 DEPENDENCIES:
-  - Alamofire (= 2.0.2)
+  - Alamofire (~> 3.0)
+  - AlamofireImage (= 2.0.0-beta.1)
   - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`)
   - SwiftyJSON (~> 2.3)
 
@@ -14,12 +17,13 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   ReachabilitySwift:
-    :commit: 2a8cbe7265d7b9221a789d60612a152f5ee9c8c7
+    :commit: 8a2c1cbb739c55d39c479797337c5b05e5773b6b
     :git: https://github.com/ashleymills/Reachability.swift
 
 SPEC CHECKSUMS:
-  Alamofire: 8edbab00802a752bb5240cc2abe70e7e881488ad
+  Alamofire: b61782387f81bcc538a0284cf2bb5d7995cd0a80
+  AlamofireImage: 6e16d1b33df25459b40be7c8a2ae6e3d6fefc080
   ReachabilitySwift: 227b98ae7ec99e1c01148b17fb22357aa91a5675
   SwiftyJSON: 8d6b61a70277ef2a5d710d372e06e7e2d87fb9e4
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0

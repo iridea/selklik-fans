@@ -112,28 +112,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 let parameters = ["token":userLocalToken!, "country":Setting.malaysia]
                 let postUrl = API.url + API.version + "user_check"
 
-                Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters).responseJSON { _, _, result in
 
-                    switch result {
-                    case .Success:
-                        let json = JSON(result.value!)
-                        print(json)
-                        if let status = json["status"].bool{
-                            if status {
-                                print("local token == web token")
+                Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters).responseJSON { response in
 
-                                self.setInitialViewController(storyboardName: "Feed", storyboardId: "feedInitialViewController")
-                            } else {
-                                print("local token != web token")
-                                let viewController = self.window!.rootViewController as! CoordinatorViewController
-                                viewController.managedContext = self.coreDataStack.context
-                            }
-                        }else{
-                            print("Fail to get status value from JSON")
+
+                    let json = JSON(response.result.value!)
+                    print(json)
+                    if let status = json["status"].bool{
+                        if status {
+                            print("local token == web token")
+
+                            self.setInitialViewController(storyboardName: "Feed", storyboardId: "feedInitialViewController")
+                        } else {
+                            print("local token != web token")
+                            let viewController = self.window!.rootViewController as! CoordinatorViewController
+                            viewController.managedContext = self.coreDataStack.context
                         }
-                    case .Failure(_, let error):
-                        print(error)
+                    }else{
+                        print("Fail to get status value from JSON")
                     }
+
 
                 }
 
@@ -162,9 +160,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     print("loginUser.count: \(loginUser.count)")
 
                     if let token = loginUser[0].token {
-                    userLocalToken = token
-                    print("loginUser[0].token:" + token)
-                    accessStatus = true
+                        userLocalToken = token
+                        print("loginUser[0].token:" + token)
+                        accessStatus = true
                     }
                 }else{
                     accessStatus = false
@@ -183,18 +181,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let parameters = ["token":userLocalToken!, "country":Setting.malaysia]
         let postUrl = API.url + API.version + "user_check"
 
-        Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters).responseJSON { _, _, result in
-            switch result {
-            case .Success:
-                let json = JSON(result.value!)
-                print(json)
+        Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters).responseJSON { response in
+
+                let json = JSON(response.result.value!)
+                print(json.array)
                 if let _ = json["status"].bool{
                     print("MASUK")
                     status = true
                 }
-            case .Failure(_, let error):
-                print(error)
-            }
+
         }
 
         print("verifyStatus:\(status)")
@@ -226,7 +221,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
-
+    
     func applicationWillTerminate(application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }

@@ -70,13 +70,11 @@ class SlideMenuViewController: UIViewController {
 
         let postUrl = API.logoutUrl
 
-        Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters).responseJSON { _, _, result in
-            switch result {
-            case .Success:
+        Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters).responseJSON { response in
 
                 self.messageFrame.removeFromSuperview()
 
-                let json = JSON(result.value!)
+                let json = JSON(response.result.value!)
 
                 print("json from logout:\(json)")
 
@@ -108,10 +106,7 @@ class SlideMenuViewController: UIViewController {
                     }))
 
                 }
-            case .Failure(_, let error):
-                
-                print(error)
-            }
+
         }
     }
 

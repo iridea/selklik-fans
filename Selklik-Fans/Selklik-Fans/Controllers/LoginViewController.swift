@@ -91,13 +91,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         
         let postUrl = API.loginUrl
         
-        Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters as? [String : AnyObject]).responseJSON { _, _, result in
-            switch result {
-            case .Success:
+        Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters as? [String : AnyObject]).responseJSON { response in
+
 
                 self.messageFrame.removeFromSuperview()
 
-                let json = JSON(result.value!)
+                let json = JSON(response.result.value!)
 
                 print("json from login:\(json)")
 
@@ -122,10 +121,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     }))
                     
                 }
-            case .Failure(_, let error):
-                
-                print(error)
-            }
+
         }
     }
     
