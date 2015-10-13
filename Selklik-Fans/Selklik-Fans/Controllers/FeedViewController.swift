@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import CoreData
+import AlamofireImage
 
 class FeedViewController: UIViewController {
 
@@ -560,12 +561,25 @@ extension FeedViewController: UITableViewDataSource {
         let socialMediaType = post.valueForKey("socialMediaType") as? String
         let postType = post.valueForKey("postType") as? String
 
+
+        //Download image profile using AlamofireImage 
+        let profileImageUrl = post.valueForKey("profileImageUrl") as? String
+        let URL = NSURL(string: profileImageUrl!)
+
+
+
+
         switch(socialMediaType!){
         case "twitter":
             if postType == "text" {
 
                 let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.twitterStatusCell, forIndexPath:indexPath) as! TwitterStatusCell
 
+                //clear cell.profilePictureImageView from previous image
+                cell.profilePictureImageView.image = UIImage(named: "UserIcon")
+                cell.profilePictureImageView.af_setImageWithURL(URL!)
+
+                
                 
                 cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
                 cell.screenNameLabel.text = "@" + (post.valueForKey("screenName") as? String)!
