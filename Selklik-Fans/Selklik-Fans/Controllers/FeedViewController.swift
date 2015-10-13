@@ -20,18 +20,48 @@ class FeedViewController: UIViewController {
     var allPosts = [Post]()
     var newPost:Post!
     var artistPost = [NSManagedObject]()
+    let userInfo = UserInfo()
 
     var fetchedResultsController: NSFetchedResultsController!
+
+    //MARK: - IBOutlet
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var feedTableView: UITableView!
 
     //variable for loading HUD
     var messageFrame = UIView()
     var activityIndicator = UIActivityIndicatorView()
     var strLabel = UILabel()
 
+    struct CellIdentifiers {
+        static let twitterStatusCell = "TwitterStatusCell"
+        static let twitterPhotoCell = "TwitterPhotoCell"
+        static let twitterVideoCell = "TwitterVideoCell"
+        static let retweetTwitterStatusCell = "RetweetTwitterStatusCell"
+        static let retweetTwitterPhotoCell = "RetweetTwitterPhotoCell"
+        static let retweetTwitterVideoCell = "RetweetTwitterVideoCell"
 
-    //MARK: - IBOutlet
-    @IBOutlet weak var menuButton: UIBarButtonItem!
-    @IBOutlet weak var feedTableView: UITableView!
+        static let facebookStatusCell = "FacebookStatusCell"
+        static let facebookPhotoCell = "FacebookPhotoCell"
+        static let facebookVideoCell = "FacebookVideoCell"
+        static let facebookLinkCell = "FacebookLinkCell"
+
+        static let instagramPhotoCell = "InstagramPhotoCell"
+        static let instagramVideoCell = "InstagramVideoCell"
+
+        static let twitterSingleStatusFeed = "TwitterSingleStatusFeed"
+
+    }
+
+    func registerNib(){
+        var cellNib = UINib(nibName: CellIdentifiers.facebookPhotoCell, bundle: nil)
+        feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.facebookPhotoCell)
+        cellNib = UINib(nibName: CellIdentifiers.twitterStatusCell, bundle: nil)
+        feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.twitterStatusCell)
+    }
+
+
+
     @IBAction func reloadButton(sender: AnyObject) {
         self.getFeedFromCoreData()
     }
@@ -462,10 +492,17 @@ class FeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        feedTableView.rowHeight = UITableViewAutomaticDimension
+        feedTableView.estimatedRowHeight = 66
+
+         registerNib()
+        
         feedTableView.dataSource = self
 
+
+
         self.managedContext = appDelegate.coreDataStack.context
-        self.userToken = getTokenFromCoreData()
+        self.userToken = userInfo.getTokenFromCoreData(managedContext)
 
         self.progressBarDisplayer("Loading data", true)
         
@@ -491,34 +528,7 @@ class FeedViewController: UIViewController {
         
     }
     
-    func getTokenFromCoreData() -> String{
-
-        var userToken:String!
-        let accessFetch = NSFetchRequest(entityName: "Access")
-        do  {
-            let result = try managedContext.executeFetchRequest(accessFetch) as? [SelklikFansAccess]
-
-            if let loginUser = result {
-
-                //if old token exist in core data, delete it
-                if loginUser.count > 0 {
-                    userToken  = loginUser[0].token
-
-                }
-
-            }
-        }
-        catch let fetchError as NSError {
-            print("dogFetch error: \(fetchError.localizedDescription)")
-        }
-
-        return userToken
-    }
-    
     func getFeedFromCoreData() {
-        
-        //----------------------------------
-        //1
         let fetchRequest = NSFetchRequest(entityName: "Post")
         
         
@@ -530,18 +540,12 @@ class FeedViewController: UIViewController {
         catch let fetchError as NSError {
             print("Fetch access in AppDelegate error: \(fetchError.localizedDescription)")
         }
-        
-        
-        
-        //----------------------------------
-        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 }
 
 extension FeedViewController: UITableViewDataSource {
@@ -551,13 +555,9 @@ extension FeedViewController: UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell =
-        tableView.dequeueReusableCellWithIdentifier("Cell")
+        //var cell = tableView.dequeueReusableCellWithIdentifier("Cell")
         
         let post = artistPost[indexPath.row]
-        
-        cell!.textLabel!.text =
-            post.valueForKey("postText") as? String
 
         let socialMediaType = post.valueForKey("socialMediaType") as? String
         let postType = post.valueForKey("postType") as? String
@@ -565,14 +565,69 @@ extension FeedViewController: UITableViewDataSource {
         switch(socialMediaType!){
         case "twitter":
             if postType == "text" {
+
+                let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.twitterStatusCell, forIndexPath:indexPath) as! TwitterStatusCell
+
                 
+                cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
+                cell.screenNameLabel.text = "@" + (post.valueForKey("screenName") as? String)!
+                cell.postStatusLabel.text = post.valueForKey("postText") as? String
+                cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+                cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
+                cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
+
+                /*
+                @IBOutlet weak var accountNameButton: UIButton!
+                @IBOutlet weak var profilePictureImageView: UIImageView!
+                @IBOutlet weak var dateTimeLabel: UILabel!
+                @IBOutlet weak var postStatusLabel: UILabel!
+                @IBOutlet weak var totalLikeLabel: UILabel!
+                @IBOutlet weak var totalCommentButton: UIButton!
+                */
+                
+                return cell
             }
         break
         case "instagram":
         print("instagram")
         break
         case "facebook":
-        print("facebook")
+            switch (postType!) {
+            case "text":
+                print("facebook text")
+                break
+            case "photo":
+                print("facebook photo")
+
+                let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.facebookPhotoCell, forIndexPath:indexPath) as! FacebookPhotoCell
+
+                cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
+                cell.postStatusLabel.text = post.valueForKey("postText") as? String
+                cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+
+
+                /*
+                @IBOutlet weak var accountNameButton: UIButton!
+                @IBOutlet weak var profilePictureImageView: UIImageView!
+                @IBOutlet weak var dateTimeLabel: UILabel!
+                @IBOutlet weak var postStatusLabel: UILabel!
+                @IBOutlet weak var totalLikeLabel: UILabel!
+                @IBOutlet weak var totalCommentButton: UIButton!
+                */
+
+                return cell
+
+
+            case "video":
+                print("facebook video")
+                break
+            case "link":
+                print("facebook link")
+                break
+            default:
+                print("unknown facebook postType: \(postType)")
+
+            }
         break
         case "premium":
         print("Premium")
@@ -580,9 +635,12 @@ extension FeedViewController: UITableViewDataSource {
         default:
         print("undefine")
         }
-        
-        
-        return cell!
+
+        let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "mycell")
+
+        cell.textLabel!.text = socialMediaType! + " - " + postType!
+
+        return cell
         
     }
     

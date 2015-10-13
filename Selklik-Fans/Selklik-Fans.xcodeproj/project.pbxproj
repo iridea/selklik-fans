@@ -16,6 +16,8 @@
 		8942531E1BB297B700A04953 /* Selklik_FansTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942531D1BB297B700A04953 /* Selklik_FansTests.swift */; };
 		894253291BB297B700A04953 /* Selklik_FansUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253281BB297B700A04953 /* Selklik_FansUITests.swift */; };
 		894253391BB29C1300A04953 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 894253381BB29C1300A04953 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
+		896D1CA31BCB6CBF008A720B /* FacebookStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896D1CA11BCB6CBF008A720B /* FacebookStatusCell.swift */; settings = {ASSET_TAGS = (); }; };
+		896D1CA41BCB6CBF008A720B /* FacebookStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896D1CA21BCB6CBF008A720B /* FacebookStatusCell.xib */; settings = {ASSET_TAGS = (); }; };
 		899B7FE71BB6941500922922 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899B7FE61BB6941500922922 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
 		89C8F0B31BB75FE900AFE092 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C8F0B21BB75FE900AFE092 /* Login.storyboard */; settings = {ASSET_TAGS = (); }; };
 		89C8F0B61BB7E6D500AFE092 /* SelklikFans.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0B41BB7E6D500AFE092 /* SelklikFans.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
@@ -33,6 +35,8 @@
 		89D553C61BC65AD500C75D4A /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D553C51BC65AD500C75D4A /* Register.storyboard */; settings = {ASSET_TAGS = (); }; };
 		89D553CB1BC7B55F00C75D4A /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D553CA1BC7B55F00C75D4A /* SlideMenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		89D553CD1BC7B83100C75D4A /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D553CC1BC7B83100C75D4A /* UserInfo.swift */; settings = {ASSET_TAGS = (); }; };
+		89D553D01BC8051C00C75D4A /* FacebookPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D553CE1BC8051C00C75D4A /* FacebookPhotoCell.swift */; settings = {ASSET_TAGS = (); }; };
+		89D553D11BC8051C00C75D4A /* FacebookPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D553CF1BC8051C00C75D4A /* FacebookPhotoCell.xib */; settings = {ASSET_TAGS = (); }; };
 		89E0B1EC1BB3C19A0052D64B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
@@ -69,6 +73,8 @@
 		894253281BB297B700A04953 /* Selklik_FansUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selklik_FansUITests.swift; sourceTree = "<group>"; };
 		8942532A1BB297B700A04953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		894253381BB29C1300A04953 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		896D1CA11BCB6CBF008A720B /* FacebookStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookStatusCell.swift; sourceTree = "<group>"; };
+		896D1CA21BCB6CBF008A720B /* FacebookStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookStatusCell.xib; sourceTree = "<group>"; };
 		899B7FE61BB6941500922922 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		89C8F0B21BB75FE900AFE092 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		89C8F0B51BB7E6D500AFE092 /* SelklikFans.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SelklikFans.xcdatamodel; sourceTree = "<group>"; };
@@ -88,6 +94,8 @@
 		89D553C51BC65AD500C75D4A /* Register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		89D553CA1BC7B55F00C75D4A /* SlideMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SlideMenuViewController.swift; sourceTree = "<group>"; };
 		89D553CC1BC7B83100C75D4A /* UserInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
+		89D553CE1BC8051C00C75D4A /* FacebookPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookPhotoCell.swift; sourceTree = "<group>"; };
+		89D553CF1BC8051C00C75D4A /* FacebookPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookPhotoCell.xib; sourceTree = "<group>"; };
 		89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		93106E8CDDAF466E4ABE4638 /* Pods_Selklik_Fans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Selklik_Fans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80A33531EC1AF33B6A0C573 /* Pods-Selklik-Fans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selklik-Fans.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Selklik-Fans/Pods-Selklik-Fans.debug.xcconfig"; sourceTree = "<group>"; };
@@ -268,6 +276,10 @@
 		89D553BA1BC5500200C75D4A /* Facebook */ = {
 			isa = PBXGroup;
 			children = (
+				896D1CA11BCB6CBF008A720B /* FacebookStatusCell.swift */,
+				89D553CE1BC8051C00C75D4A /* FacebookPhotoCell.swift */,
+				896D1CA21BCB6CBF008A720B /* FacebookStatusCell.xib */,
+				89D553CF1BC8051C00C75D4A /* FacebookPhotoCell.xib */,
 			);
 			name = Facebook;
 			sourceTree = "<group>";
@@ -430,12 +442,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				894253391BB29C1300A04953 /* .gitignore in Resources */,
+				896D1CA41BCB6CBF008A720B /* FacebookStatusCell.xib in Resources */,
 				894253131BB297B700A04953 /* LaunchScreen.storyboard in Resources */,
 				89C8F0BE1BB8218100AFE092 /* Feed.storyboard in Resources */,
 				89C8F0B31BB75FE900AFE092 /* Login.storyboard in Resources */,
 				894253101BB297B700A04953 /* Assets.xcassets in Resources */,
 				89D553C41BC6178C00C75D4A /* TwitterStatusCell.xib in Resources */,
 				8942530E1BB297B700A04953 /* Startup.storyboard in Resources */,
+				89D553D11BC8051C00C75D4A /* FacebookPhotoCell.xib in Resources */,
 				89D553C61BC65AD500C75D4A /* Register.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -516,6 +530,7 @@
 				89C8F0C51BB8327D00AFE092 /* FeedViewController.swift in Sources */,
 				89D553CD1BC7B83100C75D4A /* UserInfo.swift in Sources */,
 				89C8F0BB1BB7F9B700AFE092 /* SelklikFansAccess.swift in Sources */,
+				89D553D01BC8051C00C75D4A /* FacebookPhotoCell.swift in Sources */,
 				89D553C31BC6178C00C75D4A /* TwitterStatusCell.swift in Sources */,
 				8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */,
 				894253091BB297B700A04953 /* AppDelegate.swift in Sources */,
@@ -523,6 +538,7 @@
 				89C8F0B81BB7E83900AFE092 /* CoreDataStack.swift in Sources */,
 				899B7FE71BB6941500922922 /* Constants.swift in Sources */,
 				89D553CB1BC7B55F00C75D4A /* SlideMenuViewController.swift in Sources */,
+				896D1CA31BCB6CBF008A720B /* FacebookStatusCell.swift in Sources */,
 				89C8F0B61BB7E6D500AFE092 /* SelklikFans.xcdatamodeld in Sources */,
 				89C8F0CC1BB993DC00AFE092 /* Post+CoreDataProperties.swift in Sources */,
 			);

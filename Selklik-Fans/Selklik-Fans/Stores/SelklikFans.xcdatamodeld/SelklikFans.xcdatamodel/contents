@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="14F27" minimumToolsVersion="Xcode 7.0">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="8195" systemVersion="15A284" minimumToolsVersion="Xcode 7.0">
     <entity name="Access" representedClassName=".SelklikFansAccess" syncable="YES">
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tokenCreateTimestamp" optional="YES" attributeType="Date" syncable="YES"/>
@@ -42,6 +42,7 @@
         <attribute name="gender" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="profileImageHeight" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="profileImageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="profileImageWidth" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -49,6 +50,6 @@
     <elements>
         <element name="Access" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="Post" positionX="-36" positionY="81" width="128" height="480"/>
-        <element name="User" positionX="-54" positionY="9" width="128" height="180"/>
+        <element name="User" positionX="-54" positionY="9" width="128" height="195"/>
     </elements>
 </model>
