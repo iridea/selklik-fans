@@ -29,7 +29,7 @@
                                 </constraints>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="304" placeholderIntrinsicHeight="18" text="status" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4K-BR-SDr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="304" placeholderIntrinsicHeight="18" text="status" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4K-BR-SDr" customClass="ActiveLabel" customModule="ActiveLabel">
                                 <rect key="frame" x="8" y="59" width="304" height="18"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Thonburi-Light" family="Thonburi" pointSize="12"/>
@@ -166,8 +166,8 @@
                 <outlet property="accountNameButton" destination="4Ix-vB-L68" id="ZQ5-vd-2nj"/>
                 <outlet property="dateTimeLabel" destination="1JE-gj-3b6" id="xSG-px-Qdk"/>
                 <outlet property="postPhoto" destination="wMD-zl-5Xm" id="AzZ-Wz-HsA"/>
-                <outlet property="postStatusLabel" destination="o4K-BR-SDr" id="1JD-iC-e7O"/>
                 <outlet property="profilePictureImageView" destination="Bwn-aX-1kd" id="waW-Lx-tnk"/>
+                <outlet property="statusActiveLabel" destination="o4K-BR-SDr" id="cj7-hV-oQx"/>
                 <outlet property="totalCommentButton" destination="xHW-QP-NY0" id="Sch-VD-PhY"/>
                 <outlet property="totalLikeLabel" destination="Vqb-VO-483" id="ZkG-EV-ZnS"/>
             </connections>

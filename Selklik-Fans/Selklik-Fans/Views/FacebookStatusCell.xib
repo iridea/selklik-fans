@@ -29,14 +29,14 @@
                                 </constraints>
                                 <blurEffect style="dark"/>
                             </visualEffectView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="304" placeholderIntrinsicHeight="18" text="status" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kY3-ny-71f">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="304" placeholderIntrinsicHeight="18" text="status" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kY3-ny-71f" customClass="ActiveLabel" customModule="ActiveLabel">
                                 <rect key="frame" x="8" y="60" width="304" height="19"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Thonburi-Light" family="Thonburi" pointSize="12"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="M4f-Sq-ef5">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UsersIcon" translatesAutoresizingMaskIntoConstraints="NO" id="M4f-Sq-ef5">
                                 <rect key="frame" x="12" y="5" width="40" height="40"/>
                                 <animations/>
                                 <constraints>
@@ -159,8 +159,8 @@
             <connections>
                 <outlet property="accountNameButton" destination="hlD-Mv-ns7" id="acf-LM-fiW"/>
                 <outlet property="dateTimeLabel" destination="8wn-un-7VZ" id="J22-R6-57i"/>
-                <outlet property="postStatusLabel" destination="kY3-ny-71f" id="gZF-lh-aE4"/>
                 <outlet property="profilePictureImageView" destination="M4f-Sq-ef5" id="gbu-1s-FxL"/>
+                <outlet property="statusActiveLabel" destination="kY3-ny-71f" id="4DV-yC-SvY"/>
                 <outlet property="totalCommentButton" destination="Vgv-40-6kc" id="E2F-VV-zAi"/>
                 <outlet property="totalLikeLabel" destination="6tP-EG-cUX" id="s0P-ZR-kIz"/>
             </connections>
@@ -168,6 +168,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="UsersIcon" width="50" height="50"/>
         <image name="facebook" width="50" height="50"/>
         <image name="retweet" width="50" height="50"/>
         <image name="star" width="50" height="50"/>

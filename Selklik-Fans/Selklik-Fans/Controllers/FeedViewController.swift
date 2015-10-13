@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import CoreData
 import AlamofireImage
+import ActiveLabel
 
 class FeedViewController: UIViewController {
 
@@ -589,7 +590,10 @@ extension FeedViewController: UITableViewDataSource {
 
                 cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
                 cell.screenNameLabel.text = "@" + (post.valueForKey("screenName") as? String)!
-                cell.postStatusLabel.text = post.valueForKey("postText") as? String
+                let acLabel =  ActiveLabel()
+                //cell.postStatusLabel =
+                acLabel.text = post.valueForKey("postText") as? String
+                cell.postStatusLabel.text = acLabel.text//= post.valueForKey("postText") as? String
                 cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
                 cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
                 cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
@@ -612,18 +616,21 @@ extension FeedViewController: UITableViewDataSource {
                 let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.facebookPhotoCell, forIndexPath:indexPath) as! FacebookPhotoCell
 
                 //load profile image
-                cell.profilePictureImageView.image = nil
-                cell.profilePictureImageView.af_setImageWithURL(profileImageUrl!, placeholderImage: UIImage(named: "UserIcon"))
+                var placeholderImage = UIImage(named: "UserIcon")
+                cell.profilePictureImageView.image = nil//UIImage(named: "UserIcon")
+                cell.profilePictureImageView.af_setImageWithURL(profileImageUrl!, placeholderImage: placeholderImage)
 
                 //load Post Image
                 let imageSize = CGSize(width: (post.valueForKey("photoStdWidth") as? CGFloat)!, height: ((post.valueForKey("photoStdHeight") as? CGFloat)!)/2.0)
-                let placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
+                    placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
                 let postPhotoUrl = NSURL(string: (post.valueForKey("photoStdUrl") as? String)!)
                 cell.postPhoto.image = nil
                 cell.postPhoto.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
 
                 //load rest of the data
-                cell.postStatusLabel.text = post.valueForKey("postText") as? String
+                cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
+
+                //cell.postStatusLabel.text = post.valueForKey("postText") as? String
                 cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
                 cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
 
