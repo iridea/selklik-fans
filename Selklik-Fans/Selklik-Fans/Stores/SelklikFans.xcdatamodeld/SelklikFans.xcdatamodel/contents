@@ -12,6 +12,7 @@
         <attribute name="fbContentLinkTitle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fbTotalShare" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="photoStdHeight" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
         <attribute name="photoStdUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="photoStdWidth" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
@@ -49,7 +50,7 @@
     </entity>
     <elements>
         <element name="Access" positionX="-63" positionY="-18" width="128" height="75"/>
-        <element name="Post" positionX="-36" positionY="81" width="128" height="480"/>
+        <element name="Post" positionX="-36" positionY="81" width="128" height="495"/>
         <element name="User" positionX="-54" positionY="9" width="128" height="195"/>
     </elements>
 </model>

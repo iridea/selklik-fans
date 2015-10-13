@@ -38,7 +38,7 @@ import Alamofire
     }
     }
     */
-    
+  struct DataAPI {
     enum Router: URLRequestConvertible {
         static let baseURLString = API.url
         static let country = Setting.malaysia
@@ -66,8 +66,8 @@ import Alamofire
                     
                     
                 case .ArtistPost (let token):
-                    let params = ["token": token, "country": Router.country, "limit" : "15"]
-                    return ("/\(Router.version)/artist_feed", params)
+                    let params = ["token": token, "country": Router.country, "limit" : "25", "postType":"photo"]
+                    return ("/\(Router.version)/artist_fb_feed", params)
                     
                 case .SingleArtistPost (let token, let artistId):
                     let params = ["token": token, "country": Router.country, "limit" : "15", "artist_id":artistId]
@@ -95,4 +95,4 @@ import Alamofire
             
         }
     }
-//}
+}

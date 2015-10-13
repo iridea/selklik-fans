@@ -16,6 +16,7 @@
 		8942531E1BB297B700A04953 /* Selklik_FansTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942531D1BB297B700A04953 /* Selklik_FansTests.swift */; };
 		894253291BB297B700A04953 /* Selklik_FansUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253281BB297B700A04953 /* Selklik_FansUITests.swift */; };
 		894253391BB29C1300A04953 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 894253381BB29C1300A04953 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
+		89685CB21BCD6A200035E6C0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89685CB11BCD6A200035E6C0 /* Image.swift */; settings = {ASSET_TAGS = (); }; };
 		896D1CA31BCB6CBF008A720B /* FacebookStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896D1CA11BCB6CBF008A720B /* FacebookStatusCell.swift */; settings = {ASSET_TAGS = (); }; };
 		896D1CA41BCB6CBF008A720B /* FacebookStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896D1CA21BCB6CBF008A720B /* FacebookStatusCell.xib */; settings = {ASSET_TAGS = (); }; };
 		899B7FE71BB6941500922922 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899B7FE61BB6941500922922 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
@@ -73,6 +74,7 @@
 		894253281BB297B700A04953 /* Selklik_FansUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selklik_FansUITests.swift; sourceTree = "<group>"; };
 		8942532A1BB297B700A04953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		894253381BB29C1300A04953 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		89685CB11BCD6A200035E6C0 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		896D1CA11BCB6CBF008A720B /* FacebookStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookStatusCell.swift; sourceTree = "<group>"; };
 		896D1CA21BCB6CBF008A720B /* FacebookStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookStatusCell.xib; sourceTree = "<group>"; };
 		899B7FE61BB6941500922922 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 				899B7FE61BB6941500922922 /* Constants.swift */,
 				89C8F0B71BB7E83900AFE092 /* CoreDataStack.swift */,
 				89D553CC1BC7B83100C75D4A /* UserInfo.swift */,
+				89685CB11BCD6A200035E6C0 /* Image.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				894253091BB297B700A04953 /* AppDelegate.swift in Sources */,
 				89C8F0C31BB829FE00AFE092 /* SWRevealViewController.m in Sources */,
 				89C8F0B81BB7E83900AFE092 /* CoreDataStack.swift in Sources */,
+				89685CB21BCD6A200035E6C0 /* Image.swift in Sources */,
 				899B7FE71BB6941500922922 /* Constants.swift in Sources */,
 				89D553CB1BC7B55F00C75D4A /* SlideMenuViewController.swift in Sources */,
 				896D1CA31BCB6CBF008A720B /* FacebookStatusCell.swift in Sources */,

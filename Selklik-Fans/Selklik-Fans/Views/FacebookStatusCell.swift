@@ -19,7 +19,8 @@ class FacebookStatusCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.width / 2
+        profilePictureImageView.clipsToBounds = true
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

@@ -30,6 +30,7 @@ extension Post {
     @NSManaged var photoStdHeight: NSNumber?
     @NSManaged var photoStdWidth: NSNumber?
     @NSManaged var photoStdUrl: String?
+    @NSManaged var photoImage: NSData?
     @NSManaged var videoThumbStdHeight: NSNumber?
     @NSManaged var videoThumbStdWidth: NSNumber?
     @NSManaged var videoThumbStdUrl: String?

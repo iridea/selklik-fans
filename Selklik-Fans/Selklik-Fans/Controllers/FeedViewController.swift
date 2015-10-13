@@ -22,6 +22,8 @@ class FeedViewController: UIViewController {
     var newPost:Post!
     var artistPost = [NSManagedObject]()
     let userInfo = UserInfo()
+    let photoInfo = Photo()
+
 
     var fetchedResultsController: NSFetchedResultsController!
 
@@ -121,8 +123,9 @@ class FeedViewController: UIViewController {
 
         let postEntity = NSEntityDescription.entityForName("Post",inManagedObjectContext: managedContext)
 
-        Alamofire.request(.GET, API.artistFeedUrl, parameters: ["token": userToken, "country": Setting.malaysia, "limit" : "15"]).responseJSON { response in
-
+        Alamofire.request(DataAPI.Router.ArtistPost(userToken)).responseJSON(){
+            response in
+            
             print("MASUK FetchRemoteFeedData - ALAMOFIRE")
             let json = JSON(response.result.value!)
 
@@ -488,6 +491,9 @@ class FeedViewController: UIViewController {
 
     } //End of populateFeed()
 
+
+
+
     //MARK: - Default Function
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -495,8 +501,8 @@ class FeedViewController: UIViewController {
         feedTableView.rowHeight = UITableViewAutomaticDimension
         feedTableView.estimatedRowHeight = 66
 
-         registerNib()
-        
+        registerNib()
+
         feedTableView.dataSource = self
 
 
@@ -505,13 +511,13 @@ class FeedViewController: UIViewController {
         self.userToken = userInfo.getTokenFromCoreData(managedContext)
 
         self.progressBarDisplayer("Loading data", true)
-        
+
         if self.revealViewController() != nil {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
+
         let fetchRequest = NSFetchRequest(entityName: "Post")
         do {
             let results =
@@ -522,38 +528,40 @@ class FeedViewController: UIViewController {
         } catch let error as NSError {
             print("Could not fetch \(error), \(error.userInfo)")
         }
-        
+
         //insert to core data the new posts received from server
         populateFeed()
-        
+
     }
-    
+
     func getFeedFromCoreData() {
         let fetchRequest = NSFetchRequest(entityName: "Post")
-        
-        
+
+
         do  {
             let results = try managedContext.executeFetchRequest(fetchRequest)
             artistPost = results as! [NSManagedObject]
-            
+
         }
         catch let fetchError as NSError {
             print("Fetch access in AppDelegate error: \(fetchError.localizedDescription)")
         }
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 }
 
+var facebookPostPhoto:UIImage?
+
 extension FeedViewController: UITableViewDataSource {
-    
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return artistPost.count
     }
-    
+
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
         let post = artistPost[indexPath.row]
@@ -562,9 +570,9 @@ extension FeedViewController: UITableViewDataSource {
         let postType = post.valueForKey("postType") as? String
 
 
-        //Download image profile using AlamofireImage 
-        let profileImageUrl = post.valueForKey("profileImageUrl") as? String
-        let URL = NSURL(string: profileImageUrl!)
+        //Download image profile using AlamofireImage
+        let profileImageUrlString = post.valueForKey("profileImageUrl") as? String
+        let profileImageUrl = NSURL(string: profileImageUrlString!)
 
 
 
@@ -576,11 +584,9 @@ extension FeedViewController: UITableViewDataSource {
                 let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.twitterStatusCell, forIndexPath:indexPath) as! TwitterStatusCell
 
                 //clear cell.profilePictureImageView from previous image
-                cell.profilePictureImageView.image = UIImage(named: "UserIcon")
-                cell.profilePictureImageView.af_setImageWithURL(URL!)
+                cell.profilePictureImageView.image = nil //UIImage(named: "UserIcon")
+                cell.profilePictureImageView.af_setImageWithURL(profileImageUrl!)
 
-                
-                
                 cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
                 cell.screenNameLabel.text = "@" + (post.valueForKey("screenName") as? String)!
                 cell.postStatusLabel.text = post.valueForKey("postText") as? String
@@ -588,21 +594,13 @@ extension FeedViewController: UITableViewDataSource {
                 cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
                 cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
 
-                /*
-                @IBOutlet weak var accountNameButton: UIButton!
-                @IBOutlet weak var profilePictureImageView: UIImageView!
-                @IBOutlet weak var dateTimeLabel: UILabel!
-                @IBOutlet weak var postStatusLabel: UILabel!
-                @IBOutlet weak var totalLikeLabel: UILabel!
-                @IBOutlet weak var totalCommentButton: UIButton!
-                */
-                
+
                 return cell
             }
-        break
+            break
         case "instagram":
-        print("instagram")
-        break
+            print("instagram")
+            break
         case "facebook":
             switch (postType!) {
             case "text":
@@ -613,23 +611,25 @@ extension FeedViewController: UITableViewDataSource {
 
                 let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.facebookPhotoCell, forIndexPath:indexPath) as! FacebookPhotoCell
 
-                cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
+                //load profile image
+                cell.profilePictureImageView.image = nil
+                cell.profilePictureImageView.af_setImageWithURL(profileImageUrl!, placeholderImage: UIImage(named: "UserIcon"))
+
+                //load Post Image
+                let imageSize = CGSize(width: (post.valueForKey("photoStdWidth") as? CGFloat)!, height: ((post.valueForKey("photoStdHeight") as? CGFloat)!)/2.0)
+                let placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
+                let postPhotoUrl = NSURL(string: (post.valueForKey("photoStdUrl") as? String)!)
+                cell.postPhoto.image = nil
+                cell.postPhoto.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
+
+                //load rest of the data
                 cell.postStatusLabel.text = post.valueForKey("postText") as? String
+                cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
                 cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
 
-
-                /*
-                @IBOutlet weak var accountNameButton: UIButton!
-                @IBOutlet weak var profilePictureImageView: UIImageView!
-                @IBOutlet weak var dateTimeLabel: UILabel!
-                @IBOutlet weak var postStatusLabel: UILabel!
-                @IBOutlet weak var totalLikeLabel: UILabel!
-                @IBOutlet weak var totalCommentButton: UIButton!
-                */
-
-                return cell
-
-
+            return cell
+                
+                
             case "video":
                 print("facebook video")
                 break
@@ -638,26 +638,30 @@ extension FeedViewController: UITableViewDataSource {
                 break
             default:
                 print("unknown facebook postType: \(postType)")
-
+                
             }
-        break
+            break
         case "premium":
-        print("Premium")
-        break
+            print("Premium")
+            break
         default:
-        print("undefine")
+            print("undefine")
         }
-
+        
         let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "mycell")
-
+        
         cell.textLabel!.text = socialMediaType! + " - " + postType!
-
+        
         return cell
         
     }
-    
-    
 }
+
+
+extension FeedViewController:UITableViewDelegate {
+
+}
+
 
 
 
