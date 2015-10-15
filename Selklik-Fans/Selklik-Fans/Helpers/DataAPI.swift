@@ -66,8 +66,8 @@ import Alamofire
                     
                     
                 case .ArtistPost (let token):
-                    let params = ["token": token, "country": Router.country, "limit" : "25", "postType":"photo"]
-                    return ("/\(Router.version)/artist_fb_feed", params)
+                    let params = ["token": token, "country": Router.country, "limit" : "25"]
+                    return ("/\(Router.version)/artist_feed", params)
                     
                 case .SingleArtistPost (let token, let artistId):
                     let params = ["token": token, "country": Router.country, "limit" : "15", "artist_id":artistId]

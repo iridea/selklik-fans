@@ -41,9 +41,9 @@ class FeedViewController: UIViewController {
         static let twitterStatusCell = "TwitterStatusCell"
         static let twitterPhotoCell = "TwitterPhotoCell"
         static let twitterVideoCell = "TwitterVideoCell"
-        static let retweetTwitterStatusCell = "RetweetTwitterStatusCell"
-        static let retweetTwitterPhotoCell = "RetweetTwitterPhotoCell"
-        static let retweetTwitterVideoCell = "RetweetTwitterVideoCell"
+        static let retweetStatusCell = "RetweetStatusCell"
+        static let retweetPhotoCell = "RetweetPhotoCell"
+        static let retweetVideoCell = "RetweetVideoCell"
 
         static let facebookStatusCell = "FacebookStatusCell"
         static let facebookPhotoCell = "FacebookPhotoCell"
@@ -58,12 +58,27 @@ class FeedViewController: UIViewController {
     }
 
     func registerNib(){
+
+        //facebook
         var cellNib = UINib(nibName: CellIdentifiers.facebookPhotoCell, bundle: nil)
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.facebookPhotoCell)
+
+        //twitter
         cellNib = UINib(nibName: CellIdentifiers.twitterStatusCell, bundle: nil)
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.twitterStatusCell)
-    }
+        cellNib = UINib(nibName: CellIdentifiers.twitterPhotoCell, bundle: nil)
+        feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.twitterPhotoCell)
+        cellNib = UINib(nibName: CellIdentifiers.twitterVideoCell, bundle: nil)
+        feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.twitterVideoCell)
 
+        cellNib = UINib(nibName: CellIdentifiers.retweetStatusCell, bundle: nil)
+        feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.retweetStatusCell)
+        cellNib = UINib(nibName: CellIdentifiers.retweetPhotoCell, bundle: nil)
+        feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.retweetPhotoCell)
+        cellNib = UINib(nibName: CellIdentifiers.retweetVideoCell, bundle: nil)
+        feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.retweetVideoCell)
+        
+    }
 
 
     @IBAction func reloadButton(sender: AnyObject) {
@@ -493,8 +508,6 @@ class FeedViewController: UIViewController {
     } //End of populateFeed()
 
 
-
-
     //MARK: - Default Function
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -505,6 +518,7 @@ class FeedViewController: UIViewController {
         registerNib()
 
         feedTableView.dataSource = self
+        feedTableView.delegate = self
 
 
 
@@ -557,116 +571,30 @@ class FeedViewController: UIViewController {
 
 var facebookPostPhoto:UIImage?
 
-extension FeedViewController: UITableViewDataSource {
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return artistPost.count
-    }
-
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-
-        let post = artistPost[indexPath.row]
-
-        let socialMediaType = post.valueForKey("socialMediaType") as? String
-        let postType = post.valueForKey("postType") as? String
-
-
-        //Download image profile using AlamofireImage
-        let profileImageUrlString = post.valueForKey("profileImageUrl") as? String
-        let profileImageUrl = NSURL(string: profileImageUrlString!)
-
-
-
-
-        switch(socialMediaType!){
-        case "twitter":
-            if postType == "text" {
-
-                let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.twitterStatusCell, forIndexPath:indexPath) as! TwitterStatusCell
-
-                //clear cell.profilePictureImageView from previous image
-                cell.profilePictureImageView.image = nil //UIImage(named: "UserIcon")
-                cell.profilePictureImageView.af_setImageWithURL(profileImageUrl!)
-
-                cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
-                cell.screenNameLabel.text = "@" + (post.valueForKey("screenName") as? String)!
-                let acLabel =  ActiveLabel()
-                //cell.postStatusLabel =
-                acLabel.text = post.valueForKey("postText") as? String
-                cell.postStatusLabel.text = acLabel.text//= post.valueForKey("postText") as? String
-                cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
-                cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
-                cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
-
-
-                return cell
-            }
-            break
-        case "instagram":
-            print("instagram")
-            break
-        case "facebook":
-            switch (postType!) {
-            case "text":
-                print("facebook text")
-                break
-            case "photo":
-                print("facebook photo")
-
-                let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.facebookPhotoCell, forIndexPath:indexPath) as! FacebookPhotoCell
-
-                //load profile image
-                var placeholderImage = UIImage(named: "UserIcon")
-                cell.profilePictureImageView.image = nil//UIImage(named: "UserIcon")
-                cell.profilePictureImageView.af_setImageWithURL(profileImageUrl!, placeholderImage: placeholderImage)
-
-                //load Post Image
-                let imageSize = CGSize(width: (post.valueForKey("photoStdWidth") as? CGFloat)!, height: ((post.valueForKey("photoStdHeight") as? CGFloat)!)/2.0)
-                    placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
-                let postPhotoUrl = NSURL(string: (post.valueForKey("photoStdUrl") as? String)!)
-                cell.postPhoto.image = nil
-                cell.postPhoto.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
-
-                //load rest of the data
-                cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
-
-                //cell.postStatusLabel.text = post.valueForKey("postText") as? String
-                cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
-                cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
-
-            return cell
-                
-                
-            case "video":
-                print("facebook video")
-                break
-            case "link":
-                print("facebook link")
-                break
-            default:
-                print("unknown facebook postType: \(postType)")
-                
-            }
-            break
-        case "premium":
-            print("Premium")
-            break
-        default:
-            print("undefine")
-        }
-        
-        let cell:UITableViewCell = UITableViewCell(style: UITableViewCellStyle.Subtitle, reuseIdentifier: "mycell")
-        
-        cell.textLabel!.text = socialMediaType! + " - " + postType!
-        
-        return cell
-        
-    }
-}
 
 
 extension FeedViewController:UITableViewDelegate {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
+        let post = artistPost[indexPath.row]
+
+        let postType = post.valueForKey("postType") as? String
+
+        if postType == "photo" {
+
+            self.performSegueWithIdentifier("FeedToViewPhoto", sender: self)
+        }
+    }
+
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "FeedToViewPhoto") {
+            let viewPhotoViewController = segue.destinationViewController as! ViewPhotoViewController
+            //viewPhotoViewController.ImageUrl = "Hello"
+        }
+
+    }
 }
 
 

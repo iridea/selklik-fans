@@ -39,7 +39,7 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e6E-D1-f0Q">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" name="secondarySelectedControlColor" catalog="System" colorSpace="catalog"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="5PP-NW-7al">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
@@ -77,11 +77,65 @@
                     <connections>
                         <outlet property="feedTableView" destination="e6E-D1-f0Q" id="4qW-Hl-WKM"/>
                         <outlet property="menuButton" destination="QWD-bR-c4H" id="KCJ-xh-CYV"/>
+                        <segue destination="arn-Xx-vx2" kind="modal" identifier="FeedToViewPhoto" id="DNO-LS-pPW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3P-Bu-cae" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1550" y="-77"/>
+        </scene>
+        <!--View Photo View Controller-->
+        <scene sceneID="uSO-Ez-HPg">
+            <objects>
+                <viewController id="arn-Xx-vx2" customClass="ViewPhotoViewController" customModule="Selklik_Fans" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dsB-CT-ZMp"/>
+                        <viewControllerLayoutGuide type="bottom" id="tRv-be-vDp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="nQM-Rv-8pa">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="-5" translatesAutoresizingMaskIntoConstraints="NO" id="TAl-bt-Fx2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <animations/>
+                            </scrollView>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L4N-lI-pGk">
+                                <rect key="frame" x="0.0" y="20" width="320" height="44"/>
+                                <animations/>
+                                <items>
+                                    <navigationItem title="Title" id="EOO-u1-tll">
+                                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="AcM-qG-isj">
+                                            <connections>
+                                                <action selector="DoneButton:" destination="arn-Xx-vx2" id="rDQ-Pg-rq7"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="L4N-lI-pGk" secondAttribute="trailing" id="FTI-kN-S29"/>
+                            <constraint firstItem="TAl-bt-Fx2" firstAttribute="leading" secondItem="nQM-Rv-8pa" secondAttribute="leading" id="e6i-uB-72N"/>
+                            <constraint firstItem="tRv-be-vDp" firstAttribute="top" secondItem="TAl-bt-Fx2" secondAttribute="bottom" id="eY2-4e-P2R"/>
+                            <constraint firstAttribute="trailing" secondItem="TAl-bt-Fx2" secondAttribute="trailing" id="ee1-EG-IQb"/>
+                            <constraint firstItem="L4N-lI-pGk" firstAttribute="top" secondItem="dsB-CT-ZMp" secondAttribute="bottom" id="evs-aP-NGd"/>
+                            <constraint firstItem="L4N-lI-pGk" firstAttribute="leading" secondItem="nQM-Rv-8pa" secondAttribute="leading" id="fgU-d2-Mfb"/>
+                            <constraint firstItem="TAl-bt-Fx2" firstAttribute="centerX" secondItem="nQM-Rv-8pa" secondAttribute="centerX" id="jWz-dL-dcf"/>
+                            <constraint firstItem="TAl-bt-Fx2" firstAttribute="top" secondItem="nQM-Rv-8pa" secondAttribute="top" id="oEl-1f-mGx"/>
+                            <constraint firstItem="TAl-bt-Fx2" firstAttribute="centerY" secondItem="nQM-Rv-8pa" secondAttribute="centerY" id="xhu-aX-eeg"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="OB7-89-dbU"/>
+                    <connections>
+                        <outlet property="scrollView" destination="TAl-bt-Fx2" id="Nh7-HM-6Lk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="f2w-0z-alr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2056" y="-77"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="Yqc-lT-xh4">

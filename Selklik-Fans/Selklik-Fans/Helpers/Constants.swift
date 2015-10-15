@@ -10,7 +10,7 @@ import Foundation
 
 struct API {
     static let url = "http://www.selklik.mobi/api/"
-    static let version = "1.1/"
+    static let version = "1.2/"
     static let artistFeedUrl = url + version + "artist_feed"
     static let loginUrl = url + version + "user_login"
     static let logoutUrl = url + version + "user_logout"

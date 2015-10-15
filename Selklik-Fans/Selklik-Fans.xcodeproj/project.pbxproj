@@ -8,6 +8,18 @@
 
 /* Begin PBXBuildFile section */
 		0DB170600DE335F77AA5C2AB /* Pods_Selklik_Fans.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93106E8CDDAF466E4ABE4638 /* Pods_Selklik_Fans.framework */; };
+		8902B5341BCDEF12006AD2B9 /* ViewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5331BCDEF12006AD2B9 /* ViewPhotoViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8902B5391BCF55BC006AD2B9 /* TwitterPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5371BCF55BC006AD2B9 /* TwitterPhotoCell.swift */; settings = {ASSET_TAGS = (); }; };
+		8902B53A1BCF55BC006AD2B9 /* TwitterPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B5381BCF55BC006AD2B9 /* TwitterPhotoCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8902B53D1BCF60D6006AD2B9 /* RetweetStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B53B1BCF60D6006AD2B9 /* RetweetStatusCell.swift */; settings = {ASSET_TAGS = (); }; };
+		8902B53E1BCF60D6006AD2B9 /* RetweetStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B53C1BCF60D6006AD2B9 /* RetweetStatusCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8902B5401BCF69A3006AD2B9 /* FeedViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B53F1BCF69A3006AD2B9 /* FeedViewController+UITableViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
+		8902B5431BCF8072006AD2B9 /* TwitterVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5411BCF8072006AD2B9 /* TwitterVideoCell.swift */; settings = {ASSET_TAGS = (); }; };
+		8902B5441BCF8072006AD2B9 /* TwitterVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B5421BCF8072006AD2B9 /* TwitterVideoCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8902B5471BCF8444006AD2B9 /* RetweetPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5451BCF8444006AD2B9 /* RetweetPhotoCell.swift */; settings = {ASSET_TAGS = (); }; };
+		8902B5481BCF8444006AD2B9 /* RetweetPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B5461BCF8444006AD2B9 /* RetweetPhotoCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8902B54B1BCF89F7006AD2B9 /* RetweetVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5491BCF89F7006AD2B9 /* RetweetVideoCell.swift */; settings = {ASSET_TAGS = (); }; };
+		8902B54C1BCF89F7006AD2B9 /* RetweetVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B54A1BCF89F7006AD2B9 /* RetweetVideoCell.xib */; settings = {ASSET_TAGS = (); }; };
 		894253091BB297B700A04953 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253081BB297B700A04953 /* AppDelegate.swift */; };
 		8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942530A1BB297B700A04953 /* CoordinatorViewController.swift */; };
 		8942530E1BB297B700A04953 /* Startup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8942530C1BB297B700A04953 /* Startup.storyboard */; };
@@ -60,6 +72,18 @@
 
 /* Begin PBXFileReference section */
 		1DCCCE5513B30E4494472C0C /* Pods-Selklik-Fans.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selklik-Fans.release.xcconfig"; path = "Pods/Target Support Files/Pods-Selklik-Fans/Pods-Selklik-Fans.release.xcconfig"; sourceTree = "<group>"; };
+		8902B5331BCDEF12006AD2B9 /* ViewPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewPhotoViewController.swift; sourceTree = "<group>"; };
+		8902B5371BCF55BC006AD2B9 /* TwitterPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterPhotoCell.swift; sourceTree = "<group>"; };
+		8902B5381BCF55BC006AD2B9 /* TwitterPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwitterPhotoCell.xib; sourceTree = "<group>"; };
+		8902B53B1BCF60D6006AD2B9 /* RetweetStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetweetStatusCell.swift; sourceTree = "<group>"; };
+		8902B53C1BCF60D6006AD2B9 /* RetweetStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RetweetStatusCell.xib; sourceTree = "<group>"; };
+		8902B53F1BCF69A3006AD2B9 /* FeedViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		8902B5411BCF8072006AD2B9 /* TwitterVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterVideoCell.swift; sourceTree = "<group>"; };
+		8902B5421BCF8072006AD2B9 /* TwitterVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwitterVideoCell.xib; sourceTree = "<group>"; };
+		8902B5451BCF8444006AD2B9 /* RetweetPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetweetPhotoCell.swift; sourceTree = "<group>"; };
+		8902B5461BCF8444006AD2B9 /* RetweetPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RetweetPhotoCell.xib; sourceTree = "<group>"; };
+		8902B5491BCF89F7006AD2B9 /* RetweetVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RetweetVideoCell.swift; sourceTree = "<group>"; };
+		8902B54A1BCF89F7006AD2B9 /* RetweetVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RetweetVideoCell.xib; sourceTree = "<group>"; };
 		894253051BB297B700A04953 /* Selklik-Fans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Selklik-Fans.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		894253081BB297B700A04953 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		8942530A1BB297B700A04953 /* CoordinatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorViewController.swift; sourceTree = "<group>"; };
@@ -251,6 +275,8 @@
 			isa = PBXGroup;
 			children = (
 				89C8F0C41BB8327D00AFE092 /* FeedViewController.swift */,
+				8902B53F1BCF69A3006AD2B9 /* FeedViewController+UITableViewDataSource.swift */,
+				8902B5331BCDEF12006AD2B9 /* ViewPhotoViewController.swift */,
 			);
 			name = Feeds;
 			sourceTree = "<group>";
@@ -269,8 +295,18 @@
 		89D553B91BC54FFB00C75D4A /* Twitter */ = {
 			isa = PBXGroup;
 			children = (
+				8902B53B1BCF60D6006AD2B9 /* RetweetStatusCell.swift */,
+				8902B5451BCF8444006AD2B9 /* RetweetPhotoCell.swift */,
+				8902B5491BCF89F7006AD2B9 /* RetweetVideoCell.swift */,
 				89D553C11BC6178C00C75D4A /* TwitterStatusCell.swift */,
+				8902B5371BCF55BC006AD2B9 /* TwitterPhotoCell.swift */,
+				8902B5411BCF8072006AD2B9 /* TwitterVideoCell.swift */,
 				89D553C21BC6178C00C75D4A /* TwitterStatusCell.xib */,
+				8902B5381BCF55BC006AD2B9 /* TwitterPhotoCell.xib */,
+				8902B5421BCF8072006AD2B9 /* TwitterVideoCell.xib */,
+				8902B53C1BCF60D6006AD2B9 /* RetweetStatusCell.xib */,
+				8902B5461BCF8444006AD2B9 /* RetweetPhotoCell.xib */,
+				8902B54A1BCF89F7006AD2B9 /* RetweetVideoCell.xib */,
 			);
 			name = Twitter;
 			sourceTree = "<group>";
@@ -444,6 +480,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8902B53E1BCF60D6006AD2B9 /* RetweetStatusCell.xib in Resources */,
+				8902B53A1BCF55BC006AD2B9 /* TwitterPhotoCell.xib in Resources */,
+				8902B54C1BCF89F7006AD2B9 /* RetweetVideoCell.xib in Resources */,
 				894253391BB29C1300A04953 /* .gitignore in Resources */,
 				896D1CA41BCB6CBF008A720B /* FacebookStatusCell.xib in Resources */,
 				894253131BB297B700A04953 /* LaunchScreen.storyboard in Resources */,
@@ -452,6 +491,8 @@
 				894253101BB297B700A04953 /* Assets.xcassets in Resources */,
 				89D553C41BC6178C00C75D4A /* TwitterStatusCell.xib in Resources */,
 				8942530E1BB297B700A04953 /* Startup.storyboard in Resources */,
+				8902B5441BCF8072006AD2B9 /* TwitterVideoCell.xib in Resources */,
+				8902B5481BCF8444006AD2B9 /* RetweetPhotoCell.xib in Resources */,
 				89D553D11BC8051C00C75D4A /* FacebookPhotoCell.xib in Resources */,
 				89D553C61BC65AD500C75D4A /* Register.storyboard in Resources */,
 			);
@@ -526,6 +567,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8902B5341BCDEF12006AD2B9 /* ViewPhotoViewController.swift in Sources */,
 				89E0B1EC1BB3C19A0052D64B /* LoginViewController.swift in Sources */,
 				89C8F0BC1BB7F9B700AFE092 /* SelklikFansAccess+CoreDataProperties.swift in Sources */,
 				89C8F0C81BB8CDA400AFE092 /* DataAPI.swift in Sources */,
@@ -534,13 +576,19 @@
 				89D553CD1BC7B83100C75D4A /* UserInfo.swift in Sources */,
 				89C8F0BB1BB7F9B700AFE092 /* SelklikFansAccess.swift in Sources */,
 				89D553D01BC8051C00C75D4A /* FacebookPhotoCell.swift in Sources */,
+				8902B5401BCF69A3006AD2B9 /* FeedViewController+UITableViewDataSource.swift in Sources */,
+				8902B5391BCF55BC006AD2B9 /* TwitterPhotoCell.swift in Sources */,
+				8902B5471BCF8444006AD2B9 /* RetweetPhotoCell.swift in Sources */,
+				8902B53D1BCF60D6006AD2B9 /* RetweetStatusCell.swift in Sources */,
 				89D553C31BC6178C00C75D4A /* TwitterStatusCell.swift in Sources */,
 				8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */,
 				894253091BB297B700A04953 /* AppDelegate.swift in Sources */,
+				8902B54B1BCF89F7006AD2B9 /* RetweetVideoCell.swift in Sources */,
 				89C8F0C31BB829FE00AFE092 /* SWRevealViewController.m in Sources */,
 				89C8F0B81BB7E83900AFE092 /* CoreDataStack.swift in Sources */,
 				89685CB21BCD6A200035E6C0 /* Image.swift in Sources */,
 				899B7FE71BB6941500922922 /* Constants.swift in Sources */,
+				8902B5431BCF8072006AD2B9 /* TwitterVideoCell.swift in Sources */,
 				89D553CB1BC7B55F00C75D4A /* SlideMenuViewController.swift in Sources */,
 				896D1CA31BCB6CBF008A720B /* FacebookStatusCell.swift in Sources */,
 				89C8F0B61BB7E6D500AFE092 /* SelklikFans.xcdatamodeld in Sources */,
