@@ -24,9 +24,10 @@ class FeedViewController: UIViewController {
     var artistPost = [NSManagedObject]()
     let userInfo = UserInfo()
     let photoInfo = Photo()
-    var previewImage = [Int: String]()
-    var previewImageSelectedIndex = 0
 
+
+
+     var selectedImageUrl:String?
 
 
     var fetchedResultsController: NSFetchedResultsController!
@@ -59,6 +60,7 @@ class FeedViewController: UIViewController {
         static let twitterSingleStatusFeed = "TwitterSingleStatusFeed"
 
     }
+
 
     func registerNib(){
 
@@ -146,363 +148,380 @@ class FeedViewController: UIViewController {
             response in
             
             print("MASUK FetchRemoteFeedData - ALAMOFIRE")
-            let json = JSON(response.result.value!)
-
-            print(json)
-
-            for (_,subJson):(String, JSON) in json["result"] {
-
-                let newPost = Post(entity: postEntity!,
-                    insertIntoManagedObjectContext: self.managedContext)
-
-                //MARK: - Standard Data
-                if let artistId = subJson["artist_id"].string {
-                    newPost.artistId = artistId
-                }else{
-                    print("unable to read JSON data artist_id")
-                }
-
-                if let name = subJson["artist_name"].string {
-                    newPost.name = name
-                }else{
-                    print("unable to read JSON data artist_name")
-                }
-
-                if let screenName = subJson["artist_screen_name"].string {
-                    newPost.screenName = screenName
-                }else{
-                    print("unable to read JSON data artist_screen_name")
-                }
-
-                if let profileImageUrl = subJson["artist_img"].string {
-                    newPost.profileImageUrl = profileImageUrl
-                }else{
-                    print("unable to read JSON data artist_img")
-                }
-
-                if let timeStamp = subJson["timestamp"].string {
-                    //artistPost.timeStamp = Date(timeStamp)
-                }else{
-                    print("unable to read JSON data timestamp")
-                }
-
-                if let postId = subJson["post_id"].string {
-                    newPost.postId = postId
-                }else{
-                    print("unable to read JSON data post_id")
-                }
-
-                if let postLink = subJson["post_link"].string {
-                    newPost.postLink = postLink
-                }else{
-                    print("unable to read JSON data post_link")
-                }
-
-                if let postText = subJson["post_text"].string {
-                    newPost.postText = postText
-                }else{
-                    print("unable to read JSON data post_text")
-                }
-
-                if let socialMediaType = subJson["social_media"].string {
-                    newPost.socialMediaType = socialMediaType
-                }else{
-                    print("unable to read JSON data social_media")
-                }
-
-                if let postType = subJson["post_type"].string {
-                    newPost.postType = postType
-                }else{
-                    print("unable to read JSON data post_type")
-                }
-
-                //Check Social Media
-                if let socialMediaType = subJson["social_media"].string {
-
-                    switch socialMediaType {
-                    case "twitter": //------------TWITTER------------
-
-
-                        //isRetweet
-                        if let isRetweet = subJson["is_retweet"].int {
-
-                            newPost.twIsRetweet = isRetweet
-
-                            if isRetweet == 1 {
-                                newPost.twRetweetName = subJson["rt_name"].string
-                                newPost.twRetweetScreenName = subJson["rt_screen_name"].string
-                            }
-
-                        }else{
-                            print("Unable to read JSON data is_retweet")
-                        }
-                        //----------------------------------------------
-
-                        //Favourite
-                        if let totalLike = subJson["favorites"].string {
-                            newPost.totalLike = Int(totalLike)
-                        }else{
-                            print("unable to read JSON data favorites")
-                        }//---------------------------------------------
-
-
-                        //total retweet
-                        if let twTotalRetweet = subJson["retweets"].string {
-                            newPost.twTotalRetweet = Int(twTotalRetweet)
-                        }else{
-                            print("unable to read JSON data retweets")
-                        }//---------------------------------------------
-
-
-                        //==============================================
-                        if let postType = subJson["post_type"].string {
-                            switch postType {
-                            case "text":
-                                print("twitter text")
-                                break
-                            case "photo":
-                                if let photoStdUrl = subJson["post_photo"]["medium"]["photo_link"].string {
-                                    newPost.photoStdUrl = photoStdUrl
-                                }
-
-                                if let photoStdWidth = subJson["post_photo"]["medium"]["photo_width"].string {
-                                    newPost.photoStdWidth = Float(photoStdWidth)
-                                }
-
-                                if let photoStdHeight = subJson["post_photo"]["medium"]["photo_height"].string {
-                                    newPost.photoStdHeight = Float(photoStdHeight)
-                                }
-                                break
-
-                            case "video":
-                                if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
-                                    newPost.videoStdUrl = videoStdUrl
-                                }
-
-                                if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
-                                    newPost.videoStdUrl = videoStdUrl
-                                }
-
-                                if let videoThumbStdUrl = subJson["post_thumb"]["medium"]["thumb_link"].string {
-                                    newPost.videoThumbStdUrl = videoThumbStdUrl
-                                }
-
-                                if let videoThumbStdWidth = subJson["post_thumb"]["medium"]["thumb_width"].string {
-                                    newPost.videoThumbStdWidth = Float(videoThumbStdWidth)
-                                }
-
-                                if let videoThumbStdHeight = subJson["post_thumb"]["medium"]["thumb_height"].string {
-                                    newPost.videoThumbStdHeight = Float(videoThumbStdHeight)
-                                }
-                                break
-
-                            default:
-                                print("Unknown twitter postType format: \(postType)")
-                            }
-
-                        }else{
-                            print("Unable to read JSON data post_type")
-                        }
-                        break
-                    case "instagram": //------------INSTAGRAM------------
-                        if let postType = subJson["post_type"].string {
-
-                            //Likes
-                            if let totalLike = subJson["likes"].string {
-
-                                newPost.totalLike = Int(totalLike)
-                            }else{
-                                print("unable to read JSON data likes")
-                            }//-------------------------------------------
-
-                            //Comments
-                            if let totalComment = subJson["comments"].string {
-
-                                newPost.totalComment = Int(totalComment)
-                            }else{
-                                print("unable to read JSON data comments")
-                            }//--------------------------------------------
-
-
-                            switch postType {
-
-                            case "photo":
-                                if let photoStdUrl = subJson["post_photo"]["standard"]["photo_link"].string {
-                                    newPost.photoStdUrl = photoStdUrl
-                                }
-
-                                if let photoStdWidth = subJson["post_photo"]["standard"]["photo_width"].string {
-                                    newPost.photoStdWidth = Float(photoStdWidth)
-                                }
-
-                                if let photoStdHeight = subJson["post_photo"]["standard"]["photo_height"].string {
-                                    newPost.photoStdHeight = Float(photoStdHeight)
-                                }
-                                break
-
-                            case "video":
-                                if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
-                                    newPost.videoStdUrl = videoStdUrl
-                                }
-
-                                if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
-                                    newPost.videoStdUrl = videoStdUrl
-                                }
-
-                                //Thumb
-                                if let videoThumbStdUrl = subJson["post_thumb"]["standard"]["thumb_link"].string {
-                                    newPost.videoThumbStdUrl = videoThumbStdUrl
-                                }
-
-                                if let videoThumbStdWidth = subJson["post_thumb"]["standard"]["thumb_width"].string {
-                                    newPost.videoThumbStdWidth = Float(videoThumbStdWidth)
-                                }
-
-                                if let videoThumbStdHeight = subJson["post_thumb"]["standard"]["thumb_height"].string {
-                                    newPost.videoThumbStdHeight = Float(videoThumbStdHeight)
-                                }
-                                break
-
-                            default:
-                                print("Unknown instagram postType format: \(postType) ")
-                            }
-                        }else{
-                            print("Unable to read instagram JSON data post_type")
-                        }
-                        break
-                    case "facebook": //------------FACEBOOK------------
-                        if let postType = subJson["post_type"].string {
-
-                            //Likes
-                            if let totalLike = subJson["likes"].string {
-
-                                newPost.totalLike = Int(totalLike)
-                            }else{
-                                print("unable to read JSON data likes")
-                            }//---------------------------------------------
-
-                            //Comments
-                            if let totalComment = subJson["comments"].string {
-
-                                newPost.totalComment = Int(totalComment)
-                            }else{
-                                print("unable to read JSON data comments")
-                            }//---------------------------------------------
-
-                            //Shared
-                            if let fbTotalShare = subJson["shared"].string {
-                                newPost.fbTotalShare = Int(fbTotalShare)
-                            }else{
-                                print("unable to read JSON data likes")
-                            }//---------------------------------------------
-
-
-                            switch postType {
-                            case "text":
-                                print("facebook text")
-                                break
-                            case "photo":
-                                if let photoStdUrl = subJson["post_photo"]["standard"]["photo_link"].string {
-                                    newPost.photoStdUrl = photoStdUrl
-                                }
-
-                                if let photoStdWidth = subJson["post_photo"]["standard"]["photo_width"].string {
-                                    newPost.photoStdWidth = Float(photoStdWidth)
-                                }
-
-                                if let photoStdHeight = subJson["post_photo"]["standard"]["photo_height"].string {
-                                    newPost.photoStdHeight = Float(photoStdHeight)
-                                }
-                                break
-
-                            case "video":
-                                if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
-                                    newPost.videoStdUrl = videoStdUrl
-                                }
-
-                                if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
-                                    newPost.videoStdUrl = videoStdUrl
-                                }
-
-                                //Thumb
-                                if let videoThumbStdUrl = subJson["post_thumb"]["standard"]["thumb_link"].string {
-                                    newPost.videoThumbStdUrl = videoThumbStdUrl
-                                }
-
-                                if let videoThumbStdWidth = subJson["post_thumb"]["standard"]["thumb_width"].string {
-                                    newPost.videoThumbStdWidth = Float(videoThumbStdWidth)
-                                }
-
-                                if let videoThumbStdHeight = subJson["post_thumb"]["standard"]["thumb_height"].string {
-                                    newPost.videoThumbStdHeight = Float(videoThumbStdHeight)
-                                }
-                                break
-
-                            case "link":
-                                if let fbContentLink = subJson["post_shared"]["standard"]["shared_link"].string {
-                                    newPost.fbContentLink = fbContentLink
-                                }
-
-                                if let fbContentLinkImageUrl = subJson["post_shared"]["standard"]["link_photo"].string {
-                                    newPost.fbContentLinkImageUrl = fbContentLinkImageUrl
-                                }
-
-                                if let fbContentLinkTitle = subJson["post_shared"]["standard"]["link_title"].string {
-                                    newPost.fbContentLinkTitle = fbContentLinkTitle
-                                }
-
-                                if let fbContentLinkText = subJson["post_shared"]["standard"]["link_text"].string {
-                                    newPost.fbContentLinkText = fbContentLinkText
-                                }
-                                break
-
-                            default:
-                                print("Unknown facebook postType format: \(postType) ")
-                            }
-                        }
-                        break
-                    case "premium": //------------PREMIUM------------
-                        if let postType = subJson["post_type"].string {
-                            switch postType {
-                            case "photo":
-                                print("premium photo")
-                                print("-------------------")
-                                break
-
-                            case "video":
-                                print("premium video")
-                                print("-------------------")
-                                break
-
-                            default:
-                                print("Unknown premium postType format: \(postType) ")
-                            }
-                        }
-                        break
-                    default:
+            if let jsonData = response.result.value {
+
+                let json = JSON(jsonData)
+
+                print(json)
+
+                for (_,subJson):(String, JSON) in json["result"] {
+
+                    let newPost = Post(entity: postEntity!,
+                        insertIntoManagedObjectContext: self.managedContext)
+
+                    //MARK: - Standard Data
+                    if let artistId = subJson["artist_id"].string {
+                        newPost.artistId = artistId
+                    }else{
+                        print("unable to read JSON data artist_id")
+                    }
+
+                    if let name = subJson["artist_name"].string {
+                        newPost.name = name
+                    }else{
+                        print("unable to read JSON data artist_name")
+                    }
+
+                    if let screenName = subJson["artist_screen_name"].string {
+                        newPost.screenName = screenName
+                    }else{
+                        print("unable to read JSON data artist_screen_name")
+                    }
+
+                    if let profileImageUrl = subJson["artist_img"].string {
+                        newPost.profileImageUrl = profileImageUrl
+                    }else{
+                        print("unable to read JSON data artist_img")
+                    }
+
+                    if let timeStamp = subJson["timestamp"].string {
+                        //artistPost.timeStamp = Date(timeStamp)
+                    }else{
+                        print("unable to read JSON data timestamp")
+                    }
+
+                    if let postId = subJson["post_id"].string {
+                        newPost.postId = postId
+                    }else{
+                        print("unable to read JSON data post_id")
+                    }
+
+                    if let postLink = subJson["post_link"].string {
+                        newPost.postLink = postLink
+                    }else{
+                        print("unable to read JSON data post_link")
+                    }
+
+                    if let postText = subJson["post_text"].string {
+                        newPost.postText = postText
+                    }else{
+                        print("unable to read JSON data post_text")
+                    }
+
+                    if let socialMediaType = subJson["social_media"].string {
+                        newPost.socialMediaType = socialMediaType
+                    }else{
                         print("unable to read JSON data social_media")
                     }
 
+                    if let postType = subJson["post_type"].string {
+                        newPost.postType = postType
+                    }else{
+                        print("unable to read JSON data post_type")
+                    }
+
+                    //Check Social Media
+                    if let socialMediaType = subJson["social_media"].string {
+
+                        switch socialMediaType {
+                        case "twitter": //------------TWITTER------------
+
+
+                            //isRetweet
+                            if let isRetweet = subJson["is_retweet"].int {
+
+                                newPost.twIsRetweet = isRetweet
+
+                                if isRetweet == 1 {
+                                    newPost.twRetweetName = subJson["rt_name"].string
+                                    newPost.twRetweetScreenName = subJson["rt_screen_name"].string
+                                }
+
+                            }else{
+                                print("Unable to read JSON data is_retweet")
+                            }
+                            //----------------------------------------------
+
+                            //Favourite
+                            if let totalLike = subJson["favorites"].string {
+                                newPost.totalLike = Int(totalLike)
+                            }else{
+                                print("unable to read JSON data favorites")
+                            }//---------------------------------------------
+
+
+                            //total retweet
+                            if let twTotalRetweet = subJson["retweets"].string {
+                                newPost.twTotalRetweet = Int(twTotalRetweet)
+                            }else{
+                                print("unable to read JSON data retweets")
+                            }//---------------------------------------------
+
+
+                            //==============================================
+                            if let postType = subJson["post_type"].string {
+                                switch postType {
+                                case "text":
+                                    print("twitter text")
+                                    break
+                                case "photo":
+                                    if let photoStdUrl = subJson["post_photo"]["medium"]["photo_link"].string {
+                                        newPost.photoStdUrl = photoStdUrl
+                                    }
+
+                                    if let photoStdWidth = subJson["post_photo"]["medium"]["photo_width"].string {
+                                        newPost.photoStdWidth = Float(photoStdWidth)
+                                    }
+
+                                    if let photoStdHeight = subJson["post_photo"]["medium"]["photo_height"].string {
+                                        newPost.photoStdHeight = Float(photoStdHeight)
+                                    }
+                                    break
+
+                                case "video":
+                                    if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
+                                        newPost.videoStdUrl = videoStdUrl
+                                    }
+
+                                    if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
+                                        newPost.videoStdUrl = videoStdUrl
+                                    }
+
+                                    if let videoThumbStdUrl = subJson["post_thumb"]["medium"]["thumb_link"].string {
+                                        newPost.videoThumbStdUrl = videoThumbStdUrl
+                                    }
+
+                                    if let videoThumbStdWidth = subJson["post_thumb"]["medium"]["thumb_width"].string {
+                                        newPost.videoThumbStdWidth = Float(videoThumbStdWidth)
+                                    }
+
+                                    if let videoThumbStdHeight = subJson["post_thumb"]["medium"]["thumb_height"].string {
+                                        newPost.videoThumbStdHeight = Float(videoThumbStdHeight)
+                                    }
+                                    break
+
+                                default:
+                                    print("Unknown twitter postType format: \(postType)")
+                                }
+
+                            }else{
+                                print("Unable to read JSON data post_type")
+                            }
+                            break
+                        case "instagram": //------------INSTAGRAM------------
+                            if let postType = subJson["post_type"].string {
+
+                                //Likes
+                                if let totalLike = subJson["likes"].string {
+
+                                    newPost.totalLike = Int(totalLike)
+                                }else{
+                                    print("unable to read JSON data likes")
+                                }//-------------------------------------------
+
+                                //Comments
+                                if let totalComment = subJson["comments"].string {
+
+                                    newPost.totalComment = Int(totalComment)
+                                }else{
+                                    print("unable to read JSON data comments")
+                                }//--------------------------------------------
+
+
+                                switch postType {
+
+                                case "photo":
+                                    if let photoStdUrl = subJson["post_photo"]["standard"]["photo_link"].string {
+                                        newPost.photoStdUrl = photoStdUrl
+                                    }
+
+                                    if let photoStdWidth = subJson["post_photo"]["standard"]["photo_width"].string {
+                                        newPost.photoStdWidth = Float(photoStdWidth)
+                                    }
+
+                                    if let photoStdHeight = subJson["post_photo"]["standard"]["photo_height"].string {
+                                        newPost.photoStdHeight = Float(photoStdHeight)
+                                    }
+                                    break
+
+                                case "video":
+                                    if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
+                                        newPost.videoStdUrl = videoStdUrl
+                                    }
+
+                                    if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
+                                        newPost.videoStdUrl = videoStdUrl
+                                    }
+
+                                    //Thumb
+                                    if let videoThumbStdUrl = subJson["post_thumb"]["standard"]["thumb_link"].string {
+                                        newPost.videoThumbStdUrl = videoThumbStdUrl
+                                    }
+
+                                    if let videoThumbStdWidth = subJson["post_thumb"]["standard"]["thumb_width"].string {
+                                        newPost.videoThumbStdWidth = Float(videoThumbStdWidth)
+                                    }
+
+                                    if let videoThumbStdHeight = subJson["post_thumb"]["standard"]["thumb_height"].string {
+                                        newPost.videoThumbStdHeight = Float(videoThumbStdHeight)
+                                    }
+                                    break
+
+                                default:
+                                    print("Unknown instagram postType format: \(postType) ")
+                                }
+                            }else{
+                                print("Unable to read instagram JSON data post_type")
+                            }
+                            break
+                        case "facebook": //------------FACEBOOK------------
+                            if let postType = subJson["post_type"].string {
+
+                                //Likes
+                                if let totalLike = subJson["likes"].string {
+
+                                    newPost.totalLike = Int(totalLike)
+                                }else{
+                                    print("unable to read JSON data likes")
+                                }//---------------------------------------------
+
+                                //Comments
+                                if let totalComment = subJson["comments"].string {
+
+                                    newPost.totalComment = Int(totalComment)
+                                }else{
+                                    print("unable to read JSON data comments")
+                                }//---------------------------------------------
+
+                                //Shared
+                                if let fbTotalShare = subJson["shared"].string {
+                                    newPost.fbTotalShare = Int(fbTotalShare)
+                                }else{
+                                    print("unable to read JSON data likes")
+                                }//---------------------------------------------
+
+
+                                switch postType {
+                                case "text":
+                                    print("facebook text")
+                                    break
+                                case "photo":
+                                    if let photoStdUrl = subJson["post_photo"]["standard"]["photo_link"].string {
+                                        newPost.photoStdUrl = photoStdUrl
+                                    }
+
+                                    if let photoStdWidth = subJson["post_photo"]["standard"]["photo_width"].string {
+                                        newPost.photoStdWidth = Float(photoStdWidth)
+                                    }
+
+                                    if let photoStdHeight = subJson["post_photo"]["standard"]["photo_height"].string {
+                                        newPost.photoStdHeight = Float(photoStdHeight)
+                                    }
+                                    break
+
+                                case "video":
+                                    if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
+                                        newPost.videoStdUrl = videoStdUrl
+                                    }
+
+                                    if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
+                                        newPost.videoStdUrl = videoStdUrl
+                                    }
+
+                                    //Thumb
+                                    if let videoThumbStdUrl = subJson["post_thumb"]["standard"]["thumb_link"].string {
+                                        newPost.videoThumbStdUrl = videoThumbStdUrl
+                                    }
+
+                                    if let videoThumbStdWidth = subJson["post_thumb"]["standard"]["thumb_width"].string {
+                                        newPost.videoThumbStdWidth = Float(videoThumbStdWidth)
+                                    }
+
+                                    if let videoThumbStdHeight = subJson["post_thumb"]["standard"]["thumb_height"].string {
+                                        newPost.videoThumbStdHeight = Float(videoThumbStdHeight)
+                                    }
+                                    break
+                                    
+                                case "link":
+                                    if let fbContentLink = subJson["post_shared"]["standard"]["shared_link"].string {
+                                        newPost.fbContentLink = fbContentLink
+                                    }
+                                    
+                                    if let fbContentLinkImageUrl = subJson["post_shared"]["standard"]["link_photo"].string {
+                                        newPost.fbContentLinkImageUrl = fbContentLinkImageUrl
+                                    }
+                                    
+                                    if let fbContentLinkTitle = subJson["post_shared"]["standard"]["link_title"].string {
+                                        newPost.fbContentLinkTitle = fbContentLinkTitle
+                                    }
+                                    
+                                    if let fbContentLinkText = subJson["post_shared"]["standard"]["link_text"].string {
+                                        newPost.fbContentLinkText = fbContentLinkText
+                                    }
+                                    break
+                                    
+                                default:
+                                    print("Unknown facebook postType format: \(postType) ")
+                                }
+                            }
+                            break
+                        case "premium": //------------PREMIUM------------
+                            if let postType = subJson["post_type"].string {
+                                switch postType {
+                                case "photo":
+                                    print("premium photo")
+                                    print("-------------------")
+                                    break
+                                    
+                                case "video":
+                                    print("premium video")
+                                    print("-------------------")
+                                    break
+                                    
+                                default:
+                                    print("Unknown premium postType format: \(postType) ")
+                                }
+                            }
+                            break
+                        default:
+                            print("unable to read JSON data social_media")
+                        }
+                        
+                    }
+                    
+                    
+                    
+                    
+                    
+                }// End of For-Loop JSON data
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                    do {
+                        try self.managedContext.save()
+                    } catch let error as NSError {
+                        print("Could not save: \(error)")
+                    }
+                    
+                    self.getFeedFromCoreData()
+                    self.feedTableView.reloadData()
+                    
+                    self.messageFrame.removeFromSuperview()
+                    self.view.userInteractionEnabled = true
                 }
 
 
+            }
+            else{ //Unable to read JSON data from Alamofire
 
+                print("Unable to read JSON data from Alamofire")
+                let uiAlert = UIAlertController(title: "Read json fail", message: "Unable to read JSON data from Alamofire", preferredStyle: UIAlertControllerStyle.Alert)
+                self.presentViewController(uiAlert, animated: true, completion: nil)
 
+                uiAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
+                    self.messageFrame.removeFromSuperview()
+                    self.view.userInteractionEnabled = true
 
-            }// End of For-Loop JSON data
-
-            dispatch_async(dispatch_get_main_queue()) {
-                do {
-                    try self.managedContext.save()
-                } catch let error as NSError {
-                    print("Could not save: \(error)")
-                }
-
-                self.getFeedFromCoreData()
-                self.feedTableView.reloadData()
-
-                self.messageFrame.removeFromSuperview()
-                self.view.userInteractionEnabled = true
+                }))
             }
 
 
@@ -604,23 +623,24 @@ var facebookPostPhoto:UIImage?
 
 extension FeedViewController:UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-
+        print("didSelectRowAtIndexPath")
         let post = artistPost[indexPath.row]
 
         let postType = post.valueForKey("postType") as? String
 
-        if postType == "photo" {
-            previewImageSelectedIndex = indexPath.row
-            previewImage[indexPath.row] = post.valueForKey("photoStdUrl") as? String
-            self.performSegueWithIdentifier("FeedToViewPhoto", sender: self)
-        }
+//        if postType == "photo" {
+//            previewImageSelectedIndex = indexPath.row
+//            previewImage[indexPath.row] = post.valueForKey("photoStdUrl") as? String
+//            self.performSegueWithIdentifier("FeedToViewPhoto", sender: self)
+//        }
     }
 
 
+   
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "FeedToViewPhoto") {
             let viewPhotoViewController = segue.destinationViewController as! ViewPhotoViewController
-            viewPhotoViewController.ImageUrl =  previewImage[previewImageSelectedIndex]
+            viewPhotoViewController.ImageUrl =  selectedImageUrl
         }
 
     }

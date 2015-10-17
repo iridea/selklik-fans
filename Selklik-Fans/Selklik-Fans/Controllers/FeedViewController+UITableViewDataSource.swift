@@ -10,9 +10,25 @@ import Foundation
 
 extension FeedViewController: UITableViewDataSource {
 
+   
+    //var isImageTab = false
+    //********************************
+    func postImageHasBeenTapped(sender:PostImageTapGestureRecognizer){
+        print("postImageHasBeenTapped")
+        print(sender.imageUrl)
+        selectedImageUrl = sender.imageUrl
+        self.performSegueWithIdentifier("FeedToViewPhoto", sender: self)
+
+    }
+    //********************************
+
+
+
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return artistPost.count
     }
+
+   
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
 
@@ -81,6 +97,22 @@ extension FeedViewController: UITableViewDataSource {
 
                     let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.retweetPhotoCell, forIndexPath:indexPath) as! RetweetPhotoCell
 
+                    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    //sets the user interaction to true, so we can actually track when the image has been tapped
+                    cell.postPhoto.userInteractionEnabled = true
+
+                    //this is where we add the target, since our method to track the taps is in this class
+                    //we can just type "self", and then put our method name in quotes for the action parameter
+                    cell.gestureRecognizer.addTarget(self, action: "postImageHasBeenTapped:")
+
+                    //finally, this is where we add the gesture recognizer, so it actually functions correctly
+                    cell.postPhoto.addGestureRecognizer(cell.gestureRecognizer)
+
+                    //Custom field in uiimageveew
+                    cell.gestureRecognizer.imageUrl = (post.valueForKey("photoStdUrl") as? String)!
+                    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
                     //retweet control
                     let buttonRetweetTitle = (post.valueForKey("name") as? String)! + " retweet"
                     cell.retweetButton.setTitle(buttonRetweetTitle, forState: UIControlState.Normal)
@@ -110,6 +142,24 @@ extension FeedViewController: UITableViewDataSource {
                 }
                 else {
                     let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.twitterPhotoCell, forIndexPath:indexPath) as! TwitterPhotoCell
+
+
+                    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                    //sets the user interaction to true, so we can actually track when the image has been tapped
+                    cell.postPhoto.userInteractionEnabled = true
+
+                    //this is where we add the target, since our method to track the taps is in this class
+                    //we can just type "self", and then put our method name in quotes for the action parameter
+                    cell.gestureRecognizer.addTarget(self, action: "postImageHasBeenTapped:")
+
+                    //finally, this is where we add the gesture recognizer, so it actually functions correctly
+                    cell.postPhoto.addGestureRecognizer(cell.gestureRecognizer)
+
+                    //Custom field in uiimageveew
+                    cell.gestureRecognizer.imageUrl = (post.valueForKey("photoStdUrl") as? String)!
+                    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
 
                     cell.profilePictureImageView.image = UIImage(named: "UserIcon")
                     cell.profilePictureImageView.af_setImageWithURL(profileImageUrl!)
@@ -204,6 +254,22 @@ extension FeedViewController: UITableViewDataSource {
             case "photo":
                 let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.instagramPhotoCell, forIndexPath:indexPath) as! InstagramPhotoCell
 
+                //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                //sets the user interaction to true, so we can actually track when the image has been tapped
+                cell.postPhoto.userInteractionEnabled = true
+
+                //this is where we add the target, since our method to track the taps is in this class
+                //we can just type "self", and then put our method name in quotes for the action parameter
+                cell.gestureRecognizer.addTarget(self, action: "postImageHasBeenTapped:")
+
+                //finally, this is where we add the gesture recognizer, so it actually functions correctly
+                cell.postPhoto.addGestureRecognizer(cell.gestureRecognizer)
+
+                //Custom field in uiimageveew
+                cell.gestureRecognizer.imageUrl = (post.valueForKey("photoStdUrl") as? String)!
+                //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
                 //load profile image
                 var placeholderImage = UIImage(named: "UserIcon")
                 cell.profilePictureImageView.image = placeholderImage
@@ -215,6 +281,9 @@ extension FeedViewController: UITableViewDataSource {
                 placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
                 let postPhotoUrl = NSURL(string: (post.valueForKey("photoStdUrl") as? String)!)
                 cell.postPhoto.image = nil
+
+
+
                 cell.postPhoto.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
 
                 //load rest of the data
@@ -264,6 +333,23 @@ extension FeedViewController: UITableViewDataSource {
 
                 let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.facebookPhotoCell, forIndexPath:indexPath) as! FacebookPhotoCell
 
+                //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                //sets the user interaction to true, so we can actually track when the image has been tapped
+                cell.postPhoto.userInteractionEnabled = true
+
+                //this is where we add the target, since our method to track the taps is in this class
+                //we can just type "self", and then put our method name in quotes for the action parameter
+                cell.gestureRecognizer.addTarget(self, action: "postImageHasBeenTapped:")
+
+                //finally, this is where we add the gesture recognizer, so it actually functions correctly
+                cell.postPhoto.addGestureRecognizer(cell.gestureRecognizer)
+
+                //Custom field in uiimageveew
+                cell.gestureRecognizer.imageUrl = (post.valueForKey("photoStdUrl") as? String)!
+                //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
                 //load profile image
                 var placeholderImage = UIImage(named: "UserIcon")
                 cell.profilePictureImageView.image = nil//UIImage(named: "UserIcon")
@@ -280,7 +366,6 @@ extension FeedViewController: UITableViewDataSource {
                 //load rest of the data
                 cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
 
-                //cell.postStatusLabel.text = post.valueForKey("postText") as? String
                 cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
                 cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
 

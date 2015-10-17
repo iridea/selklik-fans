@@ -21,9 +21,12 @@ class InstagramPhotoCell: UITableViewCell {
     @IBOutlet weak var totalLikeLabel: UILabel!
     @IBOutlet weak var totalRetweetLabel: UILabel!
 
+    let gestureRecognizer = PostImageTapGestureRecognizer()
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

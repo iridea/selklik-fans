@@ -11,7 +11,8 @@ import UIKit
 class TwitterPhotoCell: TwitterStatusCell {
 
     @IBOutlet weak internal var postPhoto: UIImageView!
-    
+     let gestureRecognizer = PostImageTapGestureRecognizer()
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

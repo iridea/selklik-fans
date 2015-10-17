@@ -28,6 +28,7 @@
 		8902B55C1BD0B139006AD2B9 /* ArtistListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B55A1BD0B139006AD2B9 /* ArtistListCell.swift */; settings = {ASSET_TAGS = (); }; };
 		8902B55D1BD0B139006AD2B9 /* ArtistListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B55B1BD0B139006AD2B9 /* ArtistListCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8902B55F1BD0CC3D006AD2B9 /* ArtistViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B55E1BD0CC3D006AD2B9 /* ArtistViewController+UITableViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
+		8902B5611BD2497B006AD2B9 /* UITapGestureRecognizer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5601BD2497B006AD2B9 /* UITapGestureRecognizer+.swift */; settings = {ASSET_TAGS = (); }; };
 		894253091BB297B700A04953 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253081BB297B700A04953 /* AppDelegate.swift */; };
 		8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942530A1BB297B700A04953 /* CoordinatorViewController.swift */; };
 		8942530E1BB297B700A04953 /* Startup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8942530C1BB297B700A04953 /* Startup.storyboard */; };
@@ -100,6 +101,7 @@
 		8902B55A1BD0B139006AD2B9 /* ArtistListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistListCell.swift; sourceTree = "<group>"; };
 		8902B55B1BD0B139006AD2B9 /* ArtistListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtistListCell.xib; sourceTree = "<group>"; };
 		8902B55E1BD0CC3D006AD2B9 /* ArtistViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ArtistViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		8902B5601BD2497B006AD2B9 /* UITapGestureRecognizer+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+.swift"; sourceTree = "<group>"; };
 		894253051BB297B700A04953 /* Selklik-Fans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Selklik-Fans.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		894253081BB297B700A04953 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		8942530A1BB297B700A04953 /* CoordinatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorViewController.swift; sourceTree = "<group>"; };
@@ -400,6 +402,7 @@
 				89C8F0B71BB7E83900AFE092 /* CoreDataStack.swift */,
 				89D553CC1BC7B83100C75D4A /* UserInfo.swift */,
 				89685CB11BCD6A200035E6C0 /* Image.swift */,
+				8902B5601BD2497B006AD2B9 /* UITapGestureRecognizer+.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -638,6 +641,7 @@
 				8902B54F1BCF913F006AD2B9 /* InstagramPhotoCell.swift in Sources */,
 				8902B5531BCFB285006AD2B9 /* InstagramVideoCell.swift in Sources */,
 				894253091BB297B700A04953 /* AppDelegate.swift in Sources */,
+				8902B5611BD2497B006AD2B9 /* UITapGestureRecognizer+.swift in Sources */,
 				8902B54B1BCF89F7006AD2B9 /* RetweetVideoCell.swift in Sources */,
 				89C8F0C31BB829FE00AFE092 /* SWRevealViewController.m in Sources */,
 				89C8F0B81BB7E83900AFE092 /* CoreDataStack.swift in Sources */,

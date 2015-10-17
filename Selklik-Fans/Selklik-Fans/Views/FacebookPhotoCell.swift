@@ -11,6 +11,7 @@ import UIKit
 class FacebookPhotoCell: FacebookStatusCell {
 
     @IBOutlet weak var postPhoto: UIImageView!
+    let gestureRecognizer = PostImageTapGestureRecognizer()
     
     override func awakeFromNib() {
         super.awakeFromNib()

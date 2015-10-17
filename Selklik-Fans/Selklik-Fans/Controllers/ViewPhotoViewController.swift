@@ -19,15 +19,13 @@ class ViewPhotoViewController: UIViewController, UIScrollViewDelegate {
     var imageView: UIImageView!
 
     var ImageUrl:String!
-    //var imageWidth:CGFloat!
-    //var imageHeight:CGFloat!
-
 
     let photoInfo = Photo()
 
     func downloadImage()->UIImage{
 
         var downloadedImage:UIImage?
+        print("ImageUrl:\(ImageUrl)")
         Alamofire.request(.GET, ImageUrl)
             .responseImage { response in
                 debugPrint(response)
