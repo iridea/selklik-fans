@@ -159,7 +159,7 @@ extension FeedViewController: UITableViewDataSource {
                     cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
 
                     //load thumb Image
-                    let imageSize = CGSize(width: (post.valueForKey("photoStdWidth") as? CGFloat)!, height: ((post.valueForKey("photoStdHeight") as? CGFloat)!)/2.0)
+                    let imageSize = CGSize(width: (post.valueForKey("videoThumbStdWidth") as? CGFloat)!, height: ((post.valueForKey("videoThumbStdHeight") as? CGFloat)!)/2.0)
 
                     var placeholderImage = UIImage(named: "placeholder")
                     placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
@@ -184,7 +184,7 @@ extension FeedViewController: UITableViewDataSource {
                     cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
 
                     //load thumb Image
-                    let imageSize = CGSize(width: (post.valueForKey("photoStdWidth") as? CGFloat)!, height: ((post.valueForKey("photoStdHeight") as? CGFloat)!)/2.0)
+                    let imageSize = CGSize(width: (post.valueForKey("videoThumbStdWidth") as? CGFloat)!, height: ((post.valueForKey("videoThumbStdHeight") as? CGFloat)!)/2.0)
 
                     var placeholderImage = UIImage(named: "placeholder")
                     placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
@@ -200,7 +200,59 @@ extension FeedViewController: UITableViewDataSource {
 
             break
         case "instagram":
-            print("instagram")
+            switch (postType!) {
+            case "photo":
+                let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.instagramPhotoCell, forIndexPath:indexPath) as! InstagramPhotoCell
+
+                //load profile image
+                var placeholderImage = UIImage(named: "UserIcon")
+                cell.profilePictureImageView.image = placeholderImage
+                cell.profilePictureImageView.af_setImageWithURL(profileImageUrl!, placeholderImage: placeholderImage)
+
+                //load Post Image
+                placeholderImage = UIImage(named: "placeholder")
+                let imageSize = CGSize(width: (post.valueForKey("photoStdWidth") as? CGFloat)!, height: ((post.valueForKey("photoStdHeight") as? CGFloat)!)/2.0)
+                placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
+                let postPhotoUrl = NSURL(string: (post.valueForKey("photoStdUrl") as? String)!)
+                cell.postPhoto.image = nil
+                cell.postPhoto.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
+
+                //load rest of the data
+                cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
+
+                //cell.postStatusLabel.text = post.valueForKey("postText") as? String
+                cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
+                cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+                
+                return cell
+                
+            case "video":
+                let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.instagramVideoCell, forIndexPath:indexPath) as! InstagramVideoCell
+
+                //load profile image
+                var placeholderImage = UIImage(named: "UserIcon")
+                cell.profilePictureImageView.image = placeholderImage
+                cell.profilePictureImageView.af_setImageWithURL(profileImageUrl!, placeholderImage: placeholderImage)
+
+                //load Post Image
+                placeholderImage = UIImage(named: "placeholder")
+                let imageSize = CGSize(width: (post.valueForKey("videoThumbStdWidth") as? CGFloat)!, height: ((post.valueForKey("videoThumbStdHeight") as? CGFloat)!)/2.0)
+                placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
+                let postThumbUrl = NSURL(string: (post.valueForKey("videoThumbStdUrl") as? String)!)
+                cell.postPhoto.image = nil
+                cell.postPhoto.af_setImageWithURL(postThumbUrl!, placeholderImage: placeholderImage)
+
+                //load rest of the data
+                cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
+
+                //cell.postStatusLabel.text = post.valueForKey("postText") as? String
+                cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
+                cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+                
+                return cell
+            default:
+                print("undefine instagram type")
+            }
             break
         case "facebook":
             switch (postType!) {
@@ -233,7 +285,6 @@ extension FeedViewController: UITableViewDataSource {
                 cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
 
                 return cell
-
 
             case "video":
                 print("facebook video")

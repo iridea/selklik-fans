@@ -199,6 +199,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: - Default Function
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        //UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
+         UINavigationBar.appearance().barStyle = .Black
         initialSystem()
         // Override point for customization after application launch.
         return true

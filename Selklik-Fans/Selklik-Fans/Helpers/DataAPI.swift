@@ -57,7 +57,7 @@ import Alamofire
                 switch self {
                     
                 case .ArtistList (let token):
-                    let params = ["token": token, "country": Router.country]
+                    let params = ["token": token]//, "country": Router.country]
                     return ("/\(Router.version)/artist_all", params)
                     
                 case .FavouriteArtistList (let token):

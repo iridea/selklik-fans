@@ -14,7 +14,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="blH-l0-8hz">
-                        <rect key="frame" x="1" y="4" width="318" height="413"/>
+                        <rect key="frame" x="0.0" y="4" width="320" height="413"/>
                         <subviews>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0gc-8o-pr6">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
@@ -24,7 +24,7 @@
                                     <animations/>
                                 </view>
                                 <animations/>
-                                <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="52" id="L6x-JA-aZZ"/>
                                 </constraints>
@@ -100,7 +100,7 @@
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="redraw" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" translatesAutoresizingMaskIntoConstraints="NO" id="wMD-zl-5Xm">
-                                <rect key="frame" x="-1" y="85" width="320" height="291"/>
+                                <rect key="frame" x="0.0" y="85" width="320" height="291"/>
                                 <animations/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88888888 likes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vqb-VO-483">
@@ -109,7 +109,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook" translatesAutoresizingMaskIntoConstraints="NO" id="n0D-TL-k8w">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook-Color" translatesAutoresizingMaskIntoConstraints="NO" id="n0D-TL-k8w">
                                 <rect key="frame" x="282" y="8" width="30" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -122,18 +122,18 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="Lbh-zp-XlY" secondAttribute="bottom" constant="4" id="28t-nL-ULm"/>
-                            <constraint firstAttribute="trailing" secondItem="Foc-1B-bIJ" secondAttribute="trailing" constant="-2" id="5Ho-mJ-IEv"/>
-                            <constraint firstAttribute="trailing" secondItem="n0D-TL-k8w" secondAttribute="trailing" constant="6" id="5vx-ZE-QGB"/>
+                            <constraint firstAttribute="trailing" secondItem="Foc-1B-bIJ" secondAttribute="trailing" id="5Ho-mJ-IEv"/>
+                            <constraint firstAttribute="trailing" secondItem="n0D-TL-k8w" secondAttribute="trailing" constant="8" id="5vx-ZE-QGB"/>
                             <constraint firstItem="n0D-TL-k8w" firstAttribute="top" secondItem="blH-l0-8hz" secondAttribute="top" constant="8" id="8cW-gB-4hY"/>
                             <constraint firstItem="0gc-8o-pr6" firstAttribute="top" secondItem="Bwn-aX-1kd" secondAttribute="bottom" constant="-45" id="96n-ip-2Ad"/>
                             <constraint firstItem="Foc-1B-bIJ" firstAttribute="leading" secondItem="blH-l0-8hz" secondAttribute="leading" id="9Jc-2W-n2i"/>
-                            <constraint firstAttribute="trailing" secondItem="xHW-QP-NY0" secondAttribute="trailing" constant="6" id="A5U-wu-Iro"/>
+                            <constraint firstAttribute="trailing" secondItem="xHW-QP-NY0" secondAttribute="trailing" constant="8" id="A5U-wu-Iro"/>
                             <constraint firstAttribute="bottom" secondItem="Foc-1B-bIJ" secondAttribute="bottom" id="B8z-na-WGX"/>
                             <constraint firstAttribute="bottom" secondItem="Vqb-VO-483" secondAttribute="bottom" constant="8" id="E11-YO-wnY"/>
-                            <constraint firstAttribute="trailing" secondItem="wMD-zl-5Xm" secondAttribute="trailing" constant="-1" id="FSh-QA-jRw"/>
+                            <constraint firstAttribute="trailing" secondItem="wMD-zl-5Xm" secondAttribute="trailing" id="FSh-QA-jRw"/>
                             <constraint firstItem="1JE-gj-3b6" firstAttribute="top" secondItem="4Ix-vB-L68" secondAttribute="bottom" constant="-5" id="Haw-LP-of8"/>
                             <constraint firstItem="wMD-zl-5Xm" firstAttribute="top" secondItem="o4K-BR-SDr" secondAttribute="bottom" constant="8" id="KhG-QX-h0i"/>
-                            <constraint firstAttribute="trailing" secondItem="o4K-BR-SDr" secondAttribute="trailing" constant="6" id="LA4-AB-0Hc"/>
+                            <constraint firstAttribute="trailing" secondItem="o4K-BR-SDr" secondAttribute="trailing" constant="8" id="LA4-AB-0Hc"/>
                             <constraint firstItem="o4K-BR-SDr" firstAttribute="leading" secondItem="blH-l0-8hz" secondAttribute="leading" constant="8" id="OhU-vf-yGH"/>
                             <constraint firstItem="Bwn-aX-1kd" firstAttribute="leading" secondItem="blH-l0-8hz" secondAttribute="leading" constant="5" id="ZWB-NF-rJN"/>
                             <constraint firstAttribute="bottom" secondItem="8DY-b7-dCX" secondAttribute="bottom" constant="2" id="aLf-PW-ea0"/>
@@ -145,10 +145,10 @@
                             <constraint firstItem="1JE-gj-3b6" firstAttribute="leading" secondItem="Bwn-aX-1kd" secondAttribute="trailing" constant="8" id="jxi-Ff-CEb"/>
                             <constraint firstItem="8DY-b7-dCX" firstAttribute="leading" secondItem="blH-l0-8hz" secondAttribute="leading" constant="8" id="oWe-xp-wzH"/>
                             <constraint firstItem="xHW-QP-NY0" firstAttribute="leading" secondItem="Lbh-zp-XlY" secondAttribute="trailing" constant="8" id="q8U-IS-YDr"/>
-                            <constraint firstAttribute="trailing" secondItem="0gc-8o-pr6" secondAttribute="trailing" constant="-2" id="slp-O3-efy"/>
+                            <constraint firstAttribute="trailing" secondItem="0gc-8o-pr6" secondAttribute="trailing" id="slp-O3-efy"/>
                             <constraint firstItem="4Ix-vB-L68" firstAttribute="leading" secondItem="Bwn-aX-1kd" secondAttribute="trailing" constant="8" id="tdo-u0-sPh"/>
                             <constraint firstItem="o4K-BR-SDr" firstAttribute="top" secondItem="0gc-8o-pr6" secondAttribute="bottom" constant="7" id="u7h-d6-e9S"/>
-                            <constraint firstItem="wMD-zl-5Xm" firstAttribute="leading" secondItem="blH-l0-8hz" secondAttribute="leading" constant="-1" id="xPr-0G-pie"/>
+                            <constraint firstItem="wMD-zl-5Xm" firstAttribute="leading" secondItem="blH-l0-8hz" secondAttribute="leading" id="xPr-0G-pie"/>
                             <constraint firstItem="Foc-1B-bIJ" firstAttribute="top" secondItem="wMD-zl-5Xm" secondAttribute="bottom" constant="9" id="zEF-XZ-5ov"/>
                         </constraints>
                     </view>
@@ -157,9 +157,9 @@
                 <color key="backgroundColor" name="secondarySelectedControlColor" catalog="System" colorSpace="catalog"/>
                 <constraints>
                     <constraint firstItem="blH-l0-8hz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="RZe-zY-VFb"/>
-                    <constraint firstItem="blH-l0-8hz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="1" id="clQ-Xg-U13"/>
+                    <constraint firstItem="blH-l0-8hz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="clQ-Xg-U13"/>
                     <constraint firstAttribute="bottom" secondItem="blH-l0-8hz" secondAttribute="bottom" constant="4" id="dfM-6q-7PQ"/>
-                    <constraint firstAttribute="trailing" secondItem="blH-l0-8hz" secondAttribute="trailing" constant="1" id="jKb-7Z-mNy"/>
+                    <constraint firstAttribute="trailing" secondItem="blH-l0-8hz" secondAttribute="trailing" id="jKb-7Z-mNy"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
@@ -177,8 +177,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="UsersIcon" width="50" height="50"/>
-        <image name="facebook" width="50" height="50"/>
+        <image name="Facebook-Color" width="50" height="50"/>
+        <image name="UsersIcon" width="100" height="100"/>
         <image name="retweet" width="50" height="50"/>
         <image name="star" width="50" height="50"/>
     </resources>

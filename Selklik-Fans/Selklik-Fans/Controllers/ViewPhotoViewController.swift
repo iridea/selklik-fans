@@ -7,46 +7,98 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
+
+
+
 
 class ViewPhotoViewController: UIViewController, UIScrollViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     var imageView: UIImageView!
 
-    var ImageUrl:String?
+    var ImageUrl:String!
+    //var imageWidth:CGFloat!
+    //var imageHeight:CGFloat!
+
+
+    let photoInfo = Photo()
+
+    func downloadImage()->UIImage{
+
+        var downloadedImage:UIImage?
+        Alamofire.request(.GET, ImageUrl)
+            .responseImage { response in
+                debugPrint(response)
+
+                print(response.request)
+                print(response.response)
+                debugPrint(response.result)
+
+                if let image = response.result.value {
+                    print("image downloaded: \(image)")
+                    downloadedImage = image
+                }
+        }
+
+        return downloadedImage!
+    }
+
+    override func viewDidAppear(animated: Bool) {
+        navigationController?.hidesBarsOnSwipe = true
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         scrollView.delegate = self
         // 1
-        let image = UIImage(named: "CoordinatorVCBackground")!
-        imageView = UIImageView(image: image)
-        imageView.frame = CGRect(origin: CGPointMake(0.0, 0.0), size:image.size)
 
-        // 2
-        scrollView.addSubview(imageView)
-        scrollView.contentSize = image.size
+        Alamofire.request(.GET, ImageUrl)
+            .responseImage { response in
+                debugPrint(response)
 
-        // 3
-        let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: "scrollViewDoubleTapped:")
-        doubleTapRecognizer.numberOfTapsRequired = 2
-        doubleTapRecognizer.numberOfTouchesRequired = 1
-        scrollView.addGestureRecognizer(doubleTapRecognizer)
+                print(response.request)
+                print(response.response)
+                debugPrint(response.result)
 
-        // 4
-        let scrollViewFrame = scrollView.frame
-        let scaleWidth = scrollViewFrame.size.width / scrollView.contentSize.width
-        let scaleHeight = scrollViewFrame.size.height / scrollView.contentSize.height
-        let minScale = min(scaleWidth, scaleHeight);
-        scrollView.minimumZoomScale = minScale;
+                if let image = response.result.value {
 
-        // 5
-        scrollView.maximumZoomScale = 3.0
-        scrollView.zoomScale = minScale;
+                    print("image downloaded: \(image)")
+                    self.imageView = UIImageView(image: image)
+                    self.imageView.frame = CGRect(origin: CGPointMake(0.0, 0.0), size:image.size)
+                   // self.imageView.
+                    // 2
+                    self.scrollView.addSubview(self.imageView)
+                    self.scrollView.contentSize = image.size
 
-        // 6
-        centerScrollViewContents()
+                    // 3
+                    let doubleTapRecognizer = UITapGestureRecognizer(target: self, action: "scrollViewDoubleTapped:")
+                    doubleTapRecognizer.numberOfTapsRequired = 2
+                    doubleTapRecognizer.numberOfTouchesRequired = 1
+                    self.scrollView.addGestureRecognizer(doubleTapRecognizer)
+
+                    // 4
+                    let scrollViewFrame = self.scrollView.frame
+                    let scaleWidth = scrollViewFrame.size.width / self.scrollView.contentSize.width
+                    let scaleHeight = scrollViewFrame.size.height / self.scrollView.contentSize.height
+                    let minScale = min(scaleWidth, scaleHeight);
+                    self.scrollView.minimumZoomScale = minScale;
+                    
+                    // 5
+                    self.scrollView.maximumZoomScale = 3.0
+                    self.scrollView.zoomScale = minScale;
+                    
+                    // 6
+                    self.centerScrollViewContents()
+                }
+        }
+
+
+
+
+
     }
 
     @IBAction func DoneButton(sender: AnyObject) {
@@ -102,12 +154,16 @@ class ViewPhotoViewController: UIViewController, UIScrollViewDelegate {
         centerScrollViewContents()
     }
 
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 
    
+}
+
+extension ViewPhotoViewController: UINavigationBarDelegate {
+    func positionForBar(bar: UIBarPositioning) -> UIBarPosition {
+    return .TopAttached }
 }

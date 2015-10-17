@@ -22,7 +22,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UsersIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Qqq-tb-iYf">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Qqq-tb-iYf">
                                             <rect key="frame" x="4" y="6" width="40" height="40"/>
                                             <animations/>
                                             <constraints>
@@ -52,7 +52,7 @@
                                                 <color key="titleColor" red="0.19376453757286072" green="0.50850099325180054" blue="0.85232251882553101" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="4oS-AO-9kh">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter-Color" translatesAutoresizingMaskIntoConstraints="NO" id="4oS-AO-9kh">
                                             <rect key="frame" x="282" y="11" width="30" height="30"/>
                                             <animations/>
                                             <constraints>
@@ -78,7 +78,7 @@
                                     </constraints>
                                 </view>
                                 <animations/>
-                                <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="J8d-mb-yFN"/>
                                     <constraint firstAttribute="height" constant="52" id="zTx-WO-CPW"/>
@@ -98,7 +98,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="lMI-eL-0XA">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="lMI-eL-0XA">
                                             <rect key="frame" x="9" y="5" width="20" height="20"/>
                                             <animations/>
                                             <constraints>
@@ -118,7 +118,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="so8-5x-tvu">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Retweet" translatesAutoresizingMaskIntoConstraints="NO" id="so8-5x-tvu">
                                             <rect key="frame" x="207" y="5" width="20" height="20"/>
                                             <animations/>
                                             <constraints>
@@ -193,8 +193,8 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="UsersIcon" width="50" height="50"/>
-        <image name="star" width="50" height="50"/>
-        <image name="twitter" width="50" height="50"/>
+        <image name="Retweet" width="32" height="32"/>
+        <image name="Star" width="32" height="32"/>
+        <image name="Twitter-Color" width="50" height="50"/>
     </resources>
 </document>

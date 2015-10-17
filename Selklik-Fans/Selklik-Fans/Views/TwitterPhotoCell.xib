@@ -52,7 +52,7 @@
                                                 <color key="titleColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="MgG-ye-dD6">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter-Color" translatesAutoresizingMaskIntoConstraints="NO" id="MgG-ye-dD6">
                                             <rect key="frame" x="282" y="11" width="30" height="30"/>
                                             <animations/>
                                             <constraints>
@@ -78,7 +78,7 @@
                                     </constraints>
                                 </view>
                                 <animations/>
-                                <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="0tb-Fv-DEY"/>
                                     <constraint firstAttribute="height" constant="52" id="1Ym-Ig-9iI"/>
@@ -98,7 +98,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="L27-EX-XJ8">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="L27-EX-XJ8">
                                             <rect key="frame" x="9" y="5" width="20" height="20"/>
                                             <animations/>
                                             <constraints>
@@ -118,7 +118,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="sbh-rn-rlA">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Retweet" translatesAutoresizingMaskIntoConstraints="NO" id="sbh-rn-rlA">
                                             <rect key="frame" x="207" y="5" width="20" height="20"/>
                                             <animations/>
                                             <constraints>
@@ -206,8 +206,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Retweet" width="32" height="32"/>
+        <image name="Star" width="32" height="32"/>
+        <image name="Twitter-Color" width="50" height="50"/>
         <image name="UsersIcon" width="50" height="50"/>
-        <image name="star" width="50" height="50"/>
-        <image name="twitter" width="50" height="50"/>
     </resources>
 </document>

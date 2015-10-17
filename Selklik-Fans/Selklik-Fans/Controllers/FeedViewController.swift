@@ -24,6 +24,9 @@ class FeedViewController: UIViewController {
     var artistPost = [NSManagedObject]()
     let userInfo = UserInfo()
     let photoInfo = Photo()
+    var previewImage = [Int: String]()
+    var previewImageSelectedIndex = 0
+
 
 
     var fetchedResultsController: NSFetchedResultsController!
@@ -63,6 +66,7 @@ class FeedViewController: UIViewController {
         var cellNib = UINib(nibName: CellIdentifiers.facebookPhotoCell, bundle: nil)
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.facebookPhotoCell)
 
+
         //twitter
         cellNib = UINib(nibName: CellIdentifiers.twitterStatusCell, bundle: nil)
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.twitterStatusCell)
@@ -70,26 +74,27 @@ class FeedViewController: UIViewController {
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.twitterPhotoCell)
         cellNib = UINib(nibName: CellIdentifiers.twitterVideoCell, bundle: nil)
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.twitterVideoCell)
-
+        //twitter - Retweet
         cellNib = UINib(nibName: CellIdentifiers.retweetStatusCell, bundle: nil)
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.retweetStatusCell)
         cellNib = UINib(nibName: CellIdentifiers.retweetPhotoCell, bundle: nil)
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.retweetPhotoCell)
         cellNib = UINib(nibName: CellIdentifiers.retweetVideoCell, bundle: nil)
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.retweetVideoCell)
-        
+
+
+        //instagram
+        cellNib = UINib(nibName: CellIdentifiers.instagramPhotoCell, bundle: nil)
+        feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.instagramPhotoCell)
+        cellNib = UINib(nibName: CellIdentifiers.instagramVideoCell, bundle: nil)
+        feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.instagramVideoCell)
     }
 
-
     @IBAction func reloadButton(sender: AnyObject) {
-        self.getFeedFromCoreData()
+        reloadFeedDataFromServer()
     }
 
     //MARK: - Custom Function
-
-    //self.progressBarDisplayer("Preparing data", true)
-    //self.messageFrame.removeFromSuperview()
-    //view.userInteractionEnabled = false
     func progressBarDisplayer(msg:String, _ indicator:Bool ) {
 
         view.userInteractionEnabled = false
@@ -132,8 +137,6 @@ class FeedViewController: UIViewController {
             print("Could not save: \(error)")
         }
     }
-
-
 
     func populateFeed() {
 
@@ -509,8 +512,35 @@ class FeedViewController: UIViewController {
 
 
     //MARK: - Default Function
+//    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+//        return UIStatusBarStyle.LightContent
+//    }
+
+    func setBrandIconToNavigationController(){
+        let nav = self.navigationController?.navigationBar
+
+        nav?.tintColor = UIColor.whiteColor()
+        // 3
+        let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
+        imageView.contentMode = UIViewContentMode.ScaleAspectFit
+        // 4
+        let image = UIImage(named: "selklik-logo-bolder")
+        imageView.image = image
+        // 5
+        navigationItem.titleView = imageView
+
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if self.revealViewController() != nil {
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
+
+        setBrandIconToNavigationController()
 
         feedTableView.rowHeight = UITableViewAutomaticDimension
         feedTableView.estimatedRowHeight = 66
@@ -525,13 +555,14 @@ class FeedViewController: UIViewController {
         self.managedContext = appDelegate.coreDataStack.context
         self.userToken = userInfo.getTokenFromCoreData(managedContext)
 
+        reloadFeedDataFromServer()
+
+    }
+
+    func reloadFeedDataFromServer(){
         self.progressBarDisplayer("Loading data", true)
 
-        if self.revealViewController() != nil {
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
+
 
         let fetchRequest = NSFetchRequest(entityName: "Post")
         do {
@@ -546,7 +577,6 @@ class FeedViewController: UIViewController {
 
         //insert to core data the new posts received from server
         populateFeed()
-
     }
 
     func getFeedFromCoreData() {
@@ -572,8 +602,6 @@ class FeedViewController: UIViewController {
 var facebookPostPhoto:UIImage?
 
 
-
-
 extension FeedViewController:UITableViewDelegate {
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
 
@@ -582,7 +610,8 @@ extension FeedViewController:UITableViewDelegate {
         let postType = post.valueForKey("postType") as? String
 
         if postType == "photo" {
-
+            previewImageSelectedIndex = indexPath.row
+            previewImage[indexPath.row] = post.valueForKey("photoStdUrl") as? String
             self.performSegueWithIdentifier("FeedToViewPhoto", sender: self)
         }
     }
@@ -591,7 +620,7 @@ extension FeedViewController:UITableViewDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "FeedToViewPhoto") {
             let viewPhotoViewController = segue.destinationViewController as! ViewPhotoViewController
-            //viewPhotoViewController.ImageUrl = "Hello"
+            viewPhotoViewController.ImageUrl =  previewImage[previewImageSelectedIndex]
         }
 
     }

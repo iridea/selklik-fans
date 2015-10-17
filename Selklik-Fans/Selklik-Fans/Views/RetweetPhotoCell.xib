@@ -44,7 +44,7 @@
                                             <color key="textColor" red="0.42655369640000002" green="0.475846082" blue="0.4802647531" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="c0j-cO-g2d">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter-Color" translatesAutoresizingMaskIntoConstraints="NO" id="c0j-cO-g2d">
                                             <rect key="frame" x="282" y="31" width="30" height="30"/>
                                             <animations/>
                                             <constraints>
@@ -52,7 +52,7 @@
                                                 <constraint firstAttribute="height" constant="30" id="Zph-Yh-UF3"/>
                                             </constraints>
                                         </imageView>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="hYe-Ff-P2T">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Retweet" translatesAutoresizingMaskIntoConstraints="NO" id="hYe-Ff-P2T">
                                             <rect key="frame" x="14" y="3" width="20" height="20"/>
                                             <animations/>
                                             <constraints>
@@ -95,7 +95,7 @@
                                     </constraints>
                                 </view>
                                 <animations/>
-                                <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="52" id="Zgz-w4-f04"/>
                                 </constraints>
@@ -114,7 +114,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="4lo-XW-FUm">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="4lo-XW-FUm">
                                             <rect key="frame" x="9" y="5" width="20" height="20"/>
                                             <animations/>
                                             <constraints>
@@ -134,7 +134,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="GF3-Yw-zMl">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Retweet" translatesAutoresizingMaskIntoConstraints="NO" id="GF3-Yw-zMl">
                                             <rect key="frame" x="207" y="5" width="20" height="20"/>
                                             <animations/>
                                             <constraints>
@@ -219,8 +219,9 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Retweet" width="32" height="32"/>
+        <image name="Star" width="32" height="32"/>
+        <image name="Twitter-Color" width="50" height="50"/>
         <image name="UsersIcon" width="50" height="50"/>
-        <image name="star" width="50" height="50"/>
-        <image name="twitter" width="50" height="50"/>
     </resources>
 </document>

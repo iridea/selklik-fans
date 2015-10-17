@@ -25,8 +25,8 @@ class FacebookStatusCell: UITableViewCell {
         super.awakeFromNib()
         profilePictureImageView.layer.cornerRadius = profilePictureImageView.frame.width / 2
         profilePictureImageView.clipsToBounds = true
-        bgView.layer.cornerRadius = 7.0
-        bgView.clipsToBounds = true
+        //bgView.layer.cornerRadius = 7.0
+        //bgView.clipsToBounds = true
 
         statusActiveLabel.mentionEnabled = false
         statusActiveLabel.hashtagColor = UIColor(red: 64/255, green: 153/255, blue: 252/255, alpha: 1.0)

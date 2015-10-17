@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArtistListCell" id="NnQ-Br-rMn" customClass="ArtistListCell" customModule="Selklik_Fans" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="66"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="NnQ-Br-rMn" id="ALw-4t-Mky">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="65"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b3L-3K-PC7">
+                        <rect key="frame" x="69" y="8" width="200" height="17"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook-Color" translatesAutoresizingMaskIntoConstraints="NO" id="eu5-hb-lAD">
+                        <rect key="frame" x="69" y="32" width="23" height="23"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="23" id="Zod-KS-5D2"/>
+                            <constraint firstAttribute="height" constant="23" id="yPa-CG-1ZQ"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter-Color" translatesAutoresizingMaskIntoConstraints="NO" id="nH1-Ue-evz">
+                        <rect key="frame" x="102" y="32" width="23" height="23"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="23" id="8lP-r5-XuI"/>
+                            <constraint firstAttribute="width" constant="23" id="zqx-G5-odr"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Instagram-Color" translatesAutoresizingMaskIntoConstraints="NO" id="rFq-2p-2V5">
+                        <rect key="frame" x="135" y="32" width="23" height="23"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="23" id="3VM-sN-t9U"/>
+                            <constraint firstAttribute="height" constant="23" id="hFe-L1-dW1"/>
+                        </constraints>
+                    </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Hgw-5a-4KI">
+                        <rect key="frame" x="10" y="10" width="45" height="45"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="45" id="Wcw-BX-2pW"/>
+                            <constraint firstAttribute="width" constant="45" id="k0E-Xc-AnF"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Followed" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rbh-xs-eIc">
+                        <rect key="frame" x="269" y="28" width="43" height="12"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="Hgw-5a-4KI" firstAttribute="leading" secondItem="ALw-4t-Mky" secondAttribute="leading" constant="10" id="BDc-gt-IFm"/>
+                    <constraint firstItem="nH1-Ue-evz" firstAttribute="top" secondItem="b3L-3K-PC7" secondAttribute="bottom" constant="7" id="ElV-hU-vWx"/>
+                    <constraint firstItem="eu5-hb-lAD" firstAttribute="leading" secondItem="Hgw-5a-4KI" secondAttribute="trailing" constant="14" id="Hvt-rr-eEZ"/>
+                    <constraint firstItem="eu5-hb-lAD" firstAttribute="top" secondItem="b3L-3K-PC7" secondAttribute="bottom" constant="7" id="Pzj-Nr-9m1"/>
+                    <constraint firstItem="b3L-3K-PC7" firstAttribute="top" secondItem="ALw-4t-Mky" secondAttribute="topMargin" id="alg-GP-Kar"/>
+                    <constraint firstItem="b3L-3K-PC7" firstAttribute="leading" secondItem="Hgw-5a-4KI" secondAttribute="trailing" constant="14" id="b06-k4-JXZ"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="b3L-3K-PC7" secondAttribute="trailing" constant="43" id="bAU-hh-eiN"/>
+                    <constraint firstItem="Hgw-5a-4KI" firstAttribute="top" secondItem="ALw-4t-Mky" secondAttribute="top" constant="10" id="g90-7i-pjT"/>
+                    <constraint firstAttribute="bottom" secondItem="Hgw-5a-4KI" secondAttribute="bottom" constant="10" id="gJ4-v3-MqI"/>
+                    <constraint firstItem="nH1-Ue-evz" firstAttribute="leading" secondItem="eu5-hb-lAD" secondAttribute="trailing" constant="10" id="hWz-bW-HsM"/>
+                    <constraint firstItem="rFq-2p-2V5" firstAttribute="leading" secondItem="nH1-Ue-evz" secondAttribute="trailing" constant="10" id="iV4-qc-Jot"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="rbh-xs-eIc" secondAttribute="trailing" id="rRm-7v-CCC"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="rbh-xs-eIc" secondAttribute="bottom" constant="17" id="wcN-za-Mny"/>
+                    <constraint firstItem="rFq-2p-2V5" firstAttribute="top" secondItem="b3L-3K-PC7" secondAttribute="bottom" constant="7" id="zPH-BC-gzL"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="artistName" destination="b3L-3K-PC7" id="cyK-tA-X9w"/>
+                <outlet property="facebookIcon" destination="eu5-hb-lAD" id="Brl-3Q-Yvn"/>
+                <outlet property="instagramIcon" destination="rFq-2p-2V5" id="Gg5-de-XpV"/>
+                <outlet property="isFollowedLabel" destination="rbh-xs-eIc" id="O4n-xm-Mg6"/>
+                <outlet property="profilePhoto" destination="Hgw-5a-4KI" id="pHu-qm-tJg"/>
+                <outlet property="twitterIcon" destination="nH1-Ue-evz" id="trK-Bq-Ibb"/>
+            </connections>
+            <point key="canvasLocation" x="-25" y="358"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Facebook-Color" width="50" height="50"/>
+        <image name="Instagram-Color" width="50" height="50"/>
+        <image name="Twitter-Color" width="50" height="50"/>
+        <image name="UserIcon" width="50" height="50"/>
+    </resources>
+</document>
