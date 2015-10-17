@@ -458,14 +458,6 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <animations/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Us3-4U-lJa">
-                                <rect key="frame" x="136" y="518" width="48" height="30"/>
-                                <animations/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="logoutButton:" destination="665-iR-NYQ" eventType="touchUpInside" id="WBb-Br-Z4o"/>
-                                </connections>
-                            </button>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Efo-Fq-xj7">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Zv2-AG-wqz">
@@ -558,6 +550,9 @@
                                             <state key="normal" title="Logout" image="Logout">
                                                 <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
+                                            <connections>
+                                                <action selector="logoutButton:" destination="665-iR-NYQ" eventType="touchUpInside" id="rST-21-gVz"/>
+                                            </connections>
                                         </button>
                                         <view alpha="0.40000000596046448" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K1a-eH-zOr">
                                             <rect key="frame" x="0.0" y="567" width="326" height="1"/>
@@ -599,9 +594,7 @@
                             <constraint firstItem="Efo-Fq-xj7" firstAttribute="leading" secondItem="kiB-7U-q9o" secondAttribute="leading" id="RAe-MT-EL1"/>
                             <constraint firstItem="iCc-yg-5f4" firstAttribute="top" secondItem="kiB-7U-q9o" secondAttribute="top" id="Rjw-N5-GzR"/>
                             <constraint firstItem="Efo-Fq-xj7" firstAttribute="top" secondItem="kiB-7U-q9o" secondAttribute="top" id="V5g-RD-FjQ"/>
-                            <constraint firstItem="Us3-4U-lJa" firstAttribute="centerX" secondItem="kiB-7U-q9o" secondAttribute="centerX" id="otc-fP-fqX"/>
                             <constraint firstItem="iCc-yg-5f4" firstAttribute="leading" secondItem="kiB-7U-q9o" secondAttribute="leading" id="vRo-Z1-W5g"/>
-                            <constraint firstItem="7Gi-kA-Ui9" firstAttribute="top" secondItem="Us3-4U-lJa" secondAttribute="bottom" constant="20" id="yXC-Y6-bOW"/>
                         </constraints>
                     </view>
                 </viewController>
