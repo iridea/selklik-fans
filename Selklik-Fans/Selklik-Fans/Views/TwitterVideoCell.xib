@@ -216,6 +216,6 @@
         <image name="Retweet" width="32" height="32"/>
         <image name="Star" width="32" height="32"/>
         <image name="Twitter-Color" width="50" height="50"/>
-        <image name="UsersIcon" width="50" height="50"/>
+        <image name="UsersIcon" width="32" height="32"/>
     </resources>
 </document>

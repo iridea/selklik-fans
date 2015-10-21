@@ -24,11 +24,27 @@
 		8902B5501BCF913F006AD2B9 /* InstagramPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B54E1BCF913F006AD2B9 /* InstagramPhotoCell.xib */; settings = {ASSET_TAGS = (); }; };
 		8902B5531BCFB285006AD2B9 /* InstagramVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5511BCFB285006AD2B9 /* InstagramVideoCell.swift */; settings = {ASSET_TAGS = (); }; };
 		8902B5541BCFB285006AD2B9 /* InstagramVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B5521BCFB285006AD2B9 /* InstagramVideoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8902B5571BD0AC27006AD2B9 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5561BD0AC27006AD2B9 /* ArtistViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		8902B55C1BD0B139006AD2B9 /* ArtistListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B55A1BD0B139006AD2B9 /* ArtistListCell.swift */; settings = {ASSET_TAGS = (); }; };
 		8902B55D1BD0B139006AD2B9 /* ArtistListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B55B1BD0B139006AD2B9 /* ArtistListCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8902B55F1BD0CC3D006AD2B9 /* ArtistViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B55E1BD0CC3D006AD2B9 /* ArtistViewController+UITableViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
 		8902B5611BD2497B006AD2B9 /* UITapGestureRecognizer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5601BD2497B006AD2B9 /* UITapGestureRecognizer+.swift */; settings = {ASSET_TAGS = (); }; };
+		8902B5631BD2A290006AD2B9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5621BD2A290006AD2B9 /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		89090CDD1BD7947000E2E254 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89090CDB1BD7947000E2E254 /* Post+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		89090CDE1BD7947000E2E254 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89090CDC1BD7947000E2E254 /* Post.swift */; settings = {ASSET_TAGS = (); }; };
+		891AAECA1BD49688008E6D49 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEC91BD49688008E6D49 /* NotificationViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		891AAECC1BD496A4008E6D49 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAECB1BD496A4008E6D49 /* SettingViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		891AAECE1BD496BE008E6D49 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAECD1BD496BE008E6D49 /* AboutViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		891AAED11BD4A731008E6D49 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAECF1BD4A731008E6D49 /* CountryCell.swift */; settings = {ASSET_TAGS = (); }; };
+		891AAED21BD4A731008E6D49 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 891AAED01BD4A731008E6D49 /* CountryCell.xib */; settings = {ASSET_TAGS = (); }; };
+		891AAED41BD4C998008E6D49 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAED31BD4C998008E6D49 /* CountryListViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		891AAED71BD4E482008E6D49 /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAED51BD4E482008E6D49 /* Country+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		891AAED81BD4E482008E6D49 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAED61BD4E482008E6D49 /* Country.swift */; settings = {ASSET_TAGS = (); }; };
+		891AAEDA1BD4EB3B008E6D49 /* CountryListViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAED91BD4EB3B008E6D49 /* CountryListViewController+UITableViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
+		891AAEDC1BD52B2D008E6D49 /* CountryListViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEDB1BD52B2D008E6D49 /* CountryListViewController+UITableViewDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		891AAEDE1BD598D5008E6D49 /* FeedViewController+UITableViewDelegate .swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEDD1BD598D5008E6D49 /* FeedViewController+UITableViewDelegate .swift */; settings = {ASSET_TAGS = (); }; };
+		891AAEE01BD5AD70008E6D49 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEDF1BD5AD70008E6D49 /* ArtistViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		891AAEE21BD5ECEE008E6D49 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEE11BD5ECEE008E6D49 /* HUD.swift */; settings = {ASSET_TAGS = (); }; };
+		891AAEE51BD62EE1008E6D49 /* Artist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEE31BD62EE1008E6D49 /* Artist+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		891AAEE61BD62EE1008E6D49 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEE41BD62EE1008E6D49 /* Artist.swift */; settings = {ASSET_TAGS = (); }; };
 		894253091BB297B700A04953 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253081BB297B700A04953 /* AppDelegate.swift */; };
 		8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942530A1BB297B700A04953 /* CoordinatorViewController.swift */; };
 		8942530E1BB297B700A04953 /* Startup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8942530C1BB297B700A04953 /* Startup.storyboard */; };
@@ -41,6 +57,7 @@
 		896D1CA31BCB6CBF008A720B /* FacebookStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896D1CA11BCB6CBF008A720B /* FacebookStatusCell.swift */; settings = {ASSET_TAGS = (); }; };
 		896D1CA41BCB6CBF008A720B /* FacebookStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896D1CA21BCB6CBF008A720B /* FacebookStatusCell.xib */; settings = {ASSET_TAGS = (); }; };
 		899B7FE71BB6941500922922 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899B7FE61BB6941500922922 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
+		89C280BF1BD78B3800664A0C /* SingleFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C280BE1BD78B3700664A0C /* SingleFeedViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		89C8F0B31BB75FE900AFE092 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C8F0B21BB75FE900AFE092 /* Login.storyboard */; settings = {ASSET_TAGS = (); }; };
 		89C8F0B61BB7E6D500AFE092 /* SelklikFans.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0B41BB7E6D500AFE092 /* SelklikFans.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
 		89C8F0B81BB7E83900AFE092 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0B71BB7E83900AFE092 /* CoreDataStack.swift */; settings = {ASSET_TAGS = (); }; };
@@ -50,8 +67,6 @@
 		89C8F0C31BB829FE00AFE092 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0C21BB829FE00AFE092 /* SWRevealViewController.m */; settings = {ASSET_TAGS = (); }; };
 		89C8F0C51BB8327D00AFE092 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0C41BB8327D00AFE092 /* FeedViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		89C8F0C81BB8CDA400AFE092 /* DataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0C71BB8CDA400AFE092 /* DataAPI.swift */; settings = {ASSET_TAGS = (); }; };
-		89C8F0CB1BB993DC00AFE092 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0C91BB993DB00AFE092 /* Post.swift */; settings = {ASSET_TAGS = (); }; };
-		89C8F0CC1BB993DC00AFE092 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0CA1BB993DC00AFE092 /* Post+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
 		89D553C31BC6178C00C75D4A /* TwitterStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D553C11BC6178C00C75D4A /* TwitterStatusCell.swift */; settings = {ASSET_TAGS = (); }; };
 		89D553C41BC6178C00C75D4A /* TwitterStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D553C21BC6178C00C75D4A /* TwitterStatusCell.xib */; settings = {ASSET_TAGS = (); }; };
 		89D553C61BC65AD500C75D4A /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D553C51BC65AD500C75D4A /* Register.storyboard */; settings = {ASSET_TAGS = (); }; };
@@ -97,11 +112,27 @@
 		8902B54E1BCF913F006AD2B9 /* InstagramPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramPhotoCell.xib; sourceTree = "<group>"; };
 		8902B5511BCFB285006AD2B9 /* InstagramVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InstagramVideoCell.swift; sourceTree = "<group>"; };
 		8902B5521BCFB285006AD2B9 /* InstagramVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = InstagramVideoCell.xib; sourceTree = "<group>"; };
-		8902B5561BD0AC27006AD2B9 /* ArtistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
 		8902B55A1BD0B139006AD2B9 /* ArtistListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistListCell.swift; sourceTree = "<group>"; };
 		8902B55B1BD0B139006AD2B9 /* ArtistListCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ArtistListCell.xib; sourceTree = "<group>"; };
-		8902B55E1BD0CC3D006AD2B9 /* ArtistViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ArtistViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		8902B5601BD2497B006AD2B9 /* UITapGestureRecognizer+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITapGestureRecognizer+.swift"; sourceTree = "<group>"; };
+		8902B5621BD2A290006AD2B9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		89090CDB1BD7947000E2E254 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		89090CDC1BD7947000E2E254 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		891AAEC91BD49688008E6D49 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		891AAECB1BD496A4008E6D49 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		891AAECD1BD496BE008E6D49 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		891AAECF1BD4A731008E6D49 /* CountryCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
+		891AAED01BD4A731008E6D49 /* CountryCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
+		891AAED31BD4C998008E6D49 /* CountryListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
+		891AAED51BD4E482008E6D49 /* Country+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Country+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		891AAED61BD4E482008E6D49 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		891AAED91BD4EB3B008E6D49 /* CountryListViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CountryListViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		891AAEDB1BD52B2D008E6D49 /* CountryListViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CountryListViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		891AAEDD1BD598D5008E6D49 /* FeedViewController+UITableViewDelegate .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FeedViewController+UITableViewDelegate .swift"; sourceTree = "<group>"; };
+		891AAEDF1BD5AD70008E6D49 /* ArtistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
+		891AAEE11BD5ECEE008E6D49 /* HUD.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		891AAEE31BD62EE1008E6D49 /* Artist+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Artist+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		891AAEE41BD62EE1008E6D49 /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
 		894253051BB297B700A04953 /* Selklik-Fans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Selklik-Fans.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		894253081BB297B700A04953 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		8942530A1BB297B700A04953 /* CoordinatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +151,7 @@
 		896D1CA11BCB6CBF008A720B /* FacebookStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookStatusCell.swift; sourceTree = "<group>"; };
 		896D1CA21BCB6CBF008A720B /* FacebookStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookStatusCell.xib; sourceTree = "<group>"; };
 		899B7FE61BB6941500922922 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		89C280BE1BD78B3700664A0C /* SingleFeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SingleFeedViewController.swift; sourceTree = "<group>"; };
 		89C8F0B21BB75FE900AFE092 /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
 		89C8F0B51BB7E6D500AFE092 /* SelklikFans.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SelklikFans.xcdatamodel; sourceTree = "<group>"; };
 		89C8F0B71BB7E83900AFE092 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -131,8 +163,6 @@
 		89C8F0C21BB829FE00AFE092 /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		89C8F0C41BB8327D00AFE092 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		89C8F0C71BB8CDA400AFE092 /* DataAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataAPI.swift; sourceTree = "<group>"; };
-		89C8F0C91BB993DB00AFE092 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
-		89C8F0CA1BB993DC00AFE092 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		89D553C11BC6178C00C75D4A /* TwitterStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterStatusCell.swift; sourceTree = "<group>"; };
 		89D553C21BC6178C00C75D4A /* TwitterStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TwitterStatusCell.xib; sourceTree = "<group>"; };
 		89D553C51BC65AD500C75D4A /* Register.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -183,8 +213,10 @@
 		8902B5551BD0ABFB006AD2B9 /* Artists */ = {
 			isa = PBXGroup;
 			children = (
-				8902B5561BD0AC27006AD2B9 /* ArtistViewController.swift */,
-				8902B55E1BD0CC3D006AD2B9 /* ArtistViewController+UITableViewDataSource.swift */,
+				891AAED31BD4C998008E6D49 /* CountryListViewController.swift */,
+				891AAED91BD4EB3B008E6D49 /* CountryListViewController+UITableViewDataSource.swift */,
+				891AAEDB1BD52B2D008E6D49 /* CountryListViewController+UITableViewDelegate.swift */,
+				891AAEDF1BD5AD70008E6D49 /* ArtistViewController.swift */,
 			);
 			name = Artists;
 			sourceTree = "<group>";
@@ -204,7 +236,9 @@
 			isa = PBXGroup;
 			children = (
 				8902B55A1BD0B139006AD2B9 /* ArtistListCell.swift */,
+				891AAECF1BD4A731008E6D49 /* CountryCell.swift */,
 				8902B55B1BD0B139006AD2B9 /* ArtistListCell.xib */,
+				891AAED01BD4A731008E6D49 /* CountryCell.xib */,
 			);
 			name = Artists;
 			sourceTree = "<group>";
@@ -293,8 +327,12 @@
 		89C8F0AE1BB75CAD00AFE092 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				89C8F0C91BB993DB00AFE092 /* Post.swift */,
-				89C8F0CA1BB993DC00AFE092 /* Post+CoreDataProperties.swift */,
+				89090CDB1BD7947000E2E254 /* Post+CoreDataProperties.swift */,
+				89090CDC1BD7947000E2E254 /* Post.swift */,
+				891AAEE31BD62EE1008E6D49 /* Artist+CoreDataProperties.swift */,
+				891AAEE41BD62EE1008E6D49 /* Artist.swift */,
+				891AAED51BD4E482008E6D49 /* Country+CoreDataProperties.swift */,
+				891AAED61BD4E482008E6D49 /* Country.swift */,
 				89C8F0B91BB7F9B700AFE092 /* SelklikFansAccess.swift */,
 				89C8F0BA1BB7F9B700AFE092 /* SelklikFansAccess+CoreDataProperties.swift */,
 			);
@@ -324,7 +362,9 @@
 			children = (
 				89C8F0C41BB8327D00AFE092 /* FeedViewController.swift */,
 				8902B53F1BCF69A3006AD2B9 /* FeedViewController+UITableViewDataSource.swift */,
+				891AAEDD1BD598D5008E6D49 /* FeedViewController+UITableViewDelegate .swift */,
 				8902B5331BCDEF12006AD2B9 /* ViewPhotoViewController.swift */,
+				89C280BE1BD78B3700664A0C /* SingleFeedViewController.swift */,
 			);
 			name = Feeds;
 			sourceTree = "<group>";
@@ -390,6 +430,10 @@
 			isa = PBXGroup;
 			children = (
 				89D553CA1BC7B55F00C75D4A /* SlideMenuViewController.swift */,
+				8902B5621BD2A290006AD2B9 /* ProfileViewController.swift */,
+				891AAEC91BD49688008E6D49 /* NotificationViewController.swift */,
+				891AAECB1BD496A4008E6D49 /* SettingViewController.swift */,
+				891AAECD1BD496BE008E6D49 /* AboutViewController.swift */,
 			);
 			name = SlideMenu;
 			sourceTree = "<group>";
@@ -403,6 +447,7 @@
 				89D553CC1BC7B83100C75D4A /* UserInfo.swift */,
 				89685CB11BCD6A200035E6C0 /* Image.swift */,
 				8902B5601BD2497B006AD2B9 /* UITapGestureRecognizer+.swift */,
+				891AAEE11BD5ECEE008E6D49 /* HUD.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -495,6 +540,7 @@
 				TargetAttributes = {
 					894253041BB297B700A04953 = {
 						CreatedOnToolsVersion = 7.0;
+						DevelopmentTeam = VD724U23GV;
 					};
 					894253181BB297B700A04953 = {
 						CreatedOnToolsVersion = 7.0;
@@ -545,6 +591,7 @@
 				8942530E1BB297B700A04953 /* Startup.storyboard in Resources */,
 				8902B5441BCF8072006AD2B9 /* TwitterVideoCell.xib in Resources */,
 				8902B5481BCF8444006AD2B9 /* RetweetPhotoCell.xib in Resources */,
+				891AAED21BD4A731008E6D49 /* CountryCell.xib in Resources */,
 				8902B55D1BD0B139006AD2B9 /* ArtistListCell.xib in Resources */,
 				8902B5541BCFB285006AD2B9 /* InstagramVideoCell.xib in Resources */,
 				89D553D11BC8051C00C75D4A /* FacebookPhotoCell.xib in Resources */,
@@ -623,36 +670,50 @@
 			files = (
 				8902B5341BCDEF12006AD2B9 /* ViewPhotoViewController.swift in Sources */,
 				89E0B1EC1BB3C19A0052D64B /* LoginViewController.swift in Sources */,
+				891AAED71BD4E482008E6D49 /* Country+CoreDataProperties.swift in Sources */,
+				891AAEE61BD62EE1008E6D49 /* Artist.swift in Sources */,
 				8902B55C1BD0B139006AD2B9 /* ArtistListCell.swift in Sources */,
+				891AAEE51BD62EE1008E6D49 /* Artist+CoreDataProperties.swift in Sources */,
 				89C8F0BC1BB7F9B700AFE092 /* SelklikFansAccess+CoreDataProperties.swift in Sources */,
 				89C8F0C81BB8CDA400AFE092 /* DataAPI.swift in Sources */,
-				89C8F0CB1BB993DC00AFE092 /* Post.swift in Sources */,
+				891AAED11BD4A731008E6D49 /* CountryCell.swift in Sources */,
+				89090CDD1BD7947000E2E254 /* Post+CoreDataProperties.swift in Sources */,
+				891AAECC1BD496A4008E6D49 /* SettingViewController.swift in Sources */,
+				8902B5631BD2A290006AD2B9 /* ProfileViewController.swift in Sources */,
 				89C8F0C51BB8327D00AFE092 /* FeedViewController.swift in Sources */,
 				89D553CD1BC7B83100C75D4A /* UserInfo.swift in Sources */,
 				89C8F0BB1BB7F9B700AFE092 /* SelklikFansAccess.swift in Sources */,
-				8902B55F1BD0CC3D006AD2B9 /* ArtistViewController+UITableViewDataSource.swift in Sources */,
 				89D553D01BC8051C00C75D4A /* FacebookPhotoCell.swift in Sources */,
+				891AAECA1BD49688008E6D49 /* NotificationViewController.swift in Sources */,
+				891AAEDA1BD4EB3B008E6D49 /* CountryListViewController+UITableViewDataSource.swift in Sources */,
+				891AAED41BD4C998008E6D49 /* CountryListViewController.swift in Sources */,
+				891AAEE01BD5AD70008E6D49 /* ArtistViewController.swift in Sources */,
 				8902B5401BCF69A3006AD2B9 /* FeedViewController+UITableViewDataSource.swift in Sources */,
 				8902B5391BCF55BC006AD2B9 /* TwitterPhotoCell.swift in Sources */,
 				8902B5471BCF8444006AD2B9 /* RetweetPhotoCell.swift in Sources */,
 				8902B53D1BCF60D6006AD2B9 /* RetweetStatusCell.swift in Sources */,
 				89D553C31BC6178C00C75D4A /* TwitterStatusCell.swift in Sources */,
+				89090CDE1BD7947000E2E254 /* Post.swift in Sources */,
 				8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */,
 				8902B54F1BCF913F006AD2B9 /* InstagramPhotoCell.swift in Sources */,
 				8902B5531BCFB285006AD2B9 /* InstagramVideoCell.swift in Sources */,
 				894253091BB297B700A04953 /* AppDelegate.swift in Sources */,
+				891AAEDC1BD52B2D008E6D49 /* CountryListViewController+UITableViewDelegate.swift in Sources */,
 				8902B5611BD2497B006AD2B9 /* UITapGestureRecognizer+.swift in Sources */,
+				89C280BF1BD78B3800664A0C /* SingleFeedViewController.swift in Sources */,
 				8902B54B1BCF89F7006AD2B9 /* RetweetVideoCell.swift in Sources */,
+				891AAED81BD4E482008E6D49 /* Country.swift in Sources */,
 				89C8F0C31BB829FE00AFE092 /* SWRevealViewController.m in Sources */,
 				89C8F0B81BB7E83900AFE092 /* CoreDataStack.swift in Sources */,
 				89685CB21BCD6A200035E6C0 /* Image.swift in Sources */,
 				899B7FE71BB6941500922922 /* Constants.swift in Sources */,
 				8902B5431BCF8072006AD2B9 /* TwitterVideoCell.swift in Sources */,
+				891AAEE21BD5ECEE008E6D49 /* HUD.swift in Sources */,
+				891AAECE1BD496BE008E6D49 /* AboutViewController.swift in Sources */,
 				89D553CB1BC7B55F00C75D4A /* SlideMenuViewController.swift in Sources */,
 				896D1CA31BCB6CBF008A720B /* FacebookStatusCell.swift in Sources */,
 				89C8F0B61BB7E6D500AFE092 /* SelklikFans.xcdatamodeld in Sources */,
-				89C8F0CC1BB993DC00AFE092 /* Post+CoreDataProperties.swift in Sources */,
-				8902B5571BD0AC27006AD2B9 /* ArtistViewController.swift in Sources */,
+				891AAEDE1BD598D5008E6D49 /* FeedViewController+UITableViewDelegate .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -796,7 +857,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Selklik-Fans/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.selklik.Selklik-Fans";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -811,7 +874,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Selklik-Fans/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.selklik.Selklik-Fans";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -9,42 +9,15 @@
 import Foundation
 import Alamofire
 
-//struct DataAPI {
-    
-    /*
-    enum Router: URLRequestConvertible {
-    static let baseURLString = "http://example.com"
-    static let perPage = 50
-    
-    case Search(query: String, page: Int)
-    
-    // MARK: URLRequestConvertible
-    
-    var URLRequest: NSMutableURLRequest {
-    let result: (path: String, parameters: [String: AnyObject]) = {
-    switch self {
-    case .Search(let query, let page) where page > 1:
-    return ("/search", ["q": query, "offset": Router.perPage * page])
-    case .Search(let query, _):
-    return ("/search", ["q": query])
-    }
-    }()
-    
-    let URL = NSURL(string: Router.baseURLString)!
-    let URLRequest = NSURLRequest(URL: URL.URLByAppendingPathComponent(result.path))
-    let encoding = Alamofire.ParameterEncoding.URL
-    
-    return encoding.encode(URLRequest, parameters: result.parameters).0
-    }
-    }
-    */
   struct DataAPI {
     enum Router: URLRequestConvertible {
         static let baseURLString = API.url
         static let country = Setting.malaysia
         static let version = API.version
-        
+
+        case ArtistCountry(String)
         case ArtistList(String)
+        case ArtistPerCountry(String,String)
         case FavouriteArtistList(String)
         case ArtistPost(String)
         case SingleArtistPost(String,String)
@@ -55,22 +28,30 @@ import Alamofire
         var URLRequest: NSMutableURLRequest {
             let result: (path: String, parameters: [String: AnyObject]) = {
                 switch self {
-                    
+
+                //api/1.2/artist_country?token=
+                case .ArtistCountry (let token):
+                    let params = ["token": token]
+                    return ("/\(Router.version)/artist_country", params)
+
                 case .ArtistList (let token):
-                    let params = ["token": token]//, "country": Router.country]
+                    let params = ["token": token]
                     return ("/\(Router.version)/artist_all", params)
-                    
+
+                case .ArtistPerCountry (let token, let countryCode):
+                    let params = ["token": token, "country": countryCode]
+                    return ("/\(Router.version)/artist_all", params)
+
                 case .FavouriteArtistList (let token):
                     let params = ["token": token, "country": Router.country, "follow":"1"]
                     return ("/\(Router.version)/artist_following", params)
-                    
-                    
+
                 case .ArtistPost (let token):
                     let params = ["token": token, "country": Router.country, "limit" : "25"]
                     return ("/\(Router.version)/artist_feed", params)
                     
                 case .SingleArtistPost (let token, let artistId):
-                    let params = ["token": token, "country": Router.country, "limit" : "15", "artist_id":artistId]
+                    let params = ["token": token, "country": Router.country, "limit" : "25", "artist_id":artistId]
                     return ("/\(Router.version)/artist_feed", params)
                     
                 case .ArtistPremiumPost (let token):

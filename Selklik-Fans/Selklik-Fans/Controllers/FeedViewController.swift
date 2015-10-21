@@ -20,7 +20,7 @@ class FeedViewController: UIViewController {
     var managedContext: NSManagedObjectContext!
     var userToken:String!
     var allPosts = [Post]()
-    var newPost:Post!
+    //var newPost:Post!
     var artistPost = [NSManagedObject]()
     let userInfo = UserInfo()
     let photoInfo = Photo()
@@ -117,6 +117,7 @@ class FeedViewController: UIViewController {
         view.addSubview(messageFrame)
     }
 
+    //TODO: Refactor this fuction to another class
     func clearAllPost() {
 
         let fetchPosts = NSFetchRequest(entityName: "Post")
@@ -184,7 +185,7 @@ class FeedViewController: UIViewController {
                         print("unable to read JSON data artist_img")
                     }
 
-                    if let timeStamp = subJson["timestamp"].string {
+                    if let _ = subJson["timestamp"].string {
                         //artistPost.timeStamp = Date(timeStamp)
                     }else{
                         print("unable to read JSON data timestamp")
@@ -536,9 +537,6 @@ class FeedViewController: UIViewController {
 //    }
 
     func setBrandIconToNavigationController(){
-        let nav = self.navigationController?.navigationBar
-
-        nav?.tintColor = UIColor.whiteColor()
         // 3
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))
         imageView.contentMode = UIViewContentMode.ScaleAspectFit
@@ -568,8 +566,6 @@ class FeedViewController: UIViewController {
 
         feedTableView.dataSource = self
         feedTableView.delegate = self
-
-
 
         self.managedContext = appDelegate.coreDataStack.context
         self.userToken = userInfo.getTokenFromCoreData(managedContext)
@@ -620,31 +616,6 @@ class FeedViewController: UIViewController {
 
 var facebookPostPhoto:UIImage?
 
-
-extension FeedViewController:UITableViewDelegate {
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("didSelectRowAtIndexPath")
-        let post = artistPost[indexPath.row]
-
-        let postType = post.valueForKey("postType") as? String
-
-//        if postType == "photo" {
-//            previewImageSelectedIndex = indexPath.row
-//            previewImage[indexPath.row] = post.valueForKey("photoStdUrl") as? String
-//            self.performSegueWithIdentifier("FeedToViewPhoto", sender: self)
-//        }
-    }
-
-
-   
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        if (segue.identifier == "FeedToViewPhoto") {
-            let viewPhotoViewController = segue.destinationViewController as! ViewPhotoViewController
-            viewPhotoViewController.ImageUrl =  selectedImageUrl
-        }
-
-    }
-}
 
 
 

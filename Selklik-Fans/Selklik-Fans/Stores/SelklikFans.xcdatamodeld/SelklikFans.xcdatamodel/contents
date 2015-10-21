@@ -4,6 +4,29 @@
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tokenCreateTimestamp" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
+    <entity name="Artist" representedClassName=".Artist" syncable="YES">
+        <attribute name="artistGender" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="artistId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="artistImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="artistName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="continent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="countryCode" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="hasFacebook" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="hasInstagram" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="hasPremium" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="hasTwitter" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="international" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="isFollow" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="notification" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
+    <entity name="Country" representedClassName=".Country" syncable="YES">
+        <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="continent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iconUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="id" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="totalArtist" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+    </entity>
     <entity name="Post" representedClassName=".Post" syncable="YES">
         <attribute name="artistId" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fbContentLink" optional="YES" attributeType="String" syncable="YES"/>
@@ -50,6 +73,8 @@
     </entity>
     <elements>
         <element name="Access" positionX="-63" positionY="-18" width="128" height="75"/>
+        <element name="Artist" positionX="-36" positionY="144" width="128" height="240"/>
+        <element name="Country" positionX="-45" positionY="135" width="128" height="135"/>
         <element name="Post" positionX="-36" positionY="81" width="128" height="495"/>
         <element name="User" positionX="-54" positionY="9" width="128" height="195"/>
     </elements>

@@ -56,5 +56,55 @@ class UserInfo {
             print("Could not save: \(error)")
         }
     }
+
+
+    func clearAllCountryFromCoreData(managedContext: NSManagedObjectContext) {
+
+        let fetchPosts = NSFetchRequest(entityName: "Country")
+
+        do  {
+            let fetchedEntities = try managedContext.executeFetchRequest(fetchPosts) as? [Country]
+
+            for entity in fetchedEntities! {
+                managedContext.deleteObject(entity)
+            }
+
+        }
+        catch let fetchError as NSError {
+            print("Fetch Post for delete error: \(fetchError.localizedDescription)")
+        }
+
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save: \(error)")
+        }
+    }
+
+    func clearArtistFromCoreData(managedContext: NSManagedObjectContext){//, predicate:NSPredicate) {
+
+        let fetchPosts = NSFetchRequest(entityName: "Artist")
+        //fetchPosts.predicate = predicate
+
+        do  {
+            let fetchedEntities = try managedContext.executeFetchRequest(fetchPosts) as? [Artist]
+
+            for entity in fetchedEntities! {
+                managedContext.deleteObject(entity)
+            }
+
+        }
+        catch let fetchError as NSError {
+            print("Fetch Post for delete error: \(fetchError.localizedDescription)")
+        }
+
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save: \(error)")
+        }
+    }
+
+
     
 }

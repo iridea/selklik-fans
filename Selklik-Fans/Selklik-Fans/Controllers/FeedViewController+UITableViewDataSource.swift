@@ -18,7 +18,6 @@ extension FeedViewController: UITableViewDataSource {
         print(sender.imageUrl)
         selectedImageUrl = sender.imageUrl
         self.performSegueWithIdentifier("FeedToViewPhoto", sender: self)
-
     }
     //********************************
 
