@@ -1,16 +1,24 @@
 //
-//  RetweetPhotoCell.swift
+//  AltInstagramPhotoCell.swift
 //  Selklik-Fans
 //
-//  Created by Jamal N. Ahmad on 15/10/2015.
+//  Created by Jamal N. Ahmad on 22/10/2015.
 //  Copyright © 2015 Selklik. All rights reserved.
 //
 
 import UIKit
+import ActiveLabel
 
-class RetweetPhotoCell: RetweetStatusCell {
+class AltInstagramPhotoCell: UITableViewCell {
 
+
+    @IBOutlet weak var dateTimeLabel: UILabel!
+    @IBOutlet weak var accountName: UILabel!
+    @IBOutlet weak var statusActiveLabel:ActiveLabel!
     @IBOutlet weak var postPhoto: UIImageView!
+    @IBOutlet weak var totalLikeLabel: UILabel!
+    @IBOutlet weak var totalCommentLabel: UILabel!
+
     let gestureRecognizer = PostImageTapGestureRecognizer()
 
     override func awakeFromNib() {

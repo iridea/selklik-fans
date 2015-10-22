@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "Icon-Spotlight-40.png",
+      "filename" : "Circled Play -50.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Icon-Spotlight-40@2x.png",
+      "filename" : "Circled Play -64.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "Icon-Spotlight-40@3x.png",
+      "filename" : "Circled Play -100.png",
       "scale" : "3x"
     }
   ],

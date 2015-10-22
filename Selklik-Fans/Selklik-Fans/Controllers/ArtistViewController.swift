@@ -19,7 +19,13 @@ class ArtistViewController: UIViewController {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var managedContext: NSManagedObjectContext!
     var userToken:String!
+    var selectedArtistName:String?
+    var selectedArtistId:String?
+    var selectedArtistCountryCode:String?
+    var selectedArtistImageUrl:String?
     var countryCode:String!
+
+
     let userInfo = UserInfo()
     let hud = Hud()
     var artistList = [NSManagedObject]()
@@ -47,6 +53,7 @@ class ArtistViewController: UIViewController {
         self.userToken = userInfo.getTokenFromCoreData(managedContext)
 
         artistTableView.dataSource = self
+        artistTableView.delegate = self
         
         fetchPredicate = NSPredicate(format: "countryCode == '%@'", countryCode)
 
@@ -143,6 +150,7 @@ class ArtistViewController: UIViewController {
                     }
 
                     if let artistId = subJson["artist_id"].string {
+                        print("ARTIST ID:\(artistId)")
                         newArtist.artistId = artistId
                     }else{
                         print("unable to read JSON data artistId")
@@ -255,5 +263,32 @@ extension ArtistViewController: UITableViewDataSource {
         
         return cell
     }
+}
+
+extension ArtistViewController: UITableViewDelegate {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+
+        let artist = artistList[indexPath.row]
+        selectedArtistId = artist.valueForKey("artistId") as? String
+        selectedArtistCountryCode = artist.valueForKey("countryCode") as? String
+        selectedArtistImageUrl = artist.valueForKey("artistImageUrl") as? String
+        selectedArtistName = artist.valueForKey("artistName") as? String
+        self.performSegueWithIdentifier("artistListToSinglePost", sender: self)
+        
+    }
+
+
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+        if (segue.identifier == "artistListToSinglePost") {
+            let singleArtistPostViewController = segue.destinationViewController as! SingleFeedViewController
+            singleArtistPostViewController.artistId =  selectedArtistId
+            singleArtistPostViewController.countryCode = selectedArtistCountryCode
+             singleArtistPostViewController.profileUrl = selectedArtistImageUrl
+            singleArtistPostViewController.name = selectedArtistName
+        }
+        
+    }
+
 }
 

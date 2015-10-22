@@ -51,8 +51,8 @@ import Alamofire
                     return ("/\(Router.version)/artist_feed", params)
                     
                 case .SingleArtistPost (let token, let artistId):
-                    let params = ["token": token, "country": Router.country, "limit" : "25", "artist_id":artistId]
-                    return ("/\(Router.version)/artist_feed", params)
+                    let params = ["token": token, "limit" : "25", "artist_id":artistId]
+                    return ("/\(Router.version)/artist_peek", params)
                     
                 case .ArtistPremiumPost (let token):
                     let params = ["token": token, "country": Router.country, "limit" : "15", "post_type":"premium"]
@@ -67,7 +67,8 @@ import Alamofire
                     return ("/\(Router.version)/news_latest", params)
                 }
                 }()
-            
+
+            print(Router.baseURLString)
             let URL = NSURL(string: Router.baseURLString)!
             let URLRequest = NSURLRequest(URL: URL.URLByAppendingPathComponent(result.path))
             let encoding = Alamofire.ParameterEncoding.URL

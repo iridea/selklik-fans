@@ -1,17 +1,14 @@
 //
-//  RetweetPhotoCell.swift
+//  AltRetweetPhotoCell.swift
 //  Selklik-Fans
 //
-//  Created by Jamal N. Ahmad on 15/10/2015.
+//  Created by Jamal N. Ahmad on 22/10/2015.
 //  Copyright © 2015 Selklik. All rights reserved.
 //
 
 import UIKit
 
-class RetweetPhotoCell: RetweetStatusCell {
-
-    @IBOutlet weak var postPhoto: UIImageView!
-    let gestureRecognizer = PostImageTapGestureRecognizer()
+class AltRetweetPhotoCell: AltTwitterPhotoCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()

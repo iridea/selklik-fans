@@ -19,8 +19,8 @@ class FeedViewController: UIViewController {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var managedContext: NSManagedObjectContext!
     var userToken:String!
-    var allPosts = [Post]()
-    //var newPost:Post!
+    //var allPosts = [Post]()
+
     var artistPost = [NSManagedObject]()
     let userInfo = UserInfo()
     let photoInfo = Photo()
@@ -97,6 +97,8 @@ class FeedViewController: UIViewController {
     }
 
     //MARK: - Custom Function
+
+    //TODO: Refactor this progressBarDisplayer function
     func progressBarDisplayer(msg:String, _ indicator:Bool ) {
 
         view.userInteractionEnabled = false
@@ -614,7 +616,7 @@ class FeedViewController: UIViewController {
     }
 }
 
-var facebookPostPhoto:UIImage?
+//var facebookPostPhoto:UIImage?
 
 
 

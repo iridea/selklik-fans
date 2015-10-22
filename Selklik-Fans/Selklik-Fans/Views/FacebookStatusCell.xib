@@ -181,7 +181,7 @@
     </objects>
     <resources>
         <image name="Facebook-Color" width="50" height="50"/>
-        <image name="UsersIcon" width="100" height="100"/>
+        <image name="UsersIcon" width="50" height="50"/>
         <image name="retweet" width="50" height="50"/>
         <image name="star" width="50" height="50"/>
     </resources>
