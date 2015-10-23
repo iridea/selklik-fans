@@ -170,22 +170,26 @@
                                 <rect key="frame" x="-1" y="106" width="320" height="294"/>
                                 <animations/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDL-JX-Vh4">
-                                <rect key="frame" x="144" y="239" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLO-fV-Oif">
+                                <rect key="frame" x="137" y="230" width="45" height="45"/>
                                 <animations/>
-                                <state key="normal" title="Play"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="45" id="9Vf-mS-bQ4"/>
+                                    <constraint firstAttribute="height" constant="45" id="BKo-tA-hDR"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Play"/>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ntf-Tq-LCc" firstAttribute="top" secondItem="H5i-0D-3BH" secondAttribute="bottom" constant="8" id="5Ek-ge-gbS"/>
+                            <constraint firstItem="zLO-fV-Oif" firstAttribute="centerX" secondItem="US8-7U-vOF" secondAttribute="centerX" id="8la-Nz-kdH"/>
                             <constraint firstItem="US8-7U-vOF" firstAttribute="top" secondItem="ntf-Tq-LCc" secondAttribute="bottom" constant="8" id="Aij-kn-hUf"/>
-                            <constraint firstItem="IDL-JX-Vh4" firstAttribute="top" secondItem="US8-7U-vOF" secondAttribute="bottom" constant="-161" id="BTk-KX-0Yy"/>
                             <constraint firstAttribute="bottom" secondItem="ua4-l1-ilM" secondAttribute="bottom" id="JWe-xQ-A8i"/>
                             <constraint firstItem="ua4-l1-ilM" firstAttribute="leading" secondItem="h3k-Iz-ybd" secondAttribute="leading" id="OZJ-Qz-SPS"/>
-                            <constraint firstItem="IDL-JX-Vh4" firstAttribute="leading" secondItem="US8-7U-vOF" secondAttribute="trailing" constant="-175" id="RHK-zb-jfI"/>
                             <constraint firstItem="H5i-0D-3BH" firstAttribute="leading" secondItem="h3k-Iz-ybd" secondAttribute="leading" id="ZOg-Uu-M60"/>
+                            <constraint firstItem="zLO-fV-Oif" firstAttribute="centerY" secondItem="US8-7U-vOF" secondAttribute="centerY" id="bBG-bC-R7x"/>
                             <constraint firstItem="ntf-Tq-LCc" firstAttribute="leading" secondItem="h3k-Iz-ybd" secondAttribute="leading" constant="8" id="cQb-J7-oTz"/>
                             <constraint firstAttribute="trailing" secondItem="ua4-l1-ilM" secondAttribute="trailing" constant="-2" id="cwg-77-Viz"/>
                             <constraint firstAttribute="trailing" secondItem="ntf-Tq-LCc" secondAttribute="trailing" constant="6" id="fi6-AR-lxK"/>
@@ -225,6 +229,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Play" width="50" height="50"/>
         <image name="Retweet" width="32" height="32"/>
         <image name="Star" width="32" height="32"/>
         <image name="Twitter-Color" width="50" height="50"/>

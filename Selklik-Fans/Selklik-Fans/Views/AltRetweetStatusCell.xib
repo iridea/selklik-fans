@@ -85,7 +85,7 @@
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="retweetRound" translatesAutoresizingMaskIntoConstraints="NO" id="xKY-id-Dy0">
-                        <rect key="frame" x="9" y="67" width="25" height="25"/>
+                        <rect key="frame" x="9" y="63" width="25" height="25"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="c2r-6Z-vY7"/>
@@ -114,7 +114,7 @@
                     <constraint firstItem="Nkb-ZU-HuH" firstAttribute="leading" secondItem="qde-Yb-pvz" secondAttribute="trailing" constant="4" id="ifA-Nh-IHW"/>
                     <constraint firstItem="hed-hf-b8e" firstAttribute="baseline" secondItem="Nkb-ZU-HuH" secondAttribute="baseline" id="ih4-fx-pFU"/>
                     <constraint firstItem="mFL-LL-DmU" firstAttribute="top" secondItem="Uma-sb-Gz0" secondAttribute="bottom" constant="1" id="mz7-ef-dlv"/>
-                    <constraint firstItem="xKY-id-Dy0" firstAttribute="top" secondItem="qkL-Ps-H0W" secondAttribute="bottom" constant="4" id="oUv-yM-YCX"/>
+                    <constraint firstItem="xKY-id-Dy0" firstAttribute="top" secondItem="qkL-Ps-H0W" secondAttribute="bottom" id="oUv-yM-YCX"/>
                     <constraint firstItem="Nkb-ZU-HuH" firstAttribute="top" secondItem="hTt-tP-p03" secondAttribute="bottom" constant="11" id="osB-OM-7jk"/>
                     <constraint firstAttribute="trailingMargin" secondItem="hTt-tP-p03" secondAttribute="trailing" id="s8O-xy-jfz"/>
                     <constraint firstItem="hTt-tP-p03" firstAttribute="top" secondItem="mFL-LL-DmU" secondAttribute="bottom" constant="4" id="uQe-4q-hcq"/>

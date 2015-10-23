@@ -44,7 +44,7 @@
                             <constraint firstAttribute="height" constant="23" id="hFe-L1-dW1"/>
                         </constraints>
                     </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Hgw-5a-4KI">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Hgw-5a-4KI">
                         <rect key="frame" x="10" y="10" width="45" height="45"/>
                         <animations/>
                         <constraints>

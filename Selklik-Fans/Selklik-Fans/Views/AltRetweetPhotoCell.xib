@@ -89,7 +89,7 @@
                         <animations/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="retweetRound" translatesAutoresizingMaskIntoConstraints="NO" id="glO-Ov-gKe">
-                        <rect key="frame" x="9" y="67" width="25" height="25"/>
+                        <rect key="frame" x="9" y="63" width="25" height="25"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="height" constant="25" id="4k9-h1-cDL"/>
@@ -110,7 +110,7 @@
                     <constraint firstItem="Ckc-e3-g42" firstAttribute="leading" secondItem="e3J-k4-zLP" secondAttribute="trailing" constant="8" id="Qdd-Nc-R9n"/>
                     <constraint firstAttribute="bottomMargin" secondItem="HTh-iO-ndL" secondAttribute="bottom" constant="2" id="UZS-V5-98j"/>
                     <constraint firstAttribute="bottom" secondItem="OyY-Ws-9vp" secondAttribute="bottom" id="WgG-rY-O8U"/>
-                    <constraint firstItem="glO-Ov-gKe" firstAttribute="top" secondItem="e3J-k4-zLP" secondAttribute="bottom" constant="4" id="Yvw-ip-2ir"/>
+                    <constraint firstItem="glO-Ov-gKe" firstAttribute="top" secondItem="e3J-k4-zLP" secondAttribute="bottom" id="Yvw-ip-2ir"/>
                     <constraint firstItem="HTh-iO-ndL" firstAttribute="leading" secondItem="sf9-9m-0ur" secondAttribute="trailing" constant="4" id="czg-os-MI1"/>
                     <constraint firstItem="Ckc-e3-g42" firstAttribute="top" secondItem="o6u-ii-FP3" secondAttribute="bottom" constant="1" id="fNk-4E-TpC"/>
                     <constraint firstItem="OyY-Ws-9vp" firstAttribute="leading" secondItem="n2u-Mq-NGB" secondAttribute="leading" constant="20" id="fha-94-SQv"/>

@@ -168,7 +168,9 @@ class CountryListViewController: UIViewController {
 
     func getCountryCoreData() {
         let fetchRequest = NSFetchRequest(entityName: "Country")
-
+        let nameSort =
+        NSSortDescriptor(key: "name", ascending: true)
+        fetchRequest.sortDescriptors = [nameSort]
         do  {
             let results = try managedContext.executeFetchRequest(fetchRequest)
             countryObject = results as! [NSManagedObject]

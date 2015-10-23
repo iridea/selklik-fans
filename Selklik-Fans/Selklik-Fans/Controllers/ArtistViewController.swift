@@ -150,7 +150,6 @@ class ArtistViewController: UIViewController {
                     }
 
                     if let artistId = subJson["artist_id"].string {
-                        print("ARTIST ID:\(artistId)")
                         newArtist.artistId = artistId
                     }else{
                         print("unable to read JSON data artistId")
@@ -219,9 +218,6 @@ class ArtistViewController: UIViewController {
 
     func getArtistFromCoreData() {
         let fetchRequest = NSFetchRequest(entityName: "Artist")
-        //fetchRequest.predicate = fetchPredicate
-        //let nameSort = NSSortDescriptor(key: "artistName", ascending: true)
-        //fetchRequest.sortDescriptors = [nameSort]
         let nameSort =
         NSSortDescriptor(key: "artistName", ascending: true)
         fetchRequest.sortDescriptors = [nameSort]

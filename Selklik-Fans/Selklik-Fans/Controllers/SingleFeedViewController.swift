@@ -108,19 +108,12 @@ class SingleFeedViewController: UIViewController {
 
         let postEntity = NSEntityDescription.entityForName("PostSingle",inManagedObjectContext: managedContext)
 
-        print("userToken: \(userToken)")
-        print("artistId: \(artistId)")
-        print("countryCode: \(countryCode)")
-
         Alamofire.request(DataAPI.Router.SingleArtistPost(userToken,artistId)).responseJSON(){
             response in
 
-            print("MASUK populateSingleFeed - ALAMOFIRE")
             if let jsonData = response.result.value {
 
                 let json = JSON(jsonData)
-
-                print(json)
 
                 for (_,subJson):(String, JSON) in json["result"] {
 
@@ -505,6 +498,7 @@ class SingleFeedViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+
         feedTableView.rowHeight = UITableViewAutomaticDimension
         feedTableView.estimatedRowHeight = 90
 
@@ -515,6 +509,9 @@ class SingleFeedViewController: UIViewController {
 
         self.managedContext = appDelegate.coreDataStack.context
         self.userToken = userInfo.getTokenFromCoreData(managedContext)
+
+        self.artistImage.layer.cornerRadius = self.artistImage.frame.width / 2
+        self.artistImage.clipsToBounds = true
 
         self.artistImage.af_setImageWithURL(NSURL(string: profileUrl)!)
         self.artistName.text = name

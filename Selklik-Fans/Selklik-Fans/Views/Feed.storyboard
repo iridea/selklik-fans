@@ -888,7 +888,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zmR-Mf-MVZ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="100"/>
                                 <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lsw-d2-139">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lsw-d2-139">
                                         <rect key="frame" x="10" y="30" width="60" height="60"/>
                                         <animations/>
                                         <constraints>
@@ -940,6 +940,13 @@
                                         <connections>
                                             <action selector="closeButton:" destination="MTg-fA-0QE" eventType="touchUpInside" id="21L-1b-5ec"/>
                                         </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sft-Mc-KjM">
+                                        <rect key="frame" x="226" y="62" width="74" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Follow">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                     </button>
                                 </subviews>
                                 <animations/>
@@ -1016,7 +1023,7 @@
         <image name="twitterRound" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Lde-3C-jmg"/>
         <segue reference="9qI-Tm-i93"/>
+        <segue reference="Lde-3C-jmg"/>
     </inferredMetricsTieBreakers>
 </document>

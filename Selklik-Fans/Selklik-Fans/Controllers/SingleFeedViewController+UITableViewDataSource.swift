@@ -235,8 +235,8 @@ extension SingleFeedViewController: UITableViewDataSource {
 
 
                 //load profile image
+                //load Post Image
 
-                                //load Post Image
                 var placeholderImage = UIImage(named: "placeholder")
                 let imageSize = CGSize(width: (post.valueForKey("photoStdWidth") as? CGFloat)!, height: ((post.valueForKey("photoStdHeight") as? CGFloat)!)/2.0)
                 placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
@@ -249,8 +249,10 @@ extension SingleFeedViewController: UITableViewDataSource {
                 cell.postPhoto.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
 
                 //load rest of the data
-                cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
 
+                print(post.valueForKey("postText") as? String)
+                cell.statusActiveLabel.text = (post.valueForKey("postText") as? String)!
+                cell.accountName.text = post.valueForKey("name") as? String
 
                 cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
 

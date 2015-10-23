@@ -98,7 +98,7 @@
                         <state key="normal" backgroundImage="Play"/>
                     </button>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="retweetRound" translatesAutoresizingMaskIntoConstraints="NO" id="pDa-SU-7Cr">
-                        <rect key="frame" x="9" y="67" width="25" height="25"/>
+                        <rect key="frame" x="9" y="63" width="25" height="25"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="25" id="0ai-75-5gi"/>
@@ -127,7 +127,7 @@
                     <constraint firstItem="4Do-Ds-iT2" firstAttribute="leading" secondItem="Enj-PJ-nbG" secondAttribute="trailing" constant="4" id="jok-cv-8oo"/>
                     <constraint firstItem="TJI-Od-2EH" firstAttribute="centerX" secondItem="PR8-Mf-WFY" secondAttribute="centerX" id="k4f-kD-Shs"/>
                     <constraint firstItem="PR8-Mf-WFY" firstAttribute="leading" secondItem="obC-p7-aOJ" secondAttribute="trailing" constant="19" id="k6A-mt-gOU"/>
-                    <constraint firstItem="pDa-SU-7Cr" firstAttribute="top" secondItem="y4d-Ve-rW1" secondAttribute="bottom" constant="4" id="nZr-hx-m9y"/>
+                    <constraint firstItem="pDa-SU-7Cr" firstAttribute="top" secondItem="y4d-Ve-rW1" secondAttribute="bottom" id="nZr-hx-m9y"/>
                     <constraint firstItem="Enj-PJ-nbG" firstAttribute="leading" secondItem="obC-p7-aOJ" secondAttribute="trailing" constant="23" id="od4-gz-cot"/>
                     <constraint firstAttribute="bottomMargin" secondItem="4Do-Ds-iT2" secondAttribute="bottom" constant="2" id="p9j-Yk-J6J"/>
                     <constraint firstItem="4Do-Ds-iT2" firstAttribute="top" secondItem="PR8-Mf-WFY" secondAttribute="bottom" constant="8" id="sJa-RN-igL"/>

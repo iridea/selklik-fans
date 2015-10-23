@@ -145,23 +145,25 @@
                                 <rect key="frame" x="-1" y="84" width="320" height="293"/>
                                 <animations/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aBy-UC-oPw">
-                                <rect key="frame" x="144" y="216" width="30" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Qq-Nl-Cp0">
+                                <rect key="frame" x="137" y="208" width="45" height="45"/>
                                 <animations/>
-                                <state key="normal" title="Play">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="2rl-Q9-AFm"/>
+                                    <constraint firstAttribute="width" constant="45" id="z1j-eX-ozG"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Play"/>
                             </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="7Qq-Nl-Cp0" firstAttribute="centerY" secondItem="LwV-g9-xFD" secondAttribute="centerY" id="0pY-HP-UMt"/>
                             <constraint firstItem="hzz-OV-JHH" firstAttribute="leading" secondItem="Me8-KI-Lo8" secondAttribute="leading" id="1cd-Zj-HwS"/>
                             <constraint firstAttribute="trailing" secondItem="LwV-g9-xFD" secondAttribute="trailing" constant="-1" id="2t2-Dm-vv1"/>
                             <constraint firstAttribute="trailing" secondItem="hzz-OV-JHH" secondAttribute="trailing" constant="-2" id="43X-wf-G5a"/>
                             <constraint firstItem="hzz-OV-JHH" firstAttribute="top" secondItem="Me8-KI-Lo8" secondAttribute="top" id="7HM-1V-Xg5"/>
                             <constraint firstItem="LwV-g9-xFD" firstAttribute="leading" secondItem="Me8-KI-Lo8" secondAttribute="leading" constant="-1" id="7eJ-zq-tbJ"/>
-                            <constraint firstItem="aBy-UC-oPw" firstAttribute="leading" secondItem="LwV-g9-xFD" secondAttribute="trailing" constant="-175" id="AOf-Nf-0c8"/>
                             <constraint firstItem="hj9-PE-Vg9" firstAttribute="leading" secondItem="Me8-KI-Lo8" secondAttribute="leading" id="LlQ-1w-IrN"/>
                             <constraint firstItem="KL3-bR-xpa" firstAttribute="leading" secondItem="Me8-KI-Lo8" secondAttribute="leading" constant="8" id="QHJ-kd-rA7"/>
                             <constraint firstAttribute="trailing" secondItem="hzz-OV-JHH" secondAttribute="trailing" constant="-2" id="RXB-SY-9nY"/>
@@ -173,7 +175,7 @@
                             <constraint firstItem="LwV-g9-xFD" firstAttribute="top" secondItem="KL3-bR-xpa" secondAttribute="bottom" constant="6" id="nZv-gh-c6U"/>
                             <constraint firstItem="KL3-bR-xpa" firstAttribute="top" secondItem="hzz-OV-JHH" secondAttribute="bottom" constant="8" id="qMJ-qF-4K1"/>
                             <constraint firstAttribute="trailing" secondItem="KL3-bR-xpa" secondAttribute="trailing" constant="6" id="qwk-Uu-AVA"/>
-                            <constraint firstItem="aBy-UC-oPw" firstAttribute="top" secondItem="LwV-g9-xFD" secondAttribute="bottom" constant="-161" id="u9I-ue-CHZ"/>
+                            <constraint firstItem="7Qq-Nl-Cp0" firstAttribute="centerX" secondItem="LwV-g9-xFD" secondAttribute="centerX" id="t3J-4l-M07"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -207,6 +209,7 @@
     </objects>
     <resources>
         <image name="Instagram-Color" width="50" height="50"/>
+        <image name="Play" width="50" height="50"/>
         <image name="star" width="50" height="50"/>
         <image name="twitter" width="50" height="50"/>
     </resources>

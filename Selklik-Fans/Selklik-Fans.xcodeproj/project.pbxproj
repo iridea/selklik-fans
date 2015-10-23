@@ -73,6 +73,8 @@
 		894253291BB297B700A04953 /* Selklik_FansUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253281BB297B700A04953 /* Selklik_FansUITests.swift */; };
 		894253391BB29C1300A04953 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 894253381BB29C1300A04953 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
 		8956F8F11BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956F8F01BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		8956F8F41BDA254F001DEC44 /* FacebookVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956F8F21BDA254F001DEC44 /* FacebookVideoCell.swift */; settings = {ASSET_TAGS = (); }; };
+		8956F8F51BDA254F001DEC44 /* FacebookVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8956F8F31BDA254F001DEC44 /* FacebookVideoCell.xib */; settings = {ASSET_TAGS = (); }; };
 		89685CB21BCD6A200035E6C0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89685CB11BCD6A200035E6C0 /* Image.swift */; settings = {ASSET_TAGS = (); }; };
 		896D1CA31BCB6CBF008A720B /* FacebookStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896D1CA11BCB6CBF008A720B /* FacebookStatusCell.swift */; settings = {ASSET_TAGS = (); }; };
 		896D1CA41BCB6CBF008A720B /* FacebookStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896D1CA21BCB6CBF008A720B /* FacebookStatusCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -187,6 +189,8 @@
 		8942532A1BB297B700A04953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		894253381BB29C1300A04953 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		8956F8F01BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SingleFeedViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		8956F8F21BDA254F001DEC44 /* FacebookVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookVideoCell.swift; sourceTree = "<group>"; };
+		8956F8F31BDA254F001DEC44 /* FacebookVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookVideoCell.xib; sourceTree = "<group>"; };
 		89685CB11BCD6A200035E6C0 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		896D1CA11BCB6CBF008A720B /* FacebookStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookStatusCell.swift; sourceTree = "<group>"; };
 		896D1CA21BCB6CBF008A720B /* FacebookStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookStatusCell.xib; sourceTree = "<group>"; };
@@ -496,8 +500,10 @@
 			children = (
 				896D1CA11BCB6CBF008A720B /* FacebookStatusCell.swift */,
 				89D553CE1BC8051C00C75D4A /* FacebookPhotoCell.swift */,
+				8956F8F21BDA254F001DEC44 /* FacebookVideoCell.swift */,
 				896D1CA21BCB6CBF008A720B /* FacebookStatusCell.xib */,
 				89D553CF1BC8051C00C75D4A /* FacebookPhotoCell.xib */,
+				8956F8F31BDA254F001DEC44 /* FacebookVideoCell.xib */,
 			);
 			name = Facebook;
 			sourceTree = "<group>";
@@ -684,6 +690,7 @@
 				892272951BD8BCC4001741CE /* AltRetweetPhotoCell.xib in Resources */,
 				894253131BB297B700A04953 /* LaunchScreen.storyboard in Resources */,
 				89C8F0BE1BB8218100AFE092 /* Feed.storyboard in Resources */,
+				8956F8F51BDA254F001DEC44 /* FacebookVideoCell.xib in Resources */,
 				8902B5501BCF913F006AD2B9 /* InstagramPhotoCell.xib in Resources */,
 				89C8F0B31BB75FE900AFE092 /* Login.storyboard in Resources */,
 				894253101BB297B700A04953 /* Assets.xcassets in Resources */,
@@ -787,6 +794,7 @@
 				89D553D01BC8051C00C75D4A /* FacebookPhotoCell.swift in Sources */,
 				891AAECA1BD49688008E6D49 /* NotificationViewController.swift in Sources */,
 				891AAEDA1BD4EB3B008E6D49 /* CountryListViewController+UITableViewDataSource.swift in Sources */,
+				8956F8F41BDA254F001DEC44 /* FacebookVideoCell.swift in Sources */,
 				892272651BD7D48B001741CE /* SingleFeedViewController+UITableViewDataSource.swift in Sources */,
 				891AAED41BD4C998008E6D49 /* CountryListViewController.swift in Sources */,
 				891AAEE01BD5AD70008E6D49 /* ArtistViewController.swift in Sources */,
