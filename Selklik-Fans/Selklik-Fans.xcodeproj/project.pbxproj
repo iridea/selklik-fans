@@ -72,6 +72,7 @@
 		8942531E1BB297B700A04953 /* Selklik_FansTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942531D1BB297B700A04953 /* Selklik_FansTests.swift */; };
 		894253291BB297B700A04953 /* Selklik_FansUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253281BB297B700A04953 /* Selklik_FansUITests.swift */; };
 		894253391BB29C1300A04953 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 894253381BB29C1300A04953 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
+		8956F8F11BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956F8F01BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		89685CB21BCD6A200035E6C0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89685CB11BCD6A200035E6C0 /* Image.swift */; settings = {ASSET_TAGS = (); }; };
 		896D1CA31BCB6CBF008A720B /* FacebookStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896D1CA11BCB6CBF008A720B /* FacebookStatusCell.swift */; settings = {ASSET_TAGS = (); }; };
 		896D1CA41BCB6CBF008A720B /* FacebookStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896D1CA21BCB6CBF008A720B /* FacebookStatusCell.xib */; settings = {ASSET_TAGS = (); }; };
@@ -185,6 +186,7 @@
 		894253281BB297B700A04953 /* Selklik_FansUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selklik_FansUITests.swift; sourceTree = "<group>"; };
 		8942532A1BB297B700A04953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		894253381BB29C1300A04953 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		8956F8F01BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SingleFeedViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		89685CB11BCD6A200035E6C0 /* Image.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		896D1CA11BCB6CBF008A720B /* FacebookStatusCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookStatusCell.swift; sourceTree = "<group>"; };
 		896D1CA21BCB6CBF008A720B /* FacebookStatusCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookStatusCell.xib; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 				8902B5331BCDEF12006AD2B9 /* ViewPhotoViewController.swift */,
 				89C280BE1BD78B3700664A0C /* SingleFeedViewController.swift */,
 				892272641BD7D48B001741CE /* SingleFeedViewController+UITableViewDataSource.swift */,
+				8956F8F01BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift */,
 			);
 			name = Feeds;
 			sourceTree = "<group>";
@@ -800,6 +803,7 @@
 				892272981BD8BD5F001741CE /* AltRetweetVideoCell.swift in Sources */,
 				8902B5531BCFB285006AD2B9 /* InstagramVideoCell.swift in Sources */,
 				892272841BD8A308001741CE /* AltTwitterStatusCell.swift in Sources */,
+				8956F8F11BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift in Sources */,
 				894253091BB297B700A04953 /* AppDelegate.swift in Sources */,
 				891AAEDC1BD52B2D008E6D49 /* CountryListViewController+UITableViewDelegate.swift in Sources */,
 				8902B5611BD2497B006AD2B9 /* UITapGestureRecognizer+.swift in Sources */,
