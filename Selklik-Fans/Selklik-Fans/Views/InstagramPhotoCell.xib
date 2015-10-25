@@ -45,7 +45,7 @@
                                                 <color key="titleColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Instagram-Color" translatesAutoresizingMaskIntoConstraints="NO" id="Wkq-nb-hiy">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InstagramRound" translatesAutoresizingMaskIntoConstraints="NO" id="Wkq-nb-hiy">
                                             <rect key="frame" x="282" y="11" width="30" height="30"/>
                                             <animations/>
                                             <constraints>
@@ -196,7 +196,7 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Instagram-Color" width="50" height="50"/>
+        <image name="InstagramRound" width="40" height="40"/>
         <image name="star" width="50" height="50"/>
         <image name="twitter" width="50" height="50"/>
     </resources>

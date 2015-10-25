@@ -106,11 +106,22 @@
                         <outlet property="menuButton" destination="QWD-bR-c4H" id="KCJ-xh-CYV"/>
                         <segue destination="arn-Xx-vx2" kind="modal" identifier="FeedToViewPhoto" id="DNO-LS-pPW"/>
                         <segue destination="MTg-fA-0QE" kind="modal" identifier="artistPostToSinglePost" id="Lde-3C-jmg"/>
+                        <segue destination="o44-E1-Q18" kind="modal" identifier="FeedToPlayVideo" id="3jK-G7-7dh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3P-Bu-cae" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1529" y="-71"/>
+        </scene>
+        <!--AV Player View Controller-->
+        <scene sceneID="abR-4c-A0Q">
+            <objects>
+                <avPlayerViewController videoGravity="AVLayerVideoGravityResizeAspect" id="o44-E1-Q18" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="iy7-Cj-QKv"/>
+                </avPlayerViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fxA-Jj-o24" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1974" y="-609"/>
         </scene>
         <!--View Photo View Controller-->
         <scene sceneID="uSO-Ez-HPg">
@@ -331,7 +342,7 @@
                                                                 <rect key="frame" x="121" y="9" width="49" height="21"/>
                                                                 <animations/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ulc-tJ-515">
@@ -597,7 +608,7 @@
                                                                 <rect key="frame" x="73" y="9" width="97" height="21"/>
                                                                 <animations/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjx-eq-uWO">
@@ -687,7 +698,7 @@
                                                                 <rect key="frame" x="106" y="9" width="64" height="21"/>
                                                                 <animations/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zke-Qe-UE4">
@@ -777,7 +788,7 @@
                                                                 <rect key="frame" x="123" y="9" width="47" height="21"/>
                                                                 <animations/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wDT-eL-0P1">
@@ -1023,7 +1034,7 @@
         <image name="twitterRound" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="9qI-Tm-i93"/>
+        <segue reference="DNO-LS-pPW"/>
         <segue reference="Lde-3C-jmg"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -109,7 +109,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook-Color" translatesAutoresizingMaskIntoConstraints="NO" id="9A9-2i-ZWu">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebookRound" translatesAutoresizingMaskIntoConstraints="NO" id="9A9-2i-ZWu">
                                 <rect key="frame" x="282" y="8" width="30" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -178,7 +178,7 @@
                 <outlet property="accountNameButton" destination="wmR-MO-d8T" id="gFe-8S-Du3"/>
                 <outlet property="bgView" destination="miB-Ge-KwN" id="WRL-Z7-Efd"/>
                 <outlet property="dateTimeLabel" destination="V2L-eI-DvS" id="g5y-GA-kCN"/>
-                <outlet property="postPhoto" destination="Zni-aD-Sff" id="o1L-Jr-kcq"/>
+                <outlet property="postThumb" destination="Zni-aD-Sff" id="mM5-N1-cfW"/>
                 <outlet property="profilePictureImageView" destination="14u-br-iNJ" id="woF-Oa-Baf"/>
                 <outlet property="statusActiveLabel" destination="9n6-IK-I1U" id="qre-WG-anc"/>
                 <outlet property="totalCommentButton" destination="81M-kt-7cP" id="Urx-Wc-koV"/>
@@ -189,9 +189,9 @@
     </objects>
     <resources>
         <image name="Comment" width="32" height="32"/>
-        <image name="Facebook-Color" width="50" height="50"/>
         <image name="Play" width="50" height="50"/>
         <image name="Thumb" width="32" height="32"/>
         <image name="UserIcon" width="50" height="50"/>
+        <image name="facebookRound" width="40" height="40"/>
     </resources>
 </document>

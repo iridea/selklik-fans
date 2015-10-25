@@ -22,7 +22,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="72"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UsersIcon" translatesAutoresizingMaskIntoConstraints="NO" id="N7p-w6-WtE">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserIcon" translatesAutoresizingMaskIntoConstraints="NO" id="N7p-w6-WtE">
                                             <rect key="frame" x="4" y="26" width="40" height="40"/>
                                             <animations/>
                                             <constraints>
@@ -37,7 +37,7 @@
                                             <color key="textColor" red="0.42655369640000002" green="0.475846082" blue="0.4802647531" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter-Color" translatesAutoresizingMaskIntoConstraints="NO" id="yjF-Qr-B7k">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterRound" translatesAutoresizingMaskIntoConstraints="NO" id="yjF-Qr-B7k">
                                             <rect key="frame" x="282" y="31" width="30" height="30"/>
                                             <animations/>
                                             <constraints>
@@ -232,7 +232,7 @@
         <image name="Play" width="50" height="50"/>
         <image name="Retweet" width="32" height="32"/>
         <image name="Star" width="32" height="32"/>
-        <image name="Twitter-Color" width="50" height="50"/>
-        <image name="UsersIcon" width="50" height="50"/>
+        <image name="UserIcon" width="50" height="50"/>
+        <image name="twitterRound" width="40" height="40"/>
     </resources>
 </document>

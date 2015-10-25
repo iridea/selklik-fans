@@ -22,7 +22,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UsersIcon" translatesAutoresizingMaskIntoConstraints="NO" id="nBs-l6-XkU">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserIcon" translatesAutoresizingMaskIntoConstraints="NO" id="nBs-l6-XkU">
                                             <rect key="frame" x="4" y="6" width="40" height="40"/>
                                             <animations/>
                                             <constraints>
@@ -52,7 +52,7 @@
                                                 <color key="titleColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Twitter-Color" translatesAutoresizingMaskIntoConstraints="NO" id="MgG-ye-dD6">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitterRound" translatesAutoresizingMaskIntoConstraints="NO" id="MgG-ye-dD6">
                                             <rect key="frame" x="282" y="11" width="30" height="30"/>
                                             <animations/>
                                             <constraints>
@@ -208,7 +208,7 @@
     <resources>
         <image name="Retweet" width="32" height="32"/>
         <image name="Star" width="32" height="32"/>
-        <image name="Twitter-Color" width="50" height="50"/>
-        <image name="UsersIcon" width="50" height="50"/>
+        <image name="UserIcon" width="50" height="50"/>
+        <image name="twitterRound" width="40" height="40"/>
     </resources>
 </document>

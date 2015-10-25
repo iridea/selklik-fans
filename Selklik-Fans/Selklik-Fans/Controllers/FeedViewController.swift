@@ -12,6 +12,7 @@ import SwiftyJSON
 import CoreData
 import AlamofireImage
 import ActiveLabel
+import MediaPlayer
 
 class FeedViewController: UIViewController {
 
@@ -19,6 +20,7 @@ class FeedViewController: UIViewController {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     var managedContext: NSManagedObjectContext!
     var userToken:String!
+
     //var allPosts = [Post]()
 
     var artistPost = [NSManagedObject]()
@@ -28,6 +30,7 @@ class FeedViewController: UIViewController {
 
 
      var selectedImageUrl:String?
+    var selectedVideoUrl:String?
 
 
     var fetchedResultsController: NSFetchedResultsController!
@@ -67,6 +70,8 @@ class FeedViewController: UIViewController {
         //facebook
         var cellNib = UINib(nibName: CellIdentifiers.facebookPhotoCell, bundle: nil)
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.facebookPhotoCell)
+        cellNib = UINib(nibName: CellIdentifiers.facebookVideoCell, bundle: nil)
+        feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.facebookVideoCell)
 
 
         //twitter

@@ -368,11 +368,55 @@ extension FeedViewController: UITableViewDataSource {
                 cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
                 cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
 
+                cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " likes"
+                let totalComment = post.valueForKey("totalComment") as? Int
+                var totalCommentString = String(totalComment!)
+
+                if (totalComment == 1){
+                    totalCommentString += " Comment"
+                }else{
+                    totalCommentString += " Comments"
+                }
+
+                cell.totalCommentButton.setTitle(totalCommentString, forState: UIControlState.Normal)
+
                 return cell
 
             case "video":
-                print("facebook video")
-                break
+                let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.facebookVideoCell, forIndexPath:indexPath) as! FacebookVideoCell
+
+                //load profile image
+                var placeholderImage = UIImage(named: "UserIcon")
+                cell.profilePictureImageView.image = nil//UIImage(named: "UserIcon")
+                cell.profilePictureImageView.af_setImageWithURL(profileImageUrl!, placeholderImage: placeholderImage)
+
+                //load Post Image
+                placeholderImage = UIImage(named: "placeholder")
+                let imageSize = CGSize(width: (post.valueForKey("photoStdWidth") as? CGFloat)!, height: ((post.valueForKey("photoStdHeight") as? CGFloat)!)/2.0)
+                placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
+                let postPhotoUrl = NSURL(string: (post.valueForKey("videoThumbStdUrl") as? String)!)
+                cell.postThumb.image = nil
+                cell.postThumb.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
+
+                //load rest of the data
+                cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
+
+                cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
+                cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+
+                cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " likes"
+                let totalComment = post.valueForKey("totalComment") as? Int
+                var totalCommentString = String(totalComment!)
+
+                if (totalComment == 1){
+                    totalCommentString += " Comment"
+                }else{
+                    totalCommentString += " Comments"
+                }
+
+                cell.totalCommentButton.setTitle(totalCommentString, forState: UIControlState.Normal)
+                
+                return cell
             case "link":
                 print("facebook link")
                 break

@@ -22,7 +22,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="52"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="oRD-Af-Ktv">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="UserIcon" translatesAutoresizingMaskIntoConstraints="NO" id="oRD-Af-Ktv">
                                             <rect key="frame" x="5" y="6" width="40" height="40"/>
                                             <animations/>
                                             <constraints>
@@ -45,7 +45,7 @@
                                                 <color key="titleColor" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
                                             </state>
                                         </button>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook-Color" translatesAutoresizingMaskIntoConstraints="NO" id="RsU-ea-1Mt">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebookRound" translatesAutoresizingMaskIntoConstraints="NO" id="RsU-ea-1Mt">
                                             <rect key="frame" x="282" y="11" width="30" height="30"/>
                                             <animations/>
                                             <constraints>
@@ -181,7 +181,8 @@
     </objects>
     <resources>
         <image name="Comment" width="32" height="32"/>
-        <image name="Facebook-Color" width="50" height="50"/>
         <image name="Thumb" width="32" height="32"/>
+        <image name="UserIcon" width="50" height="50"/>
+        <image name="facebookRound" width="40" height="40"/>
     </resources>
 </document>

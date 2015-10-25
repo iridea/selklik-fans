@@ -109,7 +109,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Facebook-Color" translatesAutoresizingMaskIntoConstraints="NO" id="n0D-TL-k8w">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebookRound" translatesAutoresizingMaskIntoConstraints="NO" id="n0D-TL-k8w">
                                 <rect key="frame" x="282" y="8" width="30" height="30"/>
                                 <animations/>
                                 <constraints>
@@ -178,8 +178,8 @@
     </objects>
     <resources>
         <image name="Comment" width="32" height="32"/>
-        <image name="Facebook-Color" width="50" height="50"/>
         <image name="Thumb" width="32" height="32"/>
         <image name="UserIcon" width="50" height="50"/>
+        <image name="facebookRound" width="40" height="40"/>
     </resources>
 </document>

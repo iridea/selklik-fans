@@ -8,8 +8,9 @@
 
 import UIKit
 
-class FacebookVideoCell: UITableViewCell {
+class FacebookVideoCell: FacebookStatusCell {
 
+    @IBOutlet weak var postThumb: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
