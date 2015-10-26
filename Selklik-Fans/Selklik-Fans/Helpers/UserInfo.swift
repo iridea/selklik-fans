@@ -84,7 +84,6 @@ class UserInfo {
     func clearArtistFromCoreData(managedContext: NSManagedObjectContext) {
 
         let fetchPosts = NSFetchRequest(entityName: "Artist")
-        //fetchPosts.predicate = predicate
 
         do  {
             let fetchedEntities = try managedContext.executeFetchRequest(fetchPosts) as? [Artist]
@@ -111,6 +110,29 @@ class UserInfo {
 
         do  {
             let fetchedEntities = try managedContext.executeFetchRequest(fetchPosts) as? [PostSingle]
+
+            for entity in fetchedEntities! {
+                managedContext.deleteObject(entity)
+            }
+
+        }
+        catch let fetchError as NSError {
+            print("Fetch Post for delete error: \(fetchError.localizedDescription)")
+        }
+
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save: \(error)")
+        }
+    }
+
+    func clearCommentFromCoreData(managedContext: NSManagedObjectContext) {
+
+        let fetchPosts = NSFetchRequest(entityName: "Comment")
+
+        do  {
+            let fetchedEntities = try managedContext.executeFetchRequest(fetchPosts) as? [Comment]
 
             for entity in fetchedEntities! {
                 managedContext.deleteObject(entity)

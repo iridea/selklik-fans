@@ -89,7 +89,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="6IM-0i-EfU">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Love" translatesAutoresizingMaskIntoConstraints="NO" id="6IM-0i-EfU">
                                             <rect key="frame" x="9" y="5" width="20" height="20"/>
                                             <animations/>
                                             <constraints>
@@ -103,14 +103,14 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88888888 likes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZC-He-VNG">
-                                            <rect key="frame" x="235" y="9" width="77" height="12"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="015-pG-1b9" customClass="CommentButton" customModule="Selklik_Fans" customModuleProvider="target">
+                                            <rect key="frame" x="260" y="3" width="52" height="24"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="Uoq-No-CeG">
-                                            <rect key="frame" x="207" y="5" width="20" height="20"/>
+                                            <state key="normal" title="Comments"/>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Comment" translatesAutoresizingMaskIntoConstraints="NO" id="Uoq-No-CeG">
+                                            <rect key="frame" x="232" y="5" width="20" height="20"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="20" id="Ojq-JC-v5b"/>
@@ -121,15 +121,14 @@
                                     <animations/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="McC-DQ-Vf2" secondAttribute="bottom" constant="9" id="0oy-om-oZD"/>
-                                        <constraint firstItem="LZC-He-VNG" firstAttribute="leading" secondItem="Uoq-No-CeG" secondAttribute="trailing" constant="8" id="61S-i6-JbQ"/>
+                                        <constraint firstItem="015-pG-1b9" firstAttribute="leading" secondItem="Uoq-No-CeG" secondAttribute="trailing" constant="8" id="74b-3A-xjv"/>
                                         <constraint firstAttribute="bottom" secondItem="6IM-0i-EfU" secondAttribute="bottom" constant="5" id="8Ax-bF-fwB"/>
                                         <constraint firstItem="6IM-0i-EfU" firstAttribute="top" secondItem="E4X-UI-IME" secondAttribute="top" constant="5" id="KXS-Ru-Jmx"/>
                                         <constraint firstItem="McC-DQ-Vf2" firstAttribute="top" secondItem="E4X-UI-IME" secondAttribute="top" constant="9" id="Pox-x5-LWC"/>
                                         <constraint firstAttribute="bottom" secondItem="Uoq-No-CeG" secondAttribute="bottom" constant="5" id="Q6g-eJ-QId"/>
-                                        <constraint firstAttribute="trailing" secondItem="LZC-He-VNG" secondAttribute="trailing" constant="8" id="Zll-8h-Y2i"/>
                                         <constraint firstItem="McC-DQ-Vf2" firstAttribute="leading" secondItem="6IM-0i-EfU" secondAttribute="trailing" constant="8" id="cBs-1E-78B"/>
-                                        <constraint firstAttribute="bottom" secondItem="LZC-He-VNG" secondAttribute="bottom" constant="9" id="cz2-TZ-dMs"/>
-                                        <constraint firstItem="LZC-He-VNG" firstAttribute="top" secondItem="E4X-UI-IME" secondAttribute="top" constant="9" id="teQ-ee-OW5"/>
+                                        <constraint firstItem="015-pG-1b9" firstAttribute="baseline" secondItem="McC-DQ-Vf2" secondAttribute="baseline" id="hrr-qb-TvN"/>
+                                        <constraint firstAttribute="trailing" secondItem="015-pG-1b9" secondAttribute="trailing" constant="8" id="kub-Og-qcy"/>
                                         <constraint firstItem="6IM-0i-EfU" firstAttribute="leading" secondItem="E4X-UI-IME" secondAttribute="leading" constant="9" id="xpc-3i-Ab0"/>
                                         <constraint firstItem="Uoq-No-CeG" firstAttribute="top" secondItem="E4X-UI-IME" secondAttribute="top" constant="5" id="zhc-DR-gg3"/>
                                     </constraints>
@@ -197,20 +196,19 @@
                 <outlet property="accountNameButton" destination="m54-a0-b5Y" id="Lwf-96-1pX"/>
                 <outlet property="bgView" destination="Me8-KI-Lo8" id="VgA-Va-d9N"/>
                 <outlet property="dateTimeLabel" destination="pJ9-sd-3JI" id="RvR-k0-vak"/>
-                <outlet property="postPhoto" destination="LwV-g9-xFD" id="TAL-96-rV8"/>
                 <outlet property="postThumb" destination="LwV-g9-xFD" id="nEe-vf-lA4"/>
                 <outlet property="profilePictureImageView" destination="heL-e4-tne" id="edt-gF-9Jd"/>
                 <outlet property="statusActiveLabel" destination="KL3-bR-xpa" id="cIx-hW-eDJ"/>
+                <outlet property="totalCommentButton" destination="015-pG-1b9" id="aSK-W8-V6j"/>
                 <outlet property="totalLikeLabel" destination="McC-DQ-Vf2" id="DC1-nt-DmD"/>
-                <outlet property="totalRetweetLabel" destination="LZC-He-VNG" id="22d-cs-VLn"/>
             </connections>
             <point key="canvasLocation" x="37" y="331"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Comment" width="32" height="32"/>
         <image name="InstagramRound" width="40" height="40"/>
+        <image name="Love" width="32" height="32"/>
         <image name="Play" width="50" height="50"/>
-        <image name="star" width="50" height="50"/>
-        <image name="twitter" width="50" height="50"/>
     </resources>
 </document>

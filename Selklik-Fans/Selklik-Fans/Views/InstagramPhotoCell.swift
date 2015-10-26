@@ -19,7 +19,8 @@ class InstagramPhotoCell: UITableViewCell {
     @IBOutlet weak var statusActiveLabel:ActiveLabel!
     @IBOutlet weak var postPhoto: UIImageView!
     @IBOutlet weak var totalLikeLabel: UILabel!
-    @IBOutlet weak var totalRetweetLabel: UILabel!
+    @IBOutlet weak var totalCommentButton: CommentButton!
+   
 
     let gestureRecognizer = PostImageTapGestureRecognizer()
 

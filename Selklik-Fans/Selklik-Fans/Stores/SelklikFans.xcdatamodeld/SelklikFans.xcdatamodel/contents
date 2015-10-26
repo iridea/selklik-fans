@@ -19,6 +19,14 @@
         <attribute name="isFollow" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="notification" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
+    <entity name="Comment" representedClassName=".Comment" syncable="YES">
+        <attribute name="comment" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="profileImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="screenName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeStamp" optional="YES" attributeType="Date" syncable="YES"/>
+    </entity>
     <entity name="Country" representedClassName=".Country" syncable="YES">
         <attribute name="code" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="continent" optional="YES" attributeType="String" syncable="YES"/>
@@ -29,6 +37,7 @@
     </entity>
     <entity name="Post" representedClassName=".Post" syncable="YES">
         <attribute name="artistId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fbContentLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fbContentLinkImageUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="fbContentLinkText" optional="YES" attributeType="String" syncable="YES"/>
@@ -104,8 +113,9 @@
         <element name="Access" positionX="-63" positionY="-18" width="128" height="75"/>
         <element name="Artist" positionX="-36" positionY="144" width="128" height="240"/>
         <element name="Country" positionX="-45" positionY="135" width="128" height="135"/>
-        <element name="Post" positionX="-36" positionY="81" width="128" height="495"/>
+        <element name="Post" positionX="-36" positionY="81" width="128" height="510"/>
         <element name="PostSingle" positionX="-45" positionY="135" width="128" height="450"/>
         <element name="User" positionX="-54" positionY="9" width="128" height="195"/>
+        <element name="Comment" positionX="-45" positionY="135" width="128" height="135"/>
     </elements>
 </model>

@@ -89,7 +89,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twitter" translatesAutoresizingMaskIntoConstraints="NO" id="ry3-HS-wAN">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Love" translatesAutoresizingMaskIntoConstraints="NO" id="ry3-HS-wAN">
                                             <rect key="frame" x="9" y="5" width="20" height="20"/>
                                             <animations/>
                                             <constraints>
@@ -103,14 +103,14 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88888888 likes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RQ9-uD-CyY">
-                                            <rect key="frame" x="235" y="9" width="77" height="12"/>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uIy-ID-uzF" customClass="CommentButton" customModule="Selklik_Fans" customModuleProvider="target">
+                                            <rect key="frame" x="260" y="3" width="52" height="24"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star" translatesAutoresizingMaskIntoConstraints="NO" id="Byv-Sq-5Y5">
-                                            <rect key="frame" x="207" y="5" width="20" height="20"/>
+                                            <state key="normal" title="Comments"/>
+                                        </button>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Comment" translatesAutoresizingMaskIntoConstraints="NO" id="Byv-Sq-5Y5">
+                                            <rect key="frame" x="232" y="5" width="20" height="20"/>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="20" id="BRa-u6-emh"/>
@@ -125,13 +125,12 @@
                                         <constraint firstItem="ry3-HS-wAN" firstAttribute="leading" secondItem="YdN-MP-mNB" secondAttribute="leading" constant="9" id="DVB-M8-37C"/>
                                         <constraint firstItem="ry3-HS-wAN" firstAttribute="top" secondItem="YdN-MP-mNB" secondAttribute="top" constant="5" id="IHI-kq-bE5"/>
                                         <constraint firstItem="ny5-uK-xM3" firstAttribute="leading" secondItem="ry3-HS-wAN" secondAttribute="trailing" constant="8" id="LFv-no-a7E"/>
+                                        <constraint firstAttribute="trailing" secondItem="uIy-ID-uzF" secondAttribute="trailing" constant="8" id="LRp-xS-5tX"/>
                                         <constraint firstAttribute="bottom" secondItem="ny5-uK-xM3" secondAttribute="bottom" constant="9" id="N0w-uK-eeo"/>
-                                        <constraint firstAttribute="trailing" secondItem="RQ9-uD-CyY" secondAttribute="trailing" constant="8" id="Wf7-gZ-EcB"/>
+                                        <constraint firstItem="uIy-ID-uzF" firstAttribute="baseline" secondItem="ny5-uK-xM3" secondAttribute="baseline" id="RV5-qx-ejT"/>
+                                        <constraint firstItem="uIy-ID-uzF" firstAttribute="leading" secondItem="Byv-Sq-5Y5" secondAttribute="trailing" constant="8" id="T3E-9d-SNg"/>
                                         <constraint firstItem="Byv-Sq-5Y5" firstAttribute="top" secondItem="YdN-MP-mNB" secondAttribute="top" constant="5" id="WqR-qy-pq6"/>
-                                        <constraint firstItem="RQ9-uD-CyY" firstAttribute="top" secondItem="YdN-MP-mNB" secondAttribute="top" constant="9" id="Y8N-9H-PcK"/>
-                                        <constraint firstAttribute="bottom" secondItem="RQ9-uD-CyY" secondAttribute="bottom" constant="9" id="bCs-tl-Vi8"/>
                                         <constraint firstAttribute="bottom" secondItem="Byv-Sq-5Y5" secondAttribute="bottom" constant="5" id="eOk-fW-OKd"/>
-                                        <constraint firstItem="RQ9-uD-CyY" firstAttribute="leading" secondItem="Byv-Sq-5Y5" secondAttribute="trailing" constant="8" id="l3G-3Z-3f6"/>
                                     </constraints>
                                 </view>
                                 <animations/>
@@ -189,15 +188,15 @@
                 <outlet property="postPhoto" destination="fcJ-xn-kOA" id="RaH-Rx-id1"/>
                 <outlet property="profilePictureImageView" destination="TdD-vG-ovb" id="IMG-wV-VpK"/>
                 <outlet property="statusActiveLabel" destination="3Wp-ez-3lC" id="K1m-kf-fLg"/>
+                <outlet property="totalCommentButton" destination="uIy-ID-uzF" id="CMh-fW-5rA"/>
                 <outlet property="totalLikeLabel" destination="ny5-uK-xM3" id="vzd-62-JjY"/>
-                <outlet property="totalRetweetLabel" destination="RQ9-uD-CyY" id="119-xz-c2a"/>
             </connections>
-            <point key="canvasLocation" x="305" y="302"/>
+            <point key="canvasLocation" x="446" y="323"/>
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Comment" width="32" height="32"/>
         <image name="InstagramRound" width="40" height="40"/>
-        <image name="star" width="50" height="50"/>
-        <image name="twitter" width="50" height="50"/>
+        <image name="Love" width="32" height="32"/>
     </resources>
 </document>

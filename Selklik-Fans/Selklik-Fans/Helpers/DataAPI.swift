@@ -22,7 +22,7 @@ import Alamofire
         case ArtistPost(String)
         case SingleArtistPost(String,String)
         case ArtistPremiumPost(String)
-        case FeedComment(String,String,String)
+        case FeedComment(String,String,String, String)
         case LatestNews(String)
         
         var URLRequest: NSMutableURLRequest {
@@ -58,8 +58,8 @@ import Alamofire
                     let params = ["token": token, "country": Router.country, "limit" : "15", "post_type":"premium"]
                     return ("/\(Router.version)/artist_feed", params)
                     
-                case .FeedComment (let token, let postId, let socialMediaType):
-                    let params = ["token": token, "country": Router.country, "post_id":postId, "social_media":socialMediaType]
+                case .FeedComment (let token, let postId, let socialMediaType, let countryCode):
+                    let params = ["token": token, "country": countryCode, "post_id":postId, "social_media":socialMediaType]
                     return ("/\(Router.version)/artist_comments", params)
                     
                 case .LatestNews (let token):

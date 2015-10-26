@@ -15,6 +15,7 @@ import CoreData
 extension Post {
 
     @NSManaged var artistId: String?
+    @NSManaged var country: String?
     @NSManaged var fbContentLink: String?
     @NSManaged var fbContentLinkImageUrl: String?
     @NSManaged var fbContentLinkText: String?

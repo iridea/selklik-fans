@@ -31,7 +31,6 @@ extension FeedViewController:UITableViewDelegate {
 }
 
 
-
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "FeedToViewPhoto") {
             let viewPhotoViewController = segue.destinationViewController as! ViewPhotoViewController
@@ -42,6 +41,15 @@ extension FeedViewController:UITableViewDelegate {
             let destination = segue.destinationViewController as! AVPlayerViewController
             let url = NSURL(string:selectedVideoUrl!)
             destination.player = AVPlayer(URL: url!)
+        }
+
+        if (segue.identifier == "FeedToComment") {
+            let commentViewController = segue.destinationViewController as! CommentViewController
+
+            commentViewController.postId = self.selectedPostIdComment
+            commentViewController.token = self.userToken
+            commentViewController.socialMediaType = self.selectedSocialMediaTypeComment
+            commentViewController.country = self.selectedCountryComment
         }
     }
 }

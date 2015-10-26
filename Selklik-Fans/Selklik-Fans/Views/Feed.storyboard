@@ -107,11 +107,71 @@
                         <segue destination="arn-Xx-vx2" kind="modal" identifier="FeedToViewPhoto" id="DNO-LS-pPW"/>
                         <segue destination="MTg-fA-0QE" kind="modal" identifier="artistPostToSinglePost" id="Lde-3C-jmg"/>
                         <segue destination="o44-E1-Q18" kind="modal" identifier="FeedToPlayVideo" id="3jK-G7-7dh"/>
+                        <segue destination="1Iw-HE-gCp" kind="modal" identifier="FeedToComment" id="2lr-c6-vfM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3P-Bu-cae" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1529" y="-71"/>
+        </scene>
+        <!--Comment View Controller-->
+        <scene sceneID="7Rq-0B-4W9">
+            <objects>
+                <viewController modalPresentationStyle="overFullScreen" id="1Iw-HE-gCp" customClass="CommentViewController" customModule="Selklik_Fans" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vxw-fI-FS4"/>
+                        <viewControllerLayoutGuide type="bottom" id="fan-f4-clV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eAG-di-dtb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="dtM-iv-hmq">
+                                <rect key="frame" x="12" y="92" width="296" height="476"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MF6-Rb-5TM">
+                                <rect key="frame" x="110" y="67" width="100" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mk9-cu-7Qf">
+                                <rect key="frame" x="276" y="57" width="32" height="32"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="32" id="6jb-WG-qrB"/>
+                                    <constraint firstAttribute="width" constant="32" id="Jw8-NP-Lj0"/>
+                                </constraints>
+                                <state key="normal" image="CloseX"/>
+                                <connections>
+                                    <action selector="closeButtonAction:" destination="1Iw-HE-gCp" eventType="touchUpInside" id="3Lp-3C-ar7"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="0.12637259066104889" green="0.12639245390892029" blue="0.12636536359786987" alpha="0.69789907094594594" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="dtM-iv-hmq" firstAttribute="top" secondItem="Mk9-cu-7Qf" secondAttribute="bottom" constant="3" id="7cu-ZU-Cud"/>
+                            <constraint firstItem="dtM-iv-hmq" firstAttribute="top" secondItem="MF6-Rb-5TM" secondAttribute="bottom" constant="4" id="CzV-iH-Uav"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MF6-Rb-5TM" secondAttribute="trailing" constant="94" id="EBi-R5-7yQ"/>
+                            <constraint firstItem="MF6-Rb-5TM" firstAttribute="leading" secondItem="eAG-di-dtb" secondAttribute="leadingMargin" constant="94" id="KsX-eJ-nYk"/>
+                            <constraint firstAttribute="trailing" secondItem="dtM-iv-hmq" secondAttribute="trailing" constant="12" id="Uaq-oP-o1m"/>
+                            <constraint firstItem="Mk9-cu-7Qf" firstAttribute="trailing" secondItem="dtM-iv-hmq" secondAttribute="trailing" id="ZhP-JY-gZa"/>
+                            <constraint firstItem="dtM-iv-hmq" firstAttribute="leading" secondItem="eAG-di-dtb" secondAttribute="leading" constant="12" id="hBP-vP-b7g"/>
+                            <constraint firstItem="fan-f4-clV" firstAttribute="top" secondItem="dtM-iv-hmq" secondAttribute="bottom" id="hY3-25-59W"/>
+                            <constraint firstItem="MF6-Rb-5TM" firstAttribute="top" secondItem="vxw-fI-FS4" secondAttribute="bottom" constant="47" id="i6H-L5-3cv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="commentTableView" destination="dtM-iv-hmq" id="Ckr-bm-E5w"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qzQ-jq-4UZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1514" y="-756"/>
         </scene>
         <!--AV Player View Controller-->
         <scene sceneID="abR-4c-A0Q">
@@ -179,7 +239,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2w-0z-alr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2883" y="-663"/>
+            <point key="canvasLocation" x="2923" y="-643"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="Yqc-lT-xh4">
@@ -1017,6 +1077,7 @@
     <resources>
         <image name="About" width="32" height="32"/>
         <image name="Artist" width="32" height="32"/>
+        <image name="CloseX" width="32" height="32"/>
         <image name="CoordinatorVCBackground" width="640" height="1136"/>
         <image name="Favourite" width="32" height="32"/>
         <image name="Home" width="32" height="32"/>

@@ -14,10 +14,17 @@ extension FeedViewController: UITableViewDataSource {
     //var isImageTab = false
     //********************************
     func postImageHasBeenTapped(sender:PostImageTapGestureRecognizer){
-        print("postImageHasBeenTapped")
-        print(sender.imageUrl)
         selectedImageUrl = sender.imageUrl
         self.performSegueWithIdentifier("FeedToViewPhoto", sender: self)
+    }
+
+    func showFeedComments(sender:CommentButton) {
+
+        self.selectedPostIdComment = sender.postId
+        self.selectedSocialMediaTypeComment = sender.socialMedia
+        self.selectedCountryComment = sender.country
+
+        self.performSegueWithIdentifier("FeedToComment", sender: self)
     }
     //********************************
 
@@ -268,6 +275,23 @@ extension FeedViewController: UITableViewDataSource {
                 cell.gestureRecognizer.imageUrl = (post.valueForKey("photoStdUrl") as? String)!
                 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+                //totalComment Button -------------------------
+                var totalCommentString = " Comment"
+
+                if let totalComment = post.valueForKey("totalComment") as? Int {
+                    if totalComment > 1 {
+                        totalCommentString += "s"
+                    }
+                    totalCommentString = String(totalComment) + totalCommentString
+                }
+
+                cell.totalCommentButton.setTitle(totalCommentString, forState: UIControlState.Normal)
+                cell.totalCommentButton.addTarget(self, action: "showFeedComments:", forControlEvents: .TouchUpInside)
+
+                cell.totalCommentButton.postId = (post.valueForKey("postId") as? String)!
+                cell.totalCommentButton.country = (post.valueForKey("country") as? String)!
+                cell.totalCommentButton.socialMedia = socialMediaType!
+                //---------------------------------------------
 
                 //load profile image
                 var placeholderImage = UIImage(named: "UserIcon")
@@ -296,6 +320,25 @@ extension FeedViewController: UITableViewDataSource {
             case "video":
                 let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.instagramVideoCell, forIndexPath:indexPath) as! InstagramVideoCell
 
+                //totalComment Button -------------------------
+                var totalCommentString = " Comment"
+
+                if let totalComment = post.valueForKey("totalComment") as? Int {
+                    if totalComment > 1 {
+                        totalCommentString += "s"
+                    }
+                    totalCommentString = String(totalComment) + totalCommentString
+                }
+
+                cell.totalCommentButton.setTitle(totalCommentString, forState: UIControlState.Normal)
+                cell.totalCommentButton.addTarget(self, action: "showFeedComments:", forControlEvents: .TouchUpInside)
+
+                cell.totalCommentButton.postId = (post.valueForKey("postId") as? String)!
+                cell.totalCommentButton.country = (post.valueForKey("country") as? String)!
+                cell.totalCommentButton.socialMedia = socialMediaType!
+                //---------------------------------------------
+
+
                 //load profile image
                 var placeholderImage = UIImage(named: "UserIcon")
                 cell.profilePictureImageView.image = placeholderImage
@@ -306,8 +349,8 @@ extension FeedViewController: UITableViewDataSource {
                 let imageSize = CGSize(width: (post.valueForKey("videoThumbStdWidth") as? CGFloat)!, height: ((post.valueForKey("videoThumbStdHeight") as? CGFloat)!)/2.0)
                 placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
                 let postThumbUrl = NSURL(string: (post.valueForKey("videoThumbStdUrl") as? String)!)
-                cell.postPhoto.image = nil
-                cell.postPhoto.af_setImageWithURL(postThumbUrl!, placeholderImage: placeholderImage)
+                cell.postThumb.image = nil
+                cell.postThumb.af_setImageWithURL(postThumbUrl!, placeholderImage: placeholderImage)
                 cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                 //load rest of the data
                 cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
@@ -356,6 +399,7 @@ extension FeedViewController: UITableViewDataSource {
                 //load Post Image
                 placeholderImage = UIImage(named: "placeholder")
                 let imageSize = CGSize(width: (post.valueForKey("photoStdWidth") as? CGFloat)!, height: ((post.valueForKey("photoStdHeight") as? CGFloat)!)/2.0)
+
                 placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
                 let postPhotoUrl = NSURL(string: (post.valueForKey("photoStdUrl") as? String)!)
                 cell.postPhoto.image = nil
@@ -390,8 +434,11 @@ extension FeedViewController: UITableViewDataSource {
 
                 //load Post Image
                 placeholderImage = UIImage(named: "placeholder")
-                let imageSize = CGSize(width: (post.valueForKey("photoStdWidth") as? CGFloat)!, height: ((post.valueForKey("photoStdHeight") as? CGFloat)!)/2.0)
-                placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
+                let imageSize = CGSize(width: (post.valueForKey("videoThumbStdWidth") as? CGFloat)!, height: ((post.valueForKey("videoThumbStdHeight") as? CGFloat)!)/2.0)
+
+                //placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
+               
+
                 let postPhotoUrl = NSURL(string: (post.valueForKey("videoThumbStdUrl") as? String)!)
                 cell.postThumb.image = nil
                 cell.postThumb.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)

@@ -21,15 +21,17 @@ class FeedViewController: UIViewController {
     var managedContext: NSManagedObjectContext!
     var userToken:String!
 
-    //var allPosts = [Post]()
-
     var artistPost = [NSManagedObject]()
     let userInfo = UserInfo()
     let photoInfo = Photo()
 
+    //Comment variable
+    var selectedPostIdComment:String?
+    var selectedSocialMediaTypeComment:String?
+    var selectedCountryComment:String?
 
 
-     var selectedImageUrl:String?
+    var selectedImageUrl:String?
     var selectedVideoUrl:String?
 
 
@@ -226,6 +228,12 @@ class FeedViewController: UIViewController {
                         newPost.postType = postType
                     }else{
                         print("unable to read JSON data post_type")
+                    }
+
+                    if let country = subJson["country"].string {
+                        newPost.country = country
+                    }else{
+                        print("unable to read JSON data country")
                     }
 
                     //Check Social Media

@@ -64,6 +64,14 @@
 		8922729D1BD8C0C0001741CE /* AltInstagramPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8922729B1BD8C0C0001741CE /* AltInstagramPhotoCell.xib */; settings = {ASSET_TAGS = (); }; };
 		892272A01BD8C494001741CE /* AltInstagramVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8922729E1BD8C494001741CE /* AltInstagramVideoCell.swift */; settings = {ASSET_TAGS = (); }; };
 		892272A11BD8C494001741CE /* AltInstagramVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8922729F1BD8C494001741CE /* AltInstagramVideoCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8933BD591BDDD58B00E73528 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD571BDDD58B00E73528 /* CommentCell.swift */; settings = {ASSET_TAGS = (); }; };
+		8933BD5A1BDDD58B00E73528 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8933BD581BDDD58B00E73528 /* CommentCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8933BD5D1BDDD64200E73528 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD5C1BDDD64200E73528 /* CommentViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		8933BD5F1BDDE8DD00E73528 /* CommentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD5E1BDDE8DD00E73528 /* CommentButton.swift */; settings = {ASSET_TAGS = (); }; };
+		8933BD621BDDFC1D00E73528 /* Comment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD601BDDFC1D00E73528 /* Comment+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
+		8933BD631BDDFC1D00E73528 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD611BDDFC1D00E73528 /* Comment.swift */; settings = {ASSET_TAGS = (); }; };
+		8933BD651BDDFF1700E73528 /* CommentViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD641BDDFF1700E73528 /* CommentViewController+UITableViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
+		8933BD671BDDFF3000E73528 /* CommentViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD661BDDFF3000E73528 /* CommentViewController+UITableViewDelegate.swift */; settings = {ASSET_TAGS = (); }; };
 		894253091BB297B700A04953 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253081BB297B700A04953 /* AppDelegate.swift */; };
 		8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942530A1BB297B700A04953 /* CoordinatorViewController.swift */; };
 		8942530E1BB297B700A04953 /* Startup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8942530C1BB297B700A04953 /* Startup.storyboard */; };
@@ -174,6 +182,14 @@
 		8922729B1BD8C0C0001741CE /* AltInstagramPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AltInstagramPhotoCell.xib; sourceTree = "<group>"; };
 		8922729E1BD8C494001741CE /* AltInstagramVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AltInstagramVideoCell.swift; sourceTree = "<group>"; };
 		8922729F1BD8C494001741CE /* AltInstagramVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AltInstagramVideoCell.xib; sourceTree = "<group>"; };
+		8933BD571BDDD58B00E73528 /* CommentCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentCell.swift; sourceTree = "<group>"; };
+		8933BD581BDDD58B00E73528 /* CommentCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommentCell.xib; sourceTree = "<group>"; };
+		8933BD5C1BDDD64200E73528 /* CommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentViewController.swift; sourceTree = "<group>"; };
+		8933BD5E1BDDE8DD00E73528 /* CommentButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentButton.swift; sourceTree = "<group>"; };
+		8933BD601BDDFC1D00E73528 /* Comment+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Comment+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		8933BD611BDDFC1D00E73528 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		8933BD641BDDFF1700E73528 /* CommentViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CommentViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		8933BD661BDDFF3000E73528 /* CommentViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CommentViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		894253051BB297B700A04953 /* Selklik-Fans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Selklik-Fans.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		894253081BB297B700A04953 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		8942530A1BB297B700A04953 /* CoordinatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorViewController.swift; sourceTree = "<group>"; };
@@ -347,6 +363,25 @@
 			name = Multiple;
 			sourceTree = "<group>";
 		};
+		8933BD561BDDD56100E73528 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				8933BD571BDDD58B00E73528 /* CommentCell.swift */,
+				8933BD581BDDD58B00E73528 /* CommentCell.xib */,
+			);
+			name = Comments;
+			sourceTree = "<group>";
+		};
+		8933BD5B1BDDD60900E73528 /* Comments */ = {
+			isa = PBXGroup;
+			children = (
+				8933BD5C1BDDD64200E73528 /* CommentViewController.swift */,
+				8933BD641BDDFF1700E73528 /* CommentViewController+UITableViewDataSource.swift */,
+				8933BD661BDDFF3000E73528 /* CommentViewController+UITableViewDelegate.swift */,
+			);
+			name = Comments;
+			sourceTree = "<group>";
+		};
 		894252FC1BB297B700A04953 = {
 			isa = PBXGroup;
 			children = (
@@ -407,6 +442,7 @@
 			children = (
 				89D553C91BC7B53800C75D4A /* SlideMenu */,
 				89C8F0C61BB8C13700AFE092 /* Feeds */,
+				8933BD5B1BDDD60900E73528 /* Comments */,
 				8902B5551BD0ABFB006AD2B9 /* Artists */,
 				894253081BB297B700A04953 /* AppDelegate.swift */,
 				8942530A1BB297B700A04953 /* CoordinatorViewController.swift */,
@@ -431,6 +467,8 @@
 		89C8F0AE1BB75CAD00AFE092 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8933BD601BDDFC1D00E73528 /* Comment+CoreDataProperties.swift */,
+				8933BD611BDDFC1D00E73528 /* Comment.swift */,
 				892272601BD7CE77001741CE /* PostSingle+CoreDataProperties.swift */,
 				892272611BD7CE77001741CE /* PostSingle.swift */,
 				89090CDB1BD7947000E2E254 /* Post+CoreDataProperties.swift */,
@@ -480,6 +518,7 @@
 		89D553B81BC54FEF00C75D4A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8933BD561BDDD56100E73528 /* Comments */,
 				8902B5591BD0B06D006AD2B9 /* Artists */,
 				8902B5581BD0B05E006AD2B9 /* Feeds */,
 			);
@@ -546,6 +585,7 @@
 				89685CB11BCD6A200035E6C0 /* Image.swift */,
 				8902B5601BD2497B006AD2B9 /* UITapGestureRecognizer+.swift */,
 				891AAEE11BD5ECEE008E6D49 /* HUD.swift */,
+				8933BD5E1BDDE8DD00E73528 /* CommentButton.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -676,6 +716,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				892272911BD8BBB8001741CE /* AltRetweetStatusCell.xib in Resources */,
+				8933BD5A1BDDD58B00E73528 /* CommentCell.xib in Resources */,
 				8902B53E1BCF60D6006AD2B9 /* RetweetStatusCell.xib in Resources */,
 				892272A11BD8C494001741CE /* AltInstagramVideoCell.xib in Resources */,
 				892272891BD8B89B001741CE /* AltTwitterPhotoCell.xib in Resources */,
@@ -775,16 +816,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8933BD651BDDFF1700E73528 /* CommentViewController+UITableViewDataSource.swift in Sources */,
 				8902B5341BCDEF12006AD2B9 /* ViewPhotoViewController.swift in Sources */,
 				89E0B1EC1BB3C19A0052D64B /* LoginViewController.swift in Sources */,
 				891AAED71BD4E482008E6D49 /* Country+CoreDataProperties.swift in Sources */,
 				891AAEE61BD62EE1008E6D49 /* Artist.swift in Sources */,
+				8933BD591BDDD58B00E73528 /* CommentCell.swift in Sources */,
 				8902B55C1BD0B139006AD2B9 /* ArtistListCell.swift in Sources */,
 				891AAEE51BD62EE1008E6D49 /* Artist+CoreDataProperties.swift in Sources */,
 				89C8F0BC1BB7F9B700AFE092 /* SelklikFansAccess+CoreDataProperties.swift in Sources */,
 				8922729C1BD8C0C0001741CE /* AltInstagramPhotoCell.swift in Sources */,
 				89C8F0C81BB8CDA400AFE092 /* DataAPI.swift in Sources */,
 				891AAED11BD4A731008E6D49 /* CountryCell.swift in Sources */,
+				8933BD5F1BDDE8DD00E73528 /* CommentButton.swift in Sources */,
 				89090CDD1BD7947000E2E254 /* Post+CoreDataProperties.swift in Sources */,
 				891AAECC1BD496A4008E6D49 /* SettingViewController.swift in Sources */,
 				8902B5631BD2A290006AD2B9 /* ProfileViewController.swift in Sources */,
@@ -796,6 +840,7 @@
 				891AAEDA1BD4EB3B008E6D49 /* CountryListViewController+UITableViewDataSource.swift in Sources */,
 				8956F8F41BDA254F001DEC44 /* FacebookVideoCell.swift in Sources */,
 				892272651BD7D48B001741CE /* SingleFeedViewController+UITableViewDataSource.swift in Sources */,
+				8933BD5D1BDDD64200E73528 /* CommentViewController.swift in Sources */,
 				891AAED41BD4C998008E6D49 /* CountryListViewController.swift in Sources */,
 				891AAEE01BD5AD70008E6D49 /* ArtistViewController.swift in Sources */,
 				8902B5401BCF69A3006AD2B9 /* FeedViewController+UITableViewDataSource.swift in Sources */,
@@ -806,9 +851,11 @@
 				892272A01BD8C494001741CE /* AltInstagramVideoCell.swift in Sources */,
 				89D553C31BC6178C00C75D4A /* TwitterStatusCell.swift in Sources */,
 				89090CDE1BD7947000E2E254 /* Post.swift in Sources */,
+				8933BD621BDDFC1D00E73528 /* Comment+CoreDataProperties.swift in Sources */,
 				8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */,
 				8902B54F1BCF913F006AD2B9 /* InstagramPhotoCell.swift in Sources */,
 				892272981BD8BD5F001741CE /* AltRetweetVideoCell.swift in Sources */,
+				8933BD671BDDFF3000E73528 /* CommentViewController+UITableViewDelegate.swift in Sources */,
 				8902B5531BCFB285006AD2B9 /* InstagramVideoCell.swift in Sources */,
 				892272841BD8A308001741CE /* AltTwitterStatusCell.swift in Sources */,
 				8956F8F11BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift in Sources */,
@@ -830,6 +877,7 @@
 				891AAEE21BD5ECEE008E6D49 /* HUD.swift in Sources */,
 				891AAECE1BD496BE008E6D49 /* AboutViewController.swift in Sources */,
 				89D553CB1BC7B55F00C75D4A /* SlideMenuViewController.swift in Sources */,
+				8933BD631BDDFC1D00E73528 /* Comment.swift in Sources */,
 				892272881BD8B89B001741CE /* AltTwitterPhotoCell.swift in Sources */,
 				896D1CA31BCB6CBF008A720B /* FacebookStatusCell.swift in Sources */,
 				89C8F0B61BB7E6D500AFE092 /* SelklikFans.xcdatamodeld in Sources */,

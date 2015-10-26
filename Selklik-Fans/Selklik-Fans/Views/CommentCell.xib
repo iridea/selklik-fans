@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CommentCell" rowHeight="74" id="O9W-jG-fDc" customClass="CommentCell" customModule="Selklik_Fans" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="74"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="O9W-jG-fDc" id="Wwh-A3-OBK">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dCs-wD-83Q">
+                        <rect key="frame" x="8" y="8" width="40" height="40"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="40" id="6YG-2F-m2N"/>
+                            <constraint firstAttribute="width" constant="40" id="BjP-HG-CRE"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date/time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kTY-ET-tNW">
+                        <rect key="frame" x="56" y="52" width="256" height="12"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="10"/>
+                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="304" placeholderIntrinsicHeight="18" text="status" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NtS-jj-3qB">
+                        <rect key="frame" x="56" y="24" width="256" height="22"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" name="Thonburi-Light" family="Thonburi" pointSize="11"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <size key="shadowOffset" width="0.0" height="0.0"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8vl-NV-tEg">
+                        <rect key="frame" x="56" y="8" width="256" height="16"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <visualEffectView opaque="NO" alpha="0.10000000149011612" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="He0-IB-I62">
+                        <rect key="frame" x="0.0" y="72" width="320" height="1"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="nlO-fU-0h3">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="1"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <animations/>
+                        </view>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="CD7-64-Jrv"/>
+                        </constraints>
+                        <blurEffect style="dark"/>
+                    </visualEffectView>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="8vl-NV-tEg" firstAttribute="trailing" secondItem="Wwh-A3-OBK" secondAttribute="trailingMargin" id="Fhf-GL-2Me"/>
+                    <constraint firstItem="He0-IB-I62" firstAttribute="leading" secondItem="Wwh-A3-OBK" secondAttribute="leading" id="Ii7-Kn-sNG"/>
+                    <constraint firstItem="kTY-ET-tNW" firstAttribute="leading" secondItem="dCs-wD-83Q" secondAttribute="trailing" constant="8" id="ML6-O6-4hc"/>
+                    <constraint firstItem="dCs-wD-83Q" firstAttribute="top" secondItem="Wwh-A3-OBK" secondAttribute="top" constant="8" id="TJw-HU-uE7"/>
+                    <constraint firstItem="8vl-NV-tEg" firstAttribute="top" secondItem="Wwh-A3-OBK" secondAttribute="topMargin" id="V0t-kM-v18"/>
+                    <constraint firstItem="NtS-jj-3qB" firstAttribute="trailing" secondItem="Wwh-A3-OBK" secondAttribute="trailingMargin" id="d7h-hR-38M"/>
+                    <constraint firstAttribute="bottom" secondItem="He0-IB-I62" secondAttribute="bottom" id="foh-P1-6gj"/>
+                    <constraint firstItem="8vl-NV-tEg" firstAttribute="leading" secondItem="dCs-wD-83Q" secondAttribute="trailing" constant="8" id="gKw-mM-RvW"/>
+                    <constraint firstItem="NtS-jj-3qB" firstAttribute="leading" secondItem="dCs-wD-83Q" secondAttribute="trailing" constant="8" id="hUh-yu-xC5"/>
+                    <constraint firstAttribute="trailing" secondItem="He0-IB-I62" secondAttribute="trailing" id="miK-Hn-k1M"/>
+                    <constraint firstItem="kTY-ET-tNW" firstAttribute="trailing" secondItem="Wwh-A3-OBK" secondAttribute="trailingMargin" id="ojx-me-8Lo"/>
+                    <constraint firstItem="kTY-ET-tNW" firstAttribute="top" secondItem="NtS-jj-3qB" secondAttribute="bottom" constant="6" id="qcT-Up-j7F"/>
+                    <constraint firstItem="dCs-wD-83Q" firstAttribute="leading" secondItem="Wwh-A3-OBK" secondAttribute="leading" constant="8" id="tww-KX-EY6"/>
+                    <constraint firstItem="He0-IB-I62" firstAttribute="top" secondItem="kTY-ET-tNW" secondAttribute="bottom" constant="8" id="yIR-GR-3MV"/>
+                    <constraint firstItem="NtS-jj-3qB" firstAttribute="top" secondItem="8vl-NV-tEg" secondAttribute="bottom" id="zlh-Is-hd6"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="commentLabel" destination="NtS-jj-3qB" id="7yV-6k-AUB"/>
+                <outlet property="dateTimeLabel" destination="kTY-ET-tNW" id="RB0-YF-2ve"/>
+                <outlet property="name" destination="8vl-NV-tEg" id="lpE-bd-FlU"/>
+                <outlet property="profilePhoto" destination="dCs-wD-83Q" id="fia-G6-fvs"/>
+            </connections>
+            <point key="canvasLocation" x="205" y="367"/>
+        </tableViewCell>
+    </objects>
+</document>
