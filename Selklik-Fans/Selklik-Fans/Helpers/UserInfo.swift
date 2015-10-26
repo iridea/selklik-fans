@@ -129,6 +129,25 @@ class UserInfo {
     }
 
 
+    func dateToSting(date: NSDate) -> NSString
+    {
+        let dateFormatter: NSDateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
+
+        return dateFormatter.stringFromDate(date)
+    }
+
+    //--- Convert Date String to NSDate ---//
+    func stringToDate(dateString: NSString) -> NSDate?
+    {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
+
+        return dateFormatter.dateFromString(dateString as String)
+    }
+
 
     
 }

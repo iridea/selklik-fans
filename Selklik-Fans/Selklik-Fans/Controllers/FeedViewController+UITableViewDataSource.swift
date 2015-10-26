@@ -64,7 +64,7 @@ extension FeedViewController: UITableViewDataSource {
                     cell.accountNameLabel.text = (post.valueForKey("twRetweetName") as? String)!
                     cell.screenNameLabel.text = "@" + (post.valueForKey("twRetweetScreenName") as? String)!
                     cell.statusActiveLabel.text = post.valueForKey("postText") as? String
-                    cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+                    cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                     cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
                     cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
                     return cell
@@ -81,7 +81,7 @@ extension FeedViewController: UITableViewDataSource {
                     cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
                     cell.screenNameLabel.text = "@" + (post.valueForKey("screenName") as? String)!
                     cell.statusActiveLabel.text = post.valueForKey("postText") as? String
-                    cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+                    cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                     cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
                     cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
 
@@ -123,7 +123,7 @@ extension FeedViewController: UITableViewDataSource {
                     cell.accountNameLabel.text = (post.valueForKey("twRetweetName") as? String)!
                     cell.screenNameLabel.text = "@" + (post.valueForKey("twRetweetScreenName") as? String)!
                     cell.statusActiveLabel.text = post.valueForKey("postText") as? String
-                    cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+                    cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                     cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
                     cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
 
@@ -166,7 +166,7 @@ extension FeedViewController: UITableViewDataSource {
                     cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
                     cell.screenNameLabel.text = "@" + (post.valueForKey("screenName") as? String)!
                     cell.statusActiveLabel.text = post.valueForKey("postText") as? String
-                    cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+                    cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                     cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
                     cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
 
@@ -203,7 +203,7 @@ extension FeedViewController: UITableViewDataSource {
 
                     cell.screenNameLabel.text = "@" + (post.valueForKey("screenName") as? String)!
                     cell.statusActiveLabel.text = post.valueForKey("postText") as? String
-                    cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+                    cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                     cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
                     cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
 
@@ -228,7 +228,7 @@ extension FeedViewController: UITableViewDataSource {
                     cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
                     cell.screenNameLabel.text = "@" + (post.valueForKey("screenName") as? String)!
                     cell.statusActiveLabel.text = post.valueForKey("postText") as? String
-                    cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+                    cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                     cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
                     cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
 
@@ -284,13 +284,12 @@ extension FeedViewController: UITableViewDataSource {
 
 
                 cell.postPhoto.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
-
+                cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                 //load rest of the data
                 cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
 
                 //cell.postStatusLabel.text = post.valueForKey("postText") as? String
                 cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
-                cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
                 
                 return cell
                 
@@ -309,13 +308,13 @@ extension FeedViewController: UITableViewDataSource {
                 let postThumbUrl = NSURL(string: (post.valueForKey("videoThumbStdUrl") as? String)!)
                 cell.postPhoto.image = nil
                 cell.postPhoto.af_setImageWithURL(postThumbUrl!, placeholderImage: placeholderImage)
-
+                cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                 //load rest of the data
                 cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
 
                 //cell.postStatusLabel.text = post.valueForKey("postText") as? String
                 cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
-                cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+
                 
                 return cell
             default:
@@ -361,13 +360,12 @@ extension FeedViewController: UITableViewDataSource {
                 let postPhotoUrl = NSURL(string: (post.valueForKey("photoStdUrl") as? String)!)
                 cell.postPhoto.image = nil
                 cell.postPhoto.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
-
+                cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                 //load rest of the data
                 cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
 
                 cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
-                cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
-
+                
                 cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " likes"
                 let totalComment = post.valueForKey("totalComment") as? Int
                 var totalCommentString = String(totalComment!)
@@ -400,9 +398,8 @@ extension FeedViewController: UITableViewDataSource {
 
                 //load rest of the data
                 cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
-
+                cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                 cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
-                cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
 
                 cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " likes"
                 let totalComment = post.valueForKey("totalComment") as? Int

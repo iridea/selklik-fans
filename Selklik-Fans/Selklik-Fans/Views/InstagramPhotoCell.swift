@@ -16,8 +16,7 @@ class InstagramPhotoCell: UITableViewCell {
     @IBOutlet weak var accountNameButton: UIButton!
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var dateTimeLabel: UILabel!
-    //@IBOutlet weak var statusActiveLabel:ActiveLabel!
-    @IBOutlet weak var statusActiveLabel:UILabel!
+    @IBOutlet weak var statusActiveLabel:ActiveLabel!
     @IBOutlet weak var postPhoto: UIImageView!
     @IBOutlet weak var totalLikeLabel: UILabel!
     @IBOutlet weak var totalRetweetLabel: UILabel!

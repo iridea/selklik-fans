@@ -58,7 +58,7 @@ extension SingleFeedViewController: UITableViewDataSource {
 
                     cell.screenNameLabel.text = "@" + (post.valueForKey("twRetweetScreenName") as? String)!
                     cell.statusActiveLabel.text = post.valueForKey("postText") as? String
-                    cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+                    cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                     cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
                     cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
                     return cell
@@ -71,7 +71,7 @@ extension SingleFeedViewController: UITableViewDataSource {
 
                     cell.screenNameLabel.text = "@" + (post.valueForKey("screenName") as? String)!
                      cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
-                    cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+                    cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                     cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
                     cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
 
@@ -108,7 +108,7 @@ extension SingleFeedViewController: UITableViewDataSource {
 
                     cell.screenNameLabel.text = "@" + (post.valueForKey("twRetweetScreenName") as? String)!
                     cell.statusActiveLabel.text = post.valueForKey("postText") as? String
-                    cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+                    cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                     cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
                     cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
 
@@ -146,7 +146,7 @@ extension SingleFeedViewController: UITableViewDataSource {
 
                     cell.screenNameLabel.text = "@" + (post.valueForKey("screenName") as? String)!
                     cell.statusActiveLabel.text = post.valueForKey("postText") as? String
-                    cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+                    cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                     cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
                     cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
 
@@ -172,7 +172,7 @@ extension SingleFeedViewController: UITableViewDataSource {
                     //retweet control--------
                     cell.screenNameLabel.text = "@" + (post.valueForKey("screenName") as? String)!
                     cell.statusActiveLabel.text = post.valueForKey("postText") as? String
-                    cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+                    cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                     cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
                     cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
 
@@ -193,7 +193,7 @@ extension SingleFeedViewController: UITableViewDataSource {
 
                     cell.screenNameLabel.text = "@" + (post.valueForKey("screenName") as? String)!
                     cell.statusActiveLabel.text = post.valueForKey("postText") as? String
-                    cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+                    cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                     cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
                     cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
 
@@ -254,18 +254,13 @@ extension SingleFeedViewController: UITableViewDataSource {
                 cell.statusActiveLabel.text = (post.valueForKey("postText") as? String)!
                 cell.accountName.text = post.valueForKey("name") as? String
 
-                cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+                cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
 
                 return cell
 
             case "video":
                 let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.altInstagramVideoCell, forIndexPath:indexPath) as! AltInstagramVideoCell
 
-                //load profile image
-
-
-
-                //load Post Image
                 var placeholderImage = UIImage(named: "placeholder")
                 let imageSize = CGSize(width: (post.valueForKey("videoThumbStdWidth") as? CGFloat)!, height: ((post.valueForKey("videoThumbStdHeight") as? CGFloat)!)/2.0)
                 placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
@@ -278,7 +273,7 @@ extension SingleFeedViewController: UITableViewDataSource {
 
                 //cell.postStatusLabel.text = post.valueForKey("postText") as? String
 
-                cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
+                cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
 
                 return cell
             default:

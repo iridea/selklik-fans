@@ -139,8 +139,8 @@ class SingleFeedViewController: UIViewController {
                         print("unable to read JSON data artist_screen_name")
                     }
 
-                    if let _ = subJson["timestamp"].string {
-                        //artistPost.timeStamp = Date(timeStamp)
+                    if let timestamp = subJson["timestamp"].string {
+                        newPost.timeStamp = self.userInfo.stringToDate(timestamp)
                     }else{
                         print("unable to read JSON data timestamp")
                     }

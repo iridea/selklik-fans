@@ -192,8 +192,8 @@ class FeedViewController: UIViewController {
                         print("unable to read JSON data artist_img")
                     }
 
-                    if let _ = subJson["timestamp"].string {
-                        //artistPost.timeStamp = Date(timeStamp)
+                    if let timestamp = subJson["timestamp"].string {
+                        newPost.timeStamp = self.userInfo.stringToDate(timestamp)
                     }else{
                         print("unable to read JSON data timestamp")
                     }
@@ -584,9 +584,9 @@ class FeedViewController: UIViewController {
     func reloadFeedDataFromServer(){
         self.progressBarDisplayer("Loading data", true)
 
-
-
         let fetchRequest = NSFetchRequest(entityName: "Post")
+        //let dateSort = NSSortDescriptor(key: "timeStamp", ascending: false)
+        //fetchRequest.sortDescriptors = [dateSort]
         do {
             let results =
             try managedContext.executeFetchRequest(fetchRequest)
