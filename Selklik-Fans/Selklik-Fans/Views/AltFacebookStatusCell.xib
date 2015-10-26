@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="8191" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AltFacebookStatusCell" rowHeight="98" id="QCk-dM-038" customClass="AltFacebookStatusCell" customModule="Selklik_Fans" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="98"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QCk-dM-038" id="oOt-Bn-GUq">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="97"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QJq-tK-RY2">
+                        <rect key="frame" x="20" y="0.0" width="4" height="97"/>
+                        <animations/>
+                        <color key="backgroundColor" red="0.90823972230000005" green="0.92638683320000004" blue="0.93171715740000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="4" id="sQN-lV-stC"/>
+                        </constraints>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebookRound" translatesAutoresizingMaskIntoConstraints="NO" id="eNt-k3-MN5">
+                        <rect key="frame" x="4" y="28" width="35" height="35"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="35" id="29A-M1-VEO"/>
+                            <constraint firstAttribute="height" constant="35" id="WQc-OU-vcz"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="dateTime" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oBf-Hv-oBI">
+                        <rect key="frame" x="32" y="8" width="49" height="14"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.68888300660000001" green="0.71366006140000005" blue="0.73448425530000006" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xb-NM-8fy">
+                        <rect key="frame" x="47" y="23" width="29" height="14"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Post text" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YLi-qq-20W" customClass="ActiveLabel" customModule="ActiveLabel">
+                        <rect key="frame" x="47" y="41" width="265" height="21"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="KCN-cs-szT"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total like" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eaS-d9-CND">
+                        <rect key="frame" x="71" y="73" width="45" height="14"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <color key="textColor" red="0.51784205439999997" green="0.58159953360000005" blue="0.58617168659999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Thumb" translatesAutoresizingMaskIntoConstraints="NO" id="bPq-Jr-R0q">
+                        <rect key="frame" x="47" y="69" width="20" height="20"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="OEV-T4-uSh"/>
+                            <constraint firstAttribute="width" constant="20" id="QNR-vy-tMI"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jfy-5o-Vsu" customClass="CommentButton" customModule="Selklik_Fans" customModuleProvider="target">
+                        <rect key="frame" x="262" y="67" width="50" height="26"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="9999999"/>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Comment" translatesAutoresizingMaskIntoConstraints="NO" id="StK-4v-04x">
+                        <rect key="frame" x="234" y="69" width="20" height="20"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="6P9-UA-gOM"/>
+                            <constraint firstAttribute="width" constant="20" id="8nF-De-pbf"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <animations/>
+                <constraints>
+                    <constraint firstItem="eaS-d9-CND" firstAttribute="leading" secondItem="bPq-Jr-R0q" secondAttribute="trailing" constant="4" id="4dX-V7-T7I"/>
+                    <constraint firstItem="StK-4v-04x" firstAttribute="baseline" secondItem="bPq-Jr-R0q" secondAttribute="baseline" id="7KL-aI-jNE"/>
+                    <constraint firstItem="0Xb-NM-8fy" firstAttribute="top" secondItem="oBf-Hv-oBI" secondAttribute="bottom" constant="1" id="7yB-VP-afM"/>
+                    <constraint firstItem="QJq-tK-RY2" firstAttribute="leading" secondItem="oOt-Bn-GUq" secondAttribute="leading" constant="20" id="Cq1-Ch-dBM"/>
+                    <constraint firstItem="jfy-5o-Vsu" firstAttribute="baseline" secondItem="eaS-d9-CND" secondAttribute="baseline" id="FWs-lR-58I"/>
+                    <constraint firstAttribute="bottom" secondItem="QJq-tK-RY2" secondAttribute="bottom" id="GZx-3h-Hzx"/>
+                    <constraint firstAttribute="topMargin" secondItem="oBf-Hv-oBI" secondAttribute="top" id="Jv8-ei-Rpq"/>
+                    <constraint firstItem="oBf-Hv-oBI" firstAttribute="leading" secondItem="QJq-tK-RY2" secondAttribute="trailing" constant="8" id="TQx-Gs-sc2"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="eaS-d9-CND" secondAttribute="bottom" constant="2" id="VWG-h0-cgD"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="jfy-5o-Vsu" secondAttribute="trailing" id="XVi-8A-LSL"/>
+                    <constraint firstItem="eNt-k3-MN5" firstAttribute="centerX" secondItem="QJq-tK-RY2" secondAttribute="centerX" id="a7E-RQ-BxK"/>
+                    <constraint firstItem="eaS-d9-CND" firstAttribute="top" secondItem="YLi-qq-20W" secondAttribute="bottom" constant="11" id="cQw-oC-OmA"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="YLi-qq-20W" secondAttribute="trailing" id="d2i-LI-8El"/>
+                    <constraint firstItem="jfy-5o-Vsu" firstAttribute="leading" secondItem="StK-4v-04x" secondAttribute="trailing" constant="8" id="jXM-Nj-AFA"/>
+                    <constraint firstItem="QJq-tK-RY2" firstAttribute="top" secondItem="oOt-Bn-GUq" secondAttribute="top" id="mLu-eT-trA"/>
+                    <constraint firstItem="0Xb-NM-8fy" firstAttribute="leading" secondItem="eNt-k3-MN5" secondAttribute="trailing" constant="8" id="ogh-De-6Up"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="StK-4v-04x" secondAttribute="bottom" id="pjs-AP-O9U"/>
+                    <constraint firstItem="YLi-qq-20W" firstAttribute="top" secondItem="0Xb-NM-8fy" secondAttribute="bottom" constant="4" id="r4L-Ia-GwC"/>
+                    <constraint firstItem="bPq-Jr-R0q" firstAttribute="bottom" secondItem="oOt-Bn-GUq" secondAttribute="bottomMargin" id="ws8-eR-05X"/>
+                    <constraint firstItem="YLi-qq-20W" firstAttribute="leading" secondItem="eNt-k3-MN5" secondAttribute="trailing" constant="8" id="wsz-Cq-eZA"/>
+                    <constraint firstItem="bPq-Jr-R0q" firstAttribute="leading" secondItem="QJq-tK-RY2" secondAttribute="trailing" constant="23" id="xDx-Qs-a5p"/>
+                    <constraint firstItem="eNt-k3-MN5" firstAttribute="top" secondItem="oBf-Hv-oBI" secondAttribute="bottom" constant="6" id="yar-MN-i4s"/>
+                </constraints>
+            </tableViewCellContentView>
+            <animations/>
+            <connections>
+                <outlet property="dateTimeLabel" destination="oBf-Hv-oBI" id="Gh4-kd-h6R"/>
+                <outlet property="name" destination="0Xb-NM-8fy" id="jSj-Bt-eec"/>
+                <outlet property="statusActiveLabel" destination="YLi-qq-20W" id="lZn-cz-Gdf"/>
+                <outlet property="totalCommentLabel" destination="jfy-5o-Vsu" id="zld-UQ-Y7g"/>
+                <outlet property="totalLikeLabel" destination="eaS-d9-CND" id="kYB-6P-ddd"/>
+            </connections>
+            <point key="canvasLocation" x="-249" y="335"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Comment" width="32" height="32"/>
+        <image name="Thumb" width="32" height="32"/>
+        <image name="facebookRound" width="40" height="40"/>
+    </resources>
+</document>

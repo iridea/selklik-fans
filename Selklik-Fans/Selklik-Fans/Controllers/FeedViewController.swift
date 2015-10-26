@@ -418,7 +418,7 @@ class FeedViewController: UIViewController {
 
 
                                 switch postType {
-                                case "text":
+                                case "status":
                                     print("facebook text")
                                     break
                                 case "photo":
@@ -458,7 +458,7 @@ class FeedViewController: UIViewController {
                                     }
                                     break
                                     
-                                case "link":
+                                case "share":
                                     if let fbContentLink = subJson["post_shared"]["standard"]["shared_link"].string {
                                         newPost.fbContentLink = fbContentLink
                                     }

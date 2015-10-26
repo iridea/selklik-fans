@@ -47,6 +47,10 @@ class SingleFeedViewController: UIViewController {
 
         static let altInstagramPhotoCell = "AltInstagramPhotoCell"
         static let altInstagramVideoCell = "AltInstagramVideoCell"
+
+        static let altFacebookStatusCell = "AltFacebookStatusCell"
+        static let altFacebookPhotoCell = "AltFacebookPhotoCell"
+        static let altFacebookVideoCell = "AltFacebookVideoCell"
     }
 
     func registerNib(){
@@ -69,6 +73,13 @@ class SingleFeedViewController: UIViewController {
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.altInstagramPhotoCell)
         cellNib = UINib(nibName: CellIdentifiers.altInstagramVideoCell, bundle: nil)
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.altInstagramVideoCell)
+
+        cellNib = UINib(nibName: CellIdentifiers.altFacebookStatusCell, bundle: nil)
+        feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.altFacebookStatusCell)
+        cellNib = UINib(nibName: CellIdentifiers.altFacebookPhotoCell, bundle: nil)
+        feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.altFacebookPhotoCell)
+        cellNib = UINib(nibName: CellIdentifiers.altFacebookVideoCell, bundle: nil)
+        feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.altFacebookVideoCell)
     }
 
     //MARK: - IBOutlet

@@ -282,14 +282,33 @@ extension SingleFeedViewController: UITableViewDataSource {
             break
         case "facebook":
             switch (postType!) {
-            case "text":
-                print("facebook text")
-                break
-            case "photo":
-                print("facebook photo")
+            case "status":
 
-                /*
-                let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.facebookPhotoCell, forIndexPath:indexPath) as! FacebookPhotoCell
+                let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.altFacebookStatusCell, forIndexPath:indexPath) as! AltFacebookStatusCell
+
+                cell.name.text = (post.valueForKey("name") as? String)!
+                cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
+                cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
+
+                let totalLike = post.valueForKey("totalLike") as! Int
+                var likeString = " Like"
+                if totalLike > 1 {
+                    likeString += "s"
+                }
+
+                let totalComment = post.valueForKey("totalComment") as! Int
+                var commentString = " Comment"
+                if totalComment > 1 {
+                    commentString += "s"
+                }
+
+                cell.totalLikeLabel.text =  String(totalLike) + likeString
+                cell.totalCommentLabel.setTitle(String(totalComment) + commentString, forState: UIControlState.Normal)
+                return cell
+
+            case "photo":
+                let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.altFacebookPhotoCell, forIndexPath:indexPath) as! AltFacebookPhotoCell
+
 
                 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
                 //sets the user interaction to true, so we can actually track when the image has been tapped
@@ -306,32 +325,61 @@ extension SingleFeedViewController: UITableViewDataSource {
                 cell.gestureRecognizer.imageUrl = (post.valueForKey("photoStdUrl") as? String)!
                 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+                cell.name.text = (post.valueForKey("name") as? String)!
+                cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
+                cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
 
-
-                //load profile image
-                var placeholderImage = UIImage(named: "UserIcon")
-                cell.profilePictureImageView.image = nil//UIImage(named: "UserIcon")
-                cell.profilePictureImageView.af_setImageWithURL(profileImageUrl!, placeholderImage: placeholderImage)
-
-                //load Post Image
-                placeholderImage = UIImage(named: "placeholder")
+                var placeholderImage = UIImage(named: "placeholder")
                 let imageSize = CGSize(width: (post.valueForKey("photoStdWidth") as? CGFloat)!, height: ((post.valueForKey("photoStdHeight") as? CGFloat)!)/2.0)
                 placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
                 let postPhotoUrl = NSURL(string: (post.valueForKey("photoStdUrl") as? String)!)
                 cell.postPhoto.image = nil
                 cell.postPhoto.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
-                
-                //load rest of the data
-                cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
-                
-                cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
-                cell.dateTimeLabel.text = post.valueForKey("timeStamp") as? String
-                
+
+                let totalLike = post.valueForKey("totalLike") as! Int
+                var likeString = " Like"
+                if totalLike > 1 {
+                    likeString += "s"
+                }
+
+                let totalComment = post.valueForKey("totalComment") as! Int
+                var commentString = " Comment"
+                if totalComment > 1 {
+                    commentString += "s"
+                }
+
+                cell.totalLikeLabel.text =  String(totalLike) + likeString
+                cell.totalCommentLabel.setTitle(String(totalComment) + commentString, forState: UIControlState.Normal)
                 return cell
-                */
+
             case "video":
-                print("facebook video")
-                break
+                let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.altFacebookVideoCell, forIndexPath:indexPath) as! AltFacebookVideoCell
+                cell.name.text = (post.valueForKey("name") as? String)!
+                cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
+                cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
+
+                var placeholderImage = UIImage(named: "placeholder")
+                let imageSize = CGSize(width: (post.valueForKey("videoThumbStdWidth") as? CGFloat)!, height: ((post.valueForKey("videoThumbStdHeight") as? CGFloat)!)/2.0)
+                placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
+                let postPhotoUrl = NSURL(string: (post.valueForKey("videoThumbStdUrl") as? String)!)
+                cell.postThumb.image = nil
+                cell.postThumb.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
+
+                let totalLike = post.valueForKey("totalLike") as! Int
+                var likeString = " Like"
+                if totalLike > 1 {
+                    likeString += "s"
+                }
+
+                let totalComment = post.valueForKey("totalComment") as! Int
+                var commentString = " Comment"
+                if totalComment > 1 {
+                    commentString += "s"
+                }
+
+                cell.totalLikeLabel.text =  String(totalLike) + likeString
+                cell.totalCommentLabel.setTitle(String(totalComment) + commentString, forState: UIControlState.Normal)
+                return cell
             case "link":
                 print("facebook link")
                 break

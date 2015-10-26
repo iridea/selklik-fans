@@ -1005,7 +1005,7 @@
                                             <constraint firstAttribute="height" constant="24" id="tW6-Wx-YSv"/>
                                             <constraint firstAttribute="width" constant="24" id="vfp-4e-V3R"/>
                                         </constraints>
-                                        <state key="normal" image="XClose">
+                                        <state key="normal" backgroundImage="CloseX">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
@@ -1090,12 +1090,11 @@
         <image name="Reload" width="32" height="32"/>
         <image name="Setting" width="32" height="32"/>
         <image name="Upgrade" width="32" height="32"/>
-        <image name="XClose" width="32" height="32"/>
         <image name="facebookRound" width="40" height="40"/>
         <image name="twitterRound" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="DNO-LS-pPW"/>
         <segue reference="Lde-3C-jmg"/>
+        <segue reference="9qI-Tm-i93"/>
     </inferredMetricsTieBreakers>
 </document>
