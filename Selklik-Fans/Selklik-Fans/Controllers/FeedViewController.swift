@@ -585,8 +585,8 @@ class FeedViewController: UIViewController {
         self.progressBarDisplayer("Loading data", true)
 
         let fetchRequest = NSFetchRequest(entityName: "Post")
-        //let dateSort = NSSortDescriptor(key: "timeStamp", ascending: false)
-        //fetchRequest.sortDescriptors = [dateSort]
+        let dateSort = NSSortDescriptor(key: "timeStamp", ascending: false)
+        fetchRequest.sortDescriptors = [dateSort]
         do {
             let results =
             try managedContext.executeFetchRequest(fetchRequest)

@@ -482,7 +482,8 @@ class SingleFeedViewController: UIViewController {
 
     func getSingleFeedFromCoreData() {
         let fetchRequest = NSFetchRequest(entityName: "PostSingle")
-
+        let dateSort = NSSortDescriptor(key: "timeStamp", ascending: false)
+        fetchRequest.sortDescriptors = [dateSort]
 
         do  {
             let results = try managedContext.executeFetchRequest(fetchRequest)
