@@ -8,76 +8,77 @@
 
 /* Begin PBXBuildFile section */
 		0DB170600DE335F77AA5C2AB /* Pods_Selklik_Fans.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93106E8CDDAF466E4ABE4638 /* Pods_Selklik_Fans.framework */; };
-		8902B5341BCDEF12006AD2B9 /* ViewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5331BCDEF12006AD2B9 /* ViewPhotoViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		8902B5391BCF55BC006AD2B9 /* TwitterPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5371BCF55BC006AD2B9 /* TwitterPhotoCell.swift */; settings = {ASSET_TAGS = (); }; };
-		8902B53A1BCF55BC006AD2B9 /* TwitterPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B5381BCF55BC006AD2B9 /* TwitterPhotoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8902B53D1BCF60D6006AD2B9 /* RetweetStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B53B1BCF60D6006AD2B9 /* RetweetStatusCell.swift */; settings = {ASSET_TAGS = (); }; };
-		8902B53E1BCF60D6006AD2B9 /* RetweetStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B53C1BCF60D6006AD2B9 /* RetweetStatusCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8902B5401BCF69A3006AD2B9 /* FeedViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B53F1BCF69A3006AD2B9 /* FeedViewController+UITableViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
-		8902B5431BCF8072006AD2B9 /* TwitterVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5411BCF8072006AD2B9 /* TwitterVideoCell.swift */; settings = {ASSET_TAGS = (); }; };
-		8902B5441BCF8072006AD2B9 /* TwitterVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B5421BCF8072006AD2B9 /* TwitterVideoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8902B5471BCF8444006AD2B9 /* RetweetPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5451BCF8444006AD2B9 /* RetweetPhotoCell.swift */; settings = {ASSET_TAGS = (); }; };
-		8902B5481BCF8444006AD2B9 /* RetweetPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B5461BCF8444006AD2B9 /* RetweetPhotoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8902B54B1BCF89F7006AD2B9 /* RetweetVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5491BCF89F7006AD2B9 /* RetweetVideoCell.swift */; settings = {ASSET_TAGS = (); }; };
-		8902B54C1BCF89F7006AD2B9 /* RetweetVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B54A1BCF89F7006AD2B9 /* RetweetVideoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8902B54F1BCF913F006AD2B9 /* InstagramPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B54D1BCF913F006AD2B9 /* InstagramPhotoCell.swift */; settings = {ASSET_TAGS = (); }; };
-		8902B5501BCF913F006AD2B9 /* InstagramPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B54E1BCF913F006AD2B9 /* InstagramPhotoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8902B5531BCFB285006AD2B9 /* InstagramVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5511BCFB285006AD2B9 /* InstagramVideoCell.swift */; settings = {ASSET_TAGS = (); }; };
-		8902B5541BCFB285006AD2B9 /* InstagramVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B5521BCFB285006AD2B9 /* InstagramVideoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8902B55C1BD0B139006AD2B9 /* ArtistListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B55A1BD0B139006AD2B9 /* ArtistListCell.swift */; settings = {ASSET_TAGS = (); }; };
-		8902B55D1BD0B139006AD2B9 /* ArtistListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B55B1BD0B139006AD2B9 /* ArtistListCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8902B5611BD2497B006AD2B9 /* UITapGestureRecognizer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5601BD2497B006AD2B9 /* UITapGestureRecognizer+.swift */; settings = {ASSET_TAGS = (); }; };
-		8902B5631BD2A290006AD2B9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5621BD2A290006AD2B9 /* ProfileViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		89090CDD1BD7947000E2E254 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89090CDB1BD7947000E2E254 /* Post+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		89090CDE1BD7947000E2E254 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89090CDC1BD7947000E2E254 /* Post.swift */; settings = {ASSET_TAGS = (); }; };
-		891AAECA1BD49688008E6D49 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEC91BD49688008E6D49 /* NotificationViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		891AAECC1BD496A4008E6D49 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAECB1BD496A4008E6D49 /* SettingViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		891AAECE1BD496BE008E6D49 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAECD1BD496BE008E6D49 /* AboutViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		891AAED11BD4A731008E6D49 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAECF1BD4A731008E6D49 /* CountryCell.swift */; settings = {ASSET_TAGS = (); }; };
-		891AAED21BD4A731008E6D49 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 891AAED01BD4A731008E6D49 /* CountryCell.xib */; settings = {ASSET_TAGS = (); }; };
-		891AAED41BD4C998008E6D49 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAED31BD4C998008E6D49 /* CountryListViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		891AAED71BD4E482008E6D49 /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAED51BD4E482008E6D49 /* Country+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		891AAED81BD4E482008E6D49 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAED61BD4E482008E6D49 /* Country.swift */; settings = {ASSET_TAGS = (); }; };
-		891AAEDA1BD4EB3B008E6D49 /* CountryListViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAED91BD4EB3B008E6D49 /* CountryListViewController+UITableViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
-		891AAEDC1BD52B2D008E6D49 /* CountryListViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEDB1BD52B2D008E6D49 /* CountryListViewController+UITableViewDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		891AAEDE1BD598D5008E6D49 /* FeedViewController+UITableViewDelegate .swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEDD1BD598D5008E6D49 /* FeedViewController+UITableViewDelegate .swift */; settings = {ASSET_TAGS = (); }; };
-		891AAEE01BD5AD70008E6D49 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEDF1BD5AD70008E6D49 /* ArtistViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		891AAEE21BD5ECEE008E6D49 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEE11BD5ECEE008E6D49 /* HUD.swift */; settings = {ASSET_TAGS = (); }; };
-		891AAEE51BD62EE1008E6D49 /* Artist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEE31BD62EE1008E6D49 /* Artist+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		891AAEE61BD62EE1008E6D49 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEE41BD62EE1008E6D49 /* Artist.swift */; settings = {ASSET_TAGS = (); }; };
-		892272621BD7CE77001741CE /* PostSingle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892272601BD7CE77001741CE /* PostSingle+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		892272631BD7CE77001741CE /* PostSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892272611BD7CE77001741CE /* PostSingle.swift */; settings = {ASSET_TAGS = (); }; };
-		892272651BD7D48B001741CE /* SingleFeedViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892272641BD7D48B001741CE /* SingleFeedViewController+UITableViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
-		892272841BD8A308001741CE /* AltTwitterStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892272821BD8A308001741CE /* AltTwitterStatusCell.swift */; settings = {ASSET_TAGS = (); }; };
-		892272851BD8A308001741CE /* AltTwitterStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892272831BD8A308001741CE /* AltTwitterStatusCell.xib */; settings = {ASSET_TAGS = (); }; };
-		892272881BD8B89B001741CE /* AltTwitterPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892272861BD8B89B001741CE /* AltTwitterPhotoCell.swift */; settings = {ASSET_TAGS = (); }; };
-		892272891BD8B89B001741CE /* AltTwitterPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892272871BD8B89B001741CE /* AltTwitterPhotoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8922728C1BD8B9C4001741CE /* AltTwitterVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8922728A1BD8B9C4001741CE /* AltTwitterVideoCell.swift */; settings = {ASSET_TAGS = (); }; };
-		8922728D1BD8B9C4001741CE /* AltTwitterVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8922728B1BD8B9C4001741CE /* AltTwitterVideoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		892272901BD8BBB8001741CE /* AltRetweetStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8922728E1BD8BBB8001741CE /* AltRetweetStatusCell.swift */; settings = {ASSET_TAGS = (); }; };
-		892272911BD8BBB8001741CE /* AltRetweetStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8922728F1BD8BBB8001741CE /* AltRetweetStatusCell.xib */; settings = {ASSET_TAGS = (); }; };
-		892272941BD8BCC4001741CE /* AltRetweetPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892272921BD8BCC4001741CE /* AltRetweetPhotoCell.swift */; settings = {ASSET_TAGS = (); }; };
-		892272951BD8BCC4001741CE /* AltRetweetPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892272931BD8BCC4001741CE /* AltRetweetPhotoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		892272981BD8BD5F001741CE /* AltRetweetVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892272961BD8BD5F001741CE /* AltRetweetVideoCell.swift */; settings = {ASSET_TAGS = (); }; };
-		892272991BD8BD5F001741CE /* AltRetweetVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892272971BD8BD5F001741CE /* AltRetweetVideoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8922729C1BD8C0C0001741CE /* AltInstagramPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8922729A1BD8C0C0001741CE /* AltInstagramPhotoCell.swift */; settings = {ASSET_TAGS = (); }; };
-		8922729D1BD8C0C0001741CE /* AltInstagramPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8922729B1BD8C0C0001741CE /* AltInstagramPhotoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		892272A01BD8C494001741CE /* AltInstagramVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8922729E1BD8C494001741CE /* AltInstagramVideoCell.swift */; settings = {ASSET_TAGS = (); }; };
-		892272A11BD8C494001741CE /* AltInstagramVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8922729F1BD8C494001741CE /* AltInstagramVideoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8933BD591BDDD58B00E73528 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD571BDDD58B00E73528 /* CommentCell.swift */; settings = {ASSET_TAGS = (); }; };
-		8933BD5A1BDDD58B00E73528 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8933BD581BDDD58B00E73528 /* CommentCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8933BD5D1BDDD64200E73528 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD5C1BDDD64200E73528 /* CommentViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		8933BD5F1BDDE8DD00E73528 /* CommentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD5E1BDDE8DD00E73528 /* CommentButton.swift */; settings = {ASSET_TAGS = (); }; };
-		8933BD621BDDFC1D00E73528 /* Comment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD601BDDFC1D00E73528 /* Comment+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		8933BD631BDDFC1D00E73528 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD611BDDFC1D00E73528 /* Comment.swift */; settings = {ASSET_TAGS = (); }; };
-		8933BD651BDDFF1700E73528 /* CommentViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD641BDDFF1700E73528 /* CommentViewController+UITableViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
-		8933BD671BDDFF3000E73528 /* CommentViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD661BDDFF3000E73528 /* CommentViewController+UITableViewDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		8933BD6C1BDE168000E73528 /* AltFacebookStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD6A1BDE168000E73528 /* AltFacebookStatusCell.swift */; settings = {ASSET_TAGS = (); }; };
-		8933BD6D1BDE168000E73528 /* AltFacebookStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8933BD6B1BDE168000E73528 /* AltFacebookStatusCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8933BD701BDE1C1100E73528 /* AltFacebookPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD6E1BDE1C1100E73528 /* AltFacebookPhotoCell.swift */; settings = {ASSET_TAGS = (); }; };
-		8933BD711BDE1C1100E73528 /* AltFacebookPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8933BD6F1BDE1C1100E73528 /* AltFacebookPhotoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		8933BD741BDE1D2900E73528 /* AltFacebookVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD721BDE1D2900E73528 /* AltFacebookVideoCell.swift */; settings = {ASSET_TAGS = (); }; };
-		8933BD751BDE1D2900E73528 /* AltFacebookVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8933BD731BDE1D2900E73528 /* AltFacebookVideoCell.xib */; settings = {ASSET_TAGS = (); }; };
+		8902B5341BCDEF12006AD2B9 /* ViewPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5331BCDEF12006AD2B9 /* ViewPhotoViewController.swift */; };
+		8902B5391BCF55BC006AD2B9 /* TwitterPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5371BCF55BC006AD2B9 /* TwitterPhotoCell.swift */; };
+		8902B53A1BCF55BC006AD2B9 /* TwitterPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B5381BCF55BC006AD2B9 /* TwitterPhotoCell.xib */; };
+		8902B53D1BCF60D6006AD2B9 /* RetweetStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B53B1BCF60D6006AD2B9 /* RetweetStatusCell.swift */; };
+		8902B53E1BCF60D6006AD2B9 /* RetweetStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B53C1BCF60D6006AD2B9 /* RetweetStatusCell.xib */; };
+		8902B5401BCF69A3006AD2B9 /* FeedViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B53F1BCF69A3006AD2B9 /* FeedViewController+UITableViewDataSource.swift */; };
+		8902B5431BCF8072006AD2B9 /* TwitterVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5411BCF8072006AD2B9 /* TwitterVideoCell.swift */; };
+		8902B5441BCF8072006AD2B9 /* TwitterVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B5421BCF8072006AD2B9 /* TwitterVideoCell.xib */; };
+		8902B5471BCF8444006AD2B9 /* RetweetPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5451BCF8444006AD2B9 /* RetweetPhotoCell.swift */; };
+		8902B5481BCF8444006AD2B9 /* RetweetPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B5461BCF8444006AD2B9 /* RetweetPhotoCell.xib */; };
+		8902B54B1BCF89F7006AD2B9 /* RetweetVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5491BCF89F7006AD2B9 /* RetweetVideoCell.swift */; };
+		8902B54C1BCF89F7006AD2B9 /* RetweetVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B54A1BCF89F7006AD2B9 /* RetweetVideoCell.xib */; };
+		8902B54F1BCF913F006AD2B9 /* InstagramPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B54D1BCF913F006AD2B9 /* InstagramPhotoCell.swift */; };
+		8902B5501BCF913F006AD2B9 /* InstagramPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B54E1BCF913F006AD2B9 /* InstagramPhotoCell.xib */; };
+		8902B5531BCFB285006AD2B9 /* InstagramVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5511BCFB285006AD2B9 /* InstagramVideoCell.swift */; };
+		8902B5541BCFB285006AD2B9 /* InstagramVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B5521BCFB285006AD2B9 /* InstagramVideoCell.xib */; };
+		8902B55C1BD0B139006AD2B9 /* ArtistListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B55A1BD0B139006AD2B9 /* ArtistListCell.swift */; };
+		8902B55D1BD0B139006AD2B9 /* ArtistListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8902B55B1BD0B139006AD2B9 /* ArtistListCell.xib */; };
+		8902B5611BD2497B006AD2B9 /* UITapGestureRecognizer+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5601BD2497B006AD2B9 /* UITapGestureRecognizer+.swift */; };
+		8902B5631BD2A290006AD2B9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5621BD2A290006AD2B9 /* ProfileViewController.swift */; };
+		89090CDD1BD7947000E2E254 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89090CDB1BD7947000E2E254 /* Post+CoreDataProperties.swift */; };
+		89090CDE1BD7947000E2E254 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89090CDC1BD7947000E2E254 /* Post.swift */; };
+		8919B06C1BE00DC100515A71 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8919B06B1BE00DC100515A71 /* RegisterViewController.swift */; };
+		891AAECA1BD49688008E6D49 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEC91BD49688008E6D49 /* NotificationViewController.swift */; };
+		891AAECC1BD496A4008E6D49 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAECB1BD496A4008E6D49 /* SettingViewController.swift */; };
+		891AAECE1BD496BE008E6D49 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAECD1BD496BE008E6D49 /* AboutViewController.swift */; };
+		891AAED11BD4A731008E6D49 /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAECF1BD4A731008E6D49 /* CountryCell.swift */; };
+		891AAED21BD4A731008E6D49 /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 891AAED01BD4A731008E6D49 /* CountryCell.xib */; };
+		891AAED41BD4C998008E6D49 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAED31BD4C998008E6D49 /* CountryListViewController.swift */; };
+		891AAED71BD4E482008E6D49 /* Country+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAED51BD4E482008E6D49 /* Country+CoreDataProperties.swift */; };
+		891AAED81BD4E482008E6D49 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAED61BD4E482008E6D49 /* Country.swift */; };
+		891AAEDA1BD4EB3B008E6D49 /* CountryListViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAED91BD4EB3B008E6D49 /* CountryListViewController+UITableViewDataSource.swift */; };
+		891AAEDC1BD52B2D008E6D49 /* CountryListViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEDB1BD52B2D008E6D49 /* CountryListViewController+UITableViewDelegate.swift */; };
+		891AAEDE1BD598D5008E6D49 /* FeedViewController+UITableViewDelegate .swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEDD1BD598D5008E6D49 /* FeedViewController+UITableViewDelegate .swift */; };
+		891AAEE01BD5AD70008E6D49 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEDF1BD5AD70008E6D49 /* ArtistViewController.swift */; };
+		891AAEE21BD5ECEE008E6D49 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEE11BD5ECEE008E6D49 /* HUD.swift */; };
+		891AAEE51BD62EE1008E6D49 /* Artist+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEE31BD62EE1008E6D49 /* Artist+CoreDataProperties.swift */; };
+		891AAEE61BD62EE1008E6D49 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEE41BD62EE1008E6D49 /* Artist.swift */; };
+		892272621BD7CE77001741CE /* PostSingle+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892272601BD7CE77001741CE /* PostSingle+CoreDataProperties.swift */; };
+		892272631BD7CE77001741CE /* PostSingle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892272611BD7CE77001741CE /* PostSingle.swift */; };
+		892272651BD7D48B001741CE /* SingleFeedViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892272641BD7D48B001741CE /* SingleFeedViewController+UITableViewDataSource.swift */; };
+		892272841BD8A308001741CE /* AltTwitterStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892272821BD8A308001741CE /* AltTwitterStatusCell.swift */; };
+		892272851BD8A308001741CE /* AltTwitterStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892272831BD8A308001741CE /* AltTwitterStatusCell.xib */; };
+		892272881BD8B89B001741CE /* AltTwitterPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892272861BD8B89B001741CE /* AltTwitterPhotoCell.swift */; };
+		892272891BD8B89B001741CE /* AltTwitterPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892272871BD8B89B001741CE /* AltTwitterPhotoCell.xib */; };
+		8922728C1BD8B9C4001741CE /* AltTwitterVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8922728A1BD8B9C4001741CE /* AltTwitterVideoCell.swift */; };
+		8922728D1BD8B9C4001741CE /* AltTwitterVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8922728B1BD8B9C4001741CE /* AltTwitterVideoCell.xib */; };
+		892272901BD8BBB8001741CE /* AltRetweetStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8922728E1BD8BBB8001741CE /* AltRetweetStatusCell.swift */; };
+		892272911BD8BBB8001741CE /* AltRetweetStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8922728F1BD8BBB8001741CE /* AltRetweetStatusCell.xib */; };
+		892272941BD8BCC4001741CE /* AltRetweetPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892272921BD8BCC4001741CE /* AltRetweetPhotoCell.swift */; };
+		892272951BD8BCC4001741CE /* AltRetweetPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892272931BD8BCC4001741CE /* AltRetweetPhotoCell.xib */; };
+		892272981BD8BD5F001741CE /* AltRetweetVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 892272961BD8BD5F001741CE /* AltRetweetVideoCell.swift */; };
+		892272991BD8BD5F001741CE /* AltRetweetVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 892272971BD8BD5F001741CE /* AltRetweetVideoCell.xib */; };
+		8922729C1BD8C0C0001741CE /* AltInstagramPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8922729A1BD8C0C0001741CE /* AltInstagramPhotoCell.swift */; };
+		8922729D1BD8C0C0001741CE /* AltInstagramPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8922729B1BD8C0C0001741CE /* AltInstagramPhotoCell.xib */; };
+		892272A01BD8C494001741CE /* AltInstagramVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8922729E1BD8C494001741CE /* AltInstagramVideoCell.swift */; };
+		892272A11BD8C494001741CE /* AltInstagramVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8922729F1BD8C494001741CE /* AltInstagramVideoCell.xib */; };
+		8933BD591BDDD58B00E73528 /* CommentCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD571BDDD58B00E73528 /* CommentCell.swift */; };
+		8933BD5A1BDDD58B00E73528 /* CommentCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8933BD581BDDD58B00E73528 /* CommentCell.xib */; };
+		8933BD5D1BDDD64200E73528 /* CommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD5C1BDDD64200E73528 /* CommentViewController.swift */; };
+		8933BD5F1BDDE8DD00E73528 /* CommentButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD5E1BDDE8DD00E73528 /* CommentButton.swift */; };
+		8933BD621BDDFC1D00E73528 /* Comment+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD601BDDFC1D00E73528 /* Comment+CoreDataProperties.swift */; };
+		8933BD631BDDFC1D00E73528 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD611BDDFC1D00E73528 /* Comment.swift */; };
+		8933BD651BDDFF1700E73528 /* CommentViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD641BDDFF1700E73528 /* CommentViewController+UITableViewDataSource.swift */; };
+		8933BD671BDDFF3000E73528 /* CommentViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD661BDDFF3000E73528 /* CommentViewController+UITableViewDelegate.swift */; };
+		8933BD6C1BDE168000E73528 /* AltFacebookStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD6A1BDE168000E73528 /* AltFacebookStatusCell.swift */; };
+		8933BD6D1BDE168000E73528 /* AltFacebookStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8933BD6B1BDE168000E73528 /* AltFacebookStatusCell.xib */; };
+		8933BD701BDE1C1100E73528 /* AltFacebookPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD6E1BDE1C1100E73528 /* AltFacebookPhotoCell.swift */; };
+		8933BD711BDE1C1100E73528 /* AltFacebookPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8933BD6F1BDE1C1100E73528 /* AltFacebookPhotoCell.xib */; };
+		8933BD741BDE1D2900E73528 /* AltFacebookVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD721BDE1D2900E73528 /* AltFacebookVideoCell.swift */; };
+		8933BD751BDE1D2900E73528 /* AltFacebookVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8933BD731BDE1D2900E73528 /* AltFacebookVideoCell.xib */; };
 		894253091BB297B700A04953 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253081BB297B700A04953 /* AppDelegate.swift */; };
 		8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942530A1BB297B700A04953 /* CoordinatorViewController.swift */; };
 		8942530E1BB297B700A04953 /* Startup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8942530C1BB297B700A04953 /* Startup.storyboard */; };
@@ -85,32 +86,32 @@
 		894253131BB297B700A04953 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 894253111BB297B700A04953 /* LaunchScreen.storyboard */; };
 		8942531E1BB297B700A04953 /* Selklik_FansTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942531D1BB297B700A04953 /* Selklik_FansTests.swift */; };
 		894253291BB297B700A04953 /* Selklik_FansUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253281BB297B700A04953 /* Selklik_FansUITests.swift */; };
-		894253391BB29C1300A04953 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 894253381BB29C1300A04953 /* .gitignore */; settings = {ASSET_TAGS = (); }; };
-		8956F8F11BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956F8F01BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift */; settings = {ASSET_TAGS = (); }; };
-		8956F8F41BDA254F001DEC44 /* FacebookVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956F8F21BDA254F001DEC44 /* FacebookVideoCell.swift */; settings = {ASSET_TAGS = (); }; };
-		8956F8F51BDA254F001DEC44 /* FacebookVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8956F8F31BDA254F001DEC44 /* FacebookVideoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		89685CB21BCD6A200035E6C0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89685CB11BCD6A200035E6C0 /* Image.swift */; settings = {ASSET_TAGS = (); }; };
-		896D1CA31BCB6CBF008A720B /* FacebookStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896D1CA11BCB6CBF008A720B /* FacebookStatusCell.swift */; settings = {ASSET_TAGS = (); }; };
-		896D1CA41BCB6CBF008A720B /* FacebookStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896D1CA21BCB6CBF008A720B /* FacebookStatusCell.xib */; settings = {ASSET_TAGS = (); }; };
-		899B7FE71BB6941500922922 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899B7FE61BB6941500922922 /* Constants.swift */; settings = {ASSET_TAGS = (); }; };
-		89C280BF1BD78B3800664A0C /* SingleFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C280BE1BD78B3700664A0C /* SingleFeedViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		89C8F0B31BB75FE900AFE092 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C8F0B21BB75FE900AFE092 /* Login.storyboard */; settings = {ASSET_TAGS = (); }; };
-		89C8F0B61BB7E6D500AFE092 /* SelklikFans.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0B41BB7E6D500AFE092 /* SelklikFans.xcdatamodeld */; settings = {ASSET_TAGS = (); }; };
-		89C8F0B81BB7E83900AFE092 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0B71BB7E83900AFE092 /* CoreDataStack.swift */; settings = {ASSET_TAGS = (); }; };
-		89C8F0BB1BB7F9B700AFE092 /* SelklikFansAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0B91BB7F9B700AFE092 /* SelklikFansAccess.swift */; settings = {ASSET_TAGS = (); }; };
-		89C8F0BC1BB7F9B700AFE092 /* SelklikFansAccess+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0BA1BB7F9B700AFE092 /* SelklikFansAccess+CoreDataProperties.swift */; settings = {ASSET_TAGS = (); }; };
-		89C8F0BE1BB8218100AFE092 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C8F0BD1BB8218100AFE092 /* Feed.storyboard */; settings = {ASSET_TAGS = (); }; };
-		89C8F0C31BB829FE00AFE092 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0C21BB829FE00AFE092 /* SWRevealViewController.m */; settings = {ASSET_TAGS = (); }; };
-		89C8F0C51BB8327D00AFE092 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0C41BB8327D00AFE092 /* FeedViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		89C8F0C81BB8CDA400AFE092 /* DataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0C71BB8CDA400AFE092 /* DataAPI.swift */; settings = {ASSET_TAGS = (); }; };
-		89D553C31BC6178C00C75D4A /* TwitterStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D553C11BC6178C00C75D4A /* TwitterStatusCell.swift */; settings = {ASSET_TAGS = (); }; };
-		89D553C41BC6178C00C75D4A /* TwitterStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D553C21BC6178C00C75D4A /* TwitterStatusCell.xib */; settings = {ASSET_TAGS = (); }; };
-		89D553C61BC65AD500C75D4A /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D553C51BC65AD500C75D4A /* Register.storyboard */; settings = {ASSET_TAGS = (); }; };
-		89D553CB1BC7B55F00C75D4A /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D553CA1BC7B55F00C75D4A /* SlideMenuViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		89D553CD1BC7B83100C75D4A /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D553CC1BC7B83100C75D4A /* UserInfo.swift */; settings = {ASSET_TAGS = (); }; };
-		89D553D01BC8051C00C75D4A /* FacebookPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D553CE1BC8051C00C75D4A /* FacebookPhotoCell.swift */; settings = {ASSET_TAGS = (); }; };
-		89D553D11BC8051C00C75D4A /* FacebookPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D553CF1BC8051C00C75D4A /* FacebookPhotoCell.xib */; settings = {ASSET_TAGS = (); }; };
-		89E0B1EC1BB3C19A0052D64B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		894253391BB29C1300A04953 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 894253381BB29C1300A04953 /* .gitignore */; };
+		8956F8F11BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956F8F01BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift */; };
+		8956F8F41BDA254F001DEC44 /* FacebookVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956F8F21BDA254F001DEC44 /* FacebookVideoCell.swift */; };
+		8956F8F51BDA254F001DEC44 /* FacebookVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8956F8F31BDA254F001DEC44 /* FacebookVideoCell.xib */; };
+		89685CB21BCD6A200035E6C0 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89685CB11BCD6A200035E6C0 /* Image.swift */; };
+		896D1CA31BCB6CBF008A720B /* FacebookStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 896D1CA11BCB6CBF008A720B /* FacebookStatusCell.swift */; };
+		896D1CA41BCB6CBF008A720B /* FacebookStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 896D1CA21BCB6CBF008A720B /* FacebookStatusCell.xib */; };
+		899B7FE71BB6941500922922 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 899B7FE61BB6941500922922 /* Constants.swift */; };
+		89C280BF1BD78B3800664A0C /* SingleFeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C280BE1BD78B3700664A0C /* SingleFeedViewController.swift */; };
+		89C8F0B31BB75FE900AFE092 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C8F0B21BB75FE900AFE092 /* Login.storyboard */; };
+		89C8F0B61BB7E6D500AFE092 /* SelklikFans.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0B41BB7E6D500AFE092 /* SelklikFans.xcdatamodeld */; };
+		89C8F0B81BB7E83900AFE092 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0B71BB7E83900AFE092 /* CoreDataStack.swift */; };
+		89C8F0BB1BB7F9B700AFE092 /* SelklikFansAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0B91BB7F9B700AFE092 /* SelklikFansAccess.swift */; };
+		89C8F0BC1BB7F9B700AFE092 /* SelklikFansAccess+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0BA1BB7F9B700AFE092 /* SelklikFansAccess+CoreDataProperties.swift */; };
+		89C8F0BE1BB8218100AFE092 /* Feed.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89C8F0BD1BB8218100AFE092 /* Feed.storyboard */; };
+		89C8F0C31BB829FE00AFE092 /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0C21BB829FE00AFE092 /* SWRevealViewController.m */; };
+		89C8F0C51BB8327D00AFE092 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0C41BB8327D00AFE092 /* FeedViewController.swift */; };
+		89C8F0C81BB8CDA400AFE092 /* DataAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C8F0C71BB8CDA400AFE092 /* DataAPI.swift */; };
+		89D553C31BC6178C00C75D4A /* TwitterStatusCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D553C11BC6178C00C75D4A /* TwitterStatusCell.swift */; };
+		89D553C41BC6178C00C75D4A /* TwitterStatusCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D553C21BC6178C00C75D4A /* TwitterStatusCell.xib */; };
+		89D553C61BC65AD500C75D4A /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 89D553C51BC65AD500C75D4A /* Register.storyboard */; };
+		89D553CB1BC7B55F00C75D4A /* SlideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D553CA1BC7B55F00C75D4A /* SlideMenuViewController.swift */; };
+		89D553CD1BC7B83100C75D4A /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D553CC1BC7B83100C75D4A /* UserInfo.swift */; };
+		89D553D01BC8051C00C75D4A /* FacebookPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D553CE1BC8051C00C75D4A /* FacebookPhotoCell.swift */; };
+		89D553D11BC8051C00C75D4A /* FacebookPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D553CF1BC8051C00C75D4A /* FacebookPhotoCell.xib */; };
+		89E0B1EC1BB3C19A0052D64B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,7 @@
 		8902B5621BD2A290006AD2B9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		89090CDB1BD7947000E2E254 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		89090CDC1BD7947000E2E254 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		8919B06B1BE00DC100515A71 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		891AAEC91BD49688008E6D49 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		891AAECB1BD496A4008E6D49 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		891AAECD1BD496BE008E6D49 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
@@ -313,6 +315,22 @@
 				891AAED01BD4A731008E6D49 /* CountryCell.xib */,
 			);
 			name = Artists;
+			sourceTree = "<group>";
+		};
+		8919B0691BE00D8900515A71 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				8919B06B1BE00DC100515A71 /* RegisterViewController.swift */,
+			);
+			name = Register;
+			sourceTree = "<group>";
+		};
+		8919B06A1BE00D9100515A71 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */,
+			);
+			name = Login;
 			sourceTree = "<group>";
 		};
 		892272661BD7D633001741CE /* Multiple */ = {
@@ -478,13 +496,14 @@
 		89C8F0AC1BB75C7100AFE092 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				8919B06A1BE00D9100515A71 /* Login */,
+				8919B0691BE00D8900515A71 /* Register */,
 				89D553C91BC7B53800C75D4A /* SlideMenu */,
 				89C8F0C61BB8C13700AFE092 /* Feeds */,
 				8933BD5B1BDDD60900E73528 /* Comments */,
 				8902B5551BD0ABFB006AD2B9 /* Artists */,
 				894253081BB297B700A04953 /* AppDelegate.swift */,
 				8942530A1BB297B700A04953 /* CoordinatorViewController.swift */,
-				89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -904,6 +923,7 @@
 				89C280BF1BD78B3800664A0C /* SingleFeedViewController.swift in Sources */,
 				8902B54B1BCF89F7006AD2B9 /* RetweetVideoCell.swift in Sources */,
 				892272941BD8BCC4001741CE /* AltRetweetPhotoCell.swift in Sources */,
+				8919B06C1BE00DC100515A71 /* RegisterViewController.swift in Sources */,
 				8922728C1BD8B9C4001741CE /* AltTwitterVideoCell.swift in Sources */,
 				891AAED81BD4E482008E6D49 /* Country.swift in Sources */,
 				89C8F0C31BB829FE00AFE092 /* SWRevealViewController.m in Sources */,
