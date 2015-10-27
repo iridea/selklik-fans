@@ -24,6 +24,7 @@ class SingleFeedViewController: UIViewController {
     var countryCode:String!
     var profileUrl:String!
 
+
     var artistPost = [NSManagedObject]()
 
     let userInfo = UserInfo()
@@ -80,6 +81,11 @@ class SingleFeedViewController: UIViewController {
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.altFacebookPhotoCell)
         cellNib = UINib(nibName: CellIdentifiers.altFacebookVideoCell, bundle: nil)
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.altFacebookVideoCell)
+    }
+
+    //MARK: - IBAction
+    @IBAction func followButton(sender: AnyObject) {
+        updateFollowStatus(true)
     }
 
     //MARK: - IBOutlet
@@ -505,6 +511,43 @@ class SingleFeedViewController: UIViewController {
             print("Fetch access in AppDelegate error: \(fetchError.localizedDescription)")
         }
     }
+
+
+    func updateFollowStatus(followThisArtist:Bool){
+        
+        let headers = [
+            "Content-Type": "application/x-www-form-urlencoded"
+        ]
+
+        let parameters = [
+            "token": userToken,
+            "artist_id": artistId
+        ]
+
+        print("userToken: \(userToken)")
+        print("artistId: \(artistId)")
+
+        let APIUrl = API.url + API.version
+        print("APIUrl: \(APIUrl)")
+        var postUrl = APIUrl + "user_follow"
+
+        if !followThisArtist {
+            postUrl = APIUrl + "user_unfollow"
+        }
+
+        Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters).responseJSON {
+            response in
+
+            if let jsonData = response.result.value {
+
+                let json = JSON(jsonData)
+
+                print(json)
+            }
+
+        }
+        
+    } 
 
     //MARK: - Default Function
     override func viewDidLoad() {

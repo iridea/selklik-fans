@@ -47,7 +47,7 @@ import Alamofire
                     return ("/\(Router.version)/artist_following", params)
 
                 case .ArtistPost (let token):
-                    let params = ["token": token, "country": Router.country, "limit" : "25"]
+                    let params = ["token": token, "limit" : "60"]
                     return ("/\(Router.version)/artist_feed", params)
                     
                 case .SingleArtistPost (let token, let artistId):
