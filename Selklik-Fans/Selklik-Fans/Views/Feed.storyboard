@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="iaq-vq-h1Y">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -916,18 +917,64 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S1I-gm-ziD">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="46" width="320" height="458"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="458" id="zwX-By-PwA"/>
+                                </constraints>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Gn-Uk-gSa">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="46"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Rk-NO-orf">
+                                        <rect key="frame" x="282" y="7" width="32" height="32"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="32" id="cYV-yh-Rva"/>
+                                            <constraint firstAttribute="height" constant="32" id="vbn-ur-X2x"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="Check">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="DpL-kX-4Zb">
+                                        <rect key="frame" x="8" y="9" width="266" height="29"/>
+                                        <animations/>
+                                        <segments>
+                                            <segment title="All"/>
+                                            <segment title="Followed"/>
+                                            <segment title="Available"/>
+                                        </segments>
+                                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <action selector="artistFilterSegment:" destination="AQL-Kw-Gs4" eventType="valueChanged" id="odw-2i-W3i"/>
+                                        </connections>
+                                    </segmentedControl>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.14901961386203766" green="0.12156862765550613" blue="0.24705882370471954" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="DpL-kX-4Zb" firstAttribute="top" secondItem="9Gn-Uk-gSa" secondAttribute="top" constant="9" id="2MU-3I-0K5"/>
+                                    <constraint firstItem="1Rk-NO-orf" firstAttribute="leading" secondItem="DpL-kX-4Zb" secondAttribute="trailing" constant="8" id="3qc-1f-Sm3"/>
+                                    <constraint firstItem="DpL-kX-4Zb" firstAttribute="leading" secondItem="9Gn-Uk-gSa" secondAttribute="leading" constant="8" id="MBw-c0-hDp"/>
+                                    <constraint firstAttribute="trailing" secondItem="1Rk-NO-orf" secondAttribute="trailing" constant="6" id="fBi-il-OTJ"/>
+                                    <constraint firstItem="1Rk-NO-orf" firstAttribute="top" secondItem="9Gn-Uk-gSa" secondAttribute="top" constant="7" id="hwS-ib-9Q3"/>
+                                    <constraint firstAttribute="bottom" secondItem="DpL-kX-4Zb" secondAttribute="bottom" constant="9" id="rOh-VS-eDC"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="S1I-gm-ziD" secondAttribute="bottom" id="067-2A-OrY"/>
-                            <constraint firstItem="S1I-gm-ziD" firstAttribute="top" secondItem="tqn-zg-drW" secondAttribute="top" id="Wks-VX-HUv"/>
-                            <constraint firstAttribute="trailing" secondItem="S1I-gm-ziD" secondAttribute="trailing" id="Ypf-Lo-S3R"/>
-                            <constraint firstItem="S1I-gm-ziD" firstAttribute="leading" secondItem="tqn-zg-drW" secondAttribute="leading" id="vTT-Mi-AgZ"/>
+                            <constraint firstItem="S1I-gm-ziD" firstAttribute="top" secondItem="9Gn-Uk-gSa" secondAttribute="bottom" id="CXX-qb-yDi"/>
+                            <constraint firstAttribute="trailing" secondItem="9Gn-Uk-gSa" secondAttribute="trailing" id="JKY-6j-d5V"/>
+                            <constraint firstItem="9Gn-Uk-gSa" firstAttribute="top" secondItem="Tlb-or-wxb" secondAttribute="bottom" id="OTP-I7-Bh5"/>
+                            <constraint firstAttribute="trailing" secondItem="S1I-gm-ziD" secondAttribute="trailing" id="bfy-Sf-QNJ"/>
+                            <constraint firstItem="S1I-gm-ziD" firstAttribute="leading" secondItem="tqn-zg-drW" secondAttribute="leading" id="nhQ-WO-Osk"/>
+                            <constraint firstItem="9Gn-Uk-gSa" firstAttribute="leading" secondItem="tqn-zg-drW" secondAttribute="leading" id="rHI-GN-b0c"/>
+                            <constraint firstAttribute="bottom" secondItem="S1I-gm-ziD" secondAttribute="bottom" id="rMj-H5-YqB"/>
+                            <constraint firstItem="S1I-gm-ziD" firstAttribute="top" secondItem="9Gn-Uk-gSa" secondAttribute="bottom" id="yBF-s0-38A"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Artists" id="Ua8-OX-W1G">
@@ -936,6 +983,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="artistFilterSegmentedControl" destination="DpL-kX-4Zb" id="Hk6-8M-lxm"/>
                         <outlet property="artistTableView" destination="S1I-gm-ziD" id="uM0-WO-ibX"/>
                         <segue destination="MTg-fA-0QE" kind="modal" identifier="artistListToSinglePost" id="oRN-Wt-ynE"/>
                     </connections>
@@ -1080,6 +1128,7 @@
     <resources>
         <image name="About" width="32" height="32"/>
         <image name="Artist" width="32" height="32"/>
+        <image name="Check" width="32" height="32"/>
         <image name="CloseX" width="32" height="32"/>
         <image name="CoordinatorVCBackground" width="640" height="1136"/>
         <image name="Favourite" width="32" height="32"/>
@@ -1097,7 +1146,7 @@
         <image name="twitterRound" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Lde-3C-jmg"/>
         <segue reference="9qI-Tm-i93"/>
+        <segue reference="oRN-Wt-ynE"/>
     </inferredMetricsTieBreakers>
 </document>

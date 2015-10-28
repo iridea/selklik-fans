@@ -548,7 +548,7 @@ class SingleFeedViewController: UIViewController {
             print(json)
 
             if  (json["status"].boolValue){
-                
+
                 if (json["result"][0]["follow"]){
                     self.messagebox.showRegisterSuccessfulMessage("Successful", message: "You have successfully follow this artist", buttonTitle: "Close", style: .Success, duration: 0.0, colorStyle: 0x330066 ,buttonTextColor: 0xFFFFFF)
                 }

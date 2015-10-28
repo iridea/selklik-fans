@@ -436,7 +436,7 @@ extension FeedViewController: UITableViewDataSource {
                 placeholderImage = UIImage(named: "placeholder")
                 let imageSize = CGSize(width: (post.valueForKey("videoThumbStdWidth") as? CGFloat)!, height: ((post.valueForKey("videoThumbStdHeight") as? CGFloat)!)/2.0)
 
-                //placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
+                placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
                
 
                 let postPhotoUrl = NSURL(string: (post.valueForKey("videoThumbStdUrl") as? String)!)

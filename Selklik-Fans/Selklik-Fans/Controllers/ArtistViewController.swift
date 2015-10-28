@@ -42,6 +42,7 @@ class ArtistViewController: UIViewController {
 
     //MARK: - IBoutlet
     @IBOutlet weak var artistTableView: UITableView!
+    @IBOutlet weak var artistFilterSegmentedControl: UISegmentedControl!
 
     //MARK: - Default Function
     override func viewDidLoad() {
@@ -76,12 +77,39 @@ class ArtistViewController: UIViewController {
         artistTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.artistListCell)
     }
 
+    @IBAction func artistFilterSegment(sender:AnyObject) {
+        switch artistFilterSegmentedControl.selectedSegmentIndex
+        {
+        case 0:
+            hud.showProgressBar("Loading data", true, view: self.viewIfLoaded!)
+            self.getArtistFromCoreData()
+            self.artistTableView.reloadData()
+
+            self.hud.hideProgressBar()
+            self.view.userInteractionEnabled = true
+        case 1:
+            hud.showProgressBar("Loading data", true, view: self.viewIfLoaded!)
+            self.getFollowedArtistFromCoreData()
+            self.artistTableView.reloadData()
+
+            self.hud.hideProgressBar()
+            self.view.userInteractionEnabled = true
+        case 2:
+            hud.showProgressBar("Loading data", true, view: self.viewIfLoaded!)
+            self.getAvailableArtistFromCoreData()
+            self.artistTableView.reloadData()
+
+            self.hud.hideProgressBar()
+            self.view.userInteractionEnabled = true
+        default:
+            break; 
+        }
+    }
+
     func clearArtistData(){
         hud.showProgressBar("Loading data", true, view: self.viewIfLoaded!)
 
         let fetchRequest = NSFetchRequest(entityName: "Artist")
-
-        //fetchRequest.predicate = fetchPredicate
 
         do {
             let results =
@@ -98,11 +126,9 @@ class ArtistViewController: UIViewController {
     func populateArtistsAndCountries() {
 
         let artistEntity = NSEntityDescription.entityForName("Artist",inManagedObjectContext: managedContext)
-
         Alamofire.request(DataAPI.Router.ArtistPerCountry(userToken,countryCode)).responseJSON(){
             response in
 
-            print("MASUK populateArtists - ALAMOFIRE")
             if let jsonData = response.result.value {
 
                 let json = JSON(jsonData)
@@ -229,6 +255,42 @@ class ArtistViewController: UIViewController {
             print("Fetch access in AppDelegate error: \(fetchError.localizedDescription)")
         }
     }
+
+    func getFollowedArtistFromCoreData() {
+        let fetchRequest = NSFetchRequest(entityName: "Artist")
+        //NSPredicate *newPredicate = [NSPredicate predicateWithFormat:@"anAttribute == %@", [NSNumber numberWithBool:aBool]];
+        let predicate = NSPredicate(format: "isFollow == 1")
+        let nameSort =
+        NSSortDescriptor(key: "artistName", ascending: true)
+        fetchRequest.predicate = predicate
+        fetchRequest.sortDescriptors = [nameSort]
+
+        do  {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            artistList = results as! [NSManagedObject]
+        }
+        catch let fetchError as NSError {
+            print("Fetch access in AppDelegate error: \(fetchError.localizedDescription)")
+        }
+    }
+
+    func getAvailableArtistFromCoreData() {
+        let fetchRequest = NSFetchRequest(entityName: "Artist")
+        //NSPredicate *newPredicate = [NSPredicate predicateWithFormat:@"anAttribute == %@", [NSNumber numberWithBool:aBool]];
+        let predicate = NSPredicate(format: "isFollow == 0")
+        let nameSort =
+        NSSortDescriptor(key: "artistName", ascending: true)
+        fetchRequest.predicate = predicate
+        fetchRequest.sortDescriptors = [nameSort]
+
+        do  {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            artistList = results as! [NSManagedObject]
+        }
+        catch let fetchError as NSError {
+            print("Fetch access in AppDelegate error: \(fetchError.localizedDescription)")
+        }
+    }
 }
 
 extension ArtistViewController: UITableViewDataSource {
@@ -255,7 +317,7 @@ extension ArtistViewController: UITableViewDataSource {
         }
 
         cell.artistName.text = artist.valueForKey("artistName") as? String
-
+        print(artist.valueForKey("isFollow"))
         
         return cell
     }
