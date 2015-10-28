@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SCLAlertView
 
 class RegisterViewController: UIViewController {
 
@@ -17,21 +16,48 @@ class RegisterViewController: UIViewController {
     }
 
     @IBAction func joinButton(sender: AnyObject) {
-        showRegisterSuccessfulMessage()
+        //showRegisterSuccessfulMessage()
     }
 
     //MARK: Custom function
-    func showRegisterSuccessfulMessage(){
-        SCLAlertView().showTitle(
-            "Congratulations", // Title of view
-            subTitle: "Operation successfully completed.", // String of view
-            duration: 0.0, // Duration to show before closing automatically, default: 0.0
-            completeText: "Done", // Optional button value, default: ""
-            style: .Success, // Styles - see below.
-            colorStyle: 0xA429FF,
-            colorTextButton: 0xFFFFFF
-        )
-    }
+
+
+    /*
+    func updateFollowStatus(followThisArtist:Bool){
+
+        let headers = [
+            "Content-Type": "application/x-www-form-urlencoded"
+        ]
+
+        let parameters = [
+            "token": userToken,
+            "artist_id": artistId
+        ]
+
+        print("userToken: \(userToken)")
+        print("artistId: \(artistId)")
+
+        let APIUrl = API.url + API.version
+        print("APIUrl: \(APIUrl)")
+        var postUrl = APIUrl + "user_follow"
+
+        if !followThisArtist {
+            postUrl = APIUrl + "user_unfollow"
+        }
+
+        Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters).responseJSON {
+            response in
+
+            if let jsonData = response.result.value {
+
+                let json = JSON(jsonData)
+                
+                print(json)
+            }
+            
+        }
+        
+    }*/
 
     //MARK: Default function
     override func viewDidLoad() {

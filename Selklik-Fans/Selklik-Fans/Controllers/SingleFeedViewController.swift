@@ -30,7 +30,9 @@ class SingleFeedViewController: UIViewController {
     let userInfo = UserInfo()
     let photoInfo = Photo()
     let hud = Hud()
+    let messagebox = MessageBox()
     var allPosts = [PostSingle]()
+
 
     var selectedImageUrl:String?
 
@@ -535,15 +537,50 @@ class SingleFeedViewController: UIViewController {
             postUrl = APIUrl + "user_unfollow"
         }
 
-        Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters).responseJSON {
-            response in
+        Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters).responseJSON { response in
 
-            if let jsonData = response.result.value {
 
-                let json = JSON(jsonData)
+            //Remove HUD
+            //self.messageFrame.removeFromSuperview()
 
-                print(json)
+            let json = JSON(response.result.value!)
+
+            print(json)
+
+            if  (json["status"].boolValue){
+                
+                if (json["result"][0]["follow"]){
+                    self.messagebox.showRegisterSuccessfulMessage("Successful", message: "You have successfully follow this artist", buttonTitle: "Close", style: .Success, duration: 0.0, colorStyle: 0x330066 ,buttonTextColor: 0xFFFFFF)
+                }
+                else {
+                    self.messagebox.showRegisterSuccessfulMessage("Fail", message: "You already follow this artist", buttonTitle: "Close", style: .Error, duration: 0.0, colorStyle: 0xFF9933 ,buttonTextColor: 0xFFFFFF)
+                }
             }
+
+            /*
+            print(json["user"]["firstname"].string)
+
+            if  (json["status"].boolValue){
+
+                print("Validation Successful")
+
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.updateOrInsertTokenInCoreData(json["token"].string!)
+                    self.performSegueWithIdentifier("loginToFeedSegue", sender: self)
+                }
+            }
+            else{
+                print("Validation Failed")
+                let uiAlert = UIAlertController(title: Title.loginFail, message: Message.loginFail, preferredStyle: UIAlertControllerStyle.Alert)
+                self.presentViewController(uiAlert, animated: true, completion: nil)
+
+                uiAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
+                    self.messageFrame.removeFromSuperview()
+                    self.view.userInteractionEnabled = true
+
+                }))
+
+            } */
 
         }
         

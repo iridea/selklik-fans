@@ -112,6 +112,7 @@
 		89D553D01BC8051C00C75D4A /* FacebookPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89D553CE1BC8051C00C75D4A /* FacebookPhotoCell.swift */; };
 		89D553D11BC8051C00C75D4A /* FacebookPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D553CF1BC8051C00C75D4A /* FacebookPhotoCell.xib */; };
 		89E0B1EC1BB3C19A0052D64B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */; };
+		89E5DDB11BE058DC00AA44AE /* MessageBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DDB01BE058DC00AA44AE /* MessageBox.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -245,6 +246,7 @@
 		89D553CE1BC8051C00C75D4A /* FacebookPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookPhotoCell.swift; sourceTree = "<group>"; };
 		89D553CF1BC8051C00C75D4A /* FacebookPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookPhotoCell.xib; sourceTree = "<group>"; };
 		89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		89E5DDB01BE058DC00AA44AE /* MessageBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBox.swift; sourceTree = "<group>"; };
 		93106E8CDDAF466E4ABE4638 /* Pods_Selklik_Fans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Selklik_Fans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80A33531EC1AF33B6A0C573 /* Pods-Selklik-Fans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selklik-Fans.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Selklik-Fans/Pods-Selklik-Fans.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -639,6 +641,7 @@
 				8902B5601BD2497B006AD2B9 /* UITapGestureRecognizer+.swift */,
 				891AAEE11BD5ECEE008E6D49 /* HUD.swift */,
 				8933BD5E1BDDE8DD00E73528 /* CommentButton.swift */,
+				89E5DDB01BE058DC00AA44AE /* MessageBox.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -920,6 +923,7 @@
 				894253091BB297B700A04953 /* AppDelegate.swift in Sources */,
 				891AAEDC1BD52B2D008E6D49 /* CountryListViewController+UITableViewDelegate.swift in Sources */,
 				8902B5611BD2497B006AD2B9 /* UITapGestureRecognizer+.swift in Sources */,
+				89E5DDB11BE058DC00AA44AE /* MessageBox.swift in Sources */,
 				89C280BF1BD78B3800664A0C /* SingleFeedViewController.swift in Sources */,
 				8902B54B1BCF89F7006AD2B9 /* RetweetVideoCell.swift in Sources */,
 				892272941BD8BCC4001741CE /* AltRetweetPhotoCell.swift in Sources */,
@@ -1034,7 +1038,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -1072,7 +1076,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -1087,7 +1091,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Selklik-Fans/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.selklik.Selklik-Fans";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1104,7 +1108,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Selklik-Fans/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.selklik.Selklik-Fans";
 				PRODUCT_NAME = "$(TARGET_NAME)";

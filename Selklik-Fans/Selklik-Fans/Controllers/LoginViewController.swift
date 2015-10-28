@@ -99,6 +99,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 let json = JSON(response.result.value!)
 
                 print("json from login:\(json)")
+                print(json["user"]["firstname"].string)
 
                 if  (json["status"].boolValue){
 
