@@ -7,16 +7,71 @@
 //
 
 import UIKit
+import CoreData
 
 class ProfileViewController: UIViewController {
 
+    //MARK: - Variable
+    let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var managedContext: NSManagedObjectContext!
+
+    //MARK: IBOutlet
     @IBOutlet weak var whitePanel: UIView!
-    
+    @IBOutlet weak var firstNameLabel: UITextField!
+    @IBOutlet weak var lastNameLabel: UITextField!
+    @IBOutlet weak var genderLabel: UITextField!
+    @IBOutlet weak var emailLabel: UITextField!
+    @IBOutlet weak var profileImageView: UIImageView!
+
+    let photoInfo = Photo()
+
+
+    //MARK: Custom function
+    func getUserInfoFromCoreData(){
+        var userObject = [NSManagedObject]()
+        let fetchRequest = NSFetchRequest(entityName: "User")
+
+        do  {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            userObject = results as! [NSManagedObject]
+            let user = userObject[0]
+            self.firstNameLabel.text = user.valueForKey("firstName") as? String
+            self.lastNameLabel.text = user.valueForKey("lastName") as? String
+            self.genderLabel.text = user.valueForKey("gender") as? String
+            self.emailLabel.text = user.valueForKey("email") as? String
+
+            var placeholderImage = UIImage(named: "placeholder")
+            let imageSize = CGSize(width: (user.valueForKey("profileImageWidth") as? CGFloat)!, height: ((user.valueForKey("profileImageHeight") as? CGFloat)!)/2.0)
+
+            placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
+            let postPhotoUrl = NSURL(string: (user.valueForKey("profileImageUrl") as? String)!)
+            self.profileImageView.image = nil
+            self.profileImageView.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
+
+        }
+        catch let fetchError as NSError {
+            print("Fetch access in AppDelegate error: \(fetchError.localizedDescription)")
+        }
+    }
+
+    /*
+    func getCountryCoreData() {
+
+    }
+    */
+
+    //MARK: Default function
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.managedContext = appDelegate.coreDataStack.context
         whitePanel.layer.cornerRadius = 10
         whitePanel.clipsToBounds = true
+
+        profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2
+        profileImageView.clipsToBounds = true
+
+        getUserInfoFromCoreData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -27,15 +82,5 @@ class ProfileViewController: UIViewController {
     @IBAction func CloseButton(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

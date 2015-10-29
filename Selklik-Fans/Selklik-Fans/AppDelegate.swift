@@ -109,7 +109,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Local token exist")
 
                 let headers = ["Content-Type": "application/x-www-form-urlencoded"]
-                let parameters = ["token":userLocalToken!, "country":Setting.malaysia]
+                let parameters = ["token":userLocalToken!]
                 let postUrl = API.url + API.version + "user_check"
 
 

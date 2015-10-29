@@ -113,6 +113,8 @@
 		89D553D11BC8051C00C75D4A /* FacebookPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89D553CF1BC8051C00C75D4A /* FacebookPhotoCell.xib */; };
 		89E0B1EC1BB3C19A0052D64B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */; };
 		89E5DDB11BE058DC00AA44AE /* MessageBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DDB01BE058DC00AA44AE /* MessageBox.swift */; };
+		89E5DDB41BE18C8000AA44AE /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DDB21BE18C8000AA44AE /* User+CoreDataProperties.swift */; };
+		89E5DDB51BE18C8000AA44AE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DDB31BE18C8000AA44AE /* User.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -247,6 +249,8 @@
 		89D553CF1BC8051C00C75D4A /* FacebookPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookPhotoCell.xib; sourceTree = "<group>"; };
 		89E0B1EB1BB3C19A0052D64B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		89E5DDB01BE058DC00AA44AE /* MessageBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBox.swift; sourceTree = "<group>"; };
+		89E5DDB21BE18C8000AA44AE /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		89E5DDB31BE18C8000AA44AE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		93106E8CDDAF466E4ABE4638 /* Pods_Selklik_Fans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Selklik_Fans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80A33531EC1AF33B6A0C573 /* Pods-Selklik-Fans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selklik-Fans.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Selklik-Fans/Pods-Selklik-Fans.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -526,6 +530,8 @@
 		89C8F0AE1BB75CAD00AFE092 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				89E5DDB21BE18C8000AA44AE /* User+CoreDataProperties.swift */,
+				89E5DDB31BE18C8000AA44AE /* User.swift */,
 				8933BD601BDDFC1D00E73528 /* Comment+CoreDataProperties.swift */,
 				8933BD611BDDFC1D00E73528 /* Comment.swift */,
 				892272601BD7CE77001741CE /* PostSingle+CoreDataProperties.swift */,
@@ -901,6 +907,7 @@
 				891AAEDA1BD4EB3B008E6D49 /* CountryListViewController+UITableViewDataSource.swift in Sources */,
 				8956F8F41BDA254F001DEC44 /* FacebookVideoCell.swift in Sources */,
 				892272651BD7D48B001741CE /* SingleFeedViewController+UITableViewDataSource.swift in Sources */,
+				89E5DDB41BE18C8000AA44AE /* User+CoreDataProperties.swift in Sources */,
 				8933BD5D1BDDD64200E73528 /* CommentViewController.swift in Sources */,
 				891AAED41BD4C998008E6D49 /* CountryListViewController.swift in Sources */,
 				891AAEE01BD5AD70008E6D49 /* ArtistViewController.swift in Sources */,
@@ -935,6 +942,7 @@
 				89685CB21BCD6A200035E6C0 /* Image.swift in Sources */,
 				892272901BD8BBB8001741CE /* AltRetweetStatusCell.swift in Sources */,
 				899B7FE71BB6941500922922 /* Constants.swift in Sources */,
+				89E5DDB51BE18C8000AA44AE /* User.swift in Sources */,
 				8902B5431BCF8072006AD2B9 /* TwitterVideoCell.swift in Sources */,
 				892272631BD7CE77001741CE /* PostSingle.swift in Sources */,
 				891AAEE21BD5ECEE008E6D49 /* HUD.swift in Sources */,

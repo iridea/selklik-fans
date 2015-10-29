@@ -161,14 +161,17 @@ class UserInfo {
     }
 
     //--- Convert Date String to NSDate ---//
-    func stringToDate(dateString: NSString) -> NSDate?
+    func stringToDate(dateString: NSString, dateFormat:String) -> NSDate?
     {
         let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        //dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = dateFormat//"yyyy-MM-dd HH:mm:ss"
         dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
 
         return dateFormatter.dateFromString(dateString as String)
     }
+
+
 
 
     

@@ -115,7 +115,6 @@ class ArtistViewController: UIViewController {
             let results =
             try managedContext.executeFetchRequest(fetchRequest)
             if results.count > 0 {
-                //userInfo.clearArtistFromCoreData(managedContext,predicate: fetchPredicate)
                 userInfo.clearArtistFromCoreData(managedContext)
             }
         } catch let error as NSError {
@@ -257,11 +256,11 @@ class ArtistViewController: UIViewController {
     }
 
     func getFollowedArtistFromCoreData() {
+
         let fetchRequest = NSFetchRequest(entityName: "Artist")
-        //NSPredicate *newPredicate = [NSPredicate predicateWithFormat:@"anAttribute == %@", [NSNumber numberWithBool:aBool]];
         let predicate = NSPredicate(format: "isFollow == 1")
-        let nameSort =
-        NSSortDescriptor(key: "artistName", ascending: true)
+        let nameSort = NSSortDescriptor(key: "artistName", ascending: true)
+
         fetchRequest.predicate = predicate
         fetchRequest.sortDescriptors = [nameSort]
 
@@ -276,7 +275,6 @@ class ArtistViewController: UIViewController {
 
     func getAvailableArtistFromCoreData() {
         let fetchRequest = NSFetchRequest(entityName: "Artist")
-        //NSPredicate *newPredicate = [NSPredicate predicateWithFormat:@"anAttribute == %@", [NSNumber numberWithBool:aBool]];
         let predicate = NSPredicate(format: "isFollow == 0")
         let nameSort =
         NSSortDescriptor(key: "artistName", ascending: true)
@@ -303,18 +301,25 @@ extension ArtistViewController: UITableViewDataSource {
 
         let artist = artistList[indexPath.row]
 
-        //Download image profile using AlamofireImage
-        let artistImageUrlString = artist.valueForKey("artistImageUrl") as? String
-        let artistImageUrl = NSURL(string: artistImageUrlString!)
-
-
         let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.artistListCell, forIndexPath:indexPath) as! ArtistListCell
 
+        //Download image profile using AlamofireImage
 
         cell.profilePhoto.image = UIImage(named: "UserIcon")
-        if let imageUrl = artistImageUrl {
-            cell.profilePhoto.af_setImageWithURL(imageUrl)
+
+        if let artistImageUrlString = artist.valueForKey("artistImageUrl") as? String {
+            let artistImageUrl = NSURL(string: artistImageUrlString)
+
+            if let imageUrl = artistImageUrl {
+                cell.profilePhoto.af_setImageWithURL(imageUrl)
+            }
+        }else{
+            print("UNABLE TO GET artistImageUrlString")
         }
+
+        let isFollowStatus:Bool = artist.valueForKey("isFollow") as! Bool
+
+        cell.isFollowedLabel.hidden = !isFollowStatus
 
         cell.artistName.text = artist.valueForKey("artistName") as? String
         print(artist.valueForKey("isFollow"))
@@ -334,8 +339,6 @@ extension ArtistViewController: UITableViewDelegate {
         self.performSegueWithIdentifier("artistListToSinglePost", sender: self)
         
     }
-
-
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         if (segue.identifier == "artistListToSinglePost") {

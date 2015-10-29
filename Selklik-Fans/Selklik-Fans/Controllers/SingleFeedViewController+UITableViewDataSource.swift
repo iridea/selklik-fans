@@ -186,7 +186,6 @@ extension SingleFeedViewController: UITableViewDataSource {
                     cell.postThumb.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
 
                     return cell
-
                 }
                 else{
                     let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.altTwitterVideoCell, forIndexPath:indexPath) as! AltTwitterVideoCell

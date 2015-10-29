@@ -159,7 +159,7 @@ class SingleFeedViewController: UIViewController {
                     }
 
                     if let timestamp = subJson["timestamp"].string {
-                        newPost.timeStamp = self.userInfo.stringToDate(timestamp)
+                        newPost.timeStamp = self.userInfo.stringToDate(timestamp, dateFormat: "yyyy-MM-dd HH:mm:ss")
                     }else{
                         print("unable to read JSON data timestamp")
                     }
@@ -551,6 +551,8 @@ class SingleFeedViewController: UIViewController {
 
                 if (json["result"][0]["follow"]){
                     self.messagebox.showRegisterSuccessfulMessage("Successful", message: "You have successfully follow this artist", buttonTitle: "Close", style: .Success, duration: 0.0, colorStyle: 0x330066 ,buttonTextColor: 0xFFFFFF)
+
+                    self.updateFollowStatusInCoreData(self.artistId)
                 }
                 else {
                     self.messagebox.showRegisterSuccessfulMessage("Fail", message: "You already follow this artist", buttonTitle: "Close", style: .Error, duration: 0.0, colorStyle: 0xFF9933 ,buttonTextColor: 0xFFFFFF)
@@ -584,7 +586,45 @@ class SingleFeedViewController: UIViewController {
 
         }
         
-    } 
+    }
+
+
+    func updateFollowStatusInCoreData(artistId:String){
+
+         var selectedArtist: Artist!
+
+        let artistEntity = NSEntityDescription.entityForName("Artist",
+            inManagedObjectContext: managedContext)
+
+        let artistFetch = NSFetchRequest(entityName: "Artist")
+        let fetchPredicate = NSPredicate(format: "artistId == %@", artistId)
+        artistFetch.predicate = fetchPredicate
+
+        do  {
+            let result = try managedContext.executeFetchRequest(artistFetch) as? [Artist]
+
+            if let artist = result {
+
+                //if old token exist in core data, delete it
+                if artist.count == 1 {
+                    selectedArtist = artist[0]
+                    selectedArtist = Artist(entity: artistEntity!, insertIntoManagedObjectContext: managedContext)
+                    selectedArtist.isFollow = 1
+                }
+
+
+
+                do {
+                    try managedContext.save()
+                } catch let error as NSError {
+                    print("Could not save: \(error)")
+                }
+            }
+        }
+        catch let fetchError as NSError {
+            print("dogFetch error: \(fetchError.localizedDescription)")
+        }
+    }
 
     //MARK: - Default Function
     override func viewDidLoad() {

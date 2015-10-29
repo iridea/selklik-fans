@@ -424,6 +424,62 @@
                                                     <rect key="frame" x="95" y="62" width="100" height="100"/>
                                                     <animations/>
                                                 </imageView>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7oo-nt-5Zj">
+                                                    <rect key="frame" x="18" y="208" width="255" height="30"/>
+                                                    <animations/>
+                                                    <color key="textColor" red="0.14901961386203766" green="0.12156862765550613" blue="0.24705882370471954" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lOA-DD-Zay">
+                                                    <rect key="frame" x="18" y="197" width="62" height="13"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.68888300660000001" green="0.71366006140000005" blue="0.73448425530000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="First name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Jf0-KF-MY6">
+                                                    <rect key="frame" x="18" y="257" width="255" height="30"/>
+                                                    <animations/>
+                                                    <color key="textColor" red="0.14901961389999999" green="0.1215686277" blue="0.24705882370000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="First name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aaz-y0-vrN">
+                                                    <rect key="frame" x="18" y="246" width="62" height="13"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.68888300660000001" green="0.71366006140000005" blue="0.73448425530000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Gender" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rny-mm-l4a">
+                                                    <rect key="frame" x="18" y="306" width="255" height="30"/>
+                                                    <animations/>
+                                                    <color key="textColor" red="0.14901961389999999" green="0.1215686277" blue="0.24705882370000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gender" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DFI-55-mrK">
+                                                    <rect key="frame" x="18" y="295" width="53" height="13"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.68888300660000001" green="0.71366006140000005" blue="0.73448425530000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lkb-Tn-VVo">
+                                                    <rect key="frame" x="18" y="355" width="255" height="30"/>
+                                                    <animations/>
+                                                    <color key="textColor" red="0.14901961389999999" green="0.1215686277" blue="0.24705882370000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XeY-0f-HLA">
+                                                    <rect key="frame" x="18" y="344" width="53" height="13"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                    <color key="textColor" red="0.68888300660000001" green="0.71366006140000005" blue="0.73448425530000006" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -455,6 +511,11 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="emailLabel" destination="lkb-Tn-VVo" id="gMa-J6-tGY"/>
+                        <outlet property="firstNameLabel" destination="7oo-nt-5Zj" id="XBq-n4-K1b"/>
+                        <outlet property="genderLabel" destination="rny-mm-l4a" id="e4B-MY-IzM"/>
+                        <outlet property="lastNameLabel" destination="Jf0-KF-MY6" id="Xt2-K6-I8k"/>
+                        <outlet property="profileImageView" destination="Z2i-1R-jzm" id="oB1-Mt-bNb"/>
                         <outlet property="whitePanel" destination="bZv-4n-lkp" id="hxV-ls-Nj0"/>
                     </connections>
                 </viewController>

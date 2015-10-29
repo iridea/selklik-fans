@@ -195,7 +195,7 @@ class FeedViewController: UIViewController {
                     }
 
                     if let timestamp = subJson["timestamp"].string {
-                        newPost.timeStamp = self.userInfo.stringToDate(timestamp)
+                        newPost.timeStamp = self.userInfo.stringToDate(timestamp,dateFormat: "yyyy-MM-dd HH:mm:ss")
                     }else{
                         print("unable to read JSON data timestamp")
                     }
