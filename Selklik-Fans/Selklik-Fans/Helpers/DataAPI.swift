@@ -20,7 +20,7 @@ import Alamofire
         case ArtistPerCountry(String,String)
         case FavouriteArtistList(String)
         case ArtistPost(String)
-        case SingleArtistPost(String,String)
+        case SingleArtistPost(String,String,String)
         case ArtistPremiumPost(String)
         case FeedComment(String,String,String, String)
         case LatestNews(String)
@@ -49,10 +49,11 @@ import Alamofire
                 case .ArtistPost (let token):
                     let params = ["token": token, "limit" : "60"]
                     return ("/\(Router.version)/artist_feed", params)
-                    
-                case .SingleArtistPost (let token, let artistId):
+
+                    //artist_peek
+                case .SingleArtistPost (let token, let artistId,let endPointName):
                     let params = ["token": token, "limit" : "25", "artist_id":artistId]
-                    return ("/\(Router.version)/artist_peek", params)
+                    return ("/\(Router.version)/\(endPointName)", params)
                     
                 case .ArtistPremiumPost (let token):
                     let params = ["token": token, "country": Router.country, "limit" : "15", "post_type":"premium"]

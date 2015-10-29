@@ -347,6 +347,7 @@ extension ArtistViewController: UITableViewDelegate {
             singleArtistPostViewController.countryCode = selectedArtistCountryCode
              singleArtistPostViewController.profileUrl = selectedArtistImageUrl
             singleArtistPostViewController.name = selectedArtistName
+            singleArtistPostViewController.isPeek = true
         }
         
     }

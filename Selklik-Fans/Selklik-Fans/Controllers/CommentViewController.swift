@@ -103,7 +103,7 @@ class CommentViewController: UIViewController {
                     }
 
                     if let timeStamp = subJson["timestamp"].string {
-                        newComment.timeStamp = self.userInfo.stringToDate(timeStamp,dateFormat: "yyyy-MM-dd HH:mm:ss")
+                        newComment.timeStamp = self.userInfo.stringToDate(timeStamp,dateFormat: "yyyy-MM-dd H:mm:ss")
                     }else{
                         print("unable to read JSON data id")
                     }

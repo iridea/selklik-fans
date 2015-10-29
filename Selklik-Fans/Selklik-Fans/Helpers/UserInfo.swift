@@ -150,11 +150,34 @@ class UserInfo {
         }
     }
 
+    func clearUserFromCoreData(managedContext: NSManagedObjectContext) {
+
+        let fetchPosts = NSFetchRequest(entityName: "User")
+
+        do  {
+            let fetchedEntities = try managedContext.executeFetchRequest(fetchPosts) as? [User]
+
+            for entity in fetchedEntities! {
+                managedContext.deleteObject(entity)
+            }
+
+        }
+        catch let fetchError as NSError {
+            print("Fetch Post for delete error: \(fetchError.localizedDescription)")
+        }
+
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save: \(error)")
+        }
+    }
+
 
     func dateToSting(date: NSDate) -> NSString
     {
         let dateFormatter: NSDateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        dateFormatter.dateFormat = "yyyy-MM-dd H:mm:ss"
         dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
 
         return dateFormatter.stringFromDate(date)
@@ -164,15 +187,11 @@ class UserInfo {
     func stringToDate(dateString: NSString, dateFormat:String) -> NSDate?
     {
         let dateFormatter = NSDateFormatter()
-        //dateFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        dateFormatter.dateFormat = dateFormat//"yyyy-MM-dd HH:mm:ss"
+        //dateFormatter.dateFormat = "yyyy-MM-dd H:mm:ss"
+        dateFormatter.dateFormat = dateFormat//"yyyy-MM-dd H:mm:ss"
         dateFormatter.timeZone = NSTimeZone(abbreviation: "UTC")
 
         return dateFormatter.dateFromString(dateString as String)
     }
 
-
-
-
-    
 }

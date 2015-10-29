@@ -9,10 +9,18 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import CoreData
 
 class SlideMenuViewController: UIViewController {
 
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+    var managedContext: NSManagedObjectContext!
+
+    @IBOutlet weak var profileImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var emailLabel: UILabel!
+
+     let photoInfo = Photo()
 
     //variable for loading HUD
     var messageFrame = UIView()
@@ -21,13 +29,15 @@ class SlideMenuViewController: UIViewController {
 
     @IBAction func logoutButton(sender: AnyObject) {
         logoutFromSystem()
-
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.managedContext = appDelegate.coreDataStack.context
+        profileImageView.layer.cornerRadius = profileImageView.frame.size.height/2
+        profileImageView.clipsToBounds = true
+        getUserInfoFromCoreData()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,6 +47,30 @@ class SlideMenuViewController: UIViewController {
     
 
     //MARK: - Custom Function
+    func getUserInfoFromCoreData(){
+        var userObject = [NSManagedObject]()
+        let fetchRequest = NSFetchRequest(entityName: "User")
+
+        do  {
+            let results = try managedContext.executeFetchRequest(fetchRequest)
+            userObject = results as! [NSManagedObject]
+            let user = userObject[0]
+            self.userNameLabel.text = user.valueForKey("firstName") as? String
+            self.emailLabel.text = user.valueForKey("email") as? String
+
+            var placeholderImage = UIImage(named: "placeholder")
+            let imageSize = CGSize(width: (user.valueForKey("profileImageWidth") as? CGFloat)!, height: ((user.valueForKey("profileImageHeight") as? CGFloat)!)/2.0)
+
+            placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
+            let postPhotoUrl = NSURL(string: (user.valueForKey("profileImageUrl") as? String)!)
+            self.profileImageView.image = nil
+            self.profileImageView.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
+
+        }
+        catch let fetchError as NSError {
+            print("Fetch access in AppDelegate error: \(fetchError.localizedDescription)")
+        }
+    }
 
     func progressBarDisplayer(msg:String, _ indicator:Bool ) {
 

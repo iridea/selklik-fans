@@ -657,7 +657,7 @@
                                             <animations/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hFf-HI-uQE">
-                                            <rect key="frame" x="89" y="127" width="86" height="21"/>
+                                            <rect key="frame" x="26" y="127" width="215" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -690,6 +690,11 @@
                             <constraint firstItem="iCc-yg-5f4" firstAttribute="leading" secondItem="kiB-7U-q9o" secondAttribute="leading" id="vRo-Z1-W5g"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailLabel" destination="jXj-KC-SCH" id="viB-UK-8L0"/>
+                        <outlet property="profileImageView" destination="XfR-g1-yfq" id="lCU-IW-31M"/>
+                        <outlet property="userNameLabel" destination="hFf-HI-uQE" id="e6c-tC-rW8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="40O-uU-V8D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

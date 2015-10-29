@@ -23,7 +23,7 @@ class SingleFeedViewController: UIViewController {
     var artistId:String!
     var countryCode:String!
     var profileUrl:String!
-
+    var isPeek:Bool = false
 
     var artistPost = [NSManagedObject]()
 
@@ -127,7 +127,14 @@ class SingleFeedViewController: UIViewController {
 
         let postEntity = NSEntityDescription.entityForName("PostSingle",inManagedObjectContext: managedContext)
 
-        Alamofire.request(DataAPI.Router.SingleArtistPost(userToken,artistId)).responseJSON(){
+        var urlEndPoint:String!
+        if isPeek {
+            urlEndPoint = "artist_peek"
+        }else{
+            urlEndPoint = "artist_feed"
+        }
+
+        Alamofire.request(DataAPI.Router.SingleArtistPost(userToken,artistId,urlEndPoint)).responseJSON(){
             response in
 
             if let jsonData = response.result.value {
@@ -159,7 +166,7 @@ class SingleFeedViewController: UIViewController {
                     }
 
                     if let timestamp = subJson["timestamp"].string {
-                        newPost.timeStamp = self.userInfo.stringToDate(timestamp, dateFormat: "yyyy-MM-dd HH:mm:ss")
+                        newPost.timeStamp = self.userInfo.stringToDate(timestamp, dateFormat: "yyyy-MM-dd H:mm:ss")
                     }else{
                         print("unable to read JSON data timestamp")
                     }
