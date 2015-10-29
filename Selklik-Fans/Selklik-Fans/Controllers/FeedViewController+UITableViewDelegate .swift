@@ -52,15 +52,15 @@ extension FeedViewController:UITableViewDelegate {
             commentViewController.country = self.selectedCountryComment
         }
 
-        /*
+
         if (segue.identifier == "artistPostToSinglePost") {
             let singleArtistPostViewController = segue.destinationViewController as! SingleFeedViewController
             singleArtistPostViewController.artistId =  selectedArtistId
             singleArtistPostViewController.countryCode = selectedArtistCountryCode
             singleArtistPostViewController.profileUrl = selectedArtistImageUrl
             singleArtistPostViewController.name = selectedArtistName
-            singleArtistPostViewController.isPeek = true
-        }*/
+            singleArtistPostViewController.isPeek = false
+        }
     }
 }
 

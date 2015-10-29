@@ -49,8 +49,6 @@ extension FeedViewController: UITableViewDataSource {
         let profileImageUrl = NSURL(string: profileImageUrlString!)
 
 
-
-
         switch(socialMediaType!){
         case "twitter":
             if postType == "text" {
@@ -74,7 +72,17 @@ extension FeedViewController: UITableViewDataSource {
                     cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                     cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
                     cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
+
+                    //Detail button *************************
+                    cell.retweetButton.id = (post.valueForKey("artistId") as? String)!
+                    cell.retweetButton.countryCode = (post.valueForKey("country") as? String)!
+                    cell.retweetButton.imageUrl = (post.valueForKey("profileImageUrl") as? String)!
+                    cell.retweetButton.name = (post.valueForKey("name") as? String)!
+                    cell.retweetButton.addTarget(self, action: "showArtistSinglePost:", forControlEvents: .TouchUpInside)
+                    //***************************************
+
                     return cell
+                    
                 }
                 else{
 
@@ -91,6 +99,15 @@ extension FeedViewController: UITableViewDataSource {
                     cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
                     cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
                     cell.totalRetweetLabel.text = String(post.valueForKey("twTotalRetweet") as! Int) + " retweet"
+
+
+                    //Detail button *************************
+                    cell.accountNameButton.id = (post.valueForKey("artistId") as? String)!
+                    cell.accountNameButton.countryCode = (post.valueForKey("country") as? String)!
+                    cell.accountNameButton.imageUrl = (post.valueForKey("profileImageUrl") as? String)!
+                    cell.accountNameButton.name = (post.valueForKey("name") as? String)!
+                    cell.accountNameButton.addTarget(self, action: "showArtistSinglePost:", forControlEvents: .TouchUpInside)
+                    //***************************************
 
                     return cell
                 }
@@ -142,7 +159,15 @@ extension FeedViewController: UITableViewDataSource {
                     let postPhotoUrl = NSURL(string: (post.valueForKey("photoStdUrl") as? String)!)
                     cell.postPhoto.image = nil
                     cell.postPhoto.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
-                    
+
+                    //Detail button *************************
+                    cell.retweetButton.id = (post.valueForKey("artistId") as? String)!
+                    cell.retweetButton.countryCode = (post.valueForKey("country") as? String)!
+                    cell.retweetButton.imageUrl = (post.valueForKey("profileImageUrl") as? String)!
+                    cell.retweetButton.name = (post.valueForKey("name") as? String)!
+                    cell.retweetButton.addTarget(self, action: "showArtistSinglePost:", forControlEvents: .TouchUpInside)
+                    //***************************************
+
                     return cell
 
                 }
@@ -186,6 +211,14 @@ extension FeedViewController: UITableViewDataSource {
                     cell.postPhoto.image = nil
                     cell.postPhoto.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
 
+                    //Detail button *************************
+                    cell.accountNameButton.id = (post.valueForKey("artistId") as? String)!
+                    cell.accountNameButton.countryCode = (post.valueForKey("country") as? String)!
+                    cell.accountNameButton.imageUrl = (post.valueForKey("profileImageUrl") as? String)!
+                    cell.accountNameButton.name = (post.valueForKey("name") as? String)!
+                    cell.accountNameButton.addTarget(self, action: "showArtistSinglePost:", forControlEvents: .TouchUpInside)
+                    //***************************************
+
                     return cell
 
                 }
@@ -222,7 +255,15 @@ extension FeedViewController: UITableViewDataSource {
                     let postPhotoUrl = NSURL(string: (post.valueForKey("videoThumbStdUrl") as? String)!)
                     cell.postThumb.image = nil
                     cell.postThumb.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
-                    
+
+                    //Detail button *************************
+                    cell.retweetButton.id = (post.valueForKey("artistId") as? String)!
+                    cell.retweetButton.countryCode = (post.valueForKey("country") as? String)!
+                    cell.retweetButton.imageUrl = (post.valueForKey("profileImageUrl") as? String)!
+                    cell.retweetButton.name = (post.valueForKey("name") as? String)!
+                    cell.retweetButton.addTarget(self, action: "showArtistSinglePost:", forControlEvents: .TouchUpInside)
+                    //***************************************
+
                     return cell
                     
                 }
@@ -248,10 +289,16 @@ extension FeedViewController: UITableViewDataSource {
                     cell.postThumb.image = nil
                     cell.postThumb.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
 
+                    //Detail button *************************
+                    cell.accountNameButton.id = (post.valueForKey("artistId") as? String)!
+                    cell.accountNameButton.countryCode = (post.valueForKey("country") as? String)!
+                    cell.accountNameButton.imageUrl = (post.valueForKey("profileImageUrl") as? String)!
+                    cell.accountNameButton.name = (post.valueForKey("name") as? String)!
+                    cell.accountNameButton.addTarget(self, action: "showArtistSinglePost:", forControlEvents: .TouchUpInside)
+                    //***************************************
+
                     return cell
                 }
-
-
             }
 
             break
@@ -314,7 +361,17 @@ extension FeedViewController: UITableViewDataSource {
 
                 //cell.postStatusLabel.text = post.valueForKey("postText") as? String
                 cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
-                
+
+                //Detail button *************************
+                cell.accountNameButton.id = (post.valueForKey("artistId") as? String)!
+                cell.accountNameButton.countryCode = (post.valueForKey("country") as? String)!
+                cell.accountNameButton.imageUrl = (post.valueForKey("profileImageUrl") as? String)!
+                cell.accountNameButton.name = (post.valueForKey("name") as? String)!
+                cell.accountNameButton.addTarget(self, action: "showArtistSinglePost:", forControlEvents: .TouchUpInside)
+
+                //***************************************
+
+
                 return cell
                 
             case "video":
@@ -357,6 +414,14 @@ extension FeedViewController: UITableViewDataSource {
 
                 //cell.postStatusLabel.text = post.valueForKey("postText") as? String
                 cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
+
+                //Detail button *************************
+                cell.accountNameButton.id = (post.valueForKey("artistId") as? String)!
+                cell.accountNameButton.countryCode = (post.valueForKey("country") as? String)!
+                cell.accountNameButton.imageUrl = (post.valueForKey("profileImageUrl") as? String)!
+                cell.accountNameButton.name = (post.valueForKey("name") as? String)!
+                cell.accountNameButton.addTarget(self, action: "showArtistSinglePost:", forControlEvents: .TouchUpInside)
+                //***************************************
 
                 
                 return cell
@@ -422,6 +487,14 @@ extension FeedViewController: UITableViewDataSource {
 
                 cell.totalCommentButton.setTitle(totalCommentString, forState: UIControlState.Normal)
 
+                //Detail button *************************
+                cell.accountNameButton.id = (post.valueForKey("artistId") as? String)!
+                cell.accountNameButton.countryCode = (post.valueForKey("country") as? String)!
+                cell.accountNameButton.imageUrl = (post.valueForKey("profileImageUrl") as? String)!
+                cell.accountNameButton.name = (post.valueForKey("name") as? String)!
+                cell.accountNameButton.addTarget(self, action: "showArtistSinglePost:", forControlEvents: .TouchUpInside)
+                //***************************************
+
                 return cell
 
             case "video":
@@ -459,7 +532,14 @@ extension FeedViewController: UITableViewDataSource {
                 }
 
                 cell.totalCommentButton.setTitle(totalCommentString, forState: UIControlState.Normal)
-                
+
+                //Detail button *************************
+                cell.accountNameButton.id = (post.valueForKey("artistId") as? String)!
+                cell.accountNameButton.countryCode = (post.valueForKey("country") as? String)!
+                cell.accountNameButton.imageUrl = (post.valueForKey("profileImageUrl") as? String)!
+                cell.accountNameButton.name = (post.valueForKey("name") as? String)!
+                cell.accountNameButton.addTarget(self, action: "showArtistSinglePost:", forControlEvents: .TouchUpInside)
+                //***************************************
                 return cell
             case "link":
                 print("facebook link")

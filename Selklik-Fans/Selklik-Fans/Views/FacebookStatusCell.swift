@@ -11,7 +11,7 @@ import ActiveLabel
 
 class FacebookStatusCell: UITableViewCell {
 
-    @IBOutlet weak var accountNameButton: UIButton!
+    @IBOutlet weak var accountNameButton: ArtistNameButton!
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var dateTimeLabel: UILabel!
 

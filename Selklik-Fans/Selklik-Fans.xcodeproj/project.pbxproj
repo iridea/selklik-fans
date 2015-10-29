@@ -115,6 +115,7 @@
 		89E5DDB11BE058DC00AA44AE /* MessageBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DDB01BE058DC00AA44AE /* MessageBox.swift */; };
 		89E5DDB41BE18C8000AA44AE /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DDB21BE18C8000AA44AE /* User+CoreDataProperties.swift */; };
 		89E5DDB51BE18C8000AA44AE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DDB31BE18C8000AA44AE /* User.swift */; };
+		89E5DDB71BE23DCE00AA44AE /* ArtistNameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DDB61BE23DCE00AA44AE /* ArtistNameButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -251,6 +252,7 @@
 		89E5DDB01BE058DC00AA44AE /* MessageBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageBox.swift; sourceTree = "<group>"; };
 		89E5DDB21BE18C8000AA44AE /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		89E5DDB31BE18C8000AA44AE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		89E5DDB61BE23DCE00AA44AE /* ArtistNameButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistNameButton.swift; sourceTree = "<group>"; };
 		93106E8CDDAF466E4ABE4638 /* Pods_Selklik_Fans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Selklik_Fans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80A33531EC1AF33B6A0C573 /* Pods-Selklik-Fans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selklik-Fans.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Selklik-Fans/Pods-Selklik-Fans.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -646,7 +648,6 @@
 				89685CB11BCD6A200035E6C0 /* Image.swift */,
 				8902B5601BD2497B006AD2B9 /* UITapGestureRecognizer+.swift */,
 				891AAEE11BD5ECEE008E6D49 /* HUD.swift */,
-				8933BD5E1BDDE8DD00E73528 /* CommentButton.swift */,
 				89E5DDB01BE058DC00AA44AE /* MessageBox.swift */,
 			);
 			path = Helpers;
@@ -655,10 +656,20 @@
 		89E0B1F21BB54F450052D64B /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				89E5DDB81BE23E4400AA44AE /* Control Extend */,
 				89C8F0BF1BB829D200AFE092 /* SWRevealViewController */,
 				89C8F0C71BB8CDA400AFE092 /* DataAPI.swift */,
 			);
 			name = Libraries;
+			sourceTree = "<group>";
+		};
+		89E5DDB81BE23E4400AA44AE /* Control Extend */ = {
+			isa = PBXGroup;
+			children = (
+				89E5DDB61BE23DCE00AA44AE /* ArtistNameButton.swift */,
+				8933BD5E1BDDE8DD00E73528 /* CommentButton.swift */,
+			);
+			name = "Control Extend";
 			sourceTree = "<group>";
 		};
 		9AFF24E74F0D784D5942D99A /* Frameworks */ = {
@@ -892,6 +903,7 @@
 				8902B55C1BD0B139006AD2B9 /* ArtistListCell.swift in Sources */,
 				891AAEE51BD62EE1008E6D49 /* Artist+CoreDataProperties.swift in Sources */,
 				89C8F0BC1BB7F9B700AFE092 /* SelklikFansAccess+CoreDataProperties.swift in Sources */,
+				89E5DDB71BE23DCE00AA44AE /* ArtistNameButton.swift in Sources */,
 				8922729C1BD8C0C0001741CE /* AltInstagramPhotoCell.swift in Sources */,
 				89C8F0C81BB8CDA400AFE092 /* DataAPI.swift in Sources */,
 				891AAED11BD4A731008E6D49 /* CountryCell.swift in Sources */,

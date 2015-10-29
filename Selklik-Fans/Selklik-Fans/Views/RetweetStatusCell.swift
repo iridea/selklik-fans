@@ -11,7 +11,7 @@ import UIKit
 class RetweetStatusCell: TwitterStatusCell {
 
 
-    @IBOutlet weak var retweetButton: UIButton!
+    @IBOutlet weak var retweetButton: ArtistNameButton!
     @IBOutlet weak var accountNameLabel: UILabel!
 
 

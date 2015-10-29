@@ -93,7 +93,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
         let postUrl = API.loginUrl
 
-        Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters as? [String : AnyObject]).responseJSON { response in
+        Alamofire.request(.POST, postUrl, headers: headers, parameters: parameters as?
+            [String : AnyObject]).responseJSON {
+            response in
 
             self.messageFrame.removeFromSuperview()
 

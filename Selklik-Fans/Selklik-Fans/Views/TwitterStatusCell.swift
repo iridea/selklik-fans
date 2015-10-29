@@ -12,7 +12,7 @@ import ActiveLabel
 class TwitterStatusCell: UITableViewCell {
 
 
-    @IBOutlet weak var accountNameButton: UIButton!
+    @IBOutlet weak var accountNameButton: ArtistNameButton!
     @IBOutlet weak var screenNameLabel: UILabel!
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var dateTimeLabel: UILabel!

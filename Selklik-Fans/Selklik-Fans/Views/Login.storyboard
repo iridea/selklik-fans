@@ -184,7 +184,7 @@
                 <viewControllerPlaceholder storyboardName="Feed" id="O7w-IL-7Vg" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XS9-1K-EoV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1237" y="228"/>
+            <point key="canvasLocation" x="1242" y="311"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="1mT-0v-bve">

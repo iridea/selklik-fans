@@ -171,10 +171,24 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="emailTextField" destination="I4C-Ap-Dv4" id="1Gu-C5-f7j"/>
+                        <outlet property="firstNameTextField" destination="eDC-qI-WJO" id="V5f-C1-lRm"/>
+                        <outlet property="passwordTextField" destination="4mn-Ub-sVO" id="5Id-7A-2i4"/>
+                        <segue destination="hhU-eH-u1A" kind="modal" identifier="RegisterToFeedSegue" id="lwO-7F-nkw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="njD-Bd-eNh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="800" y="-16"/>
+        </scene>
+        <!--Feed-->
+        <scene sceneID="5bd-De-Wmh">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Feed" id="hhU-eH-u1A" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fHz-QO-5Xy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1127" y="-68"/>
         </scene>
         <!--Login-->
         <scene sceneID="hMb-Jd-IqW">
@@ -184,7 +198,7 @@
                 </viewControllerPlaceholder>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Tj3-f7-bNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1127.5" y="-16"/>
+            <point key="canvasLocation" x="1128.5" y="35"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="PCR-oh-RqX">

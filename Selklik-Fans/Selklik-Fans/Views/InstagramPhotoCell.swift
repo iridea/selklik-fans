@@ -13,7 +13,7 @@ class InstagramPhotoCell: UITableViewCell {
 
     @IBOutlet weak var bgView: UIView!
 
-    @IBOutlet weak var accountNameButton: UIButton!
+    @IBOutlet weak var accountNameButton: ArtistNameButton!
     @IBOutlet weak var profilePictureImageView: UIImageView!
     @IBOutlet weak var dateTimeLabel: UILabel!
     @IBOutlet weak var statusActiveLabel:ActiveLabel!
@@ -21,7 +21,6 @@ class InstagramPhotoCell: UITableViewCell {
     @IBOutlet weak var totalLikeLabel: UILabel!
     @IBOutlet weak var totalCommentButton: CommentButton!
    
-
     let gestureRecognizer = PostImageTapGestureRecognizer()
 
     override func awakeFromNib() {

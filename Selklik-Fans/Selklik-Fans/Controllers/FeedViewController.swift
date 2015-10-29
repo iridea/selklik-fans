@@ -30,6 +30,12 @@ class FeedViewController: UIViewController {
     var selectedSocialMediaTypeComment:String?
     var selectedCountryComment:String?
 
+    //Artist single post parameter
+    var selectedArtistId:String?
+    var selectedArtistCountryCode:String?
+    var selectedArtistImageUrl:String?
+    var selectedArtistName:String?
+
 
     var selectedImageUrl:String?
     var selectedVideoUrl:String?
@@ -104,6 +110,17 @@ class FeedViewController: UIViewController {
     }
 
     //MARK: - Custom Function
+
+    func showArtistSinglePost(sender:ArtistNameButton) {
+
+
+        selectedArtistId = sender.id
+        selectedArtistCountryCode = sender.countryCode
+        selectedArtistImageUrl = sender.imageUrl
+        selectedArtistName = sender.name
+
+        self.performSegueWithIdentifier("artistPostToSinglePost", sender: self)
+    }
 
     //TODO: Refactor this progressBarDisplayer function
     func progressBarDisplayer(msg:String, _ indicator:Bool ) {
@@ -504,10 +521,6 @@ class FeedViewController: UIViewController {
                         }
                         
                     }
-                    
-                    
-                    
-                    
                     
                 }// End of For-Loop JSON data
                 
