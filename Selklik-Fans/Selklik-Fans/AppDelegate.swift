@@ -126,7 +126,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         } else {
                             print("local token != web token")
                             let viewController = self.window!.rootViewController as! CoordinatorViewController
+                            viewController.showButton = true
                             viewController.managedContext = self.coreDataStack.context
+
                         }
                     }else{
                         print("Fail to get status value from JSON")

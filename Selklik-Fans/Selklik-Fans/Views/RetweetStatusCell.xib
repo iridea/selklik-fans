@@ -30,7 +30,7 @@
                                                 <constraint firstAttribute="width" constant="40" id="dt4-T4-q4y"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Date/time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3x-To-jTa">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date/time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j3x-To-jTa">
                                             <rect key="frame" x="52" y="48" width="48" height="13"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="11"/>
@@ -76,6 +76,7 @@
                                     </subviews>
                                     <animations/>
                                     <constraints>
+                                        <constraint firstItem="j3x-To-jTa" firstAttribute="top" secondItem="bjv-3D-xnF" secondAttribute="bottom" constant="2" id="0D0-U9-8MA"/>
                                         <constraint firstItem="f8c-5J-kvZ" firstAttribute="leading" secondItem="pVD-99-b4s" secondAttribute="trailing" constant="8" id="1JD-5U-iZ9"/>
                                         <constraint firstItem="peR-Jz-fs0" firstAttribute="top" secondItem="Biv-il-BG8" secondAttribute="top" constant="31" id="Adq-73-Idz"/>
                                         <constraint firstItem="pVD-99-b4s" firstAttribute="top" secondItem="Biv-il-BG8" secondAttribute="top" constant="3" id="Csd-iM-iDQ"/>
@@ -83,8 +84,8 @@
                                         <constraint firstAttribute="trailing" secondItem="peR-Jz-fs0" secondAttribute="trailing" constant="8" id="E7p-uz-Dij"/>
                                         <constraint firstItem="IoL-lv-kFX" firstAttribute="leading" secondItem="Biv-il-BG8" secondAttribute="leading" constant="4" id="GCi-Ns-EMf"/>
                                         <constraint firstItem="bjv-3D-xnF" firstAttribute="top" secondItem="f8c-5J-kvZ" secondAttribute="bottom" constant="2" id="PhG-eP-zw7"/>
+                                        <constraint firstItem="j3x-To-jTa" firstAttribute="leading" secondItem="IoL-lv-kFX" secondAttribute="trailing" constant="8" id="Uly-ys-8FN"/>
                                         <constraint firstAttribute="bottom" secondItem="peR-Jz-fs0" secondAttribute="bottom" constant="11" id="aFr-aZ-OPe"/>
-                                        <constraint firstItem="j3x-To-jTa" firstAttribute="leading" secondItem="IoL-lv-kFX" secondAttribute="trailing" constant="8" id="bFd-c9-edx"/>
                                         <constraint firstItem="bjv-3D-xnF" firstAttribute="leading" secondItem="IoL-lv-kFX" secondAttribute="trailing" constant="8" id="cRd-qq-5DC"/>
                                         <constraint firstItem="vEh-Mb-4rT" firstAttribute="baseline" secondItem="bjv-3D-xnF" secondAttribute="baseline" id="enT-rC-bg3"/>
                                         <constraint firstItem="IoL-lv-kFX" firstAttribute="top" secondItem="Biv-il-BG8" secondAttribute="top" constant="26" id="fmV-Xl-PtT"/>

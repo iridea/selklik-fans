@@ -379,9 +379,38 @@ extension SingleFeedViewController: UITableViewDataSource {
                 cell.totalLikeLabel.text =  String(totalLike) + likeString
                 cell.totalCommentLabel.setTitle(String(totalComment) + commentString, forState: UIControlState.Normal)
                 return cell
-            case "link":
-                print("facebook link")
-                break
+            case "shared":
+                let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.altFacebookShareCell, forIndexPath:indexPath) as! AltFacebookShareCell
+
+                cell.name.text = (post.valueForKey("name") as? String)!
+                cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
+                cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
+
+                //var placeholderImage = UIImage(named: "placeholder")
+                //let imageSize = CGSize(width: (post.valueForKey("photoStdWidth") as? CGFloat)!, height: ((post.valueForKey("photoStdHeight") as? CGFloat)!)/2.0)
+                //placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
+                //let postPhotoUrl = NSURL(string: (post.valueForKey("fbContentLinkImageUrl") as? String)!)
+                //cell.linkImageView.image = nil
+                //cell.linkImageView.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
+
+                 //cell.linkTitleButton.setTitle(post.valueForKey("fbContentLinkTitle") as? String, forState: UIControlState.Normal)
+                cell.linkPostContentLabel.text = post.valueForKey("fbContentLink") as? String
+
+                let totalLike = post.valueForKey("totalLike") as! Int
+                var likeString = " Like"
+                if totalLike > 1 {
+                    likeString += "s"
+                }
+
+                let totalComment = post.valueForKey("totalComment") as! Int
+                var commentString = " Comment"
+                if totalComment > 1 {
+                    commentString += "s"
+                }
+
+                cell.totalLikeLabel.text =  String(totalLike) + likeString
+                cell.totalCommentLabel.setTitle(String(totalComment) + commentString, forState: UIControlState.Normal)
+                return cell
             default:
                 print("unknown facebook postType: \(postType)")
                 

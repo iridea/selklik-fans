@@ -125,6 +125,7 @@ class SlideMenuViewController: UIViewController {
                         let storyboard = UIStoryboard(name: "Startup", bundle: nil)
                         let controller = storyboard.instantiateViewControllerWithIdentifier("InitialStartup") as! CoordinatorViewController
                         controller.managedContext = self.appDelegate.coreDataStack.context
+                        controller.showButton = true
                         self.presentViewController(controller, animated: true, completion: nil)
                     }
                 }

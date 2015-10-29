@@ -30,6 +30,8 @@
 		8902B5631BD2A290006AD2B9 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8902B5621BD2A290006AD2B9 /* ProfileViewController.swift */; };
 		89090CDD1BD7947000E2E254 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89090CDB1BD7947000E2E254 /* Post+CoreDataProperties.swift */; };
 		89090CDE1BD7947000E2E254 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89090CDC1BD7947000E2E254 /* Post.swift */; };
+		89158C6F1BE2CFD5007BA247 /* AltFacebookShareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89158C6D1BE2CFD5007BA247 /* AltFacebookShareCell.swift */; };
+		89158C701BE2CFD5007BA247 /* AltFacebookShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89158C6E1BE2CFD5007BA247 /* AltFacebookShareCell.xib */; };
 		8919B06C1BE00DC100515A71 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8919B06B1BE00DC100515A71 /* RegisterViewController.swift */; };
 		891AAECA1BD49688008E6D49 /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAEC91BD49688008E6D49 /* NotificationViewController.swift */; };
 		891AAECC1BD496A4008E6D49 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 891AAECB1BD496A4008E6D49 /* SettingViewController.swift */; };
@@ -159,6 +161,8 @@
 		8902B5621BD2A290006AD2B9 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		89090CDB1BD7947000E2E254 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		89090CDC1BD7947000E2E254 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		89158C6D1BE2CFD5007BA247 /* AltFacebookShareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AltFacebookShareCell.swift; sourceTree = "<group>"; };
+		89158C6E1BE2CFD5007BA247 /* AltFacebookShareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AltFacebookShareCell.xib; sourceTree = "<group>"; };
 		8919B06B1BE00DC100515A71 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		891AAEC91BD49688008E6D49 /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		891AAECB1BD496A4008E6D49 /* SettingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -325,6 +329,13 @@
 			name = Artists;
 			sourceTree = "<group>";
 		};
+		89158C711BE2DD2E007BA247 /* Multiple */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Multiple;
+			sourceTree = "<group>";
+		};
 		8919B0691BE00D8900515A71 /* Register */ = {
 			isa = PBXGroup;
 			children = (
@@ -439,9 +450,11 @@
 				8933BD6A1BDE168000E73528 /* AltFacebookStatusCell.swift */,
 				8933BD6E1BDE1C1100E73528 /* AltFacebookPhotoCell.swift */,
 				8933BD721BDE1D2900E73528 /* AltFacebookVideoCell.swift */,
+				89158C6D1BE2CFD5007BA247 /* AltFacebookShareCell.swift */,
 				8933BD6B1BDE168000E73528 /* AltFacebookStatusCell.xib */,
 				8933BD6F1BDE1C1100E73528 /* AltFacebookPhotoCell.xib */,
 				8933BD731BDE1D2900E73528 /* AltFacebookVideoCell.xib */,
+				89158C6E1BE2CFD5007BA247 /* AltFacebookShareCell.xib */,
 			);
 			name = Single;
 			sourceTree = "<group>";
@@ -622,6 +635,7 @@
 		89D553BC1BC5501100C75D4A /* Premium */ = {
 			isa = PBXGroup;
 			children = (
+				89158C711BE2DD2E007BA247 /* Multiple */,
 			);
 			name = Premium;
 			sourceTree = "<group>";
@@ -788,6 +802,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89158C701BE2CFD5007BA247 /* AltFacebookShareCell.xib in Resources */,
 				892272911BD8BBB8001741CE /* AltRetweetStatusCell.xib in Resources */,
 				8933BD5A1BDDD58B00E73528 /* CommentCell.xib in Resources */,
 				8902B53E1BCF60D6006AD2B9 /* RetweetStatusCell.xib in Resources */,
@@ -912,6 +927,7 @@
 				891AAECC1BD496A4008E6D49 /* SettingViewController.swift in Sources */,
 				8902B5631BD2A290006AD2B9 /* ProfileViewController.swift in Sources */,
 				89C8F0C51BB8327D00AFE092 /* FeedViewController.swift in Sources */,
+				89158C6F1BE2CFD5007BA247 /* AltFacebookShareCell.swift in Sources */,
 				89D553CD1BC7B83100C75D4A /* UserInfo.swift in Sources */,
 				89C8F0BB1BB7F9B700AFE092 /* SelklikFansAccess.swift in Sources */,
 				89D553D01BC8051C00C75D4A /* FacebookPhotoCell.swift in Sources */,

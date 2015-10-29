@@ -54,6 +54,7 @@ class SingleFeedViewController: UIViewController {
         static let altFacebookStatusCell = "AltFacebookStatusCell"
         static let altFacebookPhotoCell = "AltFacebookPhotoCell"
         static let altFacebookVideoCell = "AltFacebookVideoCell"
+        static let altFacebookShareCell = "AltFacebookShareCell"
     }
 
     func registerNib(){
@@ -83,6 +84,8 @@ class SingleFeedViewController: UIViewController {
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.altFacebookPhotoCell)
         cellNib = UINib(nibName: CellIdentifiers.altFacebookVideoCell, bundle: nil)
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.altFacebookVideoCell)
+        cellNib = UINib(nibName: CellIdentifiers.altFacebookShareCell, bundle: nil)
+        feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.altFacebookShareCell)
     }
 
     //MARK: - IBAction
@@ -423,11 +426,13 @@ class SingleFeedViewController: UIViewController {
                                     }
                                     break
 
-                                case "link":
-                                    if let fbContentLink = subJson["post_shared"]["standard"]["shared_link"].string {
+                                case "shared":
+                                    print(json)
+                                    if let fbContentLink = subJson["post_shared"].string {
                                         newPost.fbContentLink = fbContentLink
                                     }
 
+                                    /*
                                     if let fbContentLinkImageUrl = subJson["post_shared"]["standard"]["link_photo"].string {
                                         newPost.fbContentLinkImageUrl = fbContentLinkImageUrl
                                     }
@@ -438,7 +443,7 @@ class SingleFeedViewController: UIViewController {
 
                                     if let fbContentLinkText = subJson["post_shared"]["standard"]["link_text"].string {
                                         newPost.fbContentLinkText = fbContentLinkText
-                                    }
+                                    } */
                                     break
 
                                 default:

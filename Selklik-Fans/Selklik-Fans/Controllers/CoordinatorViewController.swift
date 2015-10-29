@@ -14,11 +14,15 @@ class CoordinatorViewController: UIViewController {
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var joinButton: UIButton!
     
+    var showButton:Bool=true
     var managedContext: NSManagedObjectContext!
+    var hud = Hud()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        print(showButton)
+        hud.showProgressBar("Checking user", true, view: self.viewIfLoaded!)
         // Do any additional setup after loading the view, typically from a nib.
         //loginButton.backgroundColor = UIColor.clearColor()
         loginButton.layer.cornerRadius = 23
@@ -29,6 +33,17 @@ class CoordinatorViewController: UIViewController {
         joinButton.layer.cornerRadius = 23
         joinButton.layer.borderWidth = 1
         joinButton.layer.borderColor = UIColor.whiteColor().CGColor
+
+
+
+            if (showButton==true) {
+                loginButton.hidden = false
+                joinButton.hidden = false
+                self.hud.hideProgressBar()
+                self.view.userInteractionEnabled = true
+            }
+
+
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
@@ -37,6 +52,7 @@ class CoordinatorViewController: UIViewController {
             let navigationController = segue.destinationViewController as! UINavigationController
             let loginViewController = navigationController.topViewController as! LoginViewController
             loginViewController.managedContext = self.managedContext
+            self.hud.hideProgressBar()
 
         }
     }
