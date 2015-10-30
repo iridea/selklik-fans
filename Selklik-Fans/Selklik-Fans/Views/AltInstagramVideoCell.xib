@@ -58,27 +58,12 @@
                         <color key="textColor" red="0.51784205439999997" green="0.58159953360000005" blue="0.58617168659999996" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="total comment" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GDc-V0-keM">
-                        <rect key="frame" x="236" y="349" width="76" height="14"/>
-                        <animations/>
-                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                        <color key="textColor" red="0.51784205439999997" green="0.58159953360000005" blue="0.58617168659999996" alpha="1" colorSpace="calibratedRGB"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Love" translatesAutoresizingMaskIntoConstraints="NO" id="GnZ-jp-M0t">
                         <rect key="frame" x="47" y="345" width="20" height="20"/>
                         <animations/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="8HQ-hX-rUJ"/>
                             <constraint firstAttribute="height" constant="20" id="JXc-f7-A9L"/>
-                        </constraints>
-                    </imageView>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Comment" translatesAutoresizingMaskIntoConstraints="NO" id="KJE-Lx-1xg">
-                        <rect key="frame" x="208" y="345" width="20" height="20"/>
-                        <animations/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="20" id="DLZ-fy-x9x"/>
-                            <constraint firstAttribute="width" constant="20" id="mgh-CV-x7n"/>
                         </constraints>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="infinite" placeholderIntrinsicHeight="infinite" translatesAutoresizingMaskIntoConstraints="NO" id="LvJ-Jb-BuV">
@@ -94,6 +79,20 @@
                         </constraints>
                         <state key="normal" backgroundImage="Play"/>
                     </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iGM-pL-hBq" customClass="CommentButton" customModule="Selklik_Fans" customModuleProvider="target">
+                        <rect key="frame" x="277" y="343" width="35" height="26"/>
+                        <animations/>
+                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                        <state key="normal" title="Button"/>
+                    </button>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Comment" translatesAutoresizingMaskIntoConstraints="NO" id="KJE-Lx-1xg">
+                        <rect key="frame" x="249" y="345" width="20" height="20"/>
+                        <animations/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="DLZ-fy-x9x"/>
+                            <constraint firstAttribute="width" constant="20" id="mgh-CV-x7n"/>
+                        </constraints>
+                    </imageView>
                 </subviews>
                 <animations/>
                 <constraints>
@@ -103,9 +102,8 @@
                     <constraint firstItem="TEW-vm-qHJ" firstAttribute="leading" secondItem="n38-9f-d89" secondAttribute="trailing" constant="8" id="8hI-hi-d7v"/>
                     <constraint firstItem="aCT-fK-0TL" firstAttribute="centerY" secondItem="LvJ-Jb-BuV" secondAttribute="centerY" id="Des-G7-vYu"/>
                     <constraint firstItem="98b-4C-Hos" firstAttribute="leading" secondItem="n38-9f-d89" secondAttribute="trailing" constant="8" id="H8y-XV-Eyb"/>
-                    <constraint firstAttribute="trailingMargin" secondItem="GDc-V0-keM" secondAttribute="trailing" id="I3c-JK-h1M"/>
+                    <constraint firstItem="iGM-pL-hBq" firstAttribute="baseline" secondItem="dNs-sq-Nqv" secondAttribute="baseline" id="PKO-c1-WTz"/>
                     <constraint firstItem="n38-9f-d89" firstAttribute="top" secondItem="KEu-xU-7nO" secondAttribute="bottom" constant="6" id="QL1-pu-cLY"/>
-                    <constraint firstItem="GDc-V0-keM" firstAttribute="baseline" secondItem="dNs-sq-Nqv" secondAttribute="baseline" id="Tyy-ye-6ln"/>
                     <constraint firstItem="LvJ-Jb-BuV" firstAttribute="leading" secondItem="hf1-4O-LGO" secondAttribute="trailing" constant="19" id="Wd6-dv-ZFx"/>
                     <constraint firstItem="hf1-4O-LGO" firstAttribute="leading" secondItem="Nc8-iY-Qfr" secondAttribute="leading" constant="20" id="X07-ck-SaK"/>
                     <constraint firstItem="KEu-xU-7nO" firstAttribute="leading" secondItem="hf1-4O-LGO" secondAttribute="trailing" constant="8" id="X9d-s5-MNP"/>
@@ -113,9 +111,9 @@
                     <constraint firstItem="dNs-sq-Nqv" firstAttribute="top" secondItem="LvJ-Jb-BuV" secondAttribute="bottom" constant="8" id="cUu-7Z-igI"/>
                     <constraint firstItem="GnZ-jp-M0t" firstAttribute="bottom" secondItem="Nc8-iY-Qfr" secondAttribute="bottomMargin" id="ff6-fP-zSd"/>
                     <constraint firstAttribute="bottomMargin" secondItem="dNs-sq-Nqv" secondAttribute="bottom" constant="2" id="h4h-B5-otL"/>
-                    <constraint firstItem="GDc-V0-keM" firstAttribute="leading" secondItem="KJE-Lx-1xg" secondAttribute="trailing" constant="8" id="iVn-vm-J2U"/>
                     <constraint firstItem="98b-4C-Hos" firstAttribute="top" secondItem="KEu-xU-7nO" secondAttribute="bottom" constant="1" id="irX-c5-vO5"/>
                     <constraint firstAttribute="topMargin" secondItem="KEu-xU-7nO" secondAttribute="top" id="kRp-TC-Gxb"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="iGM-pL-hBq" secondAttribute="trailing" id="krR-ZR-wpY"/>
                     <constraint firstItem="hf1-4O-LGO" firstAttribute="top" secondItem="Nc8-iY-Qfr" secondAttribute="top" id="nI7-R4-wP9"/>
                     <constraint firstItem="dNs-sq-Nqv" firstAttribute="leading" secondItem="GnZ-jp-M0t" secondAttribute="trailing" constant="4" id="ne1-ji-A3E"/>
                     <constraint firstAttribute="trailingMargin" secondItem="LvJ-Jb-BuV" secondAttribute="trailing" id="rwC-Zs-Z2v"/>
@@ -123,6 +121,7 @@
                     <constraint firstItem="n38-9f-d89" firstAttribute="centerX" secondItem="hf1-4O-LGO" secondAttribute="centerX" id="vaS-b0-JkR"/>
                     <constraint firstAttribute="bottom" secondItem="hf1-4O-LGO" secondAttribute="bottom" id="wCz-0m-7iu"/>
                     <constraint firstItem="GnZ-jp-M0t" firstAttribute="leading" secondItem="hf1-4O-LGO" secondAttribute="trailing" constant="23" id="wiT-rR-NcZ"/>
+                    <constraint firstItem="iGM-pL-hBq" firstAttribute="leading" secondItem="KJE-Lx-1xg" secondAttribute="trailing" constant="8" id="xvR-IV-zjJ"/>
                 </constraints>
             </tableViewCellContentView>
             <animations/>
@@ -131,7 +130,7 @@
                 <outlet property="dateTimeLabel" destination="KEu-xU-7nO" id="ouK-RP-agD"/>
                 <outlet property="postPhoto" destination="LvJ-Jb-BuV" id="lsU-E3-UEj"/>
                 <outlet property="statusActiveLabel" destination="TEW-vm-qHJ" id="NdN-XS-Ttu"/>
-                <outlet property="totalCommentLabel" destination="GDc-V0-keM" id="BH1-bt-PPd"/>
+                <outlet property="totalCommentButton" destination="iGM-pL-hBq" id="VN8-3b-sq6"/>
                 <outlet property="totalLikeLabel" destination="dNs-sq-Nqv" id="dJw-Mw-jDv"/>
             </connections>
             <point key="canvasLocation" x="-363" y="224"/>

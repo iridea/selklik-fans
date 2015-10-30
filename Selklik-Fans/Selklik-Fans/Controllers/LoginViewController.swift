@@ -143,7 +143,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         _email = email
                     }
 
-                    if let birthday = json["user"]["birthday"].string{
+                    if let birthday = json["user"]["birthdate"].string{
                         print("birthday: \(birthday)")
                         _birthday=self.userInfo.stringToDate(birthday, dateFormat: "yyyy-MM-dd")!
                     }

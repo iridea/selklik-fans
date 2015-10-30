@@ -86,16 +86,16 @@
                                 <blurEffect style="light"/>
                             </visualEffectView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="750" verticalCompressionResistancePriority="1000" placeholderIntrinsicWidth="304" placeholderIntrinsicHeight="18" text="status" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Syi-Ui-DUV" customClass="ActiveLabel" customModule="ActiveLabel">
-                                <rect key="frame" x="8" y="60" width="304" height="19"/>
+                                <rect key="frame" x="8" y="60" width="302" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="Thonburi-Light" family="Thonburi" pointSize="13"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SXe-mF-rve">
-                                <rect key="frame" x="0.0" y="89" width="320" height="30"/>
+                                <rect key="frame" x="0.0" y="89" width="318" height="30"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Wy7-JQ-gB3">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="30"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="318" height="30"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star" translatesAutoresizingMaskIntoConstraints="NO" id="lMI-eL-0XA">
@@ -112,13 +112,13 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88888888 likes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhg-YK-aQL">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="88888888 likes" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhg-YK-aQL">
                                             <rect key="frame" x="235" y="9" width="77" height="12"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Retweet" translatesAutoresizingMaskIntoConstraints="NO" id="so8-5x-tvu">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Retweet" translatesAutoresizingMaskIntoConstraints="NO" id="so8-5x-tvu">
                                             <rect key="frame" x="207" y="5" width="20" height="20"/>
                                             <animations/>
                                             <constraints>
@@ -146,7 +146,7 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.90823972225189209" green="0.92638683319091797" blue="0.9317171573638916" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="fGY-kK-xNb"/>
+                                    <constraint firstAttribute="height" constant="30" id="b8u-Bl-wig"/>
                                 </constraints>
                                 <blurEffect style="light"/>
                             </visualEffectView>
@@ -154,16 +154,16 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Syi-Ui-DUV" firstAttribute="top" secondItem="rE0-Lq-GDB" secondAttribute="bottom" constant="8" id="3LB-aP-coC"/>
-                            <constraint firstItem="Syi-Ui-DUV" firstAttribute="leading" secondItem="baf-AI-KrK" secondAttribute="leading" constant="8" id="6Xv-iC-UXF"/>
+                            <constraint firstItem="Syi-Ui-DUV" firstAttribute="top" secondItem="rE0-Lq-GDB" secondAttribute="bottom" constant="8" id="1BY-TX-c07"/>
                             <constraint firstItem="rE0-Lq-GDB" firstAttribute="leading" secondItem="baf-AI-KrK" secondAttribute="leading" id="BBq-eI-Q2d"/>
-                            <constraint firstAttribute="bottom" secondItem="SXe-mF-rve" secondAttribute="bottom" id="Bfm-kB-MYB"/>
-                            <constraint firstAttribute="trailing" secondItem="SXe-mF-rve" secondAttribute="trailing" constant="-2" id="MNI-Bo-yGV"/>
-                            <constraint firstItem="SXe-mF-rve" firstAttribute="top" secondItem="Syi-Ui-DUV" secondAttribute="bottom" constant="10" id="NTH-7r-zTc"/>
-                            <constraint firstAttribute="trailing" secondItem="Syi-Ui-DUV" secondAttribute="trailing" constant="6" id="OyV-tV-hgX"/>
+                            <constraint firstAttribute="trailing" secondItem="SXe-mF-rve" secondAttribute="trailing" id="Gr7-al-jEJ"/>
+                            <constraint firstAttribute="bottom" secondItem="SXe-mF-rve" secondAttribute="bottom" id="QEr-et-J3n"/>
                             <constraint firstAttribute="trailing" secondItem="rE0-Lq-GDB" secondAttribute="trailing" constant="-2" id="UcE-II-bd0"/>
                             <constraint firstItem="rE0-Lq-GDB" firstAttribute="top" secondItem="baf-AI-KrK" secondAttribute="top" id="b5S-Td-h4h"/>
-                            <constraint firstItem="SXe-mF-rve" firstAttribute="leading" secondItem="baf-AI-KrK" secondAttribute="leading" id="fO6-Hv-com"/>
+                            <constraint firstAttribute="trailing" secondItem="Syi-Ui-DUV" secondAttribute="trailing" constant="8" id="dar-rj-5xi"/>
+                            <constraint firstItem="Syi-Ui-DUV" firstAttribute="leading" secondItem="baf-AI-KrK" secondAttribute="leading" constant="8" id="ewM-Ro-HzG"/>
+                            <constraint firstItem="SXe-mF-rve" firstAttribute="leading" secondItem="baf-AI-KrK" secondAttribute="leading" id="f7j-Df-qp7"/>
+                            <constraint firstItem="SXe-mF-rve" firstAttribute="top" secondItem="Syi-Ui-DUV" secondAttribute="bottom" constant="8" id="hDz-nu-az2"/>
                             <constraint firstItem="rE0-Lq-GDB" firstAttribute="leading" secondItem="baf-AI-KrK" secondAttribute="leading" id="kTs-2G-hqF"/>
                             <constraint firstAttribute="trailing" secondItem="rE0-Lq-GDB" secondAttribute="trailing" constant="-2" id="scy-AX-NiG"/>
                         </constraints>

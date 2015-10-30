@@ -28,6 +28,7 @@ extension CommentViewController:UITableViewDataSource {
 
 
         cell.name.text = comment.valueForKey("name") as? String
+        cell.profilePhoto.image = UIImage(named: "UserIcon")
         cell.profilePhoto.af_setImageWithURL(profileImageUrl!)
         cell.commentLabel.text = comment.valueForKey("comment") as? String
 

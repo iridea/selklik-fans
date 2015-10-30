@@ -18,6 +18,7 @@ class AltInstagramPhotoCell: UITableViewCell {
     @IBOutlet weak var postPhoto: UIImageView!
     @IBOutlet weak var totalLikeLabel: UILabel!
     @IBOutlet weak var totalCommentLabel: UILabel!
+    @IBOutlet weak var totalCommentButton: CommentButton!
 
     let gestureRecognizer = PostImageTapGestureRecognizer()
 

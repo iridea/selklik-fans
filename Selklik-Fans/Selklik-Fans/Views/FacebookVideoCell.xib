@@ -90,7 +90,7 @@
                                     <constraint firstAttribute="height" constant="20" id="vr4-ca-id7"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81M-kt-7cP">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="81M-kt-7cP" customClass="CommentButton" customModule="Selklik_Fans" customModuleProvider="target">
                                 <rect key="frame" x="213" y="387" width="99" height="24"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>

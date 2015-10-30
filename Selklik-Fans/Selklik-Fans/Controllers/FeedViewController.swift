@@ -174,7 +174,7 @@ class FeedViewController: UIViewController {
         Alamofire.request(DataAPI.Router.ArtistPost(userToken)).responseJSON(){
             response in
             
-            print("MASUK FetchRemoteFeedData - ALAMOFIRE")
+            print("MASUK feedview  - ALAMOFIRE")
             if let jsonData = response.result.value {
 
                 let json = JSON(jsonData)
@@ -598,6 +598,7 @@ class FeedViewController: UIViewController {
         self.managedContext = appDelegate.coreDataStack.context
         self.userToken = userInfo.getTokenFromCoreData(managedContext)
 
+        print("token from viewdidload - Feedview: \(self.userToken)")
         reloadFeedDataFromServer()
 
     }

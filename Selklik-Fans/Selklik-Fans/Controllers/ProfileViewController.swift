@@ -35,18 +35,35 @@ class ProfileViewController: UIViewController {
             let results = try managedContext.executeFetchRequest(fetchRequest)
             userObject = results as! [NSManagedObject]
             let user = userObject[0]
-            self.firstNameLabel.text = user.valueForKey("firstName") as? String
-            self.lastNameLabel.text = user.valueForKey("lastName") as? String
-            self.genderLabel.text = user.valueForKey("gender") as? String
-            self.emailLabel.text = user.valueForKey("email") as? String
 
-            var placeholderImage = UIImage(named: "placeholder")
-            let imageSize = CGSize(width: (user.valueForKey("profileImageWidth") as? CGFloat)!, height: ((user.valueForKey("profileImageHeight") as? CGFloat)!)/2.0)
+            if let firstName = user.valueForKey("firstName") as? String {
+                self.firstNameLabel.text = firstName
+            }
 
-            placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
-            let postPhotoUrl = NSURL(string: (user.valueForKey("profileImageUrl") as? String)!)
-            self.profileImageView.image = nil
-            self.profileImageView.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
+            if let lastName = user.valueForKey("lastName") as? String {
+                self.lastNameLabel.text = lastName
+            }
+
+            if let gender = user.valueForKey("gender") as? String {
+                self.genderLabel.text = gender
+
+            }
+
+            if let email = user.valueForKey("email") as? String {
+                self.emailLabel.text = email
+            }
+
+            if let profileUrl = user.valueForKey("profileImageUrl") as? String {
+                var placeholderImage = UIImage(named: "placeholder")
+                let imageSize = CGSize(width: (user.valueForKey("profileImageWidth") as? CGFloat)!, height: ((user.valueForKey("profileImageHeight") as? CGFloat)!)/2.0)
+
+                placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
+                let postPhotoUrl = NSURL(string: (profileUrl))
+                self.profileImageView.image = nil
+                self.profileImageView.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
+            }
+
+
 
         }
         catch let fetchError as NSError {
