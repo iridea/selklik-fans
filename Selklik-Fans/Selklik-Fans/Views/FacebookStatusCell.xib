@@ -96,7 +96,7 @@
                                                 <constraint firstAttribute="height" constant="20" id="f1R-Pb-0Nr"/>
                                             </constraints>
                                         </imageView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G00-dy-QCT">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G00-dy-QCT" customClass="CommentButton" customModule="Selklik_Fans" customModuleProvider="target">
                                             <rect key="frame" x="213" y="2" width="99" height="24"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="10"/>

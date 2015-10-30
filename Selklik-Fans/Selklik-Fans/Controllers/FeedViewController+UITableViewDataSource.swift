@@ -458,6 +458,24 @@ extension FeedViewController: UITableViewDataSource {
                 cell.gestureRecognizer.imageUrl = (post.valueForKey("photoStdUrl") as? String)!
                 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+                //totalComment Button -------------------------
+                var totalCommentString = " Comment"
+
+                if let totalComment = post.valueForKey("totalComment") as? Int {
+                    if totalComment > 1 {
+                        totalCommentString += "s"
+                    }
+                    totalCommentString = String(totalComment) + totalCommentString
+                }
+
+                cell.totalCommentButton.setTitle(totalCommentString, forState: UIControlState.Normal)
+                cell.totalCommentButton.addTarget(self, action: "showFeedComments:", forControlEvents: .TouchUpInside)
+
+                cell.totalCommentButton.postId = (post.valueForKey("postId") as? String)!
+                cell.totalCommentButton.country = (post.valueForKey("country") as? String)!
+                cell.totalCommentButton.socialMedia = socialMediaType!
+                //---------------------------------------------
+
 
 
                 //load profile image
@@ -481,7 +499,6 @@ extension FeedViewController: UITableViewDataSource {
                 
                 cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " likes"
                 let totalComment = post.valueForKey("totalComment") as? Int
-                var totalCommentString = String(totalComment!)
 
                 if (totalComment == 1){
                     totalCommentString += " Comment"
@@ -535,6 +552,22 @@ extension FeedViewController: UITableViewDataSource {
                     totalCommentString += " Comments"
                 }
 
+                //totalComment Button -------------------------
+
+                if let totalComment = post.valueForKey("totalComment") as? Int {
+                    if totalComment > 1 {
+                        totalCommentString += "s"
+                    }
+                    totalCommentString = String(totalComment) + totalCommentString
+                }
+
+                cell.totalCommentButton.setTitle(totalCommentString, forState: UIControlState.Normal)
+                cell.totalCommentButton.addTarget(self, action: "showFeedComments:", forControlEvents: .TouchUpInside)
+
+                cell.totalCommentButton.postId = (post.valueForKey("postId") as? String)!
+                cell.totalCommentButton.country = (post.valueForKey("country") as? String)!
+                cell.totalCommentButton.socialMedia = socialMediaType!
+                //---------------------------------------------
                 cell.totalCommentButton.setTitle(totalCommentString, forState: UIControlState.Normal)
 
                 //Detail button *************************

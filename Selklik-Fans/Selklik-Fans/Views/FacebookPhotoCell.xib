@@ -90,7 +90,7 @@
                                     <constraint firstAttribute="width" constant="20" id="egA-OQ-93U"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHW-QP-NY0">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xHW-QP-NY0" customClass="CommentButton" customModule="Selklik_Fans" customModuleProvider="target">
                                 <rect key="frame" x="213" y="387" width="99" height="24"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="10"/>

@@ -117,7 +117,7 @@
                                     <constraint firstAttribute="width" constant="30" id="rE6-a9-vvr"/>
                                 </constraints>
                             </imageView>
-                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LZ-s3-Ojt">
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0LZ-s3-Ojt" customClass="CommentButton" customModule="Selklik_Fans" customModuleProvider="target">
                                 <rect key="frame" x="138" y="208" width="45" height="45"/>
                                 <animations/>
                                 <constraints>

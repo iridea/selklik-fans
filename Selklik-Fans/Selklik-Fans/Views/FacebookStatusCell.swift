@@ -16,7 +16,7 @@ class FacebookStatusCell: UITableViewCell {
     @IBOutlet weak var dateTimeLabel: UILabel!
 
     @IBOutlet weak var totalLikeLabel: UILabel!
-    @IBOutlet weak var totalCommentButton: UIButton!
+    @IBOutlet weak var totalCommentButton: CommentButton!
     @IBOutlet weak var statusActiveLabel:ActiveLabel!
 
     @IBOutlet weak var bgView: UIView!
