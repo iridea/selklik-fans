@@ -73,7 +73,7 @@
                         <rect key="frame" x="43" y="66" width="269" height="275"/>
                         <animations/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEZ-eS-5t1">
+                    <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VEZ-eS-5t1">
                         <rect key="frame" x="155" y="181" width="45" height="45"/>
                         <animations/>
                         <constraints>

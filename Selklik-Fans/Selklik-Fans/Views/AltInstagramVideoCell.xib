@@ -85,7 +85,7 @@
                         <rect key="frame" x="43" y="61" width="269" height="280"/>
                         <animations/>
                     </imageView>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCT-fK-0TL">
+                    <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCT-fK-0TL">
                         <rect key="frame" x="155" y="179" width="45" height="45"/>
                         <animations/>
                         <constraints>

@@ -117,6 +117,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     var _birthday:NSDate = NSDate()
                     var _phone:String = ""
                     var _country:String = ""
+                    var _email:String = ""
                     var _profileImageUrl:String = ""
                     var _profileImageWidth:Float = 0.0
                     var _profileImageHeight:Float = 0.0
@@ -135,6 +136,11 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                     if let gender = json["user"]["gender"].string{
                         print("gender: \(gender)")
                         _gender = gender
+                    }
+
+                    if let email = json["user"]["email"].string{
+                        print("email: \(email)")
+                        _email = email
                     }
 
                     if let birthday = json["user"]["birthday"].string{
@@ -169,7 +175,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                         _profileImageHeight = Float(photo_height)!
                     }
 
-                    self.saveUserInfo(_firstName, lastName: _lastName, gender: _gender, birthday: _birthday, phone: _phone, country: _country, profileImageUrl: _profileImageUrl, profileImageWidth: _profileImageWidth, profileImageHeight: _profileImageHeight)
+                    self.saveUserInfo(_firstName, lastName: _lastName, gender: _gender, birthday: _birthday, phone: _phone, country: _country, profileImageUrl: _profileImageUrl, profileImageWidth: _profileImageWidth, profileImageHeight: _profileImageHeight,email: _email)
 
                     //--------------------------------
 
@@ -203,7 +209,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
-    func saveUserInfo(firstName:String, lastName:String, gender:String, birthday:NSDate,phone:String, country:String, profileImageUrl:String, profileImageWidth:Float, profileImageHeight:Float){
+    func saveUserInfo(firstName:String, lastName:String, gender:String, birthday:NSDate,phone:String, country:String, profileImageUrl:String, profileImageWidth:Float, profileImageHeight:Float, email:String){
 
         var currentUser: User!
         let userEntity = NSEntityDescription.entityForName("User",
@@ -233,6 +239,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 currentUser.profileImageUrl    = profileImageUrl
                 currentUser.profileImageWidth  = profileImageWidth
                 currentUser.profileImageHeight = profileImageHeight
+
+                currentUser.email = email
 
                 do {
                     try managedContext.save()

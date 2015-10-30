@@ -154,10 +154,14 @@
                                 <rect key="frame" x="-1" y="84" width="320" height="293"/>
                                 <animations/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUa-Ad-hS5">
-                                <rect key="frame" x="144" y="216" width="30" height="30"/>
+                            <button opaque="NO" alpha="0.69999999999999996" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aUa-Ad-hS5">
+                                <rect key="frame" x="137" y="208" width="45" height="45"/>
                                 <animations/>
-                                <state key="normal" title="Play"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="18y-2H-o8C"/>
+                                    <constraint firstAttribute="width" constant="45" id="vQI-vI-NsY"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="Play"/>
                             </button>
                         </subviews>
                         <animations/>
@@ -171,15 +175,15 @@
                             <constraint firstAttribute="trailing" secondItem="Aov-CJ-bUf" secondAttribute="trailing" constant="-2" id="Rkg-4B-xKt"/>
                             <constraint firstItem="Aov-CJ-bUf" firstAttribute="top" secondItem="xE4-Ki-5lg" secondAttribute="top" id="SfW-XF-BIa"/>
                             <constraint firstAttribute="bottom" secondItem="O0u-6i-oPu" secondAttribute="bottom" id="TPP-kN-8Tf"/>
+                            <constraint firstItem="aUa-Ad-hS5" firstAttribute="centerX" secondItem="wkZ-f7-W9g" secondAttribute="centerX" id="a2v-D6-rfs"/>
                             <constraint firstAttribute="trailing" secondItem="Aov-CJ-bUf" secondAttribute="trailing" constant="-2" id="dN3-Xf-3tm"/>
-                            <constraint firstItem="aUa-Ad-hS5" firstAttribute="leading" secondItem="wkZ-f7-W9g" secondAttribute="trailing" constant="-175" id="ebo-Wi-1vR"/>
-                            <constraint firstItem="aUa-Ad-hS5" firstAttribute="top" secondItem="wkZ-f7-W9g" secondAttribute="bottom" constant="-161" id="k8G-Lw-i1U"/>
                             <constraint firstItem="V3Y-7x-msV" firstAttribute="top" secondItem="Aov-CJ-bUf" secondAttribute="bottom" constant="8" id="kPQ-aY-3TL"/>
                             <constraint firstItem="Aov-CJ-bUf" firstAttribute="leading" secondItem="xE4-Ki-5lg" secondAttribute="leading" id="lPl-qa-rpg"/>
                             <constraint firstItem="wkZ-f7-W9g" firstAttribute="leading" secondItem="xE4-Ki-5lg" secondAttribute="leading" constant="-1" id="uXO-8q-cnC"/>
                             <constraint firstAttribute="trailing" secondItem="O0u-6i-oPu" secondAttribute="trailing" constant="-2" id="vLC-uJ-cGc"/>
                             <constraint firstItem="wkZ-f7-W9g" firstAttribute="top" secondItem="V3Y-7x-msV" secondAttribute="bottom" constant="6" id="wIt-2A-M4s"/>
                             <constraint firstItem="O0u-6i-oPu" firstAttribute="leading" secondItem="xE4-Ki-5lg" secondAttribute="leading" id="wdW-r5-fKj"/>
+                            <constraint firstItem="aUa-Ad-hS5" firstAttribute="centerY" secondItem="wkZ-f7-W9g" secondAttribute="centerY" id="wfT-tv-Zs1"/>
                             <constraint firstItem="V3Y-7x-msV" firstAttribute="leading" secondItem="xE4-Ki-5lg" secondAttribute="leading" constant="8" id="xSa-o7-CSa"/>
                         </constraints>
                     </view>
@@ -213,6 +217,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Play" width="50" height="50"/>
         <image name="Retweet" width="32" height="32"/>
         <image name="Star" width="32" height="32"/>
         <image name="UserIcon" width="50" height="50"/>
