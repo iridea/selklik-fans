@@ -11,12 +11,16 @@ import ActiveLabel
 
 class AltFacebookShareCell: AltFacebookStatusCell {
 
+    @IBOutlet weak var shareContentBackground: UIView!
     @IBOutlet weak var linkImageView: UIImageView!
     @IBOutlet weak var linkTitleButton: UIButton!
     @IBOutlet weak var linkPostContentLabel: ActiveLabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        shareContentBackground.layer.borderWidth = 1
+
+        shareContentBackground.layer.borderColor = UIColor.lightGrayColor().CGColor
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

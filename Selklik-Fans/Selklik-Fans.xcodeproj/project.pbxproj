@@ -89,6 +89,12 @@
 		8942531E1BB297B700A04953 /* Selklik_FansTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942531D1BB297B700A04953 /* Selklik_FansTests.swift */; };
 		894253291BB297B700A04953 /* Selklik_FansUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253281BB297B700A04953 /* Selklik_FansUITests.swift */; };
 		894253391BB29C1300A04953 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 894253381BB29C1300A04953 /* .gitignore */; };
+		89443C6F1BE9ACD2003C3AED /* PremiumPhotoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89443C6D1BE9ACD2003C3AED /* PremiumPhotoCell.swift */; };
+		89443C701BE9ACD2003C3AED /* PremiumPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89443C6E1BE9ACD2003C3AED /* PremiumPhotoCell.xib */; };
+		89443C731BE9AE2E003C3AED /* PremiumVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89443C711BE9AE2E003C3AED /* PremiumVideoCell.swift */; };
+		89443C741BE9AE2E003C3AED /* PremiumVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89443C721BE9AE2E003C3AED /* PremiumVideoCell.xib */; };
+		89443C771BE9F1EA003C3AED /* FacebookShareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89443C751BE9F1EA003C3AED /* FacebookShareCell.swift */; };
+		89443C781BE9F1EA003C3AED /* FacebookShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89443C761BE9F1EA003C3AED /* FacebookShareCell.xib */; };
 		8956F8F11BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956F8F01BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift */; };
 		8956F8F41BDA254F001DEC44 /* FacebookVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956F8F21BDA254F001DEC44 /* FacebookVideoCell.swift */; };
 		8956F8F51BDA254F001DEC44 /* FacebookVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8956F8F31BDA254F001DEC44 /* FacebookVideoCell.xib */; };
@@ -226,6 +232,12 @@
 		894253281BB297B700A04953 /* Selklik_FansUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Selklik_FansUITests.swift; sourceTree = "<group>"; };
 		8942532A1BB297B700A04953 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		894253381BB29C1300A04953 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		89443C6D1BE9ACD2003C3AED /* PremiumPhotoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumPhotoCell.swift; sourceTree = "<group>"; };
+		89443C6E1BE9ACD2003C3AED /* PremiumPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PremiumPhotoCell.xib; sourceTree = "<group>"; };
+		89443C711BE9AE2E003C3AED /* PremiumVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumVideoCell.swift; sourceTree = "<group>"; };
+		89443C721BE9AE2E003C3AED /* PremiumVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PremiumVideoCell.xib; sourceTree = "<group>"; };
+		89443C751BE9F1EA003C3AED /* FacebookShareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookShareCell.swift; sourceTree = "<group>"; };
+		89443C761BE9F1EA003C3AED /* FacebookShareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookShareCell.xib; sourceTree = "<group>"; };
 		8956F8F01BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SingleFeedViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		8956F8F21BDA254F001DEC44 /* FacebookVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookVideoCell.swift; sourceTree = "<group>"; };
 		8956F8F31BDA254F001DEC44 /* FacebookVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookVideoCell.xib; sourceTree = "<group>"; };
@@ -332,6 +344,10 @@
 		89158C711BE2DD2E007BA247 /* Multiple */ = {
 			isa = PBXGroup;
 			children = (
+				89443C6D1BE9ACD2003C3AED /* PremiumPhotoCell.swift */,
+				89443C711BE9AE2E003C3AED /* PremiumVideoCell.swift */,
+				89443C6E1BE9ACD2003C3AED /* PremiumPhotoCell.xib */,
+				89443C721BE9AE2E003C3AED /* PremiumVideoCell.xib */,
 			);
 			name = Multiple;
 			sourceTree = "<group>";
@@ -437,9 +453,11 @@
 				896D1CA11BCB6CBF008A720B /* FacebookStatusCell.swift */,
 				89D553CE1BC8051C00C75D4A /* FacebookPhotoCell.swift */,
 				8956F8F21BDA254F001DEC44 /* FacebookVideoCell.swift */,
+				89443C751BE9F1EA003C3AED /* FacebookShareCell.swift */,
 				896D1CA21BCB6CBF008A720B /* FacebookStatusCell.xib */,
 				89D553CF1BC8051C00C75D4A /* FacebookPhotoCell.xib */,
 				8956F8F31BDA254F001DEC44 /* FacebookVideoCell.xib */,
+				89443C761BE9F1EA003C3AED /* FacebookShareCell.xib */,
 			);
 			name = Multiple;
 			sourceTree = "<group>";
@@ -512,6 +530,13 @@
 				8942532A1BB297B700A04953 /* Info.plist */,
 			);
 			path = "Selklik-FansUITests";
+			sourceTree = "<group>";
+		};
+		8984D2481BE892200062F581 /* News */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = News;
 			sourceTree = "<group>";
 		};
 		89C8F0AC1BB75C7100AFE092 /* Controllers */ = {
@@ -598,6 +623,7 @@
 		89D553B81BC54FEF00C75D4A /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				8984D2481BE892200062F581 /* News */,
 				8933BD561BDDD56100E73528 /* Comments */,
 				8902B5591BD0B06D006AD2B9 /* Artists */,
 				8902B5581BD0B05E006AD2B9 /* Feeds */,
@@ -808,10 +834,12 @@
 				8902B53E1BCF60D6006AD2B9 /* RetweetStatusCell.xib in Resources */,
 				892272A11BD8C494001741CE /* AltInstagramVideoCell.xib in Resources */,
 				892272891BD8B89B001741CE /* AltTwitterPhotoCell.xib in Resources */,
+				89443C741BE9AE2E003C3AED /* PremiumVideoCell.xib in Resources */,
 				8922729D1BD8C0C0001741CE /* AltInstagramPhotoCell.xib in Resources */,
 				892272991BD8BD5F001741CE /* AltRetweetVideoCell.xib in Resources */,
 				8922728D1BD8B9C4001741CE /* AltTwitterVideoCell.xib in Resources */,
 				8902B53A1BCF55BC006AD2B9 /* TwitterPhotoCell.xib in Resources */,
+				89443C781BE9F1EA003C3AED /* FacebookShareCell.xib in Resources */,
 				8902B54C1BCF89F7006AD2B9 /* RetweetVideoCell.xib in Resources */,
 				892272851BD8A308001741CE /* AltTwitterStatusCell.xib in Resources */,
 				894253391BB29C1300A04953 /* .gitignore in Resources */,
@@ -822,6 +850,7 @@
 				8956F8F51BDA254F001DEC44 /* FacebookVideoCell.xib in Resources */,
 				8933BD6D1BDE168000E73528 /* AltFacebookStatusCell.xib in Resources */,
 				8902B5501BCF913F006AD2B9 /* InstagramPhotoCell.xib in Resources */,
+				89443C701BE9ACD2003C3AED /* PremiumPhotoCell.xib in Resources */,
 				89C8F0B31BB75FE900AFE092 /* Login.storyboard in Resources */,
 				894253101BB297B700A04953 /* Assets.xcassets in Resources */,
 				89D553C41BC6178C00C75D4A /* TwitterStatusCell.xib in Resources */,
@@ -926,6 +955,7 @@
 				89090CDD1BD7947000E2E254 /* Post+CoreDataProperties.swift in Sources */,
 				891AAECC1BD496A4008E6D49 /* SettingViewController.swift in Sources */,
 				8902B5631BD2A290006AD2B9 /* ProfileViewController.swift in Sources */,
+				89443C771BE9F1EA003C3AED /* FacebookShareCell.swift in Sources */,
 				89C8F0C51BB8327D00AFE092 /* FeedViewController.swift in Sources */,
 				89158C6F1BE2CFD5007BA247 /* AltFacebookShareCell.swift in Sources */,
 				89D553CD1BC7B83100C75D4A /* UserInfo.swift in Sources */,
@@ -949,6 +979,7 @@
 				89090CDE1BD7947000E2E254 /* Post.swift in Sources */,
 				8933BD621BDDFC1D00E73528 /* Comment+CoreDataProperties.swift in Sources */,
 				8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */,
+				89443C731BE9AE2E003C3AED /* PremiumVideoCell.swift in Sources */,
 				8902B54F1BCF913F006AD2B9 /* InstagramPhotoCell.swift in Sources */,
 				892272981BD8BD5F001741CE /* AltRetweetVideoCell.swift in Sources */,
 				8933BD671BDDFF3000E73528 /* CommentViewController+UITableViewDelegate.swift in Sources */,
@@ -981,6 +1012,7 @@
 				8933BD6C1BDE168000E73528 /* AltFacebookStatusCell.swift in Sources */,
 				896D1CA31BCB6CBF008A720B /* FacebookStatusCell.swift in Sources */,
 				89C8F0B61BB7E6D500AFE092 /* SelklikFans.xcdatamodeld in Sources */,
+				89443C6F1BE9ACD2003C3AED /* PremiumPhotoCell.swift in Sources */,
 				891AAEDE1BD598D5008E6D49 /* FeedViewController+UITableViewDelegate .swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

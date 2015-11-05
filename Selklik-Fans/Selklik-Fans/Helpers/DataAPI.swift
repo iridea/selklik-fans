@@ -47,7 +47,7 @@ import Alamofire
                     return ("/\(Router.version)/artist_following", params)
 
                 case .ArtistPost (let token):
-                    let params = ["token": token, "limit" : "60"]
+                    let params = ["token": token, "limit" : "60"]//, "post_type" : "shared"]
                     return ("/\(Router.version)/artist_feed", params)
 
                     //artist_peek
@@ -69,7 +69,6 @@ import Alamofire
                 }
                 }()
 
-            print(Router.baseURLString)
             let URL = NSURL(string: Router.baseURLString)!
             let URLRequest = NSURLRequest(URL: URL.URLByAppendingPathComponent(result.path))
             let encoding = Alamofire.ParameterEncoding.URL

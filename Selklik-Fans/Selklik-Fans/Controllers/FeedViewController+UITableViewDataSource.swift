@@ -360,7 +360,7 @@ extension FeedViewController: UITableViewDataSource {
                 cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
 
                 //cell.postStatusLabel.text = post.valueForKey("postText") as? String
-                cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
+                cell.accountNameButton.setTitle(post.valueForKey("screenName") as? String, forState: UIControlState.Normal)
 
                 cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
 
@@ -368,7 +368,7 @@ extension FeedViewController: UITableViewDataSource {
                 cell.accountNameButton.id = (post.valueForKey("artistId") as? String)!
                 cell.accountNameButton.countryCode = (post.valueForKey("country") as? String)!
                 cell.accountNameButton.imageUrl = (post.valueForKey("profileImageUrl") as? String)!
-                cell.accountNameButton.name = (post.valueForKey("name") as? String)!
+                cell.accountNameButton.name = (post.valueForKey("screenName") as? String)!
                 cell.accountNameButton.addTarget(self, action: "showArtistSinglePost:", forControlEvents: .TouchUpInside)
 
                 //***************************************
@@ -415,7 +415,7 @@ extension FeedViewController: UITableViewDataSource {
                 cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
 
                 //cell.postStatusLabel.text = post.valueForKey("postText") as? String
-                cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
+                cell.accountNameButton.setTitle(post.valueForKey("screenName") as? String, forState: UIControlState.Normal)
 
                 cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
                 
@@ -423,7 +423,7 @@ extension FeedViewController: UITableViewDataSource {
                 cell.accountNameButton.id = (post.valueForKey("artistId") as? String)!
                 cell.accountNameButton.countryCode = (post.valueForKey("country") as? String)!
                 cell.accountNameButton.imageUrl = (post.valueForKey("profileImageUrl") as? String)!
-                cell.accountNameButton.name = (post.valueForKey("name") as? String)!
+                cell.accountNameButton.name = (post.valueForKey("screenName") as? String)!
                 cell.accountNameButton.addTarget(self, action: "showArtistSinglePost:", forControlEvents: .TouchUpInside)
                 //***************************************
 
@@ -439,8 +439,6 @@ extension FeedViewController: UITableViewDataSource {
                 print("facebook text")
                 break
             case "photo":
-                print("facebook photo")
-
                 let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.facebookPhotoCell, forIndexPath:indexPath) as! FacebookPhotoCell
 
                 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -485,7 +483,22 @@ extension FeedViewController: UITableViewDataSource {
 
                 //load Post Image
                 placeholderImage = UIImage(named: "placeholder")
-                let imageSize = CGSize(width: (post.valueForKey("photoStdWidth") as? CGFloat)!, height: ((post.valueForKey("photoStdHeight") as? CGFloat)!)/2.0)
+
+                let photoWidth:CGFloat?
+                if let _photoWidth = post.valueForKey("photoStdWidth") as? CGFloat {
+                    photoWidth = _photoWidth
+                }else{
+                    photoWidth = 100.0
+                }
+
+                let photoHeight:CGFloat?
+                if let _photoHeight = post.valueForKey("photoStdHeight") as? CGFloat {
+                    photoHeight = _photoHeight
+                }else{
+                    photoHeight = 50.0
+                }
+
+                let imageSize = CGSize(width: photoWidth!, height:photoHeight!/2.0)
 
                 placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
                 let postPhotoUrl = NSURL(string: (post.valueForKey("photoStdUrl") as? String)!)
@@ -578,9 +591,88 @@ extension FeedViewController: UITableViewDataSource {
                 cell.accountNameButton.addTarget(self, action: "showArtistSinglePost:", forControlEvents: .TouchUpInside)
                 //***************************************
                 return cell
-            case "link":
-                print("facebook link")
-                break
+
+            case "shared":
+                let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.facebookShareCell, forIndexPath:indexPath) as! FacebookShareCell
+
+                //totalComment Button -------------------------
+                var totalCommentString = " Comment"
+
+                if let totalComment = post.valueForKey("totalComment") as? Int {
+                    if totalComment > 1 {
+                        totalCommentString += "s"
+                    }
+                    totalCommentString = String(totalComment) + totalCommentString
+                }
+
+                cell.totalCommentButton.setTitle(totalCommentString, forState: UIControlState.Normal)
+                cell.totalCommentButton.addTarget(self, action: "showFeedComments:", forControlEvents: .TouchUpInside)
+
+                cell.totalCommentButton.postId = (post.valueForKey("postId") as? String)!
+                cell.totalCommentButton.country = (post.valueForKey("country") as? String)!
+                cell.totalCommentButton.socialMedia = socialMediaType!
+                //---------------------------------------------
+
+
+
+                //load profile image
+                var placeholderImage = UIImage(named: "UserIcon")
+                cell.profilePictureImageView.image = nil//UIImage(named: "UserIcon")
+                cell.profilePictureImageView.af_setImageWithURL(profileImageUrl!, placeholderImage: placeholderImage)
+
+                //load Post Image
+                placeholderImage = UIImage(named: "placeholder")
+
+                let photoWidth:CGFloat?
+                if let _photoWidth = post.valueForKey("photoStdWidth") as? CGFloat {
+                    photoWidth = _photoWidth
+                }else{
+                    photoWidth = 100.0
+                }
+
+                let photoHeight:CGFloat?
+                if let _photoHeight = post.valueForKey("photoStdHeight") as? CGFloat {
+                    photoHeight = _photoHeight
+                }else{
+                    photoHeight = 50.0
+                }
+
+
+                //let imageSize = CGSize(width: photoWidth!, height:photoHeight!/2.0)
+
+                //placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
+
+                if let shareImageUrl = post.valueForKey("fbContentLinkImageUrl") as? String {
+                    print("shareImageUrl: \(shareImageUrl)")
+                    let postPhotoUrl = NSURL(string: shareImageUrl)
+                    cell.shareContentPhoto.image = nil
+                    cell.shareContentPhoto.af_setImageWithURL(postPhotoUrl!)
+
+                }
+
+
+
+                cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
+                //load rest of the data
+                cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
+
+                cell.accountNameButton.setTitle((post.valueForKey("name") as? String)! + " joe", forState: UIControlState.Normal)
+
+                cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " likes"
+                
+                cell.shareContentTitle.text = post.valueForKey("fbContentLinkTitle") as? String
+                cell.shareContentText.text = post.valueForKey("fbContentLinkText") as? String
+
+                //Detail button *************************
+                cell.accountNameButton.id = (post.valueForKey("artistId") as? String)!
+                cell.accountNameButton.countryCode = (post.valueForKey("country") as? String)!
+                cell.accountNameButton.imageUrl = (post.valueForKey("profileImageUrl") as? String)!
+                cell.accountNameButton.name = (post.valueForKey("name") as? String)!
+                cell.accountNameButton.addTarget(self, action: "showArtistSinglePost:", forControlEvents: .TouchUpInside)
+                //***************************************
+                
+                return cell
+
             default:
                 print("unknown facebook postType: \(postType)")
                 

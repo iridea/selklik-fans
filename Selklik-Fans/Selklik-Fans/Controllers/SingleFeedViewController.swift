@@ -144,6 +144,8 @@ class SingleFeedViewController: UIViewController {
 
                 let json = JSON(jsonData)
 
+                print(json)
+
                 for (_,subJson):(String, JSON) in json["result"] {
 
                     let newPost = PostSingle(entity: postEntity!,
@@ -384,6 +386,14 @@ class SingleFeedViewController: UIViewController {
                                     print("unable to read JSON data likes")
                                 }//---------------------------------------------
 
+                                //post text
+                                if let postText = subJson["post_text"].string {
+                                    newPost.postText = postText
+                                }else{
+                                    print("unable to read JSON data postText")
+                                }//---------------------------------------------
+
+
 
                                 switch postType {
                                 case "text":
@@ -427,12 +437,10 @@ class SingleFeedViewController: UIViewController {
                                     break
 
                                 case "shared":
-                                    print(json)
-                                    if let fbContentLink = subJson["post_shared"].string {
+                                    if let fbContentLink = subJson["post_shared"]["standard"]["shared_link"].string {
                                         newPost.fbContentLink = fbContentLink
                                     }
-
-                                    /*
+                                    
                                     if let fbContentLinkImageUrl = subJson["post_shared"]["standard"]["link_photo"].string {
                                         newPost.fbContentLinkImageUrl = fbContentLinkImageUrl
                                     }
@@ -443,7 +451,7 @@ class SingleFeedViewController: UIViewController {
 
                                     if let fbContentLinkText = subJson["post_shared"]["standard"]["link_text"].string {
                                         newPost.fbContentLinkText = fbContentLinkText
-                                    } */
+                                    } 
                                     break
 
                                 default:

@@ -63,13 +63,15 @@ class FeedViewController: UIViewController {
         static let facebookStatusCell = "FacebookStatusCell"
         static let facebookPhotoCell = "FacebookPhotoCell"
         static let facebookVideoCell = "FacebookVideoCell"
-        static let facebookLinkCell = "FacebookLinkCell"
+        static let facebookShareCell = "FacebookShareCell"
 
         static let instagramPhotoCell = "InstagramPhotoCell"
         static let instagramVideoCell = "InstagramVideoCell"
 
         static let twitterSingleStatusFeed = "TwitterSingleStatusFeed"
 
+        static let premiumPhotoCell = "PremiumPhotoCell"
+        static let premiumVideoCell = "PremiumVideoCell"
     }
 
 
@@ -80,6 +82,8 @@ class FeedViewController: UIViewController {
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.facebookPhotoCell)
         cellNib = UINib(nibName: CellIdentifiers.facebookVideoCell, bundle: nil)
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.facebookVideoCell)
+        cellNib = UINib(nibName: CellIdentifiers.facebookShareCell, bundle: nil)
+        feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.facebookShareCell)
 
 
         //twitter
@@ -103,6 +107,13 @@ class FeedViewController: UIViewController {
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.instagramPhotoCell)
         cellNib = UINib(nibName: CellIdentifiers.instagramVideoCell, bundle: nil)
         feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.instagramVideoCell)
+
+
+        //premium
+        cellNib = UINib(nibName: CellIdentifiers.premiumPhotoCell, bundle: nil)
+        feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.premiumPhotoCell)
+        cellNib = UINib(nibName: CellIdentifiers.premiumVideoCell, bundle: nil)
+        feedTableView.registerNib(cellNib, forCellReuseIdentifier: CellIdentifiers.premiumVideoCell)
     }
 
     @IBAction func reloadButton(sender: AnyObject) {
@@ -173,8 +184,7 @@ class FeedViewController: UIViewController {
 
         Alamofire.request(DataAPI.Router.ArtistPost(userToken)).responseJSON(){
             response in
-            
-            print("MASUK feedview  - ALAMOFIRE")
+
             if let jsonData = response.result.value {
 
                 let json = JSON(jsonData)
@@ -435,9 +445,11 @@ class FeedViewController: UIViewController {
 
 
                                 switch postType {
+                                /*
                                 case "status":
                                     print("facebook text")
                                     break
+                                */
                                 case "photo":
                                     if let photoStdUrl = subJson["post_photo"]["standard"]["photo_link"].string {
                                         newPost.photoStdUrl = photoStdUrl
@@ -475,22 +487,38 @@ class FeedViewController: UIViewController {
                                     }
                                     break
                                     
-                                case "share":
-                                    if let fbContentLink = subJson["post_shared"]["standard"]["shared_link"].string {
-                                        newPost.fbContentLink = fbContentLink
-                                    }
-                                    
-                                    if let fbContentLinkImageUrl = subJson["post_shared"]["standard"]["link_photo"].string {
-                                        newPost.fbContentLinkImageUrl = fbContentLinkImageUrl
-                                    }
-                                    
-                                    if let fbContentLinkTitle = subJson["post_shared"]["standard"]["link_title"].string {
-                                        newPost.fbContentLinkTitle = fbContentLinkTitle
-                                    }
-                                    
-                                    if let fbContentLinkText = subJson["post_shared"]["standard"]["link_text"].string {
-                                        newPost.fbContentLinkText = fbContentLinkText
-                                    }
+                                case "shared":
+
+                                    let shareType = subJson["post_shared"]["standard"]["shared_type"].string
+
+
+                                    //if shareType == "link" {
+                                        if let fbContentLink = subJson["post_shared"]["standard"]["shared_link"].string {
+                                            newPost.fbContentLink = fbContentLink
+                                        }else{
+                                            print("Unable to read shared_link")
+                                        }
+
+                                        if let fbContentLinkImageUrl = subJson["post_shared"]["standard"]["link_photo"].string {
+                                            newPost.fbContentLinkImageUrl = fbContentLinkImageUrl
+                                        }else{
+                                            print("Unable to read link_photo")
+                                        }
+
+                                        if let fbContentLinkTitle = subJson["post_shared"]["standard"]["link_title"].string {
+                                            newPost.fbContentLinkTitle = fbContentLinkTitle
+                                        }else{
+                                            print("Unable to read link_title")
+                                        }
+
+                                        if let fbContentLinkText = subJson["post_shared"]["standard"]["link_text"].string {
+                                            newPost.fbContentLinkText = fbContentLinkText
+                                        }else{
+                                            print("Unable to read link_text")
+                                        }
+                                    //}
+
+
                                     break
                                     
                                 default:

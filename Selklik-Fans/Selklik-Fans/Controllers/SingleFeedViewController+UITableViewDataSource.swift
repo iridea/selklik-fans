@@ -251,7 +251,7 @@ extension SingleFeedViewController: UITableViewDataSource {
 
                 print(post.valueForKey("postText") as? String)
                 cell.statusActiveLabel.text = (post.valueForKey("postText") as? String)!
-                cell.accountName.text = post.valueForKey("name") as? String
+                cell.accountName.text = post.valueForKey("screenName") as? String
 
                 cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
 
@@ -280,6 +280,8 @@ extension SingleFeedViewController: UITableViewDataSource {
                 let imageSize = CGSize(width: (post.valueForKey("videoThumbStdWidth") as? CGFloat)!, height: ((post.valueForKey("videoThumbStdHeight") as? CGFloat)!)/2.0)
                 placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
                 let postThumbUrl = NSURL(string: (post.valueForKey("videoThumbStdUrl") as? String)!)
+                cell.accountName.text = post.valueForKey("screenName") as? String
+                
                 cell.postPhoto.image = nil
                 cell.postPhoto.af_setImageWithURL(postThumbUrl!, placeholderImage: placeholderImage)
 
@@ -360,8 +362,29 @@ extension SingleFeedViewController: UITableViewDataSource {
                 cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
                 cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
 
+                
                 var placeholderImage = UIImage(named: "placeholder")
-                let imageSize = CGSize(width: (post.valueForKey("photoStdWidth") as? CGFloat)!, height: ((post.valueForKey("photoStdHeight") as? CGFloat)!)/2.0)
+
+                //load Post Image
+                placeholderImage = UIImage(named: "placeholder")
+
+                let photoWidth:CGFloat?
+                if let _photoWidth = post.valueForKey("photoStdWidth") as? CGFloat {
+                    photoWidth = _photoWidth
+                }else{
+                    photoWidth = 50.0
+                }
+
+                let photoHeight:CGFloat?
+                if let _photoHeight = post.valueForKey("photoStdHeight") as? CGFloat {
+                    photoHeight = _photoHeight
+                }else{
+                    photoHeight = 50.0
+                }
+
+                let imageSize = CGSize(width: photoWidth!, height:photoHeight!/2.0)
+
+
                 placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
                 let postPhotoUrl = NSURL(string: (post.valueForKey("photoStdUrl") as? String)!)
                 cell.postPhoto.image = nil
@@ -412,21 +435,40 @@ extension SingleFeedViewController: UITableViewDataSource {
                 cell.totalCommentLabel.setTitle(String(totalComment) + commentString, forState: UIControlState.Normal)
                 return cell
             case "shared":
+
+                /*
+                if let fbContentLink = subJson["post_shared"]["standard"]["shared_link"].string {
+                newPost.fbContentLink = fbContentLink
+                }
+
+                if let fbContentLinkImageUrl = subJson["post_shared"]["standard"]["link_photo"].string {
+                newPost.fbContentLinkImageUrl = fbContentLinkImageUrl
+                }
+
+                if let fbContentLinkTitle = subJson["post_shared"]["standard"]["link_title"].string {
+                newPost.fbContentLinkTitle = fbContentLinkTitle
+                }
+
+                if let fbContentLinkText = subJson["post_shared"]["standard"]["link_text"].string {
+                newPost.fbContentLinkText = fbContentLinkText
+                }
+                */
+
                 let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.altFacebookShareCell, forIndexPath:indexPath) as! AltFacebookShareCell
 
                 cell.name.text = (post.valueForKey("name") as? String)!
                 cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
                 cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
 
-                //var placeholderImage = UIImage(named: "placeholder")
-                //let imageSize = CGSize(width: (post.valueForKey("photoStdWidth") as? CGFloat)!, height: ((post.valueForKey("photoStdHeight") as? CGFloat)!)/2.0)
-                //placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
-                //let postPhotoUrl = NSURL(string: (post.valueForKey("fbContentLinkImageUrl") as? String)!)
-                //cell.linkImageView.image = nil
-                //cell.linkImageView.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
+                var placeholderImage = UIImage(named: "placeholder")
+                let imageSize = CGSize(width: (post.valueForKey("photoStdWidth") as? CGFloat)!, height: ((post.valueForKey("photoStdHeight") as? CGFloat)!)/2.0)
+                placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
+                let postPhotoUrl = NSURL(string: (post.valueForKey("fbContentLinkImageUrl") as? String)!)
+                cell.linkImageView.image = nil
+                cell.linkImageView.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
 
-                 //cell.linkTitleButton.setTitle(post.valueForKey("fbContentLinkTitle") as? String, forState: UIControlState.Normal)
-                cell.linkPostContentLabel.text = post.valueForKey("fbContentLink") as? String
+                 cell.linkTitleButton.setTitle(post.valueForKey("fbContentLinkTitle") as? String, forState: UIControlState.Normal)
+                cell.linkPostContentLabel.text = post.valueForKey("fbContentLinkText") as? String
 
                 let totalLike = post.valueForKey("totalLike") as! Int
                 var likeString = " Like"
