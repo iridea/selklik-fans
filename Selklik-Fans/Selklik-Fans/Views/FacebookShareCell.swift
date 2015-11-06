@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ActiveLabel
 
 class FacebookShareCell: FacebookStatusCell {
 
@@ -14,7 +15,7 @@ class FacebookShareCell: FacebookStatusCell {
     @IBOutlet weak var shareContentPhoto: UIImageView!
 
     @IBOutlet weak var shareContentTitle: UILabel!
-    @IBOutlet weak var shareContentText: UILabel!
+    @IBOutlet weak var shareContentText: ActiveLabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,6 +25,8 @@ class FacebookShareCell: FacebookStatusCell {
         shareBackgroundView.layer.borderWidth = 1
 
         shareBackgroundView.layer.borderColor = UIColor.lightGrayColor().CGColor
+
+         shareContentText.handleURLTap { url in UIApplication.sharedApplication().openURL(url) }
     }
 
     override func setSelected(selected: Bool, animated: Bool) {

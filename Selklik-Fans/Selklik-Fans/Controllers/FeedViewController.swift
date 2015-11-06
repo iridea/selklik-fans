@@ -465,9 +465,6 @@ class FeedViewController: UIViewController {
                                     break
 
                                 case "video":
-                                    if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
-                                        newPost.videoStdUrl = videoStdUrl
-                                    }
 
                                     if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
                                         newPost.videoStdUrl = videoStdUrl
@@ -476,21 +473,21 @@ class FeedViewController: UIViewController {
                                     //Thumb
                                     if let videoThumbStdUrl = subJson["post_thumb"]["standard"]["thumb_link"].string {
                                         newPost.videoThumbStdUrl = videoThumbStdUrl
+
                                     }
 
-                                    if let videoThumbStdWidth = subJson["post_thumb"]["standard"]["thumb_width"].string {
+                                    if let videoThumbStdWidth = subJson["post_thumb"]["standard"]["thumb_width"].string {//
                                         newPost.videoThumbStdWidth = Float(videoThumbStdWidth)
+                                         print("videoThumbStdWidth: \(videoThumbStdWidth)")
                                     }
 
                                     if let videoThumbStdHeight = subJson["post_thumb"]["standard"]["thumb_height"].string {
                                         newPost.videoThumbStdHeight = Float(videoThumbStdHeight)
+                                        print("videoThumbStdWidth: \(videoThumbStdHeight)")
                                     }
                                     break
                                     
                                 case "shared":
-
-                                    let shareType = subJson["post_shared"]["standard"]["shared_type"].string
-
 
                                     //if shareType == "link" {
                                         if let fbContentLink = subJson["post_shared"]["standard"]["shared_link"].string {

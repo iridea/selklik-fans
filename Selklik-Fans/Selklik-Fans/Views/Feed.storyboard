@@ -14,11 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="PKi-RF-WMt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Yds-Qp-IYo">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="yV4-Z3-jQH">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -59,11 +59,11 @@
                         <viewControllerLayoutGuide type="bottom" id="awS-gI-P2d"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8pS-MN-dbq">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="e6E-D1-f0Q">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="455"/>
                                 <animations/>
                                 <color key="backgroundColor" name="secondarySelectedControlColor" catalog="System" colorSpace="catalog"/>
                                 <prototypes>
@@ -186,7 +186,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qzQ-jq-4UZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1854" y="-71"/>
+            <point key="canvasLocation" x="2532" y="-1082"/>
         </scene>
         <!--AV Player View Controller-->
         <scene sceneID="abR-4c-A0Q">
@@ -283,11 +283,12 @@
         <scene sceneID="pKE-SR-vb0">
             <objects>
                 <tabBarController id="tT5-ja-Npa" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="c7u-zN-bNI">
+                    <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="c7u-zN-bNI">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
                         <segue destination="tOf-kC-ysR" kind="relationship" relationship="viewControllers" id="Qaa-Ow-5L5"/>
@@ -351,7 +352,7 @@
                         <viewControllerLayoutGuide type="bottom" id="WM4-uG-4Vp"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Hcc-kr-qRc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -371,7 +372,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Vzc-Es-dhs"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="TtW-37-QjH">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -993,19 +994,19 @@
                         <viewControllerLayoutGuide type="bottom" id="DEH-bR-jeo"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="tqn-zg-drW">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S1I-gm-ziD">
-                                <rect key="frame" x="0.0" y="46" width="320" height="458"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="S1I-gm-ziD">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="458"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="458" id="zwX-By-PwA"/>
                                 </constraints>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Gn-Uk-gSa">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="46"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Gn-Uk-gSa">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="0.0"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Rk-NO-orf">
                                         <rect key="frame" x="282" y="7" width="32" height="32"/>

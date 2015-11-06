@@ -540,11 +540,20 @@ extension FeedViewController: UITableViewDataSource {
                 cell.profilePictureImageView.af_setImageWithURL(profileImageUrl!, placeholderImage: placeholderImage)
 
                 //load Post Image
-                placeholderImage = UIImage(named: "placeholder")
+
                 let imageSize = CGSize(width: (post.valueForKey("videoThumbStdWidth") as? CGFloat)!, height: ((post.valueForKey("videoThumbStdHeight") as? CGFloat)!)/2.0)
 
-                placeholderImage = self.photoInfo.resize(image: placeholderImage!, sizeChange: imageSize, imageScale: 0.1)
-               
+
+                //system sometime cannot find 'placeholder' image in Assets library.
+                //so i prepare a "placeholder-backup"
+                if let ph = UIImage(named: "placeholder") {
+                    placeholderImage = self.photoInfo.resize(image: ph, sizeChange: imageSize, imageScale: 0.1)
+                }else{
+                    let ph = UIImage(named: "placeholder-backup")
+                    placeholderImage = self.photoInfo.resize(image: ph!, sizeChange: imageSize, imageScale: 0.1)
+
+                }
+
 
                 let postPhotoUrl = NSURL(string: (post.valueForKey("videoThumbStdUrl") as? String)!)
                 cell.postThumb.image = nil
@@ -659,9 +668,17 @@ extension FeedViewController: UITableViewDataSource {
                 cell.accountNameButton.setTitle((post.valueForKey("name") as? String)! + " joe", forState: UIControlState.Normal)
 
                 cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " likes"
-                
+
+
+                if let content = (post.valueForKey("fbContentLinkText") as? String) {
+                    cell.shareContentText.text = content + " " + (post.valueForKey("fbContentLink") as? String)!
+                }
+                else{
+                    cell.shareContentText.text = post.valueForKey("fbContentLink") as? String
+                }
+
                 cell.shareContentTitle.text = post.valueForKey("fbContentLinkTitle") as? String
-                cell.shareContentText.text = post.valueForKey("fbContentLinkText") as? String
+
 
                 //Detail button *************************
                 cell.accountNameButton.id = (post.valueForKey("artistId") as? String)!

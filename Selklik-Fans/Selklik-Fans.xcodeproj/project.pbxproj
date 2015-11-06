@@ -95,6 +95,7 @@
 		89443C741BE9AE2E003C3AED /* PremiumVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89443C721BE9AE2E003C3AED /* PremiumVideoCell.xib */; };
 		89443C771BE9F1EA003C3AED /* FacebookShareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89443C751BE9F1EA003C3AED /* FacebookShareCell.swift */; };
 		89443C781BE9F1EA003C3AED /* FacebookShareCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 89443C761BE9F1EA003C3AED /* FacebookShareCell.xib */; };
+		89443C7A1BEB586C003C3AED /* placeholder-backup.png in Resources */ = {isa = PBXBuildFile; fileRef = 89443C791BEB586C003C3AED /* placeholder-backup.png */; };
 		8956F8F11BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956F8F01BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift */; };
 		8956F8F41BDA254F001DEC44 /* FacebookVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8956F8F21BDA254F001DEC44 /* FacebookVideoCell.swift */; };
 		8956F8F51BDA254F001DEC44 /* FacebookVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8956F8F31BDA254F001DEC44 /* FacebookVideoCell.xib */; };
@@ -238,6 +239,7 @@
 		89443C721BE9AE2E003C3AED /* PremiumVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PremiumVideoCell.xib; sourceTree = "<group>"; };
 		89443C751BE9F1EA003C3AED /* FacebookShareCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookShareCell.swift; sourceTree = "<group>"; };
 		89443C761BE9F1EA003C3AED /* FacebookShareCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookShareCell.xib; sourceTree = "<group>"; };
+		89443C791BEB586C003C3AED /* placeholder-backup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder-backup.png"; sourceTree = "<group>"; };
 		8956F8F01BDA15B6001DEC44 /* SingleFeedViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SingleFeedViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		8956F8F21BDA254F001DEC44 /* FacebookVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FacebookVideoCell.swift; sourceTree = "<group>"; };
 		8956F8F31BDA254F001DEC44 /* FacebookVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FacebookVideoCell.xib; sourceTree = "<group>"; };
@@ -681,6 +683,7 @@
 		89E0B1F11BB54F3D0052D64B /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				89443C791BEB586C003C3AED /* placeholder-backup.png */,
 				89E0B1F21BB54F450052D64B /* Libraries */,
 				899B7FE61BB6941500922922 /* Constants.swift */,
 				89C8F0B71BB7E83900AFE092 /* CoreDataStack.swift */,
@@ -856,6 +859,7 @@
 				89D553C41BC6178C00C75D4A /* TwitterStatusCell.xib in Resources */,
 				8942530E1BB297B700A04953 /* Startup.storyboard in Resources */,
 				8902B5441BCF8072006AD2B9 /* TwitterVideoCell.xib in Resources */,
+				89443C7A1BEB586C003C3AED /* placeholder-backup.png in Resources */,
 				8902B5481BCF8444006AD2B9 /* RetweetPhotoCell.xib in Resources */,
 				891AAED21BD4A731008E6D49 /* CountryCell.xib in Resources */,
 				8902B55D1BD0B139006AD2B9 /* ArtistListCell.xib in Resources */,
