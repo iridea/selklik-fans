@@ -651,6 +651,8 @@ class FeedViewController: UIViewController {
     func getFeedFromCoreData() {
         let fetchRequest = NSFetchRequest(entityName: "Post")
 
+        let dateSort = NSSortDescriptor(key: "timeStamp", ascending: false)
+        fetchRequest.sortDescriptors = [dateSort]
 
         do  {
             let results = try managedContext.executeFetchRequest(fetchRequest)

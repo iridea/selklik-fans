@@ -201,12 +201,34 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //MARK: - Default Function
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        //UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)
-         UINavigationBar.appearance().barStyle = .Black
-         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+
+        let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(settings)
+
+        UIApplication.sharedApplication().registerForRemoteNotifications()
+
+
+        UINavigationBar.appearance().barStyle = .Black
+        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
+
         initialSystem()
-        // Override point for customization after application launch.
+
+
         return true
+    }
+
+    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
+
+        print("deviceToken:\(deviceToken)")
+
+    }
+
+
+
+    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
+        
+        print(error)
+        
     }
 
     func applicationWillResignActive(application: UIApplication) {

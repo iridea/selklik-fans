@@ -795,6 +795,11 @@
 					894253041BB297B700A04953 = {
 						CreatedOnToolsVersion = 7.0;
 						DevelopmentTeam = VD724U23GV;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					894253181BB297B700A04953 = {
 						CreatedOnToolsVersion = 7.0;

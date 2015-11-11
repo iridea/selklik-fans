@@ -1227,7 +1227,7 @@
         <image name="twitterRound" width="40" height="40"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="oRN-Wt-ynE"/>
         <segue reference="DNO-LS-pPW"/>
-        <segue reference="Lde-3C-jmg"/>
     </inferredMetricsTieBreakers>
 </document>
