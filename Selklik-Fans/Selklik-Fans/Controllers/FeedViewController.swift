@@ -74,7 +74,6 @@ class FeedViewController: UIViewController {
         static let premiumVideoCell = "PremiumVideoCell"
     }
 
-
     func registerNib(){
 
         //facebook
@@ -123,8 +122,6 @@ class FeedViewController: UIViewController {
     //MARK: - Custom Function
 
     func showArtistSinglePost(sender:ArtistNameButton) {
-
-
         selectedArtistId = sender.id
         selectedArtistCountryCode = sender.countryCode
         selectedArtistImageUrl = sender.imageUrl
@@ -178,6 +175,7 @@ class FeedViewController: UIViewController {
         }
     }
 
+    //Get data from JSON and save to CoreData
     func populateFeed() {
 
         let postEntity = NSEntityDescription.entityForName("Post",inManagedObjectContext: managedContext)
@@ -583,12 +581,7 @@ class FeedViewController: UIViewController {
 
     } //End of populateFeed()
 
-
-    //MARK: - Default Function
-//    override func preferredStatusBarStyle() -> UIStatusBarStyle {
-//        return UIStatusBarStyle.LightContent
-//    }
-
+    //Set Selklik icon to the center of navigationbar
     func setBrandIconToNavigationController(){
         // 3
         let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 25, height: 25))

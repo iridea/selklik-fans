@@ -88,7 +88,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
         let parameters = ["email":username!,
             "password":password!,
-            "device_id":"test-device-id",
+            "device_id":Setting.deviceToken,
             "device_os":1]
 
         let postUrl = API.loginUrl

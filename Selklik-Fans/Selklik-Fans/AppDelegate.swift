@@ -219,8 +219,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
 
-        print("deviceToken:\(deviceToken)")
+        let characterSet: NSCharacterSet = NSCharacterSet( charactersInString: "<>" )
 
+        Setting.deviceToken = ( deviceToken.description as NSString )
+            .stringByTrimmingCharactersInSet( characterSet )
+            .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
+
+        print("deviceToken:\(Setting.deviceToken)")
     }
 
 

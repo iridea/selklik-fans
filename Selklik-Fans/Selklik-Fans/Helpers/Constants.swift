@@ -20,6 +20,7 @@ struct API {
 struct Setting {
     static let malaysia = "my"
     static let indonesia = "idn"
+    static var deviceToken = ""
 }
 
 
@@ -32,4 +33,6 @@ struct Message {
     static let loginFail = "Log in to system fail. Please check your email or password."
     static let logoutFail = "Something wrong with our server. Logout fail."
 }
+
+
 
