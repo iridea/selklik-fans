@@ -665,7 +665,12 @@ class SingleFeedViewController: UIViewController {
         self.artistImage.layer.cornerRadius = self.artistImage.frame.width / 2
         self.artistImage.clipsToBounds = true
 
-        self.artistImage.af_setImageWithURL(NSURL(string: profileUrl)!)
+        if let profileUrlString = profileUrl {
+            if let url = NSURL(string: profileUrlString) {
+                self.artistImage.af_setImageWithURL(url)
+            }
+        }
+
         self.artistName.text = name
         reloadSingleFeedDataFromServer()
     }
