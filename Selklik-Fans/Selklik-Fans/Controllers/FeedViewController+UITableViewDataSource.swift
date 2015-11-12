@@ -511,13 +511,6 @@ extension FeedViewController: UITableViewDataSource {
                 cell.accountNameButton.setTitle(post.valueForKey("name") as? String, forState: UIControlState.Normal)
                 
                 cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " likes"
-                let totalComment = post.valueForKey("totalComment") as? Int
-
-                if (totalComment == 1){
-                    totalCommentString += " Comment"
-                }else{
-                    totalCommentString += " Comments"
-                }
 
                 cell.totalCommentButton.setTitle(totalCommentString, forState: UIControlState.Normal)
 
@@ -567,12 +560,6 @@ extension FeedViewController: UITableViewDataSource {
                 cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " likes"
                 let totalComment = post.valueForKey("totalComment") as? Int
                 var totalCommentString = String(totalComment!)
-
-                if (totalComment == 1){
-                    totalCommentString += " Comment"
-                }else{
-                    totalCommentString += " Comments"
-                }
 
                 //totalComment Button -------------------------
 
