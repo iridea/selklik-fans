@@ -699,7 +699,7 @@ extension FeedViewController: UITableViewDataSource {
                 cell.postPhoto.addGestureRecognizer(cell.gestureRecognizer)
 
                 //Custom field in uiimageveew
-                //cell.gestureRecognizer.imageUrl = (post.valueForKey("photoStdUrl") as? String)!
+                cell.gestureRecognizer.imageUrl = (post.valueForKey("photoStdUrl") as? String)!
                 //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
                 //totalComment Button -------------------------
@@ -746,9 +746,6 @@ extension FeedViewController: UITableViewDataSource {
                 placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
                 let postPhotoUrl = NSURL(string: (post.valueForKey("photoStdUrl") as? String)!)
                 cell.postPhoto.image = nil
-
-
-
 
 
                 cell.postPhoto.af_setImageWithURL(postPhotoUrl!, placeholderImage: placeholderImage)
