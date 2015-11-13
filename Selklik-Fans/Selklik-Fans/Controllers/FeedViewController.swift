@@ -194,7 +194,7 @@ class FeedViewController: UIViewController {
                     let newPost = Post(entity: postEntity!,
                         insertIntoManagedObjectContext: self.managedContext)
 
-                    //MARK: - Standard Data
+                    //Standard Data ---------------------------
                     if let artistId = subJson["artist_id"].string {
                         newPost.artistId = artistId
                     }else{
@@ -260,6 +260,7 @@ class FeedViewController: UIViewController {
                     }else{
                         print("unable to read JSON data country")
                     }
+                    //End Standard Data ---------------------------
 
                     //Check Social Media
                     if let socialMediaType = subJson["social_media"].string {
@@ -525,10 +526,39 @@ class FeedViewController: UIViewController {
                             if let postType = subJson["post_type"].string {
                                 switch postType {
                                 case "photo":
-                                    print("premium photo")
-                                    print("-------------------")
+                                    if let photoStdUrl = subJson["post_photo"]["standard"]["photo_link"].string {
+                                        newPost.photoStdUrl = photoStdUrl
+                                    }else{
+                                        print("Unable to read photo_link")
+                                    }
+
+                                    if let photoStdWidth = subJson["post_photo"]["standard"]["photo_width"].string {
+                                        newPost.photoStdWidth = Float(photoStdWidth)
+                                    }else{
+                                        print("Unable to read photo_width")
+                                    }
+
+                                    if let photoStdHeight = subJson["post_photo"]["standard"]["photo_height"].string {
+                                        newPost.photoStdHeight = Float(photoStdHeight)
+                                    }else{
+                                        print("Unable to read photo_width")
+                                    }
+
+                                    if let totalLike = subJson["likes"].string {
+
+                                        newPost.totalLike = Int(totalLike)
+                                    }else{
+                                        print("unable to read JSON data likes")
+                                    }
+
+                                    if let totalComment = subJson["comments"].string {
+
+                                        newPost.totalComment = Int(totalComment)
+                                    }else{
+                                        print("unable to read JSON data comments")
+                                    }
+
                                     break
-                                    
                                 case "video":
                                     print("premium video")
                                     print("-------------------")

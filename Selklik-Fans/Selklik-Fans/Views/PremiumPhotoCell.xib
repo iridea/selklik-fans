@@ -181,6 +181,15 @@
                 </constraints>
             </tableViewCellContentView>
             <animations/>
+            <connections>
+                <outlet property="accountNameButton" destination="I40-7v-7sn" id="meW-sQ-IrP"/>
+                <outlet property="dateTimeLabel" destination="GGg-RV-Uyx" id="kL7-5y-Nsc"/>
+                <outlet property="postPhoto" destination="ObC-4N-MNt" id="ai8-tl-q5S"/>
+                <outlet property="profilePictureImageView" destination="Uz2-ka-7sS" id="MRu-io-OTv"/>
+                <outlet property="statusActiveLabel" destination="NAV-9a-WFi" id="FY3-TJ-cJU"/>
+                <outlet property="totalCommentButton" destination="6fJ-jv-eBz" id="gFR-1d-yxV"/>
+                <outlet property="totalLikeLabel" destination="3iL-Xr-FVj" id="jFC-Q4-lRJ"/>
+            </connections>
             <point key="canvasLocation" x="239" y="401"/>
         </tableViewCell>
     </objects>

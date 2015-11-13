@@ -7,9 +7,20 @@
 //
 
 import UIKit
+import ActiveLabel
 
 class PremiumPhotoCell: UITableViewCell {
 
+    @IBOutlet weak var accountNameButton: ArtistNameButton!
+    @IBOutlet weak var profilePictureImageView: UIImageView!
+    @IBOutlet weak var dateTimeLabel: UILabel!
+    @IBOutlet weak var statusActiveLabel:ActiveLabel!
+    @IBOutlet weak var postPhoto: UIImageView!
+    @IBOutlet weak var totalLikeLabel: UILabel!
+    @IBOutlet weak var totalCommentButton: CommentButton!
+
+    let gestureRecognizer = PostImageTapGestureRecognizer()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

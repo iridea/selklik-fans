@@ -48,7 +48,7 @@ import Alamofire
 
                 case .ArtistPost (let token):
                     let params = ["token": token, "limit" : "60"]//, "post_type" : "shared"]
-                    return ("/\(Router.version)/artist_feed", params)
+                    return ("/\(Router.version)/artist_premium", params)
 
                     //artist_peek
                 case .SingleArtistPost (let token, let artistId,let endPointName):
