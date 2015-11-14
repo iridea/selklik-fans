@@ -8,7 +8,9 @@
 
 import UIKit
 
-class PremiumVideoCell: UITableViewCell {
+class PremiumVideoCell: PremiumPhotoCell {
+
+    @IBOutlet weak var postThumb: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()

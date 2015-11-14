@@ -52,8 +52,11 @@
         <attribute name="postLink" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postText" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="postType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prChargeType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="prLikeStatus" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="profileImage" optional="YES" attributeType="Binary" allowsExternalBinaryDataStorage="YES" syncable="YES"/>
         <attribute name="profileImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prPurchaseStatus" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="screenName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="socialMediaType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="timeStamp" optional="YES" attributeType="Date" indexed="YES" syncable="YES"/>
@@ -115,7 +118,7 @@
         <element name="Artist" positionX="-36" positionY="144" width="128" height="240"/>
         <element name="Comment" positionX="-45" positionY="135" width="128" height="135"/>
         <element name="Country" positionX="-45" positionY="135" width="128" height="135"/>
-        <element name="Post" positionX="-36" positionY="81" width="128" height="510"/>
+        <element name="Post" positionX="-36" positionY="81" width="128" height="555"/>
         <element name="PostSingle" positionX="-45" positionY="135" width="128" height="450"/>
         <element name="User" positionX="-54" positionY="9" width="128" height="210"/>
     </elements>

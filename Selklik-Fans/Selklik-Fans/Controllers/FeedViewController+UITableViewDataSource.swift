@@ -725,9 +725,6 @@ extension FeedViewController: UITableViewDataSource {
                 cell.profilePictureImageView.image = placeholderImage
                 cell.profilePictureImageView.af_setImageWithURL(profileImageUrl!, placeholderImage: placeholderImage)
 
-
-
-
                 //load Post Image
                 
                 let imageSize = CGSize(width: (post.valueForKey("photoStdWidth") as? CGFloat)!, height: ((post.valueForKey("photoStdHeight") as? CGFloat)!)/2.0)
@@ -768,8 +765,61 @@ extension FeedViewController: UITableViewDataSource {
                 //***************************************
                 return cell
             case "video":
-                print("premium video")
-                break
+                let cell = tableView.dequeueReusableCellWithIdentifier(CellIdentifiers.premiumVideoCell, forIndexPath:indexPath) as! PremiumVideoCell
+
+                //totalComment Button -------------------------
+                var totalCommentString = " Comment"
+
+                if let totalComment = post.valueForKey("totalComment") as? Int {
+                    if totalComment > 1 {
+                        totalCommentString += "s"
+                    }
+                    totalCommentString = String(totalComment) + totalCommentString
+                }
+
+                cell.totalCommentButton.setTitle(totalCommentString, forState: UIControlState.Normal)
+                cell.totalCommentButton.addTarget(self, action: "showFeedComments:", forControlEvents: .TouchUpInside)
+
+                cell.totalCommentButton.postId = (post.valueForKey("postId") as? String)!
+                cell.totalCommentButton.country = (post.valueForKey("country") as? String)!
+                cell.totalCommentButton.socialMedia = socialMediaType!
+                //---------------------------------------------
+
+
+                //load profile image
+                var placeholderImage = UIImage(named: "UserIcon")
+                cell.profilePictureImageView.image = placeholderImage
+                cell.profilePictureImageView.af_setImageWithURL(profileImageUrl!, placeholderImage: placeholderImage)
+
+                //load Post Image
+                placeholderImage = UIImage(named: "placeholder")
+                
+                let imageSize = CGSize(width: (post.valueForKey("videoThumbStdWidth") as? CGFloat)!, height: ((post.valueForKey("videoThumbStdHeight") as? CGFloat)!)/2.0)
+
+                    //print("imageSize:\(imageSize)")
+                placeholderImage = self.photoInfo.resize(image: UIImage(named: "placeholder")!, sizeChange: imageSize, imageScale: 0.1)
+                let postThumbUrl = NSURL(string: (post.valueForKey("videoThumbStdUrl") as? String)!)
+                //cell.postThumb.image = nil
+                cell.postThumb.af_setImageWithURL(postThumbUrl!, placeholderImage: placeholderImage)
+                cell.dateTimeLabel.text = String(post.valueForKey("timeStamp") as! NSDate)
+                //load rest of the data
+                cell.statusActiveLabel!.text = post.valueForKey("postText") as? String
+
+                //cell.postStatusLabel.text = post.valueForKey("postText") as? String
+                cell.accountNameButton.setTitle(post.valueForKey("screenName") as? String, forState: UIControlState.Normal)
+
+                cell.totalLikeLabel.text =  String(post.valueForKey("totalLike") as! Int) + " favorites"
+
+                //Detail button *************************
+                cell.accountNameButton.id = (post.valueForKey("artistId") as? String)!
+                cell.accountNameButton.countryCode = (post.valueForKey("country") as? String)!
+                cell.accountNameButton.imageUrl = (post.valueForKey("profileImageUrl") as? String)!
+                cell.accountNameButton.name = (post.valueForKey("screenName") as? String)!
+                cell.accountNameButton.addTarget(self, action: "showArtistSinglePost:", forControlEvents: .TouchUpInside)
+                //***************************************
+                
+                
+                return cell
             default:
                 break
             }

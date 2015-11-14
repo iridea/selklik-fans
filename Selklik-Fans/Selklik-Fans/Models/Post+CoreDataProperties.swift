@@ -46,4 +46,7 @@ extension Post {
     @NSManaged var videoThumbStdUrl: String?
     @NSManaged var videoThumbStdWidth: NSNumber?
 
+    @NSManaged var prLikeStatus: NSNumber?
+    @NSManaged var prPurchaseStatus: NSNumber?
+    @NSManaged var prChargeType: NSNumber?
 }

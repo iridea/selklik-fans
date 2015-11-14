@@ -268,7 +268,6 @@ class FeedViewController: UIViewController {
                         switch socialMediaType {
                         case "twitter": //------------TWITTER------------
 
-
                             //isRetweet
                             if let isRetweet = subJson["is_retweet"].int {
 
@@ -552,16 +551,92 @@ class FeedViewController: UIViewController {
                                     }
 
                                     if let totalComment = subJson["comments"].string {
-
                                         newPost.totalComment = Int(totalComment)
                                     }else{
                                         print("unable to read JSON data comments")
                                     }
 
+                                    if let chargeType = subJson["charge_type"].string {
+                                        newPost.prChargeType = Int(chargeType)
+                                    }else{
+                                        print("Unable to read JSON data chargeType")
+                                    }
+
+                                    if let likeStatus = subJson["like_status"].string {
+                                        newPost.prLikeStatus = Int(likeStatus)
+                                    }else{
+                                        print("Unable to read JSON data likeStatus")
+                                    }
+
+                                    if let purchaseStatus = subJson["status"].int {
+                                        newPost.prPurchaseStatus = purchaseStatus
+                                    }else{
+                                        print("Unable to read JSON data likeStatus")
+                                    }
+
                                     break
                                 case "video":
-                                    print("premium video")
-                                    print("-------------------")
+                                    //video url only available when purchase status == 1
+                                    if let purchaseStatus = subJson["status"].int {
+                                        newPost.prPurchaseStatus = purchaseStatus
+
+                                        if purchaseStatus == 1 {
+                                            if let videoStdUrl = subJson["post_video"]["standard"]["video_link"].string {
+                                                newPost.videoStdUrl = videoStdUrl
+                                            }else{
+                                                print("Unable to read videoStdUrl")
+                                            }
+
+                                        }
+
+                                    }else{
+                                        print("Unable to read JSON data likeStatus")
+                                    }
+
+                                    //Thumb -------------------------------
+                                    if let videoThumbStdUrl = subJson["post_thumb"]["standard"]["thumb_link"].string {
+                                        newPost.videoThumbStdUrl = videoThumbStdUrl
+                                    }else{
+                                        print("Unable to read thumb_height")
+                                    }
+
+                                    if let videoThumbStdWidth = subJson["post_thumb"]["standard"]["thumb_width"].string {
+                                        newPost.videoThumbStdWidth = Float(videoThumbStdWidth)
+                                    }else{
+                                        print("Unable to read thumb_width")
+                                    }
+
+                                    if let videoThumbStdHeight = subJson["post_thumb"]["standard"]["thumb_height"].string {
+                                        newPost.videoThumbStdHeight = Float(videoThumbStdHeight)
+                                    }else{
+                                        print("Unable to read thumb_height")
+                                    }
+                                    
+                                    //Thumb -------------------------------
+                                    if let totalLike = subJson["likes"].string {
+
+                                        newPost.totalLike = Int(totalLike)
+                                    }else{
+                                        print("unable to read JSON data likes")
+                                    }
+
+                                    if let totalComment = subJson["comments"].string {
+                                        newPost.totalComment = Int(totalComment)
+                                    }else{
+                                        print("unable to read JSON data comments")
+                                    }
+
+                                    if let chargeType = subJson["charge_type"].string {
+                                        newPost.prChargeType = Int(chargeType)
+                                    }else{
+                                        print("Unable to read JSON data chargeType")
+                                    }
+
+                                    if let likeStatus = subJson["like_status"].string {
+                                        newPost.prLikeStatus = Int(likeStatus)
+                                    }else{
+                                        print("Unable to read JSON data likeStatus")
+                                    }
                                     break
                                     
                                 default:
