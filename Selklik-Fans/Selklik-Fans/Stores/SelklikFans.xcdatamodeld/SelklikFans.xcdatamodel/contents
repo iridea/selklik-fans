@@ -100,6 +100,30 @@
         <attribute name="videoThumbStdUrl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="videoThumbStdWidth" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
     </entity>
+    <entity name="PremiumPost" representedClassName=".PremiumPost" syncable="YES">
+        <attribute name="artistId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoStdHeight" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="photoStdUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="photoStdWidth" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="postId" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postText" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prChargeType" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="prLikeStatus" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="profileImageUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="prPurchaseStatus" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="screenName" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="socialMediaType" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="timeStamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="totalComment" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="totalLike" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="videoStdUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="videoThumbStdHeight" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="videoThumbStdUrl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="videoThumbStdWidth" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+    </entity>
     <entity name="User" representedClassName=".User" syncable="YES">
         <attribute name="birthday" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
@@ -121,5 +145,6 @@
         <element name="Post" positionX="-36" positionY="81" width="128" height="555"/>
         <element name="PostSingle" positionX="-45" positionY="135" width="128" height="450"/>
         <element name="User" positionX="-54" positionY="9" width="128" height="210"/>
+        <element name="PremiumPost" positionX="-36" positionY="144" width="128" height="30"/>
     </elements>
 </model>

@@ -47,17 +47,16 @@ import Alamofire
                     return ("/\(Router.version)/artist_following", params)
 
                 case .ArtistPost (let token):
-                    let params = ["token": token, "limit" : "60", "post_type" : "video"]
-                    return ("/\(Router.version)/artist_premium", params)
+                    let params = ["token": token, "limit" : "60"]
+                    return ("/\(Router.version)/artist_feed", params)
 
-                    //artist_peek
                 case .SingleArtistPost (let token, let artistId,let endPointName):
                     let params = ["token": token, "limit" : "25", "artist_id":artistId]
                     return ("/\(Router.version)/\(endPointName)", params)
                     
                 case .ArtistPremiumPost (let token):
-                    let params = ["token": token, "country": Router.country, "limit" : "15", "post_type":"premium"]
-                    return ("/\(Router.version)/artist_feed", params)
+                    let params = ["token": token, "limit" : "60", "post_type" : "video"]
+                    return ("/\(Router.version)/artist_premium", params)
                     
                 case .FeedComment (let token, let postId, let socialMediaType, let countryCode):
                     let params = ["token": token, "country": countryCode, "post_id":postId, "social_media":socialMediaType]
@@ -66,6 +65,7 @@ import Alamofire
                 case .LatestNews (let token):
                     let params = ["token": token]
                     return ("/\(Router.version)/news_latest", params)
+                    
                 }
                 }()
 

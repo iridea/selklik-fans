@@ -81,6 +81,8 @@
 		8933BD711BDE1C1100E73528 /* AltFacebookPhotoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8933BD6F1BDE1C1100E73528 /* AltFacebookPhotoCell.xib */; };
 		8933BD741BDE1D2900E73528 /* AltFacebookVideoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8933BD721BDE1D2900E73528 /* AltFacebookVideoCell.swift */; };
 		8933BD751BDE1D2900E73528 /* AltFacebookVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8933BD731BDE1D2900E73528 /* AltFacebookVideoCell.xib */; };
+		893EF1E71BF985CD000D0F8F /* PremiumPost+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF1E51BF985CD000D0F8F /* PremiumPost+CoreDataProperties.swift */; };
+		893EF1E81BF985CD000D0F8F /* PremiumPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF1E61BF985CD000D0F8F /* PremiumPost.swift */; };
 		894253091BB297B700A04953 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253081BB297B700A04953 /* AppDelegate.swift */; };
 		8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942530A1BB297B700A04953 /* CoordinatorViewController.swift */; };
 		8942530E1BB297B700A04953 /* Startup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8942530C1BB297B700A04953 /* Startup.storyboard */; };
@@ -219,6 +221,8 @@
 		8933BD6F1BDE1C1100E73528 /* AltFacebookPhotoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AltFacebookPhotoCell.xib; sourceTree = "<group>"; };
 		8933BD721BDE1D2900E73528 /* AltFacebookVideoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AltFacebookVideoCell.swift; sourceTree = "<group>"; };
 		8933BD731BDE1D2900E73528 /* AltFacebookVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AltFacebookVideoCell.xib; sourceTree = "<group>"; };
+		893EF1E51BF985CD000D0F8F /* PremiumPost+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PremiumPost+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		893EF1E61BF985CD000D0F8F /* PremiumPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumPost.swift; sourceTree = "<group>"; };
 		894253051BB297B700A04953 /* Selklik-Fans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Selklik-Fans.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		894253081BB297B700A04953 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		8942530A1BB297B700A04953 /* CoordinatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorViewController.swift; sourceTree = "<group>"; };
@@ -572,6 +576,8 @@
 		89C8F0AE1BB75CAD00AFE092 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				893EF1E51BF985CD000D0F8F /* PremiumPost+CoreDataProperties.swift */,
+				893EF1E61BF985CD000D0F8F /* PremiumPost.swift */,
 				89E5DDB21BE18C8000AA44AE /* User+CoreDataProperties.swift */,
 				89E5DDB31BE18C8000AA44AE /* User.swift */,
 				8933BD601BDDFC1D00E73528 /* Comment+CoreDataProperties.swift */,
@@ -978,6 +984,7 @@
 				8933BD5D1BDDD64200E73528 /* CommentViewController.swift in Sources */,
 				891AAED41BD4C998008E6D49 /* CountryListViewController.swift in Sources */,
 				891AAEE01BD5AD70008E6D49 /* ArtistViewController.swift in Sources */,
+				893EF1E81BF985CD000D0F8F /* PremiumPost.swift in Sources */,
 				8902B5401BCF69A3006AD2B9 /* FeedViewController+UITableViewDataSource.swift in Sources */,
 				8902B5391BCF55BC006AD2B9 /* TwitterPhotoCell.swift in Sources */,
 				8902B5471BCF8444006AD2B9 /* RetweetPhotoCell.swift in Sources */,
@@ -987,6 +994,7 @@
 				89D553C31BC6178C00C75D4A /* TwitterStatusCell.swift in Sources */,
 				89090CDE1BD7947000E2E254 /* Post.swift in Sources */,
 				8933BD621BDDFC1D00E73528 /* Comment+CoreDataProperties.swift in Sources */,
+				893EF1E71BF985CD000D0F8F /* PremiumPost+CoreDataProperties.swift in Sources */,
 				8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */,
 				89443C731BE9AE2E003C3AED /* PremiumVideoCell.swift in Sources */,
 				8902B54F1BCF913F006AD2B9 /* InstagramPhotoCell.swift in Sources */,
