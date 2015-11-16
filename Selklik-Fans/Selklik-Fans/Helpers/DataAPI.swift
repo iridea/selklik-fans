@@ -55,7 +55,7 @@ import Alamofire
                     return ("/\(Router.version)/\(endPointName)", params)
                     
                 case .ArtistPremiumPost (let token):
-                    let params = ["token": token, "limit" : "60", "post_type" : "video"]
+                    let params = ["token": token, "limit" : "60"]
                     return ("/\(Router.version)/artist_premium", params)
                     
                 case .FeedComment (let token, let postId, let socialMediaType, let countryCode):

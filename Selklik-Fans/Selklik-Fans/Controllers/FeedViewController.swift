@@ -40,7 +40,6 @@ class FeedViewController: UIViewController {
     var selectedImageUrl:String?
     var selectedVideoUrl:String?
 
-
     var fetchedResultsController: NSFetchedResultsController!
 
     //MARK: - IBOutlet

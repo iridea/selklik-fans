@@ -150,6 +150,29 @@ class UserInfo {
         }
     }
 
+    func clearPremiumPostFromCoreData(managedContext: NSManagedObjectContext) {
+
+        let fetchPosts = NSFetchRequest(entityName: "PremiumPost")
+
+        do  {
+            let fetchedEntities = try managedContext.executeFetchRequest(fetchPosts) as? [PremiumPost]
+
+            for entity in fetchedEntities! {
+                managedContext.deleteObject(entity)
+            }
+
+        }
+        catch let fetchError as NSError {
+            print("Fetch Post for delete error: \(fetchError.localizedDescription)")
+        }
+
+        do {
+            try managedContext.save()
+        } catch let error as NSError {
+            print("Could not save: \(error)")
+        }
+    }
+
     func clearUserFromCoreData(managedContext: NSManagedObjectContext) {
 
         let fetchPosts = NSFetchRequest(entityName: "User")

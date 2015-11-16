@@ -83,6 +83,9 @@
 		8933BD751BDE1D2900E73528 /* AltFacebookVideoCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8933BD731BDE1D2900E73528 /* AltFacebookVideoCell.xib */; };
 		893EF1E71BF985CD000D0F8F /* PremiumPost+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF1E51BF985CD000D0F8F /* PremiumPost+CoreDataProperties.swift */; };
 		893EF1E81BF985CD000D0F8F /* PremiumPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF1E61BF985CD000D0F8F /* PremiumPost.swift */; };
+		893EF1EB1BF988F8000D0F8F /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF1EA1BF988F8000D0F8F /* PremiumViewController.swift */; };
+		893EF1ED1BF98C80000D0F8F /* PremiumViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF1EC1BF98C80000D0F8F /* PremiumViewController+UITableViewDataSource.swift */; };
+		893EF1EF1BF98C96000D0F8F /* PremiumViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF1EE1BF98C96000D0F8F /* PremiumViewController+UITableViewDelegate.swift */; };
 		894253091BB297B700A04953 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253081BB297B700A04953 /* AppDelegate.swift */; };
 		8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942530A1BB297B700A04953 /* CoordinatorViewController.swift */; };
 		8942530E1BB297B700A04953 /* Startup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8942530C1BB297B700A04953 /* Startup.storyboard */; };
@@ -223,6 +226,9 @@
 		8933BD731BDE1D2900E73528 /* AltFacebookVideoCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AltFacebookVideoCell.xib; sourceTree = "<group>"; };
 		893EF1E51BF985CD000D0F8F /* PremiumPost+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PremiumPost+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		893EF1E61BF985CD000D0F8F /* PremiumPost.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumPost.swift; sourceTree = "<group>"; };
+		893EF1EA1BF988F8000D0F8F /* PremiumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
+		893EF1EC1BF98C80000D0F8F /* PremiumViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PremiumViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
+		893EF1EE1BF98C96000D0F8F /* PremiumViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PremiumViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
 		894253051BB297B700A04953 /* Selklik-Fans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Selklik-Fans.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		894253081BB297B700A04953 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		8942530A1BB297B700A04953 /* CoordinatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorViewController.swift; sourceTree = "<group>"; };
@@ -483,6 +489,16 @@
 			name = Single;
 			sourceTree = "<group>";
 		};
+		893EF1E91BF988E0000D0F8F /* Premium */ = {
+			isa = PBXGroup;
+			children = (
+				893EF1EA1BF988F8000D0F8F /* PremiumViewController.swift */,
+				893EF1EC1BF98C80000D0F8F /* PremiumViewController+UITableViewDataSource.swift */,
+				893EF1EE1BF98C96000D0F8F /* PremiumViewController+UITableViewDelegate.swift */,
+			);
+			name = Premium;
+			sourceTree = "<group>";
+		};
 		894252FC1BB297B700A04953 = {
 			isa = PBXGroup;
 			children = (
@@ -548,6 +564,7 @@
 		89C8F0AC1BB75C7100AFE092 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				893EF1E91BF988E0000D0F8F /* Premium */,
 				8919B06A1BE00D9100515A71 /* Login */,
 				8919B0691BE00D8900515A71 /* Register */,
 				89D553C91BC7B53800C75D4A /* SlideMenu */,
@@ -966,6 +983,7 @@
 				8922729C1BD8C0C0001741CE /* AltInstagramPhotoCell.swift in Sources */,
 				89C8F0C81BB8CDA400AFE092 /* DataAPI.swift in Sources */,
 				891AAED11BD4A731008E6D49 /* CountryCell.swift in Sources */,
+				893EF1EB1BF988F8000D0F8F /* PremiumViewController.swift in Sources */,
 				8933BD5F1BDDE8DD00E73528 /* CommentButton.swift in Sources */,
 				89090CDD1BD7947000E2E254 /* Post+CoreDataProperties.swift in Sources */,
 				891AAECC1BD496A4008E6D49 /* SettingViewController.swift in Sources */,
@@ -987,6 +1005,7 @@
 				893EF1E81BF985CD000D0F8F /* PremiumPost.swift in Sources */,
 				8902B5401BCF69A3006AD2B9 /* FeedViewController+UITableViewDataSource.swift in Sources */,
 				8902B5391BCF55BC006AD2B9 /* TwitterPhotoCell.swift in Sources */,
+				893EF1ED1BF98C80000D0F8F /* PremiumViewController+UITableViewDataSource.swift in Sources */,
 				8902B5471BCF8444006AD2B9 /* RetweetPhotoCell.swift in Sources */,
 				8902B53D1BCF60D6006AD2B9 /* RetweetStatusCell.swift in Sources */,
 				892272621BD7CE77001741CE /* PostSingle+CoreDataProperties.swift in Sources */,
@@ -1018,6 +1037,7 @@
 				89685CB21BCD6A200035E6C0 /* Image.swift in Sources */,
 				892272901BD8BBB8001741CE /* AltRetweetStatusCell.swift in Sources */,
 				899B7FE71BB6941500922922 /* Constants.swift in Sources */,
+				893EF1EF1BF98C96000D0F8F /* PremiumViewController+UITableViewDelegate.swift in Sources */,
 				89E5DDB51BE18C8000AA44AE /* User.swift in Sources */,
 				8902B5431BCF8072006AD2B9 /* TwitterVideoCell.swift in Sources */,
 				892272631BD7CE77001741CE /* PostSingle.swift in Sources */,

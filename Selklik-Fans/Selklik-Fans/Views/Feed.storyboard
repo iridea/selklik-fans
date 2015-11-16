@@ -366,7 +366,7 @@
         <!--Premium-->
         <scene sceneID="mLj-H9-FM8">
             <objects>
-                <viewController id="2qg-2z-GRa" sceneMemberID="viewController">
+                <viewController id="2qg-2z-GRa" customClass="PremiumViewController" customModule="Selklik_Fans" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9jc-fl-OQz"/>
                         <viewControllerLayoutGuide type="bottom" id="Vzc-Es-dhs"/>
@@ -404,10 +404,23 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Premium" id="wwD-HP-KmA">
-                        <barButtonItem key="rightBarButtonItem" image="Reload" id="oU5-Ks-Ovl">
+                        <barButtonItem key="leftBarButtonItem" image="Menu" id="auF-bV-GhZ">
                             <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" image="Reload" id="oU5-Ks-Ovl">
+                            <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="reloadButton:" destination="2qg-2z-GRa" id="97y-ij-2gm"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="feedTableView" destination="TzA-yN-QCD" id="Le9-dI-amg"/>
+                        <outlet property="menuButton" destination="auF-bV-GhZ" id="8cr-PY-ojn"/>
+                        <segue destination="arn-Xx-vx2" kind="modal" identifier="PremiumToViewPhoto" id="MkU-yU-Hof"/>
+                        <segue destination="1Iw-HE-gCp" kind="modal" identifier="PremiumToComment" id="udr-cm-OBm"/>
+                        <segue destination="o44-E1-Q18" kind="modal" identifier="PremiumToPlayVideo" id="X9W-m1-aoE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="T9a-g9-6iN" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xDb-zG-rLH">
@@ -430,7 +443,7 @@
                     <sections/>
                 </tableView>
             </objects>
-            <point key="canvasLocation" x="1550" y="1918"/>
+            <point key="canvasLocation" x="1570" y="1918"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="Gtz-UL-WsU">
@@ -1295,6 +1308,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Lde-3C-jmg"/>
-        <segue reference="DNO-LS-pPW"/>
+        <segue reference="X9W-m1-aoE"/>
+        <segue reference="MkU-yU-Hof"/>
+        <segue reference="udr-cm-OBm"/>
     </inferredMetricsTieBreakers>
 </document>
