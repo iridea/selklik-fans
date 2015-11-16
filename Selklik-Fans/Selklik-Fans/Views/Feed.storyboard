@@ -804,20 +804,20 @@
                                         <view alpha="0.69999998807907104" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="haL-Yz-LX6">
                                             <rect key="frame" x="15" y="32" width="290" height="504"/>
                                             <subviews>
-                                                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VXH-vm-tXy">
+                                                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VXH-vm-tXy">
                                                     <rect key="frame" x="0.0" y="0.0" width="290" height="39"/>
-                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="bwa-xT-J1x">
+                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="bwa-xT-J1x">
                                                         <rect key="frame" x="0.0" y="0.0" width="290" height="39"/>
                                                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9v-4R-afy">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifications" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h9v-4R-afy">
                                                                 <rect key="frame" x="73" y="9" width="97" height="21"/>
                                                                 <animations/>
                                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjx-eq-uWO">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qjx-eq-uWO">
                                                                 <rect key="frame" x="240" y="5" width="39" height="30"/>
                                                                 <animations/>
                                                                 <state key="normal" title="Close"/>
@@ -827,13 +827,34 @@
                                                             </button>
                                                         </subviews>
                                                         <animations/>
+                                                        <constraints>
+                                                            <constraint firstItem="qjx-eq-uWO" firstAttribute="centerY" secondItem="bwa-xT-J1x" secondAttribute="centerY" id="JsD-8p-bDv"/>
+                                                            <constraint firstItem="qjx-eq-uWO" firstAttribute="top" secondItem="bwa-xT-J1x" secondAttribute="top" constant="5" id="emn-ek-7Sd"/>
+                                                            <constraint firstItem="h9v-4R-afy" firstAttribute="baseline" secondItem="qjx-eq-uWO" secondAttribute="baseline" id="f7Z-30-KLU"/>
+                                                            <constraint firstItem="qjx-eq-uWO" firstAttribute="leading" secondItem="h9v-4R-afy" secondAttribute="trailing" constant="70" id="m0C-Em-Zgl"/>
+                                                            <constraint firstItem="h9v-4R-afy" firstAttribute="leading" secondItem="bwa-xT-J1x" secondAttribute="leading" constant="73" id="ugg-b8-xVJ"/>
+                                                        </constraints>
                                                     </view>
                                                     <animations/>
                                                     <blurEffect style="extraLight"/>
                                                 </visualEffectView>
+                                                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Niw-l2-nkJ">
+                                                    <rect key="frame" x="8" y="47" width="274" height="449"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </tableView>
                                             </subviews>
                                             <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstItem="VXH-vm-tXy" firstAttribute="top" secondItem="haL-Yz-LX6" secondAttribute="top" id="0vc-Rm-oRF"/>
+                                                <constraint firstItem="Niw-l2-nkJ" firstAttribute="leading" secondItem="haL-Yz-LX6" secondAttribute="leading" constant="8" id="AEC-kC-6rb"/>
+                                                <constraint firstItem="VXH-vm-tXy" firstAttribute="leading" secondItem="haL-Yz-LX6" secondAttribute="leading" id="Mzv-Vv-IVI"/>
+                                                <constraint firstItem="Niw-l2-nkJ" firstAttribute="centerX" secondItem="VXH-vm-tXy" secondAttribute="centerX" id="P2U-Hj-j9y"/>
+                                                <constraint firstItem="Niw-l2-nkJ" firstAttribute="top" secondItem="VXH-vm-tXy" secondAttribute="bottom" constant="8" id="P4r-tt-fiD"/>
+                                                <constraint firstAttribute="bottom" secondItem="Niw-l2-nkJ" secondAttribute="bottom" constant="8" id="Rn7-1T-uwD"/>
+                                                <constraint firstAttribute="trailing" secondItem="Niw-l2-nkJ" secondAttribute="trailing" constant="8" id="znr-AY-mHM"/>
+                                            </constraints>
                                         </view>
                                     </subviews>
                                     <animations/>
