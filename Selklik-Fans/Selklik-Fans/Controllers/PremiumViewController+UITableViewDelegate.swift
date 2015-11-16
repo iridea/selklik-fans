@@ -25,7 +25,7 @@ extension PremiumViewController:UITableViewDelegate {
             {
                 selectedVideoUrl = videoURLString
                 print("videoURLString\(videoURLString)")
-                performSegueWithIdentifier("FeedToPlayVideo", sender: self)
+                performSegueWithIdentifier("PremiumToPlayVideo", sender: self)
             }
 
         }

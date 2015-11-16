@@ -14,7 +14,7 @@ extension PremiumViewController:UITableViewDataSource {
     //********************************
     func postImageHasBeenTapped(sender:PostImageTapGestureRecognizer){
         selectedImageUrl = sender.imageUrl
-        self.performSegueWithIdentifier("FeedToViewPhoto", sender: self)
+        self.performSegueWithIdentifier("PremiumToViewPhoto", sender: self)
     }
 
     func showFeedComments(sender:CommentButton) {
@@ -23,7 +23,7 @@ extension PremiumViewController:UITableViewDataSource {
         self.selectedSocialMediaTypeComment = sender.socialMedia
         self.selectedCountryComment = sender.country
 
-        self.performSegueWithIdentifier("FeedToComment", sender: self)
+        self.performSegueWithIdentifier("PremiumToComment", sender: self)
     }
     //********************************
 
