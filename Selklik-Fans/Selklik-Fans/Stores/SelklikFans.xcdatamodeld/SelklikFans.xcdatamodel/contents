@@ -4,6 +4,9 @@
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tokenCreateTimestamp" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
+    <entity name="AppSetting" representedClassName=".Setting" syncable="YES">
+        <attribute name="pushNotification" optional="YES" attributeType="Boolean" syncable="YES"/>
+    </entity>
     <entity name="Artist" representedClassName=".Artist" syncable="YES">
         <attribute name="artistGender" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="artistId" optional="YES" attributeType="String" syncable="YES"/>
@@ -146,5 +149,6 @@
         <element name="PostSingle" positionX="-45" positionY="135" width="128" height="450"/>
         <element name="User" positionX="-54" positionY="9" width="128" height="210"/>
         <element name="PremiumPost" positionX="-36" positionY="144" width="128" height="30"/>
+        <element name="AppSetting" positionX="-27" positionY="153" width="128" height="60"/>
     </elements>
 </model>

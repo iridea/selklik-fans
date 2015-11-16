@@ -71,12 +71,6 @@ class ProfileViewController: UIViewController {
         }
     }
 
-    /*
-    func getCountryCoreData() {
-
-    }
-    */
-
     //MARK: Default function
     override func viewDidLoad() {
         super.viewDidLoad()

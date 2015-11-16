@@ -86,6 +86,8 @@
 		893EF1EB1BF988F8000D0F8F /* PremiumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF1EA1BF988F8000D0F8F /* PremiumViewController.swift */; };
 		893EF1ED1BF98C80000D0F8F /* PremiumViewController+UITableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF1EC1BF98C80000D0F8F /* PremiumViewController+UITableViewDataSource.swift */; };
 		893EF1EF1BF98C96000D0F8F /* PremiumViewController+UITableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF1EE1BF98C96000D0F8F /* PremiumViewController+UITableViewDelegate.swift */; };
+		893EF1F41BF9C88B000D0F8F /* AppSetting+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF1F21BF9C88B000D0F8F /* AppSetting+CoreDataProperties.swift */; };
+		893EF1F51BF9C88B000D0F8F /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893EF1F31BF9C88B000D0F8F /* AppSetting.swift */; };
 		894253091BB297B700A04953 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 894253081BB297B700A04953 /* AppDelegate.swift */; };
 		8942530B1BB297B700A04953 /* CoordinatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8942530A1BB297B700A04953 /* CoordinatorViewController.swift */; };
 		8942530E1BB297B700A04953 /* Startup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8942530C1BB297B700A04953 /* Startup.storyboard */; };
@@ -229,6 +231,8 @@
 		893EF1EA1BF988F8000D0F8F /* PremiumViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PremiumViewController.swift; sourceTree = "<group>"; };
 		893EF1EC1BF98C80000D0F8F /* PremiumViewController+UITableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PremiumViewController+UITableViewDataSource.swift"; sourceTree = "<group>"; };
 		893EF1EE1BF98C96000D0F8F /* PremiumViewController+UITableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PremiumViewController+UITableViewDelegate.swift"; sourceTree = "<group>"; };
+		893EF1F21BF9C88B000D0F8F /* AppSetting+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppSetting+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		893EF1F31BF9C88B000D0F8F /* AppSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSetting.swift; sourceTree = "<group>"; };
 		894253051BB297B700A04953 /* Selklik-Fans.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Selklik-Fans.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		894253081BB297B700A04953 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../AppDelegate.swift; sourceTree = "<group>"; };
 		8942530A1BB297B700A04953 /* CoordinatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorViewController.swift; sourceTree = "<group>"; };
@@ -593,6 +597,8 @@
 		89C8F0AE1BB75CAD00AFE092 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				893EF1F21BF9C88B000D0F8F /* AppSetting+CoreDataProperties.swift */,
+				893EF1F31BF9C88B000D0F8F /* AppSetting.swift */,
 				893EF1E51BF985CD000D0F8F /* PremiumPost+CoreDataProperties.swift */,
 				893EF1E61BF985CD000D0F8F /* PremiumPost.swift */,
 				89E5DDB21BE18C8000AA44AE /* User+CoreDataProperties.swift */,
@@ -983,6 +989,7 @@
 				8922729C1BD8C0C0001741CE /* AltInstagramPhotoCell.swift in Sources */,
 				89C8F0C81BB8CDA400AFE092 /* DataAPI.swift in Sources */,
 				891AAED11BD4A731008E6D49 /* CountryCell.swift in Sources */,
+				893EF1F51BF9C88B000D0F8F /* AppSetting.swift in Sources */,
 				893EF1EB1BF988F8000D0F8F /* PremiumViewController.swift in Sources */,
 				8933BD5F1BDDE8DD00E73528 /* CommentButton.swift in Sources */,
 				89090CDD1BD7947000E2E254 /* Post+CoreDataProperties.swift in Sources */,
@@ -1008,6 +1015,7 @@
 				893EF1ED1BF98C80000D0F8F /* PremiumViewController+UITableViewDataSource.swift in Sources */,
 				8902B5471BCF8444006AD2B9 /* RetweetPhotoCell.swift in Sources */,
 				8902B53D1BCF60D6006AD2B9 /* RetweetStatusCell.swift in Sources */,
+				893EF1F41BF9C88B000D0F8F /* AppSetting+CoreDataProperties.swift in Sources */,
 				892272621BD7CE77001741CE /* PostSingle+CoreDataProperties.swift in Sources */,
 				892272A01BD8C494001741CE /* AltInstagramVideoCell.swift in Sources */,
 				89D553C31BC6178C00C75D4A /* TwitterStatusCell.swift in Sources */,
