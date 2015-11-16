@@ -133,8 +133,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     }else{
                         print("Fail to get status value from JSON")
                     }
-
-
                 }
 
             }else{ //if local token NOT exist
@@ -226,6 +224,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             .stringByReplacingOccurrencesOfString( " ", withString: "" ) as String
 
         print("deviceToken:\(Setting.deviceToken)")
+    }
+
+    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject]) {
+         NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
     }
 
 

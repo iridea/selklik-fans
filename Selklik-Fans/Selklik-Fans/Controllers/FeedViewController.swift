@@ -660,11 +660,12 @@ class FeedViewController: UIViewController {
                     
                     self.getFeedFromCoreData()
                     self.feedTableView.reloadData()
-                    
+
+                    self.scrollToTop()
                     self.messageFrame.removeFromSuperview()
                     self.view.userInteractionEnabled = true
-                }
 
+                }
 
             }
             else{ //Unable to read JSON data from Alamofire
@@ -676,7 +677,7 @@ class FeedViewController: UIViewController {
                 uiAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: { action in
                     self.messageFrame.removeFromSuperview()
                     self.view.userInteractionEnabled = true
-
+                    self.scrollToTop()
                 }))
             }
 
@@ -721,7 +722,12 @@ class FeedViewController: UIViewController {
         self.userToken = userInfo.getTokenFromCoreData(managedContext)
 
         print("token from viewdidload - Feedview: \(self.userToken)")
+
+
+
         reloadFeedDataFromServer()
+
+         NSNotificationCenter.defaultCenter().addObserver(self, selector: "reloadFeedDataFromServer",name:"load", object: nil)
 
     }
 
@@ -741,8 +747,15 @@ class FeedViewController: UIViewController {
             print("Could not fetch \(error), \(error.userInfo)")
         }
 
+        UIApplication.sharedApplication().applicationIconBadgeNumber = 0
         //insert to core data the new posts received from server
         populateFeed()
+    }
+
+    func scrollToTop(){
+            let top = NSIndexPath(forRow: Foundation.NSNotFound, inSection: 0);
+            self.feedTableView.scrollToRowAtIndexPath(top, atScrollPosition: UITableViewScrollPosition.Top, animated: true);
+
     }
 
     func getFeedFromCoreData() {
