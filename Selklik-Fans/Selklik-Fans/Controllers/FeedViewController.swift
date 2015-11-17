@@ -732,6 +732,9 @@ class FeedViewController: UIViewController {
     }
 
     func reloadFeedDataFromServer(){
+
+        self.tabBarController!.selectedIndex = 0
+
         self.progressBarDisplayer("Loading data", true)
 
         let fetchRequest = NSFetchRequest(entityName: "Post")
