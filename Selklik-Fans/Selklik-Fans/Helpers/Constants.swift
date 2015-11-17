@@ -14,6 +14,7 @@ struct API {
     static let artistFeedUrl = url + version + "artist_feed"
     static let loginUrl = url + version + "user_login"
     static let logoutUrl = url + version + "user_logout"
+    static let userSettingUrl = url + version + "user_setting"
 
 }
 

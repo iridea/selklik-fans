@@ -256,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f2w-0z-alr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2923" y="-643"/>
+            <point key="canvasLocation" x="2931" y="-648"/>
         </scene>
         <!--Reveal View Controller-->
         <scene sceneID="Yqc-lT-xh4">
@@ -1189,6 +1189,12 @@
                                 <rect key="frame" x="0.0" y="46" width="320" height="409"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <button key="tableFooterView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="9Rt-eN-VMb">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <animations/>
+                                    <state key="normal" title="Button"/>
+                                </button>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Gn-Uk-gSa">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="46"/>
@@ -1435,8 +1441,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Lde-3C-jmg"/>
+        <segue reference="9qI-Tm-i93"/>
         <segue reference="X9W-m1-aoE"/>
-        <segue reference="MkU-yU-Hof"/>
         <segue reference="udr-cm-OBm"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -10,7 +10,43 @@ import Foundation
 import CoreData
 
 class UserInfo {
-    func getTokenFromCoreData(managedContext: NSManagedObjectContext) -> String{
+
+    
+    func getNotificationSettingFromCoreData(managedContext: NSManagedObjectContext) -> NSNumber {
+
+        print("managedContext: \(managedContext)")
+        
+        var notificationStatus:NSNumber!
+        let accessFetch = NSFetchRequest(entityName: "AppSetting")
+
+        do  {
+            let result = try managedContext.executeFetchRequest(accessFetch) as? [AppSetting]
+
+            if let settings = result {
+
+                //if old token exist in core data, delete it
+                if settings.count > 0 {
+                    notificationStatus  = settings[0].pushNotification!
+                }
+                else{
+                    //insert into coredata new value of notificationStatus
+                    notificationStatus = 1
+                    var newSetting:AppSetting!
+                    let settingEntity = NSEntityDescription.entityForName("AppSetting", inManagedObjectContext: managedContext)
+                    newSetting = AppSetting(entity:settingEntity!, insertIntoManagedObjectContext: managedContext)
+                    newSetting.pushNotification = notificationStatus
+                    try managedContext.save()
+                }
+            }
+        }catch let fetchError as NSError {
+            print("Error: \(fetchError.localizedDescription)")
+        }
+        
+        return notificationStatus
+    }
+
+
+    func getTokenFromCoreData(managedContext: NSManagedObjectContext) -> String {
 
         var userToken:String!
         let accessFetch = NSFetchRequest(entityName: "Access")

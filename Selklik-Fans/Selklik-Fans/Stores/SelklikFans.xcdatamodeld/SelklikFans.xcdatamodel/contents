@@ -4,7 +4,7 @@
         <attribute name="token" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tokenCreateTimestamp" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
-    <entity name="AppSetting" representedClassName=".Setting" syncable="YES">
+    <entity name="AppSetting" representedClassName=".AppSetting" syncable="YES">
         <attribute name="pushNotification" optional="YES" attributeType="Boolean" syncable="YES"/>
     </entity>
     <entity name="Artist" representedClassName=".Artist" syncable="YES">
