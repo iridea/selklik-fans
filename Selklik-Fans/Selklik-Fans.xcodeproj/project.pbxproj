@@ -132,6 +132,7 @@
 		89E5DDB41BE18C8000AA44AE /* User+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DDB21BE18C8000AA44AE /* User+CoreDataProperties.swift */; };
 		89E5DDB51BE18C8000AA44AE /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DDB31BE18C8000AA44AE /* User.swift */; };
 		89E5DDB71BE23DCE00AA44AE /* ArtistNameButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E5DDB61BE23DCE00AA44AE /* ArtistNameButton.swift */; };
+		89FCB3C31C06F9FF002167AE /* ArtistBehaviour.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89FCB3C21C06F9FF002167AE /* ArtistBehaviour.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -285,6 +286,7 @@
 		89E5DDB21BE18C8000AA44AE /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		89E5DDB31BE18C8000AA44AE /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		89E5DDB61BE23DCE00AA44AE /* ArtistNameButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistNameButton.swift; sourceTree = "<group>"; };
+		89FCB3C21C06F9FF002167AE /* ArtistBehaviour.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArtistBehaviour.swift; sourceTree = "<group>"; };
 		93106E8CDDAF466E4ABE4638 /* Pods_Selklik_Fans.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Selklik_Fans.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D80A33531EC1AF33B6A0C573 /* Pods-Selklik-Fans.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Selklik-Fans.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Selklik-Fans/Pods-Selklik-Fans.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -721,6 +723,7 @@
 				8902B5601BD2497B006AD2B9 /* UITapGestureRecognizer+.swift */,
 				891AAEE11BD5ECEE008E6D49 /* HUD.swift */,
 				89E5DDB01BE058DC00AA44AE /* MessageBox.swift */,
+				89FCB3C21C06F9FF002167AE /* ArtistBehaviour.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -823,7 +826,6 @@
 				TargetAttributes = {
 					894253041BB297B700A04953 = {
 						CreatedOnToolsVersion = 7.0;
-						DevelopmentTeam = VD724U23GV;
 						SystemCapabilities = {
 							com.apple.Push = {
 								enabled = 1;
@@ -1036,6 +1038,7 @@
 				89E5DDB11BE058DC00AA44AE /* MessageBox.swift in Sources */,
 				89C280BF1BD78B3800664A0C /* SingleFeedViewController.swift in Sources */,
 				8902B54B1BCF89F7006AD2B9 /* RetweetVideoCell.swift in Sources */,
+				89FCB3C31C06F9FF002167AE /* ArtistBehaviour.swift in Sources */,
 				892272941BD8BCC4001741CE /* AltRetweetPhotoCell.swift in Sources */,
 				8919B06C1BE00DC100515A71 /* RegisterViewController.swift in Sources */,
 				8922728C1BD8B9C4001741CE /* AltTwitterVideoCell.swift in Sources */,

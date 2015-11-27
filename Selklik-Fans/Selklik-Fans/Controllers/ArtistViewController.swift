@@ -25,7 +25,7 @@ class ArtistViewController: UIViewController {
     var selectedArtistImageUrl:String?
     var countryCode:String!
 
-
+    let artistBehaviour = ArtistBehaviour()
     let userInfo = UserInfo()
     let hud = Hud()
     var artistList = [NSManagedObject]()
@@ -55,7 +55,7 @@ class ArtistViewController: UIViewController {
 
         artistTableView.dataSource = self
         artistTableView.delegate = self
-        
+
         fetchPredicate = NSPredicate(format: "countryCode == '%@'", countryCode)
 
         registerNib()
@@ -102,7 +102,7 @@ class ArtistViewController: UIViewController {
             self.hud.hideProgressBar()
             self.view.userInteractionEnabled = true
         default:
-            break; 
+            break;
         }
     }
 
@@ -231,14 +231,14 @@ class ArtistViewController: UIViewController {
                     self.hud.hideProgressBar()
                     self.view.userInteractionEnabled = true
                 }
-                
+
             }
             else{ //Unable to read JSON data from Alamofire
                 print("Unable to read JSON data from Alamofire")
             }
-            
+
         }// End of Alamofire
-        
+
     }
 
     func getArtistFromCoreData() {
@@ -323,9 +323,10 @@ extension ArtistViewController: UITableViewDataSource {
 
         cell.artistName.text = artist.valueForKey("artistName") as? String
         print(artist.valueForKey("isFollow"))
-        
+
         return cell
     }
+
 }
 
 extension ArtistViewController: UITableViewDelegate {
@@ -337,7 +338,7 @@ extension ArtistViewController: UITableViewDelegate {
         selectedArtistImageUrl = artist.valueForKey("artistImageUrl") as? String
         selectedArtistName = artist.valueForKey("artistName") as? String
         self.performSegueWithIdentifier("artistListToSinglePost", sender: self)
-        
+
     }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
@@ -345,12 +346,62 @@ extension ArtistViewController: UITableViewDelegate {
             let singleArtistPostViewController = segue.destinationViewController as! SingleFeedViewController
             singleArtistPostViewController.artistId =  selectedArtistId
             singleArtistPostViewController.countryCode = selectedArtistCountryCode
-             singleArtistPostViewController.profileUrl = selectedArtistImageUrl
+            singleArtistPostViewController.profileUrl = selectedArtistImageUrl
             singleArtistPostViewController.name = selectedArtistName
             singleArtistPostViewController.isPeek = true
         }
-        
+
     }
+
+
+    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        // the cells you would like the actions to appear needs to be editable
+        return true
+    }
+
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+
+    }
+
+    func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+
+        let artist = artistList[indexPath.row]
+        var rateAction = UITableViewRowAction()
+
+        if let isFollow = artist.valueForKey("isFollow") {
+            print("isFollow: \(isFollow)")
+            if isFollow as! Int == 0 {
+                rateAction = UITableViewRowAction(style: UITableViewRowActionStyle.Normal, title: "Follow") { (action , indexPath ) -> Void in
+                    self.editing = false
+                    print("Follow button pressed")
+
+                    self.UpdateFollow(artist,followStatus:1,tableView: tableView,indexPath: indexPath)
+                    
+                }
+                rateAction.backgroundColor = UIColor.greenColor()
+            } else {
+                rateAction = UITableViewRowAction(style: UITableViewRowActionStyle.Default, title: "Unfollow") { (action , indexPath ) -> Void in
+                    self.editing = false
+                    print("Unfollow button pressed")
+                    self.UpdateFollow(artist,followStatus:0,tableView: tableView,indexPath: indexPath)
+                }
+                rateAction.backgroundColor = UIColor.orangeColor()
+            }
+        }
+        
+        return [rateAction]
+    }
+    
+    func UpdateFollow(artist:NSManagedObject, followStatus:Int,tableView: UITableView, indexPath:NSIndexPath){
+        let selectedArtistId = artist.valueForKey("artistId") as! String
+        let updateToServerStatus = self.artistBehaviour.updateArtistIsFollowStatusInServer(self.userToken, artistIdList: selectedArtistId, isFollow: followStatus)
+
+        if updateToServerStatus {
+            self.artistBehaviour.updateArtistIsFollowStatus(self.managedContext, artistId: selectedArtistId, isFollowStatus: followStatus)
+            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+        }
+    }
+
 
 }
 

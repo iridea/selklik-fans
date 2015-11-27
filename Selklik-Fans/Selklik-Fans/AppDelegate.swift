@@ -18,7 +18,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let useClosures = false
     var userLocalToken:String?
-    let reachability = Reachability.reachabilityForInternetConnection()
+    //let reachability:Reachability.reachabilityForInternetConnection()
     lazy var coreDataStack = CoreDataStack()
 
     //MARK: - Custom Function
@@ -33,11 +33,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     }
 
+    /*
     private func initialSystem(){
 
         //2. Check internet exist
         if (useClosures) {  // 2nd loop
-            reachability!.whenReachable = {
+            reachability.whenReachable = {
                 reachability in
                 if reachability.isReachableViaWiFi() {
                     print("Reachable via WiFi")
@@ -47,7 +48,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
                 self.connectedToInternet()
             }
-            reachability!.whenUnreachable = { reachability in
+            reachability.whenUnreachable = { reachability in
                 print("System are not connected to internet")
             }
         }
@@ -57,11 +58,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 name: ReachabilityChangedNotification, object: reachability)
         }
 
-        reachability!.startNotifier()
+        reachability.startNotifier()
 
         // Initial reachability check
-        if reachability!.isReachable() {
-            if reachability!.isReachableViaWiFi() {
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
                 print("Reachable via WiFi")
 
             } else {
@@ -95,12 +96,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     deinit {
-        reachability!.stopNotifier()
+        reachability.stopNotifier()
 
         if (!useClosures) {
             NSNotificationCenter.defaultCenter().removeObserver(self, name: ReachabilityChangedNotification, object: nil)
         }
-    }
+    }*/
 
     func connectedToInternet(){
         if self.window!.rootViewController is CoordinatorViewController {
@@ -198,7 +199,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     //MARK: - Default Function
 
+    //func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+
+
 
         let settings = UIUserNotificationSettings(forTypes: [.Alert, .Badge], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(settings)
@@ -209,8 +213,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barStyle = .Black
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
 
-        initialSystem()
-
+        //initialSystem()
+        self.connectedToInternet()
 
         return true
     }

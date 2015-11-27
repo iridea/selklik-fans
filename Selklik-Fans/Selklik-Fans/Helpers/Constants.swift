@@ -15,6 +15,8 @@ struct API {
     static let loginUrl = url + version + "user_login"
     static let logoutUrl = url + version + "user_logout"
     static let userSettingUrl = url + version + "user_setting"
+    static let followUrl = url + version + "user_follow"
+     static let unFollowUrl = url + version + "user_unfollow"
 
 }
 

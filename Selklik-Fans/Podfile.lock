@@ -1,11 +1,11 @@
 PODS:
   - ActiveLabel (0.2.2)
-  - Alamofire (3.0.0)
+  - Alamofire (3.0.1)
   - AlamofireImage (2.0.0-beta.1):
     - Alamofire (~> 3.0.0-beta.3)
-  - ReachabilitySwift (2.0)
+  - ReachabilitySwift (2.3)
   - SCLAlertView (0.4.3)
-  - SwiftyJSON (2.3.0)
+  - SwiftyJSON (2.3.1)
 
 DEPENDENCIES:
   - ActiveLabel
@@ -21,15 +21,15 @@ EXTERNAL SOURCES:
 
 CHECKOUT OPTIONS:
   ReachabilitySwift:
-    :commit: 8a2c1cbb739c55d39c479797337c5b05e5773b6b
+    :commit: 4788551ca34ce6f6c4d4cd29fcb0959df779510c
     :git: https://github.com/ashleymills/Reachability.swift
 
 SPEC CHECKSUMS:
   ActiveLabel: cecbc4ddf9f798bbacfa361960c9ccaeadb9d6e1
-  Alamofire: b61782387f81bcc538a0284cf2bb5d7995cd0a80
+  Alamofire: 2457e1b2e6c46bb05c3a598c542b7bfd08893775
   AlamofireImage: 6e16d1b33df25459b40be7c8a2ae6e3d6fefc080
-  ReachabilitySwift: 227b98ae7ec99e1c01148b17fb22357aa91a5675
+  ReachabilitySwift: 2ac9df18a443901f06caae38a9f5431219a4c36a
   SCLAlertView: a5c726a80a938fd3127edd7dbc19da33fb936ca3
-  SwiftyJSON: 8d6b61a70277ef2a5d710d372e06e7e2d87fb9e4
+  SwiftyJSON: 592b53bee5ef3dd9b3bebc6b9cb7ee35426ae8c3
 
 COCOAPODS: 0.39.0
